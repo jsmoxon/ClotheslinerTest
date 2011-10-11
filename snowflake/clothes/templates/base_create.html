@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block bodycontent%}
+
+<div id="content" class="grid_14 push_1">
+	<div id="measurementintro" class="alpha omega grid_">
+	<h2> Manual pant entry</h2>
+	<p> You can enter your own pant measurements here. </p>
+	</div> <!--close #measurementintro-->
+
+	<div id="inputform" class="alpha grid_5">	
+	<form>
+	<input type="text" name="brand" maxlength="30" size="10"  /> Brand Name<br />
+	<input type="text" name="model" maxlength="30" size="10" /> Style Name <br />
+	<input type="text" name="label_waist" maxlength="4" size="2" /> Their waist size <br />
+	<input type="text" name="label_inseam" maxlength="4" size="2" /> Their inseam size <br />
+	<hr>
+	<input type="text" onclick="display3()" name="waist" maxlength="4" size="2" /> Actual waist <br />
+	<input type="text" onclick="display4()" name="inseam" maxlength="4" size="2" /> Actual Inseam <br />
+	<input type="text" onclick="display5()" name="outseam" maxlength="4" size="2" /> Outseam <br />
+	<input type="text" onclick="display6()" name="frontrise" maxlength="4" size="2" /> Front Rise <br />
+	<input type="text" onclick="display7()" name="backrise" maxlength="4" size="2" /> Back Rise <br />
+	<input type="text" onclick="display8()" name="hips" maxlength="4" size="2" /> Hips <br />
+	<input type="text" onclick="display9()" name="thigh" maxlength="4" size="2"  /> Thigh <br />
+	<input type="text" onclick="display10()" name="knee" maxlength="4" size="2" /> Knee <br />
+	<input type="text" onclick="display11()" name="cuff" maxlength="4" size="2" /> Cuff <br />
+	<input type="submit" value="Enter & Compare" />
+	</form>
+	</div> <!--closes #inputform-->
+
+
+	<div id="starter" class="omega grid_9"> 
+	<img src="http://placekitten.com/g/201/301" alt="Fat"/>
+	<p>Dreamcatcher wayfarers trust fund, ut american apparel aesthetic helvetica PBR. Do locavore beard esse, et cillum mcsweeney's deserunt excepteur veniam dolor viral. Proident ut ad reprehenderit shoreditch. Banh mi scenester mlkshk, ethical 3 wolf moon aesthetic nisi you probably haven't heard of them do placeat. Sartorial trust fund accusamus organic, tumblr quinoa messenger bag iphone gentrify leggings american apparel high life mustache lo-fi. Helvetica veniam placeat food truck tumblr. Delectus homo synth chambray consectetur nihil ad. </p>
+	
+	</div>
+	
+</div> <!--closes #content-->
+
+
+{% endblock bodycontent %}

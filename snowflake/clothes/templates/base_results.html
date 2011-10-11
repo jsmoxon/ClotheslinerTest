@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load filters %}
+
+{% block refpant %}
+
+<div id="content" class="grid_14 push_1">
+<div id="refpant" class="grid_4 alpha">
+<img src="{{reference.picURL}}"width="240" height="280"></img>
+<ul>
+<li id="ref_make" class="make">{{reference.designer}}</li>
+</br>
+<li id="ref_model" class="model">{{reference.style}} -- {{reference.designer_waist}}x{{reference.designer_inseam}}</li>
+<li id="ref_price" class="price"></li>
+</ul>
+<div id="refpant_desc" class="alpha omega grid_4">
+
+<p> This is your reference pant, and all your search returns are described in relation to it.
+</p>
+<li>(Place holder text:)</li>
+</br>
+<li class="category">Waist</li><li>The pant is designed to sit at your natural waist rather than at the hips </li>
+</br>
+<li class="category">Rise</li><li>The rise is relatively high so it shouldn't cup your crotch too tightly </li>
+</br>
+<li class="category">Cuff</li><li>The cuff is fairly narrow so the pant has a relatively tapered feel and it tightens as it
+ approaches the foot
+ </li>
+</br>
+<li class="category">Thigh</li><li>The thigh fits somewhat snugly </li>
+</br>
+</div> <!--closes refpant_desc-->
+</div> <!--closes refpant-->
+
+<div id="results" class="grid_10 omega">
+
+    {% block content %}
+    {% endblock content %}
+</div> <!--closes #results-->
+</div> <!--closes #content-->
+
+{% endblock refpant%}

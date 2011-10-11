@@ -1,0 +1,24 @@
+{% extends "base_results.html" %}
+
+{% block content %}
+
+{% for item,values in pants.items %}
+   <div id="item" class="tile">
+    <a href="{{item.url_link}}"><img src="{{item.picURL}}" width="120" height="140"></a>
+    <div class="desc">
+    <ul>
+      <li class="make">{{item.designer}}</li>
+      </br>
+      <li class="model">{{item.style}} </li><li> {{item.designer_waist}}x{{item.designer_inseam}}</li>
+      <li>{{ values.waist }}</li>
+      <li>{{ values.inseam }}</li>
+      <li>{{ values.cuff }}</li>
+    </ul>
+    </div><!--ends desc div-->
+    </div><!--ends item div-->
+{% endfor %}
+
+   
+
+
+{% endblock content%}

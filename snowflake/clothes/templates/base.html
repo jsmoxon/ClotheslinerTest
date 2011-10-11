@@ -1,0 +1,61 @@
+{% load static %}
+{% load filters %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
+  <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+  <script type="text/javascript" src="{% get_static_prefix %}js/dropdown.js"></script>
+  <script type="text/javascript" src="{% get_static_prefix %}js/pk.js"></script>
+  <script type="text/javascript" src="{% get_static_prefix %}{% block js %}                                                                       
+  {% endblock js %}"> </script>
+  <script type="text/javascript" src="{% get_static_prefix %}{% block js2 %}                                                                      
+  {% endblock js2 %}"> </script>
+  <title>                                                                                                                                         
+    Clothesliner                                                                                                                                  
+    </title>
+</head>
+<body>
+<div id="container" class="container_16">
+
+  <div id="header" class= "alpha omega grid_16">
+    <div id="title">
+      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
+      <h2>Find  pants that fit. (Beta)</h2>
+      </div> <!--closes the title div-->
+    <div id="headerlinks">
+      <ul>
+        <li><a href="/pants4thunderthighs/search/">Search</a></li>
+        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
+        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/pants4thunderthighs/logout">Logout</a></li>
+        </ul>
+      </div> <!--closes the headerlinks div-->
+    <hr />
+    </div> <!--closes the header div-->
+{% block refpant %}
+{% endblock refpant%}
+
+{% block bodycontent%}
+{% endblock bodycontent%}
+
+
+
+<div id="footer" class="alpha omega grid_16">
+    <hr />
+    <div id="footerlinks">
+      <ul>
+        <li><a href="/pants4thunderthighs/search/">Search</a></li>
+        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
+        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/pants4thunderthighs/create/">Enter a Pant</a></li>
+      </ul>
+    </div> <!--closes the footerlinks div-->
+  </div> <!--closes the footer div-->
+</div> <!--closes the container div-->
+</body>
+</html>
