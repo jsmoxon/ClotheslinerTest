@@ -16,7 +16,8 @@ function popDescription(sel)
 
 function addFilter(sel)
 {
-	s += "("+sel.name+", "+sel.value+")";
+	if (!(s.match("("+sel.name+", "+sel.value+")")))
+		{s += "("+sel.name+", "+sel.value+")"};
 	var newFilter = document.createElement("INPUT");
 	newFilter.name = "filter";
 	newFilter.type = "hidden";
