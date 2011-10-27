@@ -46,7 +46,7 @@ def results(request):
 	else:
 		translated = narrow_pants(result_set.copy(), filters)
 	
-	return render_to_response('results.html', {'pants':translated, 'reference':reference_pant, 'filters':request.POST.get("filter", ""), 'token':token}, context_instance=RequestContext(request))
+	return render_to_response('results.html', {'pants':translated, 'reference':reference_pant, 'filters':filters, 'token':token}, context_instance=RequestContext(request))
 
 def find_reference(request):
 	measurements = str.split(str(request.POST.get('measurements')))
