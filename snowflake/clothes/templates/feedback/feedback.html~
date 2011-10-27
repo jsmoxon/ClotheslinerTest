@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/feedback.css" >
+
+</head>
+
+<body>
+
+<h1>Clothesliner!</h1>
+<h3>Feedback</h3>
+<div id="feedback">
+<form action="/feedback/submit/" method="get">
+<textarea name="subject" rows="1" cols="30">Subject</textarea>
+<textarea name="message" rows="10" cols="30">Message</textarea>
+<textarea name="sender" rows="1" cols="30">Sender</textarea>
+<input type="submit" class="feedback" value="submit!"/>
+</form>
+</div>
+
+</body>

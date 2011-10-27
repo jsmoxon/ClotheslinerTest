@@ -1,0 +1,61 @@
+{% extends "base_results.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+
+var s = "";
+{% for filt in filters %}
+   	s += "{{filt}}";
+{% endfor %}
+
+function popDescription(sel)
+{
+	window.open("/pants4thunderthighs/product_info/"+sel.name, "Compare Pants", "status=0, height=600, width=500");
+}
+
+function makeFormaddFilter(sel)
+{
+	var newForm = document.createElement("FORM");
+	newForm.action="/pants4thunderthighs/results/";
+	newForm.method="post";
+
+	s += "("+sel.id+", "+sel.title+")";
+	var newFilter = document.createElement("INPUT");
+	newFilter.name = "filter";
+	newFilter.type = "hidden";
+	newFilter.value = s;
+	
+	var csrfToken = document.createElement("INPUT");
+	csrfToken.name = "csrfmiddlewaretoken";
+	csrfToken.type = "hidden";
+	csrfToken.value = "{{token}}";
+	
+	newForm.appendChild(csrfToken);
+	newForm.appendChild(newFilter);
+	newForm.submit();
+}
+
+</script>
+<p>
+{% for filt in filters %}
+	<a href="#" onclick="dropFilter(this)">{{filt}}</a>
+{% endfor %}
+</p>
+{% for item,values in pants.items %}
+   <div id="item" class="tile">
+    <input type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" width="180" height="200">
+    <div class="desc">
+    <ul>
+      <li class="make">{{item.designer}}</li></br>
+      <li class="model">{{item.style}} </li>
+	  <li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
+      <li><a href="#" onClick="makeFormaddFilter(this)" id="waist" title="{{values.waist}}">{{values.waist}}</a></li>
+      <li><a href="#" onClick="makeFormaddFilter(this)" id="inseam" title="{{values.inseam}}">{{values.inseam}}</a></li>
+      <li><a href="#" onClick="makeFormaddFilter(this)" id="cuff" title="{{values.cuff}}">{{values.cuff}}</a></li>
+    </ul>
+   </div><!--ends desc div-->
+   </div><!--ends item div-->
+{% endfor %}
+
+{% endblock content%}

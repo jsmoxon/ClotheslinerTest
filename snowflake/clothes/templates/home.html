@@ -1,0 +1,136 @@
+{% load static %}
+{% load filters %}
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
+  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
+ <script type="text/javascript">
+  function feedbackPopup() {
+  window.open("/feedback/", "feedbackWindow", "status=1, height = 600, width = 600, resizable = 0")
+  }
+  </script>
+<title>Clothesliner Home Page</title>		
+<script type="text/javascript">
+
+var d = new Object();
+{% for des, sty in measurements.items %}
+	d[{{des.id}}] = new Array();
+	{% for st, measure in sty.items %}
+		d[{{des.id}}].push(new Array("{{st.id}}","{{st.name}}"));
+	{% endfor %}
+{% endfor %}
+
+var m = new Object();
+{% for des, sty in measurements.items %}
+	m[{{des.id}}] = new Array();
+	{% for st, meas in sty.items %}
+		m[{{des.id}}][{{st.id}}] = new Array();
+		{% for mea in meas %}
+			{% if mea.designer_inseam != 0.0 %}
+				m[{{des.id}}][{{st.id}}].push(new Array("{{mea.designer_waist}}","{{mea.designer_inseam}}"));
+			{% else %}
+				m[{{des.id}}][{{st.id}}].push(new Array("{{mea.designer_waist}}","Unhemmed"));
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+{% endfor %}
+
+function genStyles(sel)
+{
+	var optionlist = d[sel[sel.selectedIndex].value];
+	var z = document.getElementById("styles");
+	while(z.length > 0)
+	{
+	   z.remove(0);
+	}
+	for (i=0;i<optionlist.length;i++)
+	{
+		var newOption = document.createElement("OPTION");
+		newOption.text = optionlist[i][1];
+		newOption.value = optionlist[i][0];
+		z.add(newOption, null);
+	}
+	genMeasurements(sel, z)
+}
+
+function genMeasurements(des, sel)
+{
+	var measures = m[des[des.selectedIndex].value][sel[sel.selectedIndex].value];
+	var z = document.getElementById("measurements");
+	while(z.length > 0)
+	{
+		z.remove(0);
+	}
+	for (i=0;i<measures.length;i++)
+	{
+		var newOption = document.createElement("OPTION");
+		newOption.text = measures[i][0]+' x '+measures[i][1];
+		newOption.value = measures[i][0]+' x '+measures[i][1];
+		z.add(newOption, null);
+	}
+}
+</script>
+</head>
+<body onload=genStyles(document.getElementById("designers"))>
+<div id="sidebar">
+    <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" alt="" onClick="feedbackPopup()" value="Feedback">
+</div>
+
+<div id="container" class="container_16">
+
+  <div id="header" class= "alpha omega grid_16">
+    <div id="title">
+      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
+      <h2>Find  pants that fit.</h2>
+      </div> <!--closes the title div-->
+    <div id="headerlinks">
+      <ul>
+        <li><a href="/pants4thunderthighs/search/">Search</a></li>
+        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
+        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/pants4thunderthighs/logout">Logout</a></li>
+        </ul>
+      </div> <!--closes the headerlinks div-->
+    <hr />
+    </div> <!--closes the header div-->
+
+<div id="mainsearch" class="grid_6 push_5">
+<h2>Search for pants</h2>
+<p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
+<form action="/pants4thunderthighs/reference/" method="post" name="selectReferencePant">
+	{% csrf_token %}
+	<select id="designers" name="designers" onchange="genStyles(this)">
+	{% for des, sty in measurements.items %}
+		<option value="{{des.id}}">{{des.name}}</option>
+	{% endfor %}
+	</select><br />
+	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br />
+	<select id="measurements" name="measurements"></select><br />
+
+	<input type="submit" value="Compare" />
+</form>
+</br>
+<p> Do we not have the pants you want to compare against? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
+</div> <!--close #mainsearch -->
+
+
+<div id="footer" class="alpha omega grid_16">
+    <hr />
+    <div id="footerlinks">
+      <ul>
+        <li><a href="/pants4thunderthighs/search/">Search</a></li>
+        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
+        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/create/">Enter a Pant</a></li>
+      </ul>
+    </div> <!--closes the footerlinks div-->
+  </div> <!--closes the footer div-->
+</div> <!--closes the container div-->
+
+
+</body>
+</html>
