@@ -1,7 +1,19 @@
-.filterLink {
+.dropfilterLink {
 background-color: transparent;
 text-decoration: none;
 border: none;
 color: blue;
 cursor: pointer;
+}
+
+.addFilterLink {
+background-color: transparent;
+text-decoration: none;
+border: none;
+cursor: pointer;
+display: inline;
+color: 23015E;
+font-family:'Palatino', serif;
+font-size: 11px;
+padding: 0px 0px;
 }
