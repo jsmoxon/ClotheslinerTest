@@ -15,17 +15,12 @@
 <script type="text/javascript">
 
 var d = new Object();
-{% for des, sty in measurements.items %}
-	d[{{des.id}}] = new Array();
-	{% for st, measure in sty.items %}
-		d[{{des.id}}].push(new Array("{{st.id}}","{{st.name}}"));
-	{% endfor %}
-{% endfor %}
-
 var m = new Object();
 {% for des, sty in measurements.items %}
+	d[{{des.id}}] = new Array();
 	m[{{des.id}}] = new Array();
 	{% for st, meas in sty.items %}
+		d[{{des.id}}].push(new Array("{{st.id}}","{{st.name}}"));
 		m[{{des.id}}][{{st.id}}] = new Array();
 		{% for mea in meas %}
 			{% if mea.designer_inseam != 0.0 %}

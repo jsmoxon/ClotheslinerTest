@@ -16,6 +16,7 @@ def compare_pants(reference_pant, reference_measurements, reference_margins_of_e
 			kwargs = {'%s__%s' % (category, 'range'): (measurement-moe, measurement+moe)}
 			q = q.filter(**kwargs)
 	q = q.exclude(id=reference_pant.id)
+	q = q.exclude(designer=reference_pant.designer, style=reference_pant.style)
 	return q 
 
 def find_pants(designer, style, waist, inseam):

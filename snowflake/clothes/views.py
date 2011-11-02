@@ -68,7 +68,12 @@ def product_info(request, comp):
 	reference_pant = request.session["reference_pant"]
 	compared_pant = Pant.objects.get(id__exact = comp)
 	return render_to_response('product_info.html', {'compared':compared_pant, 'reference':reference_pant}, context_instance=RequestContext(request))
-	
+
+def super_compare(request):
+	shopping_cart = request.session["shopping_cart"]
+	reference_pant = request.session["shopping_cart"]
+	return render_to_response('super_compare.html', {'reference':reference_pant, 'shopping':shopping_cart}, context_instance=RequestContext(request))
+
 def about(request):
 	return render_to_response('base_about.html', {},)
 
@@ -79,5 +84,4 @@ def logout(request):
 	return render_to_response('base_outsuccess.html', {},)
 
 def create(request):
-	return render_to_response('base_create.html', {},)		
-	
+	return render_to_response('base_create.html', {},)	
