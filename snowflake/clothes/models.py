@@ -1,4 +1,5 @@
 from django.db import models
+from clothes.fields import * 
 
 class Fabric(models.Model):
 	name = models.CharField(max_length=200)
@@ -115,8 +116,8 @@ class Pant(Cloth_Item):
 	knee = models.FloatField(null=True, blank=True)
 	outseam = models.FloatField(null=True, blank=True)
 	cuff = models.FloatField(null=True, blank=True)
-	designer_waist = models.FloatField(null=True, blank=True)
-	designer_inseam = models.FloatField(null=True, blank=True)
+	designer_waist = DisplayedFloatField(null=True, blank=True)
+	designer_inseam = DisplayedFloatField(null=True, blank=True)
 	cuff_unfinished = models.NullBooleanField()
 	rear_pocket_quantity = models.IntegerField(null=True, blank=True)
 	rear_pocket_depth = models.FloatField(null=True, blank=True)
@@ -143,8 +144,7 @@ class Pant(Cloth_Item):
 	style = models.ForeignKey(Style, null=True, blank=True)
 	picURL = models.URLField(max_length=1000, null=True)
 	url_link = models.URLField(max_length=1000, null=True)
-
-
+	
 	def attrs(self):
             for attr, value in self.__dict__.iteritems():
                 yield attr, value
@@ -156,7 +156,6 @@ class Pant(Cloth_Item):
 		d = "" if self.inseam is None else self.inseam
 		return a+" "+b+" "+str(c)+" "+str(d) if a+b+str(c)+str(d) != "" else "Some Pants"
 
-	
 class Pant_Stock_Item(models.Model):
 	item = models.ForeignKey(Pant)
 	retailer = models.ForeignKey(Retailer)

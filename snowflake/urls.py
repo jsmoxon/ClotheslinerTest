@@ -5,7 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', 'clothes.views.landing'),
-    (r'^pants4thunderthighs/',        include('clothes.urls')),
+    (r'^pants4thunderthighs/', include('clothes.urls')),
     (r'^feedback/$', 'feedback.views.home'),
     (r'^feedback/submit/$', 'feedback.views.feedback_submit'),
     (r'^create/$', 'createpant.views.create'),
