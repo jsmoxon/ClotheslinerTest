@@ -11,7 +11,8 @@ var s = "";
 
 function popDescription(sel)
 {
-	window.open("/pants4thunderthighs/product_info/"+sel.name, "Compare Pants", "status=0, height=600, width=500");
+	
+	window.open("/pants4thunderthighs/super_compare/"+sel.name, "Compare Pants", "status=0, height=600, width=500");
 }
 
 function addFilter(sel)
@@ -55,7 +56,17 @@ function makeForm(child)
 	newForm.appendChild(child);
 	newForm.submit();
 }
+
+function fitThis(item)
+{
+	var fitItem = document.createElement("INPUT");
+	fitItem.name = "fitRoom";
+	fitItem.type = "hidden";
+	fitItem.value = item;
+	makeForm(fitItem);
+}
 </script>
+
 <p>
 {% for filt in filters %}
 	<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
@@ -63,10 +74,11 @@ function makeForm(child)
 </p>
 {% for item,values in pants.items %}
    <div id="item" class="tile">
-    <input type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" width="180" height="200">
+	<input type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" width="180" height="200">
     <div class="desc">
     <ul>
-      <li class="make">{{item.designer}}</li></br>
+      <li class="make">{{item.designer}}</li> 
+		<input type="button" class="fittingRoom" onClick="fitThis({{item.id}})" name="add{{item.id}}" value="+"><br>
       <li class="model">{{item.style}} </li>
 	  <li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
       <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></li>

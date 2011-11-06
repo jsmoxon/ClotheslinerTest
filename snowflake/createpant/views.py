@@ -31,4 +31,5 @@ def submit(request):
 	request.session["flags"] = []
 	request.session["result_set"] = None
 	request.session["filters"] = []
+	request.session["shopping_cart"] = []
 	return HttpResponseRedirect(reverse('clothes.views.results'))
