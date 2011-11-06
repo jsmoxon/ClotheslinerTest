@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     (r'^feedback/submit/$', 'feedback.views.feedback_submit'),
     (r'^create/$', 'createpant.views.create'),
     (r'^create/submit/', 'createpant.views.submit'),
+    (r'^drawnpantimage/', 'clothes.views.drawnpantimage'),
 
     (r'^admin/', include(admin.site.urls)),
 )

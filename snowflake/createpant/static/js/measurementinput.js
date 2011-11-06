@@ -4,7 +4,7 @@ document.getElementById("starter").innerHTML='<div class="measurementguide">\
 	<p>With the pants laid flat, measure from edge to edge widthwise across the ellipse that\'s created by the space between the rear and the front of the waistband. If the rear waistband is a perfectly straight line, use that.</p>\
 	<p>Don\'t include belt loops in your measurement.  Enter it. Your final measurement should be about half of what the designers label said it would be.</p>\
 	<p>(You double it to know the whole waist size but we didn\'t want to risk you messing up the math while you enter the data. You\'ll notice, though, that the actual waist measurement is likely to be different from what the label said by as much as 2 inches).</p>\
-	<img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\
+	<img src="/drawnpantimage/" class="drawnpant" alt="pant drawing"/>\
 	</div>'
 	;
 }
@@ -13,7 +13,7 @@ function displayLabelInseam()
 {
     document.getElementById("starter").innerHTML='<div class="measurementguide">\
     <p>Pick one of the legs, measure from the crotch of the pant to the bottom of the cuff. If the line between those two points isn\'t perfectly straight, try to follow its curvature. Your final measurement should be within a couple of inches of what the designer\'s label said it would be. </p>\
-    <img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\
+    <img src="images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\
     </div>'
 	;
 }
