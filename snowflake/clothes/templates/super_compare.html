@@ -2,6 +2,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super.css" >
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
 <script type="text/javascript">
 
@@ -56,7 +57,7 @@ function makeCompare(sel)
 	$('.small_tile#'+sel.name).css("outline","3px solid blue");
 
 	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
-	$('#desc').text(describe);
+	$('#fit_desc').text(describe);
 }
 
 function makeReference(sel)
@@ -160,10 +161,7 @@ function unfitThis(item)
 <div id="comp_pant_1">
 	<img id="image">  
 	<ul class="fit_dict">
-		<li>The front rise is going to fit like this. It's going to feel very  nice.</li><br/>
-		<li>Since the rise is 1/4 inch lower you it will cup your balls more.</li><br/>
-		<li>The ratio of waist to rise may result in plumber butt.</li><br/>
-		<li>This pant will taper more severly than the reference pant.</li>
+		<li id="fit_desc"></li><br/>
 	</ul>
 
 	<div class="measurements">
@@ -184,7 +182,6 @@ function unfitThis(item)
 </div><!--closes comp_pant_1-->
 
 </div><!--closes compare-->
-<!--<div id="desc"></div>-->
 
 <div class="thumbnails">
 	<input  type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{reference.id}}" name="{{reference.id}}" src="{{reference.picURL}}" width="90" height="100">
