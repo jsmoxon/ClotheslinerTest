@@ -1,86 +1,199 @@
+<head>
+{% load static %}
+<script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+<script type="text/javascript">
+
+var p = new Object();
+	p[{{reference.id}}] = new Object();
+	p[{{reference.id}}]["image"] = ("{{reference.picURL}}" == "None") ? "N/A":'{{reference.picURL}}';
+	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":'{{reference.designer}}';
+	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":'{{reference.style}}';
+	p[{{reference.id}}]["waist"] = ("{{reference.waist}}" == "None") ? "N/A":{{reference.waist}};
+	p[{{reference.id}}]["inseam"] = ("{{reference.inseam}}" == "None") ? "N/A":{{reference.inseam}};
+	p[{{reference.id}}]["cuff"] = ("{{reference.cuff}}" == "None") ? "N/A":{{reference.cuff}};
+	p[{{reference.id}}]["thigh"] = ("{{reference.thigh}}" == "None") ? "N/A":{{reference.thigh}};
+	p[{{reference.id}}]["front_rise"] = ("{{reference.front_rise}}" == "None") ? "N/A":{{reference.front_rise}};
+	p[{{reference.id}}]["back_rise"] = ("{{reference.back_rise}}" == "None") ? "N/A":{{reference.back_rise}};
+	p[{{reference.id}}]["hips"] = ("{{reference.hips}}" == "None") ? "N/A":{{reference.hips}};
+	p[{{reference.id}}]["knee"] = ("{{reference.knee}}" == "None") ? "N/A":{{reference.knee}};
+	p[{{reference.id}}]["outseam"] = ("{{reference.outseam}}" == "None") ? "N/A":{{reference.outseam}};
+
+{% for pant in fitRoom %}
+	p[{{pant.id}}] = new Object();
+	p[{{pant.id}}]["image"] = ("{{pant.picURL}}" == "None") ? "N/A":'{{pant.picURL}}';
+	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":'{{pant.designer}}';
+	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":'{{pant.style}}';
+	p[{{pant.id}}]["waist"] = ("{{pant.waist}}" == "None") ? "N/A":{{pant.waist}};
+	p[{{pant.id}}]["inseam"] = ("{{pant.inseam}}" == "None") ? "N/A":{{pant.inseam}};
+	p[{{pant.id}}]["cuff"] = ("{{pant.cuff}}" == "None") ? "N/A":{{pant.cuff}};
+	p[{{pant.id}}]["thigh"] = ("{{pant.thigh}}" == "None") ? "N/A":{{pant.thigh}};
+	p[{{pant.id}}]["front_rise"] = ("{{pant.front_rise}}" == "None") ? "N/A":{{pant.front_rise}};
+	p[{{pant.id}}]["back_rise"] = ("{{pant.back_rise}}" == "None") ? "N/A":{{pant.back_rise}};
+	p[{{pant.id}}]["hips"] = ("{{pant.hips}}" == "None") ? "N/A":{{pant.hips}};
+	p[{{pant.id}}]["knee"] = ("{{pant.knee}}" == "None") ? "N/A":{{pant.knee}};
+	p[{{pant.id}}]["outseam"] = ("{{pant.outseam}}" == "None") ? "N/A":{{pant.outseam}};
+{% endfor %}
+
+function makeCompare(sel)
+{
+	$('table#comp_pant_1 td#image').html("<img src='"+p[sel.name]['image']+"' width='90' height='100'>");
+	$('table#comp_pant_1 td#designer').text(p[sel.name]['designer']);
+	$('table#comp_pant_1 td#model').text(p[sel.name]['style']);
+	$('table#comp_pant_1 td#waist').text(p[sel.name]['waist']);
+	$('table#comp_pant_1 td#inseam').text(p[sel.name]['inseam']);
+	$('table#comp_pant_1 td#cuff').text(p[sel.name]['cuff']);
+	$('table#comp_pant_1 td#thigh').text(p[sel.name]['thigh']);
+	$('table#comp_pant_1 td#front_rise').text(p[sel.name]['front_rise']);
+	$('table#comp_pant_1 td#back_rise').text(p[sel.name]['back_rise']);
+	$('table#comp_pant_1 td#hips').text(p[sel.name]['hips']);
+	$('table#comp_pant_1 td#knee').text(p[sel.name]['knee']);
+	$('table#comp_pant_1 td#outseam').text(p[sel.name]['outseam']);
+	$('table#comp_pant_1').attr('title', sel.name);
+
+	$('.small_tile').css("outline", "none");
+	$('.small_tile#'+sel.name).css("outline","3px solid blue");
+}
+function makeReference(sel)
+{
+	$('table#reference_pant td#image').html("<img src='"+p[sel.name]['image']+"' width='90' height='100'>");
+	$('table#reference_pant td#designer').text(p[sel.name]['designer']);
+	$('table#reference_pant td#model').text(p[sel.name]['style']);
+	$('table#reference_pant td#waist').text(p[sel.name]['waist']);
+	$('table#reference_pant td#inseam').text(p[sel.name]['inseam']);
+	$('table#reference_pant td#cuff').text(p[sel.name]['cuff']);
+	$('table#reference_pant td#thigh').text(p[sel.name]['thigh']);
+	$('table#reference_pant td#front_rise').text(p[sel.name]['front_rise']);
+	$('table#reference_pant td#back_rise').text(p[sel.name]['back_rise']);
+	$('table#reference_pant td#hips').text(p[sel.name]['hips']);
+	$('table#reference_pant td#knee').text(p[sel.name]['knee']);
+	$('table#reference_pant td#outseam').text(p[sel.name]['outseam']);
+	
+	$('.small_tile').css("border", "none");
+	$('.small_tile#'+sel.name).css("border","3px solid red");
+}
+
+function makeForm(child)
+{
+	var newForm = document.createElement("FORM");
+	var newID = "{{compared.id}}";
+	if (child.value == newID)
+	{
+		newID = $('table#comp_pant_1').attr('title');
+		if (child.value == newID)
+		{
+			newID = "{{fitRoom.0.id}}";
+			if (child.value == newID)
+			{
+				{% with fitRoom|last as newPant %}
+				    newID = "{{newPant.id}}"
+				{% endwith %}
+//				if (child.value == newID)
+//				{
+//					newID = "";
+//				}
+			}
+		}
+	}
+	if (newID) {newID += "/"}
+	newForm.action="/pants4thunderthighs/super_compare/"+newID;
+	newForm.method="post";
+	
+	var csrfToken = document.createElement("INPUT");
+	csrfToken.name = "csrfmiddlewaretoken";
+	csrfToken.type = "hidden";
+	csrfToken.value = "{{token}}";
+	
+	newForm.appendChild(csrfToken);
+	newForm.appendChild(child);
+	newForm.submit();
+}
+
+function unfitThis(item)
+{
+	var unfitItem = document.createElement("INPUT");
+	unfitItem.name = "unfitRoom";
+	unfitItem.type = "hidden";
+	unfitItem.value = item;
+	makeForm(unfitItem);
+}
+</script>
+</head>
+<body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 <div id="compare">
 <table>
 	<tr>
-		<div id="descriptors">
+		<div class="header" id="descriptors">
 		<td>
 			<table>
-				<tr>
-					<td id="image"></td>
-					<td id="designer">Designer:</td>
-					<td id="model">Model:</td>
-					<td id="waist">Waist:</td>
-					<td id="inseam">Inseam:</td>
-					<td id="cuff">Cuff:</td>
-					<td id="thigh">Thigh:</td>
-					<td id="front_rise">Front Rise:</td>
-					<td id="back_rise">Back Rise:</td>
-					<td id="hips">Hips:</td>
-					<td id="knee">Knee:</td>
-					<td id="outseam">Outseam:</td>
-				</tr>
+				<tr><td id="image" width="90" height="100"></td></tr>
+				<tr><td id="designer">Designer:</td></tr>
+				<tr><td id="model">Model:</td></tr>
+				<tr><td id="waist">Waist:</td></tr>
+				<tr><td id="inseam">Inseam:</td></tr>
+				<tr><td id="cuff">Cuff:</td></tr>
+				<tr><td id="thigh">Thigh:</td></tr>
+				<tr><td id="front_rise">Front Rise:</td></tr>
+				<tr><td id="back_rise">Back Rise:</td></tr>
+				<tr><td id="hips">Hips:</td></tr>
+				<tr><td id="knee">Knee:</td></tr>
+				<tr><td id="outseam">Outseam:</td></tr>
 			</table>
 		</td>
 		</div>
 		
-		<div id="reference_pant">
+		<div class="header">
 		<td>
-			<table>
-				<tr>
-					<td id="image"></td>
-					<td id="designer"></td>
-					<td id="model"></td>
-					<td id="waist"></td>
-					<td id="inseam"></td>
-					<td id="cuff"></td>
-					<td id="thigh"></td>
-					<td id="front_rise"></td>
-					<td id="back_rise"></td>
-					<td id="hips"></td>
-					<td id="knee"></td>
-					<td id="outseam"></td>
-				</tr>
+			<table id="reference_pant">
+				<tr><td id="image"></td></tr>
+				<tr><td id="designer"></td></tr>
+				<tr><td id="model"></td></tr>
+				<tr><td id="waist"></td></tr>
+				<tr><td id="inseam"></td></tr>
+				<tr><td id="cuff"></td></tr>
+				<tr><td id="thigh"></td></tr>
+				<tr><td id="front_rise"></td></tr>
+				<tr><td id="back_rise"></td></tr>
+				<tr><td id="hips"></td></tr>
+				<tr><td id="knee"></td></tr>
+				<tr><td id="outseam"></td></tr>
 			</table>
 		</td>
 		</div>
 		
-		<div id="comp_pant_1">
+		<div class="header">
 		<td>
-			<table>
-				<tr>
-					<td id="image"></td>
-					<td id="designer"></td>
-					<td id="model"></td>
-					<td id="waist"></td>
-					<td id="inseam"></td>
-					<td id="cuff"></td>
-					<td id="thigh"></td>
-					<td id="front_rise"></td>
-					<td id="back_rise"></td>
-					<td id="hips"></td>
-					<td id="knee"></td>
-					<td id="outseam"></td>
-				</tr>
+			<table id="comp_pant_1" title="">
+				<tr><td id="image"></td></tr>
+				<tr><td id="designer"></td></tr>
+				<tr><td id="model"></td></tr>
+				<tr><td id="waist"></td></tr>
+				<tr><td id="inseam"></td></tr>
+				<tr><td id="cuff"></td></tr>
+				<tr><td id="thigh"></td></tr>
+				<tr><td id="front_rise"></td></tr>
+				<tr><td id="back_rise"></td></tr>
+				<tr><td id="hips"></td></tr>
+				<tr><td id="knee"></td></tr>
+				<tr><td id="outseam"></td></tr>
 			</table>
 		</td>
 		</div>
 		
-		<div id="comp_pant_2" style="display: block">
+		<div class="header" id="comp_pant_2" style="display: block">
 		<td>
 			<table>
-				<tr>
-					<td id="image"></td>
-					<td id="designer"></td>
-					<td id="model"></td>
-					<td id="waist"></td>
-					<td id="inseam"></td>
-					<td id="cuff"></td>
-					<td id="thigh"></td>
-					<td id="front_rise"></td>
-					<td id="back_rise"></td>
-					<td id="hips"></td>
-					<td id="knee"></td>
-					<td id="outseam"></td>
-				</tr>
+				<tr><td id="image"></td></tr>
+				<tr><td id="designer"></td></tr>
+				<tr><td id="model"></td></tr>
+				<tr><td id="waist"></td></tr>
+				<tr><td id="inseam"></td></tr>
+				<tr><td id="cuff"></td></tr>
+				<tr><td id="thigh"></td></tr>
+				<tr><td id="front_rise"></td></tr>
+				<tr><td id="back_rise"></td></tr>
+				<tr><td id="hips"></td></tr>
+				<tr><td id="knee"></td></tr>
+				<tr><td id="outseam"></td></tr>
 			</table>	
 		</td>
 		</div>
@@ -89,7 +202,21 @@
 </div>
 
 <div id="list">
-	<div id="small_tile">
-{% for pant in shopping %}
-{% endfor %}
+	<table><tr>
+			<td><ul style="list-style-type: none">
+				<li><input type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{reference.id}}" name="{{reference.id}}" src="{{reference.picURL}}" width="90" height="100"></li>
+				<li>{{reference.designer}}</li>
+				<li>{{reference.style}}</li>
+				<li>{{reference.designer_waist}} x {{reference.designer_inseam}}</li>
+			</ul></td>
+		{% for pant in fitRoom %}
+			<td><ul style="list-style-type: none">
+				<li><input type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{pant.id}}" name="{{pant.id}}" src="{{pant.picURL}}" width="90" height="100"></li>
+				<li>{{pant.designer}} <input type="button" class="fittingRoom" onClick="unfitThis({{pant.id}})" name="remove{{pant.id}}" value="-"></li>
+				<li>{{pant.style}}</li>
+				<li>{{pant.designer_waist}} x {{pant.designer_inseam}}</li>
+			</ul></td>
+		{% endfor %}
+	</tr></table>
 </div>
+</body>
