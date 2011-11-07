@@ -6,11 +6,13 @@
 <script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
 <script type="text/javascript">
 
+var sauce = jQuery.parseJSON('{{ sauce|safe }}');
+
 var p = new Object();
 	p[{{reference.id}}] = new Object();
-	p[{{reference.id}}]["image"] = ("{{reference.picURL}}" == "None") ? "N/A":'{{reference.picURL}}';
-	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":'{{reference.designer}}';
-	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":'{{reference.style}}';
+	p[{{reference.id}}]["image"] = ("{{reference.picURL}}" == "None") ? "N/A":"{{reference.picURL|safe}}";
+	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":"{{reference.designer|safe}}";
+	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":"{{reference.style|safe}}";
 	p[{{reference.id}}]["waist"] = ("{{reference.waist}}" == "None") ? "N/A":{{reference.waist}};
 	p[{{reference.id}}]["inseam"] = ("{{reference.inseam}}" == "None") ? "N/A":{{reference.inseam}};
 	p[{{reference.id}}]["cuff"] = ("{{reference.cuff}}" == "None") ? "N/A":{{reference.cuff}};
@@ -23,9 +25,9 @@ var p = new Object();
 
 {% for pant in fitRoom %}
 	p[{{pant.id}}] = new Object();
-	p[{{pant.id}}]["image"] = ("{{pant.picURL}}" == "None") ? "N/A":'{{pant.picURL}}';
-	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":'{{pant.designer}}';
-	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":'{{pant.style}}';
+	p[{{pant.id}}]["image"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.picURL|safe}}";
+	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":"{{pant.designer|safe}}";
+	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":"{{pant.style|safe}}";
 	p[{{pant.id}}]["waist"] = ("{{pant.waist}}" == "None") ? "N/A":{{pant.waist}};
 	p[{{pant.id}}]["inseam"] = ("{{pant.inseam}}" == "None") ? "N/A":{{pant.inseam}};
 	p[{{pant.id}}]["cuff"] = ("{{pant.cuff}}" == "None") ? "N/A":{{pant.cuff}};
@@ -57,7 +59,7 @@ function makeCompare(sel)
 	$('.small_tile#'+sel.name).css("outline","3px solid blue");
 
 	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
-	$('#fit_desc').text(describe);
+	$('#fit_desc').html(describe);
 }
 
 function makeReference(sel)
@@ -133,12 +135,12 @@ function unfitThis(item)
 <div id="compare">
 
 <div id="reference_pant">
-	<img id="image"> 
+	<img id="image" src=""/> 
 	<ul class="fit_dict">
 		<li>The front rise is going to fit like this. It's going to feel very nice.</li><br/>
 		<li>Since the rise is 1/4 inch lower you it will cup your balls more.</li><br/>
 		<li>The ratio of waist to rise may result in plumber butt.</li><br/>
-		<li>This pant will taper more severly than the reference pant.</li>
+		<li>This pant will taper more severely than the reference pant.</li>
 	</ul>
 	
 	<div class="measurements" align="right">
@@ -159,7 +161,7 @@ function unfitThis(item)
 </div><!--closes reference_pant-->
 
 <div id="comp_pant_1">
-	<img id="image">  
+	<img id="image" src=""/>  
 	<ul class="fit_dict">
 		<li id="fit_desc"></li><br/>
 	</ul>

@@ -7,13 +7,13 @@ function calcDiff(ref, comp)
 	var muffinTop = muffin(ref, comp);
 	var thighTightness = thigh(ref, comp); 
 	var ankleTightness = ankle(ref, comp);
-	return "nuts:"+nutCupping+
-		  " leg:"+legTightness+
-		  " buttCup:"+buttCupping+ 
-		  " diaper:"+diaperButt+
-		  " muffin:"+muffinTop+
-		  " thigh:"+thighTightness+
-		  " ankle:"+ankleTightness;
+
+	return compThem(nutCupping, "nutcupping")+"<br/><br/>"+
+		   compThem(legTightness, "leg")+"<br/><br/>"+
+		   compThem(buttCupping, "buttcupping")+"<br/><br/>"+
+		   compThem(muffinTop, "muffintop")+"<br/><br/>"+
+		   compThem(thighTightness, "thigh")+"<br/><br/>"+
+		   compThem(ankleTightness, "ankle");
 }
 
 function thigh(ref, comp)
