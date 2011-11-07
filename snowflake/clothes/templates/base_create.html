@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block js %}
 js/measurementinput.js
 {% endblock js%}
@@ -20,7 +20,7 @@ js/measurementinput.js
 	<input type="text" onFocus="displayLabelWaist()" name="label_waist" maxlength="4" size="2" /> Label waist size <br />
 	<input type="text" onFocus="displayLabelInseam()" name="label_inseam" maxlength="4" size="2" /> Label inseam size <br />
 	<input type="text" onFocus="displayWaist()" name="waist" maxlength="4" size="2" /> Actual waist <br />
-	<input type="tex" onFocus="displayInseam()" name="inseam" maxlength="4" size="2" /> Actual Inseam <br />
+	<input type="text" onFocus="displayInseam()" name="inseam" maxlength="4" size="2" /> Actual Inseam <br />
 	<input type="text" onFocus="displayOutseam()" name="outseam" maxlength="4" size="2" /> Outseam <br />
 	<input type="text" onFocus="displayFront()" name="front_rise" maxlength="4" size="2" /> Front Rise <br />
 	<input type="text" onFocus="displayBack()" name="back_rise" maxlength="4" size="2" /> Back Rise <br />
