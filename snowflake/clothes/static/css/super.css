@@ -17,26 +17,24 @@ margin:0;
 }
 
 #compare {
-	height:400px;
+	height:500px;
 	padding: 5px;
 }
 
 #comp_pant_1 {
-	float:right;
+	margin-left: 210px;
+	width:400px;
 }
 
 #reference_pant {
+	width: 200px;
 	float:left;
-}
-
-#reference_pant #image {
-	float:right;
 }
 
 .fit_dict {
 	float:right;
-	margin-left:5px;
 	width:200px;
+	height:240px;
 }
 
 .thumbnails {
@@ -44,8 +42,7 @@ margin:0;
 }
 
 .measurements {
-	padding-top:10px;
-	clear: both;
+	margin-top:10px;
 }
 
 #reference_pant .measurements{

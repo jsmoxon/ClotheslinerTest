@@ -7,6 +7,8 @@
 <script type="text/javascript">
 
 var sauce = jQuery.parseJSON('{{ sauce|safe }}');
+var specialSauce = jQuery.parseJSON('{{ specialSauce|safe }}');
+var lessSpecialSauce = jQuery.parseJSON('{{ lessSpecialSauce|safe }}');
 
 var p = new Object();
 	p[{{reference.id}}] = new Object();
@@ -136,12 +138,6 @@ function unfitThis(item)
 
 <div id="reference_pant">
 	<img id="image" src=""/> 
-	<ul class="fit_dict">
-		<li>The front rise is going to fit like this. It's going to feel very nice.</li><br/>
-		<li>Since the rise is 1/4 inch lower you it will cup your balls more.</li><br/>
-		<li>The ratio of waist to rise may result in plumber butt.</li><br/>
-		<li>This pant will taper more severely than the reference pant.</li>
-	</ul>
 	
 	<div class="measurements" align="right">
 	<ul class="measurement_data">
@@ -183,15 +179,15 @@ function unfitThis(item)
 	</div><!--closes measurements-->
 </div><!--closes comp_pant_1-->
 
+<div id="explain"></div>
 </div><!--closes compare-->
 
 <div class="thumbnails">
 	<input  type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{reference.id}}" name="{{reference.id}}" src="{{reference.picURL}}" width="90" height="100">
-{% for pant in fitRoom %}
 
+{% for pant in fitRoom %}
 	<input type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{pant.id}}" name="{{pant.id}}" src="{{pant.picURL}}" width="90" height="100">
 	<input type="button" class="fitting_room" onClick="unfitThis({{pant.id}})" name="remove{{pant.id}}" value="-">
-
 {% endfor %}
 </div><!--closes thumbnails-->
 </body>

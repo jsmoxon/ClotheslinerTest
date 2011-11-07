@@ -8,12 +8,12 @@ function calcDiff(ref, comp)
 	var thighTightness = thigh(ref, comp); 
 	var ankleTightness = ankle(ref, comp);
 
-	return compThem(nutCupping, "nutcupping")+"<br/><br/>"+
-		   compThem(legTightness, "leg")+"<br/><br/>"+
-		   compThem(buttCupping, "buttcupping")+"<br/><br/>"+
-		   compThem(muffinTop, "muffintop")+"<br/><br/>"+
-		   compThem(thighTightness, "thigh")+"<br/><br/>"+
-		   compThem(ankleTightness, "ankle");
+	return '<p onclick=explainThis(this) id="nutcupping" title="'+nutCupping+'">'+compThem(nutCupping, "nutcupping")+'</p>'+
+		   '<p onclick=explainThis(this) id="leg" title="'+legTightness+'">'+compThem(legTightness, "leg")+'</p>'+
+		   '<p onclick=explainThis(this) id="buttcupping" title="'+buttCupping+'">'+compThem(buttCupping, "buttcupping")+'</p>'+
+		   '<p onclick=explainThis(this) id="muffintop" title="'+muffinTop+'">'+compThem(muffinTop, "muffintop")+'</p>'+
+		   '<p onclick=explainThis(this) id="thigh" title="'+thighTightness+'">'+compThem(thighTightness, "thigh")+'</p>'+
+		   '<p onclick=explainThis(this) id="ankle" title="'+ankleTightness+'">'+compThem(ankleTightness, "ankle")+'</p>';
 }
 
 function thigh(ref, comp)

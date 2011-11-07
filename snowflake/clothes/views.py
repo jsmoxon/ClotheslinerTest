@@ -6,6 +6,7 @@ from clothes.models import *
 from snowflake.functions import *
 from snowflake.vars import *
 from snowflake.fitdict import *
+from snowflake.deepdict import *
 from django.utils import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
@@ -83,7 +84,9 @@ def product_info(request, comp):
 	return render_to_response('product_info.html', {'compared':compared_pant, 'reference':reference_pant}, context_instance=RequestContext(request))
 
 def super_compare(request, comp=None):
-	secret_sauce = simplejson.dumps(FIT_DICT)
+	sauce = simplejson.dumps(FIT_DICT)
+	secret_sauce = simplejson.dumps(DEEP_DICT)
+	not_secret_sauce = simplejson.dumps(SHALLOW_DICT)
 	unfittingRoom = str(request.POST.get("unfitRoom", ""))
 	token = get_token(request)
 	
@@ -101,7 +104,9 @@ def super_compare(request, comp=None):
 	return render_to_response('super_compare.html', {'reference':reference_pant, 
 													 'fitRoom':fittingRoom, 
 													 'compared':compared_pant,
-													 'sauce':secret_sauce,
+													 'sauce':sauce,
+													 'specialSauce':secret_sauce,
+													 'lessSpecialSauce':not_secret_sauce,
 													 'token':token }, context_instance=RequestContext(request))
 
 def about(request):
