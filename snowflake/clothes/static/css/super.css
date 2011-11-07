@@ -1,0 +1,59 @@
+ul{
+list-style-type: none;
+padding: 0;
+margin: 0;
+font-size: 11px;
+}
+
+li {
+list-style: none; 
+margin:0; 
+}
+
+#image {
+	width: 200px;
+	height: 240px;
+	float: left;
+}
+
+#compare {
+	height:400px;
+	padding: 5px;
+}
+
+#comp_pant_1 {
+	float:right;
+}
+
+#reference_pant {
+	float:left;
+}
+
+#reference_pant #image {
+	float:right;
+}
+
+.fit_dict {
+	float:right;
+	margin-left:5px;
+	width:200px;
+}
+
+.thumbnails {
+	padding-top:25px;
+}
+
+.measurements {
+	padding-top:10px;
+	clear: both;
+}
+
+#reference_pant .measurements{
+	float:right;
+}
+
+.small_tile {
+	display: inline;
+	margin:5px;
+	clear: both;
+}
