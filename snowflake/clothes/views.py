@@ -121,3 +121,6 @@ def drawnpantimage(request):
 
 def liemphoto(request):
 	return render_to_response('liemphoto.html', {},)
+
+def test(request):
+	return render_to_response('test.html', {},)

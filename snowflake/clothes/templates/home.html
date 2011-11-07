@@ -2,6 +2,7 @@
 {% load filters %}
 <html>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
@@ -71,6 +72,7 @@ function genMeasurements(des, sel)
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
 </script> end Mixpanel -->
 </head>
+
 <body onload=genStyles(document.getElementById("designers"))>
 <div id="sidebar">
     <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" alt="" onClick="feedbackPopup()" value="Feedback">
@@ -80,8 +82,8 @@ function genMeasurements(des, sel)
 
   <div id="header" class= "alpha omega grid_16">
     <div id="title">
-      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
-      <h2>Find  pants that fit.</h2>
+      <h1>Clothesliner</h1>
+      <h2>find  pants that fit (beta)</h2>
       </div> <!--closes the title div-->
     <div id="headerlinks">
       <ul>
@@ -96,7 +98,7 @@ function genMeasurements(des, sel)
     </div> <!--closes the header div-->
 
 <div id="mainsearch" class="grid_6 push_5">
-<h2>Search for pants</h2>
+<h3>Search for pants</h3>
 <p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
 <form action="/pants4thunderthighs/reference/" method="post" name="selectReferencePant">
 	{% csrf_token %}
