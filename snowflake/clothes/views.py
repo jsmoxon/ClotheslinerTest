@@ -115,3 +115,7 @@ def logout(request):
 
 def create(request):
 	return render_to_response('base_create.html', {},)	
+
+
+def drawnpantimage(request):
+	return render_to_response('drawnpant.html', {},)	

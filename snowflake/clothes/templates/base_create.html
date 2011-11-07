@@ -10,6 +10,11 @@ js/measurementinput.js
 	<div id="measurementintro" class="alpha omega grid_">
 	<h2> Manual pant entry</h2>
 	<p> You can enter your own pant measurements here. </p>
+	<p> You'll notice that there's some gray area in measuring depending on whether you pull the fabric taunt before you measure, whether you pull the measuring tape very tight or use a yardstick, whether you follow the curve between measurement points or approximate with a straight line, and where you choose to define the edge of the garment. We recognize there's a margin for error in all this, and our algorithm returns similar items if they're within a relevant tolerance. 
+	</p>
+	<p>Lay the pair of pants flat on the ground or a table and zip or button up the fly. All measurements are to the edge of the garment rather than the seam, unless specifically stated. Round to the nearest 1/8 of an inch, even though it'll sometimes be a tough call. You're going to do great. 
+	</p>
+
 	</div> <!--close #measurementintro-->
 
 	<div id="inputform" class="alpha grid_5">	
@@ -34,9 +39,8 @@ js/measurementinput.js
 
 
 	<div id="starter" class="omega grid_9"> 
-	<img src="http://placekitten.com/g/201/303" alt="Fat"/>
-	<p>Click each box for instructions about how to measure.</p>
-	
+	<p>First enter the Brand and Style for the pant you're about to enter. Then click on the box to the right of each measurement for instructions about how to take it. </p>
+	<img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant" alt="pant drawing"/>
 	</div>
 	
 </div> <!--closes #content-->
