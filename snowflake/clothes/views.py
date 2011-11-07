@@ -18,13 +18,18 @@ def home(request):
 	q = Pant.objects.all()
 	r = {}
 	for pant in q:
-		if pant.designer in r and pant.style in r[pant.designer]:
-			r[pant.designer][pant.style].append(pant)
-		elif pant.designer in r:
-			r[pant.designer][pant.style]=[pant]
+		des = str(pant.designer.name)
+		sty = str(pant.style.name)
+		desID = int(pant.designer.id)
+		styID = int(pant.style.id)
+		if des in r and sty in r[des]:
+			r[des][sty].append([pant.designer_waist, pant.designer_inseam, desID, styID])
+		elif des in r:
+			r[des][sty]=[[pant.designer_waist, pant.designer_inseam, desID, styID]]
 		else:
-			r[pant.designer]={pant.style:[pant]}
-	return render_to_response('home.html', {'measurements':r}, context_instance=RequestContext(request))
+			r[des]={sty:[[pant.designer_waist, pant.designer_inseam, desID, styID]]}
+	measure = simplejson.dumps(r)
+	return render_to_response('home.html', {'measurements':measure}, context_instance=RequestContext(request))
 
 def results(request):
 	reference_pant = request.session["reference_pant"]
@@ -54,7 +59,6 @@ def results(request):
 	else:
 		translated = narrow_pants(result_set.copy(), filters)
 	
-	print request.session["fitting_room"]
 	return render_to_response('results.html', { 'pants':translated, 
 												'reference':reference_pant, 
 												'filters':filters, 
@@ -64,9 +68,9 @@ def results(request):
 def find_reference(request):
 	measurements = str.split(str(request.POST.get('measurements')))
 	waist = measurements[0]
-	inseam = measurements[2]
-	designer = request.POST.get('designers')
-	style = request.POST.get('styles')
+	inseam = measurements[1]
+	designer = measurements[2]
+	style = measurements[3]
 	reference_pant, flags = find_pants(designer, style, waist, inseam)
 	if not reference_pant:
 		return redirect(home)
