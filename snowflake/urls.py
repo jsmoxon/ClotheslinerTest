@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     (r'^create/$', 'createpant.views.create'),
     (r'^create/submit/', 'createpant.views.submit'),
     (r'^drawnpantimage/', 'clothes.views.drawnpantimage'),
+    (r'^Chris Liem/', 'clothes.views.liemphoto'),
 
     (r'^admin/', include(admin.site.urls)),
 )
