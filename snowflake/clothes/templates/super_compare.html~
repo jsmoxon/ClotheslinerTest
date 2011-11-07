@@ -140,8 +140,8 @@ function unfitThis(item)
 	<img id="image" src=""/> 	
 	<div class="measurements" align="right">
 	<ul class="measurement_data">
-		<li id="designer" class="designer"></li>
-		<li id="model" class="designer"></li>
+		<li id="designer"></li>
+		<li id="model"></li>
 		<li id="waist"></li>
 		<li id="inseam"></li>
 		<li id="cuff"></li>
@@ -154,21 +154,6 @@ function unfitThis(item)
 	</ul>
 	</div><!--closes measurements-->
 </div><!--closes reference_pant-->
-<div id="labels">
-        <ul class="measurement_data">
-                <li id="designer">Designer</li>
-                <li id="model">Model</li>
-                <li id="waist">Waist</li>
-                <li id="inseam">Inseam</li>
-                <li id="cuff">Cuff</li>
-                <li id="thigh">Thigh</li>
-                <li id="front_rise">Front rise</li>
-                <li id="back_rise">Back rise</li>
-                <li id="hips">Hips</li>
-                <li id="knee">Knee</li>
-                <li id="outseam">Outseam</li>
-        </ul>
-</div><!--closes reference_pant-->
 
 <div id="comp_pant_1">
 	<img id="image" src=""/> 
@@ -178,8 +163,8 @@ function unfitThis(item)
 
 	<div class="measurements">
 	<ul class="measurement_data">
-		<li id="designer" class="designer"></li>
-		<li id="model" class="designer"></li>
+		<li id="designer"></li>
+		<li id="model"></li>
 		<li id="waist"></li>
 		<li id="inseam"></li>
 		<li id="cuff"></li>
@@ -194,7 +179,6 @@ function unfitThis(item)
 </div><!--closes comp_pant_1-->
 
 <div id="explain"></div>
-</div>
 </div><!--closes compare-->
 
 <div class="thumbnails">

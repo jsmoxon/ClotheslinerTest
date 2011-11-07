@@ -2,8 +2,7 @@ ul{
 list-style-type: none;
 padding: 0;
 margin: 0;
-font-size: 12px;
-font-family: 'helvetica';;
+font-size: 11px;
 }
 
 li {
@@ -22,41 +21,14 @@ margin:0;
 	padding: 5px;
 }
 
-.fitting_room {
-background: grey;
-}
-
-.designer {
-color: purple;
-}
-
-#explain {
-color: blue;
-background: grey;
-width: 200px;
-float: right;
-margin-top: -380px;
-margin-right: 40px;
-font-family: 'helvetica';
-font-size: 12px;
-}
-
 #comp_pant_1 {
-	margin-left: 280px;
-	margin-top: -405px;
-	width: 400px;
-	}
+	margin-left: 210px;
+	width:400px;
+}
 
 #reference_pant {
 	width: 200px;
-	margin-top: 35px;
 	float:left;
-}
-
-#labels {
-margin-left: 205px;
-margin-top: 285px;
-width: 70px;
 }
 
 .fit_dict {
