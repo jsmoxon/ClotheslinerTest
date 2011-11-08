@@ -6,6 +6,7 @@ from clothes.models import *
 from snowflake.functions import *
 from snowflake.vars import *
 from snowflake.fitdict import *
+from snowflake.deepdict import *
 from django.utils import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
@@ -17,13 +18,18 @@ def home(request):
 	q = Pant.objects.all()
 	r = {}
 	for pant in q:
-		if pant.designer in r and pant.style in r[pant.designer]:
-			r[pant.designer][pant.style].append(pant)
-		elif pant.designer in r:
-			r[pant.designer][pant.style]=[pant]
+		des = str(pant.designer.name)
+		sty = str(pant.style.name)
+		desID = int(pant.designer.id)
+		styID = int(pant.style.id)
+		if des in r and sty in r[des]:
+			r[des][sty].append([pant.designer_waist, pant.designer_inseam, desID, styID])
+		elif des in r:
+			r[des][sty]=[[pant.designer_waist, pant.designer_inseam, desID, styID]]
 		else:
-			r[pant.designer]={pant.style:[pant]}
-	return render_to_response('home.html', {'measurements':r}, context_instance=RequestContext(request))
+			r[des]={sty:[[pant.designer_waist, pant.designer_inseam, desID, styID]]}
+	measure = simplejson.dumps(r)
+	return render_to_response('home.html', {'measurements':measure}, context_instance=RequestContext(request))
 
 def results(request):
 	reference_pant = request.session["reference_pant"]
@@ -53,7 +59,6 @@ def results(request):
 	else:
 		translated = narrow_pants(result_set.copy(), filters)
 	
-	print request.session["fitting_room"]
 	return render_to_response('results.html', { 'pants':translated, 
 												'reference':reference_pant, 
 												'filters':filters, 
@@ -63,9 +68,9 @@ def results(request):
 def find_reference(request):
 	measurements = str.split(str(request.POST.get('measurements')))
 	waist = measurements[0]
-	inseam = measurements[2]
-	designer = request.POST.get('designers')
-	style = request.POST.get('styles')
+	inseam = measurements[1]
+	designer = measurements[2]
+	style = measurements[3]
 	reference_pant, flags = find_pants(designer, style, waist, inseam)
 	if not reference_pant:
 		return redirect(home)
@@ -83,7 +88,9 @@ def product_info(request, comp):
 	return render_to_response('product_info.html', {'compared':compared_pant, 'reference':reference_pant}, context_instance=RequestContext(request))
 
 def super_compare(request, comp=None):
-	secret_sauce = simplejson.dumps(FIT_DICT)
+	sauce = simplejson.dumps(FIT_DICT)
+	secret_sauce = simplejson.dumps(DEEP_DICT)
+	not_secret_sauce = simplejson.dumps(SHALLOW_DICT)
 	unfittingRoom = str(request.POST.get("unfitRoom", ""))
 	token = get_token(request)
 	
@@ -101,7 +108,9 @@ def super_compare(request, comp=None):
 	return render_to_response('super_compare.html', {'reference':reference_pant, 
 													 'fitRoom':fittingRoom, 
 													 'compared':compared_pant,
-													 'sauce':secret_sauce,
+													 'sauce':sauce,
+													 'specialSauce':secret_sauce,
+													 'lessSpecialSauce':not_secret_sauce,
 													 'token':token }, context_instance=RequestContext(request))
 
 def about(request):
@@ -116,6 +125,11 @@ def logout(request):
 def create(request):
 	return render_to_response('base_create.html', {},)	
 
-
 def drawnpantimage(request):
-	return render_to_response('drawnpant.html', {},)	
+	return render_to_response('drawnpant.html', {},)
+
+def liemphoto(request):
+	return render_to_response('liemphoto.html', {},)
+
+def test(request):
+	return render_to_response('test.html', {},)

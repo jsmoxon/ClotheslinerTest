@@ -1,5 +1,5 @@
 project_home="/Users/jmoxon/Clothesliner/ClotheslinerTest/snowflake/"
-csv_home="/Users/jmoxon/needsupply_new.csv"
+csv_home="/Users/jmoxon/test.csv"
 
 import sys, os
 sys.path.append(project_home)

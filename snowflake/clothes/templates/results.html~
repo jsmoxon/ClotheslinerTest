@@ -73,6 +73,31 @@ function fitThis(item)
 </p>
 
 {% for item,values in pants.items %}
+<<<<<<< HEAD
+   <div id="maybe">
+   <div id="item" class="tile">
+	    <div id="imagecontainer">
+		<input id="resultimage" type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" >
+		</div><!--closes #itemimage-->
+		<span id="plussigncontainer">
+		<input type="button" class="fittingRoom" onClick="fitThis({{item.id}})" name="add{{item.id}}" value="+" id="fittingroombutton">
+		</span> <!--closes plussigncontainer-->
+		<div id="pantlabel">
+		<ul>
+		<li class="make">{{item.designer}}</li> </br> 
+		<li class="model">{{item.style}} </li></br>
+		<li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
+		</ul>
+		</div><!--closes #pantlabel-->   
+		
+		<div id="desc">
+		<input class="browse" type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"> </br>
+		<input class="browse" type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"> </br>
+		<input class="browse"  type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"> </br>
+	   </div><!--ends desc div-->
+   </div><!--ends item div-->
+   </div><!--ends #maybe-->
+=======
 <div id="item" class="tile">
 	<div id="imagecontainer" onmouseover="$('.pantlabel#{{item.id}}').show();" onmouseout="$('.pantlabel').hide();">
 		<input type="image" 
@@ -101,6 +126,7 @@ function fitThis(item)
 		<input type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"></br>
 	</div><!--ends desc div-->
 </div><!--ends item div-->
+>>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 {% endfor %}
 
 {% endblock content%}

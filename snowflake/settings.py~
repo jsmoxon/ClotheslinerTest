@@ -126,7 +126,7 @@ INSTALLED_APPS = (
     'clothes',
     'feedback',
     'createpant',
-#    'south',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
