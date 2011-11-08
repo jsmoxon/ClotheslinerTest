@@ -24,5 +24,5 @@ function explainThis(val)
 	else if (val.title > 0) {specificDescription = specify["positive"];}
 	else if (val.title < 0) {specificDescription = specify["negative"];}
 	else {specificDescription = "you messed up somewhere";}
-	$('div#explain').html("<li>"+generalDescription+"</li><li>"+specificDescription+"</li>");
+	$('div#explain').html("<p>"+generalDescription+"</p><p>"+specificDescription+"</p>");
 }

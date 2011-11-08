@@ -1,11 +1,10 @@
-h1, a {
+h1 {
 color: 83818;
 font-size: 48px;
 line-height: 0px;
 font-family: 'Raleway', cursive;
-text-decoration: none;
-}
 
+}
 
 h2 {
 font-family: 'Raleway', cursive;
