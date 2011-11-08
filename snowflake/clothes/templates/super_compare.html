@@ -136,24 +136,6 @@ function unfitThis(item)
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 <div id="compare">
 
-<div id="reference_pant">
-	<img id="image" src=""/> 	
-	<div class="measurements" align="right">
-	<ul class="measurement_data">
-		<li id="designer" class="designer"></li>
-		<li id="model" class="designer"></li>
-		<li id="waist"></li>
-		<li id="inseam"></li>
-		<li id="cuff"></li>
-		<li id="thigh"></li>
-		<li id="front_rise"></li>
-		<li id="back_rise"></li>
-		<li id="hips"></li>
-		<li id="knee"></li>
-		<li id="outseam"></li>
-	</ul>
-	</div><!--closes measurements-->
-</div><!--closes reference_pant-->
 <div id="labels">
         <ul class="measurement_data">
                 <li id="designer">Designer</li>
@@ -168,14 +150,28 @@ function unfitThis(item)
                 <li id="knee">Knee</li>
                 <li id="outseam">Outseam</li>
         </ul>
+</div><!--closes labels-->
+
+
+<div id="reference_pant">
+	<img id="image" src=""/ alt="ref"> 	
+	<ul class="measurement_data">
+		<li id="designer" class="designer"></li>
+		<li id="model" class="designer"></li>
+		<li id="waist"></li>
+		<li id="inseam"></li>
+		<li id="cuff"></li>
+		<li id="thigh"></li>
+		<li id="front_rise"></li>
+		<li id="back_rise"></li>
+		<li id="hips"></li>
+		<li id="knee"></li>
+		<li id="outseam"></li>
+	</ul>
 </div><!--closes reference_pant-->
 
 <div id="comp_pant_1">
 	<img id="image" src=""/> 
-	<ul class="fit_dict">
-		<li id="fit_desc"></li><br/>
-	</ul>
-
 	<div class="measurements">
 	<ul class="measurement_data">
 		<li id="designer" class="designer"></li>
@@ -192,6 +188,10 @@ function unfitThis(item)
 	</ul>
 	</div><!--closes measurements-->
 </div><!--closes comp_pant_1-->
+
+<div id="descrip">
+        <li id="fit_desc"></li><br/>
+</div><!--closes descrip-->
 
 <div id="explain"></div>
 </div>
