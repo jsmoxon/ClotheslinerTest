@@ -1,5 +1,6 @@
 <head>
 {% load static %}
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super.css" >
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>

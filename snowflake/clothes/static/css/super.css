@@ -1,10 +1,11 @@
-h1 {
+h1, a {
 color: 83818;
 font-size: 48px;
 line-height: 0px;
 font-family: 'Raleway', cursive;
-
+text-decoration: none;
 }
+
 
 h2 {
 font-family: 'Raleway', cursive;
@@ -58,7 +59,7 @@ background: grey;
 }
 
 #comp_pant_1 {
-        margin-left: 300px;
+        margin-left: 305px;
 	margin-top: -395px;
         width: 200px;
         background: ;}
@@ -78,7 +79,7 @@ background: grey;
 }
 
 #explain {
-background: #4D5268;
+background: #DBDBDB;
 width: 100px;
 float: right;
 margin-top: -380px;
@@ -91,14 +92,13 @@ font-size: 12px;
 padding: 8px;
 list-style-type: circle;
 }
-	
-
-#thumbnails {
-	padding-top:25px;
-}
 
 #reference_pant .measurements{
 	float:right;
+}
+
+.thumbnails  {
+width: 1200px;
 }
 
 .small_tile {
