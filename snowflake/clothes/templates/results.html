@@ -68,24 +68,35 @@ function fitThis(item)
 
 <p>
 {% for filt in filters %}
-	<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
 {% endfor %}
 </p>
 {% for item,values in pants.items %}
+   <div id="maybe">
    <div id="item" class="tile">
-	<input type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" width="180" height="200">
-    <div class="desc">
-    <ul>
-      <li class="make">{{item.designer}}</li> 
-		<input type="button" class="fittingRoom" onClick="fitThis({{item.id}})" name="add{{item.id}}" value="+"><br>
-      <li class="model">{{item.style}} </li>
-	  <li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
-      <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></li>
-      <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"></li>
-      <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"></li>
-    </ul>
-   </div><!--ends desc div-->
+	    <div id="imagecontainer">
+		<input id="resultimage" type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" >
+		</div><!--closes #itemimage-->
+		<span id="plussigncontainer">
+		<input type="button" class="fittingRoom" onClick="fitThis({{item.id}})" name="add{{item.id}}" value="+" id="fittingroombutton">
+		</span> <!--closes plussigncontainer-->
+		<div id="pantlabel">
+		<ul>
+		<li class="make">{{item.designer}}</li> </br> 
+		<li class="model">{{item.style}} </li></br>
+		<li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
+		</ul>
+		</div><!--closes #pantlabel-->   
+		
+		<div id="desc">
+		<ul>
+		<li><input class="browse" type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></li></br>
+		<li><input class="browse" type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"></li></br>
+		<li><input class="browse"  type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"></li></br>
+		</ul>
+	   </div><!--ends desc div-->
    </div><!--ends item div-->
+   </div><!--ends #maybe-->
 {% endfor %}
 
 {% endblock content%}

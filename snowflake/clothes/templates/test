@@ -1,0 +1,27 @@
+{% load static %}
+{% load filters %}
+<head>
+</head>
+<html>
+<body>
+<div id="item" class="tile">
+	    <div id="itemimage">
+		<input type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" width="180" height="200">
+		<input type="button" class="fittingRoom" onClick="fitThis({{item.id}})" name="add{{item.id}}" value="+" id="fittingroombutton">
+		</div><!--closes #itemimage-->
+    
+		<div id="desc">
+		<ul>
+			<div id="pantlabel">
+			<li class="make">{{item.designer}}</li> 
+			<li class="model">{{item.style}} </li>
+			<li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
+			</div><!--closes #pantlabel-->
+		<li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></li>
+		<li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"></li>
+		<li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"></li>
+		</ul>
+	   </div><!--ends desc div-->
+   </div><!--ends item div-->
+</body>
+</html>
