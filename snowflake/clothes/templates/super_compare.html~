@@ -154,8 +154,7 @@ function unfitThis(item)
 
 
 <div id="reference_pant">
-	<img id="image" src=""/> 	
-	<div class="measurements">
+	<img id="image" src=""/ alt="ref"> 	
 	<ul class="measurement_data">
 		<li id="designer" class="designer"></li>
 		<li id="model" class="designer"></li>
@@ -169,7 +168,6 @@ function unfitThis(item)
 		<li id="knee"></li>
 		<li id="outseam"></li>
 	</ul>
-	</div><!--closes measurements-->
 </div><!--closes reference_pant-->
 
 <div id="comp_pant_1">

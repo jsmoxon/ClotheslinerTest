@@ -1,5 +1,5 @@
 ul{
-list-style-type: none;
+ompalist-style-type: none;
 padding: 0;
 margin: 0;
 font-size: 12px;
@@ -17,7 +17,7 @@ margin:0;
 }
 
 #compare {
-	height: auto;
+	height: 500px;
 	padding: 5px;
 	background: yellow;
 }
@@ -54,20 +54,21 @@ color: purple;
 #descrip {
 	background: red;
 	width:250px;
+	height: 450px;
 	float: right;
 	font-size: 12px;
 	font-family: 'helvetica';
-	margin-top: -380px;
-	margin-right: 200px;
+	margin-top: -390px;
+	margin-right: 215px;
 }
 
 #explain {
 color: blue;
 background: grey;
-width: 200px;
+width: 100px;
 float: right;
 margin-top: -380px;
-margin-right: 30px;
+margin-right: -400px;
 font-family: 'helvetica';
 font-size: 12px;
 }
