@@ -166,9 +166,8 @@ text-align:center;
 }
 
 #resultimage {
-max-width: 180px;
-max-height:200px;
-height: auto;
+width: 180px;
+height:200px;
 }
 
 #plussigncontainer {
@@ -186,6 +185,11 @@ color:white;
 background-color:838181;
 opacity: 10;
 border:transparent;
+padding:0px;
+height: 16px;
+width: 16px;
+text-align:center;
+font-size:13px;
 }
 
 #pantlabel{
@@ -254,6 +258,8 @@ max-width:180px;
 background-color:;
 overflow:hidden;
 }
+
+
 
 
 li.make, li.model, li.price, li.originalprice, li.sale {
@@ -329,6 +335,51 @@ clear:right;
  margin-left: 0;
  padding-left: 0;
  color:$666;
+}
+
+/* Landing Page */
+#companyname h1, h2{
+color:white;
+margin-left: 100px;
+}
+
+#companyname h1 {
+font-weight: bold;
+margin-top:150px;
+}
+
+#companyname{
+margin:0px; 
+padding:0px;
+position: absolute;
+top: 5px;
+}
+
+#explainer{
+margin-top: 410px; 
+margin-left:auto; 
+margin-right: auto;
+max-width: 700px; 
+min-width: 400px;
+background-color:black; 
+opacity:.7; 
+color:white; 
+z-index:1;
+padding:10px;
+}
+
+#explainer p {
+font-family:'Helvetica Neue Light', Helvetica, Arial,sans-serif;
+}
+
+
+#backimage {
+position: fixed;
+top:0;
+margin-top:0px;
+margin-left: auto;
+margin-right: auto;
+z-index:-1;
 }
 
 

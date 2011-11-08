@@ -2,17 +2,14 @@
 
 <html>
 <head>
-<meta name="google-site-verification" content="iwuvz_XdsI1XayXPXbkp7uYNHDVGngkNi-euSdH0D-c" />
 <title> Clothesliner | Find pants that fit.</title>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/landingPage.css" >
 </head>
 
 <body>
 <div id="container">
-	<div id="backimage"> 
-	<img src="{% get_static_prefix %}images/liemphoto.jpg" class="background" alt="background photo"/>
-	</div> 
-
 	<div id="companyname"> 
 	<h1>Clothesliner</h1>
 	<h2>Find pants that fit</h2>
@@ -24,21 +21,27 @@
 	<p>You've come to the right place. Sign up to get more info about our upcoming launch. </p>
 
 		<form method="POST" action="">
-		<div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="3e428bc3f0b073d0d5e2479db6d1ce36">
+		<div style="display:none">
+		<input type="hidden" name="csrfmiddlewaretoken" value="3e428bc3f0b073d0d5e2479db6d1ce36">
 		</div>
+		
 		<p>
 		<label for="id_name">Name:</label> 
 		<input id="id_name" type="text" name="name" maxlength="100">
 		</p>
+		
 		<p>
 		<label for="id_email">Email:</label>
 		<input id="id_email" type="text" name="email" maxlength="75">
 		</p>
+		
 		<input type="submit" value="Register">
 		</form> 
 	</div> <!--closes #explainer-->
 
-
+	<div id="backimage"> 
+	<img src="{% get_static_prefix %}images/liemphoto.jpg" class="background" alt="background photo"/>
+	</div> 
 
 <div id="links">
 </div>
