@@ -1,30 +1,32 @@
 /* SITE WIDE */
 
-a {text-decoration: none;}
+a {text-decoration: none; color: 838181;}
 a:hover {color:9C052A;} 
 
-h1, h2, h3, h4, h5, h6, a {
-color: 23015E;
-font-family:'Palatino', serif;
-font-weight:lighter;
-text-align:left;
-}
+
 
 
 h1 {
-font-size: 50px;
+color: 83818;
+font-size: 48px;
 line-height: 20px;
+font-family: 'Raleway', cursive;
 }
 
 h2 {
-font-size: 20px;
-line-height: 0px
+color: 83818;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:left;
+font-size: 16px;
+line-height: 0px;
 }
 
-h3 {font-size: 30px;}
-
-h4 {font-size: 16px;}
-
+h3 {
+color: 838181;
+font-size: 20px;
+line-height: 20px;
+font-family: 'Raleway', cursive;
+}
 
 ul{
 list-style-type: none;
@@ -47,7 +49,7 @@ font: sans-serif;
 hr {
 width: 100%;
 background-image:url();
-background-color: #9C052A;
+background-color: 838181;
 height: 1px;
 line-height:0px;
 margin:0;
@@ -83,8 +85,14 @@ margin-top:5px;
 #headerlinks li, #footerlinks li {
 display: inline;
 padding:1em;
-
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+font-size: 16px;
 }
+
+
 
 #sidebar {
 margin-top:250px;
@@ -138,7 +146,7 @@ min-height: 400px;
 
 #mainsearch a {
 font: 13px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
-color:23015E;
+color:838181;
 font-weight:normal;
 text-decoration:underline;
 }
@@ -147,28 +155,100 @@ text-decoration:underline;
 
 
 /* RESULTS PAGE */
-
 #results {background:;}
 
-#searchsidebar h4{
-font-size:18px;
-font-variant:small-caps;
-line-height:0px;
+#imagecontainer{
+height:200px;
+width:180px;
+z-index:;
+background-color:;
+text-align:center;
 }
 
-#searchsidebar ui {
-list-style-type:none;
+#resultimage {
+width: 180px;
+height:200px;
+}
+
+#plussigncontainer {
+margin-top: px;
+background-color:838181;
+border: 838181;
+opacity:.6;
+z-index:2;
+height: 10px;
+width: 10px;
+}
+
+#fittingroombutton {
+color:white;
+background-color:838181;
+opacity: 10;
+border:transparent;
 padding:0px;
-margin:0px;
+height: 16px;
+width: 16px;
+text-align:center;
+font-size:13px;
 }
 
-#searchsidebar li
-{
-background-image:url(/static/images/gt.gif);
-background-repeat:no-repeat;
-background-position:0px 5px; 
-padding-left:10px;
+#pantlabel{
+height: 85px;
+background-color:#FFFFFF;
+opacity:.6;
+z-index:2;
 }
+
+#pantlabel li {
+font: 'Helvetica Neue';
+font-size:12px;
+z-index:3;
+color: black;
+}
+
+#pantlabel ul {
+padding-top: 7px;
+padding-left:7px
+}
+
+#desc ul{
+padding-bottom:30px;
+}
+
+.browse {
+text-align:right;
+font-variant:small-caps;
+color: #838181;
+font-family: 'Helvetica Neue Reg', sans-serif;
+font-size: 12px;
+float:right;
+background-color:transparent;
+border:transparent;
+}
+
+.dropfilterLink {
+background-color: transparent;
+text-decoration: none;
+border: none;
+color: blue;
+cursor: pointer;
+}
+
+.addFilterLink {
+background-color: transparent;
+text-decoration: none;
+border: none;
+cursor: pointer;
+display: inline;
+color: 838181;
+font-family:inherit;
+font-size: 11px;
+padding: 0px 0px;
+}
+
+
+
+
 
 
 .tile {
@@ -176,25 +256,25 @@ margin: 5px;
 float:left;
 max-width:180px;
 background-color:;
-/*overflow:hidden; */
+overflow:hidden;
 }
 
-.desc {
-min-height:120px;
-/*white-space:nowrap; */
-}
+
+
 
 li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
-color: 23015E;
-font-family:'Palatino', serif;
+color: 838181;
+font-family:;
 font-size: 12px;
 }
 
-li.model, li.price, li.originalprice {color: $666;}
+li.model, li.price, li.originalprice {color: 838181;}
 li.price, li.originalprice {margin-left:15px;}
 li.sale {color:9C052A; margin-left:2px;}
 li.originalprice {text-decoration: line-through;}
+
+li.model {overflow:hidden; white-space: nowrap; width: 180px;}
 
 li.colors {
 margin: 0;
@@ -206,8 +286,8 @@ list-style: none;
 #ref_make, #ref_model, #ref_price {font-size: 14px;}
 
 #refpant li.category{
-color: #23015E;
-font-family: 'Palatino', serif;
+color: #838181;
+font-family:;
 }
 
 
@@ -235,13 +315,6 @@ width:auto;
 clear:right;
 }
 
-/*NOT CURRENTLY USED */
-
-#aboutsidebar {
-float: left;
-height: 500px;
-color: $666;
-}
 
 /* Breadcrumb. Markup taken from http://projectcerbera.com/web/articles/breadcrumbs-markup */
 #breadcrumb, #breadcrumb ol, #breadcrumb li {
@@ -263,3 +336,76 @@ color: $666;
  padding-left: 0;
  color:$666;
 }
+
+/* Landing Page */
+#companyname h1, h2{
+color:white;
+margin-left: 100px;
+}
+
+#companyname h1 {
+font-weight: bold;
+margin-top:150px;
+}
+
+#companyname{
+margin:0px; 
+padding:0px;
+position: absolute;
+top: 5px;
+}
+
+#explainer{
+margin-top: 410px; 
+margin-left:auto; 
+margin-right: auto;
+max-width: 700px; 
+min-width: 400px;
+background-color:black; 
+opacity:.7; 
+color:white; 
+z-index:1;
+padding:10px;
+}
+
+#explainer p {
+font-family:'Helvetica Neue Light', Helvetica, Arial,sans-serif;
+}
+
+
+#backimage {
+position: fixed;
+top:0;
+margin-top:0px;
+margin-left: auto;
+margin-right: auto;
+z-index:-1;
+}
+
+
+
+
+/*CODE WE PROBABLY DONT NEED BUT JUST IN CASE
+h3 {font-size: 30px;}
+h4 {font-size: 16px;}
+
+#searchsidebar h4{
+font-size:18px;
+font-variant:small-caps;
+line-height:0px;
+}
+
+#searchsidebar ui {
+list-style-type:none;
+padding:0px;
+margin:0px;
+}
+
+#searchsidebar li
+{
+background-image:url(/static/images/gt.gif);
+background-repeat:no-repeat;
+background-position:0px 5px; 
+padding-left:10px;
+}
+*/

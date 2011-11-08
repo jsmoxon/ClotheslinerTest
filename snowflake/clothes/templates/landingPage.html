@@ -2,27 +2,51 @@
 
 <html>
 <head>
-<meta name="google-site-verification" content="iwuvz_XdsI1XayXPXbkp7uYNHDVGngkNi-euSdH0D-c" />
-<title> Clothesliner</title>
-  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/landingPage.css" >
-
-<script type="text/javascript" src="http://www.webputty.net/js/agtzfmNzc2ZpZGRsZXIMCxIEUGFnZRimvA4M"></script>
+<title> Clothesliner | Find pants that fit.</title>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/landingPage.css" >
 </head>
+
 <body>
-<div id="companyname">
-<h1>Clothesliner</h1>
-<h2>find pants that fit</h2>
+<div id="container">
+	<div id="companyname"> 
+	<h1>Clothesliner</h1>
+	<h2>Find pants that fit</h2>
+	</div>
+
+	<div id="explainer">
+	<p>Shopping online is hard, but going to the mall is worse. We're building a website that lets you search for clothes that you like, based on clothes that you already know fit you.</p>
+	<p>Like the fit of the Levi's 505, but want to find it in khaki? You're a 34x32 in Dockers, 33x31 in Levi's and want to know what you are at Banana Republic? What the hell does "relaxed fit" mean anyway? </p>
+	<p>You've come to the right place. Sign up to get more info about our upcoming launch. </p>
+
+		<form method="POST" action="">
+		<div style="display:none">
+		<input type="hidden" name="csrfmiddlewaretoken" value="3e428bc3f0b073d0d5e2479db6d1ce36">
+		</div>
+		
+		<p>
+		<label for="id_name">Name:</label> 
+		<input id="id_name" type="text" name="name" maxlength="100">
+		</p>
+		
+		<p>
+		<label for="id_email">Email:</label>
+		<input id="id_email" type="text" name="email" maxlength="75">
+		</p>
+		
+		<input type="submit" value="Register">
+		</form> 
+	</div> <!--closes #explainer-->
+
+	<div id="backimage"> 
+	<img src="{% get_static_prefix %}images/liemphoto.jpg" class="background" alt="background photo"/>
+	</div> 
+
+<div id="links">
 </div>
 
-<div id="explainer" class="floatBox">
-       </br></br> <p1>Shopping online is hard, but going to the mall is worse. We're building a website that lets you search for clothes that you like
-, based on clothes that you already know fit you.
-        <br><br>Like the fit of the Levi's 505, but want to find it in khaki? You're a 34x32 in Dockers, 33x31 in Levi's and want to know wh
-at you are at Banana Republic? What the hell does "relaxed fit" mean anyway? <br><br>You've come to the right place. Stay tuned to get more info about our upcoming launch.
-        </p1>
 </div>
-
-
-</div>
+</div> <!--closes #container-->
 </body>
 

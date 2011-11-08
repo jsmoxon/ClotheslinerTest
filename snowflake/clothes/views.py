@@ -121,6 +121,11 @@ def logout(request):
 def create(request):
 	return render_to_response('base_create.html', {},)	
 
-
 def drawnpantimage(request):
-	return render_to_response('drawnpant.html', {},)	
+	return render_to_response('drawnpant.html', {},)
+
+def liemphoto(request):
+	return render_to_response('liemphoto.html', {},)
+
+def test(request):
+	return render_to_response('test.html', {},)
