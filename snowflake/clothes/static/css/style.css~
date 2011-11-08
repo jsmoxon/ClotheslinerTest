@@ -3,9 +3,6 @@
 a {text-decoration: none; color: 838181;}
 a:hover {color:9C052A;} 
 
-
-
-
 h1 {
 color: 83818;
 font-size: 48px;
@@ -155,32 +152,44 @@ text-decoration:underline;
 
 
 /* RESULTS PAGE */
-#results {background:;}
+
+.tile {
+	margin-left: 5px;
+	float:left;
+	width:180px;
+	height:280px;
+	background-color:;
+	overflow:hidden;
+}
 
 #imagecontainer{
-height:200px;
-width:180px;
-z-index:;
-background-color:;
-text-align:center;
+	height:220px;
+	width:180px;
+	text-align:center;
+	cursor: pointer;
 }
 
 #resultimage {
+<<<<<<< HEAD
 width: 180px;
 height:200px;
+=======
+	width: 180px;
+	height:220px;
+>>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 }
 
-#plussigncontainer {
-margin-top: px;
-background-color:838181;
-border: 838181;
-opacity:.6;
-z-index:2;
-height: 10px;
-width: 10px;
+.pantlabel{
+	position:relative;
+	top:-55px;
+	height: 55px;
+	background-color:#FFFFFF;
+	opacity:.8;
+	z-index:2;
 }
 
 #fittingroombutton {
+<<<<<<< HEAD
 color:white;
 background-color:838181;
 opacity: 10;
@@ -190,78 +199,64 @@ height: 16px;
 width: 16px;
 text-align:center;
 font-size:13px;
+=======
+	color:white;
+	float:right;
+	border:none;
+	position:relative;
+	background-color:838181;
+	opacity: .5;
+	top:-275px;
+	z-index:2;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+>>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 }
 
-#pantlabel{
-height: 85px;
-background-color:#FFFFFF;
-opacity:.6;
-z-index:2;
+.pantlabel li {
+	font: 'Helvetica Neue';
+	font-size:12px;
+	z-index:3;
+	color: black;
 }
 
-#pantlabel li {
-font: 'Helvetica Neue';
-font-size:12px;
-z-index:3;
-color: black;
-}
-
-#pantlabel ul {
-padding-top: 7px;
-padding-left:7px
-}
-
-#desc ul{
-padding-bottom:30px;
-}
-
-.browse {
-text-align:right;
-font-variant:small-caps;
-color: #838181;
-font-family: 'Helvetica Neue Reg', sans-serif;
-font-size: 12px;
-float:right;
-background-color:transparent;
-border:transparent;
+.pantlabel ul {
+	padding-left:7px
 }
 
 .dropfilterLink {
-background-color: transparent;
-text-decoration: none;
-border: none;
-color: blue;
-cursor: pointer;
+	background-color: transparent;
+	text-decoration: none;
+	border: none;
+	color: blue;
+}
+
+.desc {
+	position:relative;
 }
 
 .addFilterLink {
-background-color: transparent;
-text-decoration: none;
-border: none;
-cursor: pointer;
-display: inline;
-color: 838181;
-font-family:inherit;
-font-size: 11px;
-padding: 0px 0px;
+	cursor: pointer;
+	position:absolute;
+	right:0px;
+	text-align:center;
+	vertical-align:middle;
+	color: #838181;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	font-variant:small-caps;
+	font-size: 12px;
+	background-color:transparent;
+	border:none;
+	height:15px;
 }
 
+<<<<<<< HEAD
 
 
 
-
-
-.tile {
-margin: 5px;
-float:left;
-max-width:180px;
-background-color:;
-overflow:hidden;
-}
-
-
-
-
+=======
+>>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
 color: 838181;
