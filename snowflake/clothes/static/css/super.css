@@ -1,5 +1,5 @@
 ul{
-list-style-type: none;
+ompalist-style-type: none;
 padding: 0;
 margin: 0;
 font-size: 12px;
@@ -14,12 +14,12 @@ margin:0;
 #image {
 	width: 200px;
 	height: 240px;
-	float: left;
 }
 
 #compare {
-	height:500px;
+	height: 500px;
 	padding: 5px;
+	background: yellow;
 }
 
 .fitting_room {
@@ -30,47 +30,52 @@ background: grey;
 color: purple;
 }
 
-#explain {
-color: blue;
-background: grey;
-width: 200px;
-float: right;
-margin-top: -380px;
-margin-right: 40px;
-font-family: 'helvetica';
-font-size: 12px;
+#labels {
+	background: blue;
+	width: 60px;
+	margin-top: 280px;
+	margin-left: 30px;
+}
+
+#reference_pant {
+        width: 200px;
+        background: green;
+	margin-left: 100px;
+	margin-top: -395px;
 }
 
 #comp_pant_1 {
-	margin-left: 280px;
-	margin-top: -405px;
-	width: 400px;
-	}
+        margin-left: 300px;
+	margin-top: -395px;
+        width: 200px;
+        background: orange;}
 
-#reference_pant {
-	width: 200px;
-	margin-top: 35px;
-	float:left;
+
+#descrip {
+	background: red;
+	width:250px;
+	height: 450px;
+	float: right;
+	font-size: 12px;
+	font-family: 'helvetica';
+	margin-top: -390px;
+	margin-right: 215px;
 }
 
-#labels {
-margin-left: 205px;
-margin-top: 285px;
-width: 70px;
+#explain {
+color: blue;
+background: grey;
+width: 100px;
+float: right;
+margin-top: -380px;
+margin-right: -400px;
+font-family: 'helvetica';
+font-size: 12px;
 }
+	
 
-.fit_dict {
-	float:right;
-	width:200px;
-	height:240px;
-}
-
-.thumbnails {
+#thumbnails {
 	padding-top:25px;
-}
-
-.measurements {
-	margin-top:10px;
 }
 
 #reference_pant .measurements{
