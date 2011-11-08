@@ -1,5 +1,6 @@
 <head>
 {% load static %}
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super.css" >
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
@@ -134,8 +135,12 @@ function unfitThis(item)
 </script> end Mixpanel -->
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
-<div id="compare">
 
+<div id="compare">
+    <div id="title">
+      <h1>Clothesliner</h1>
+      <h2>find  pants that fit (beta)</h2>
+      </div> <!--closes the title div-->
 <div id="labels">
         <ul class="measurement_data">
                 <li id="designer">Designer</li>

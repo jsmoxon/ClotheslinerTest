@@ -1,9 +1,25 @@
+h1 {
+color: 83818;
+font-size: 48px;
+line-height: 0px;
+font-family: 'Raleway', cursive;
+
+}
+
+h2 {
+font-family: 'Raleway', cursive;
+font-size:20px;
+line-height: 0px;
+margin-left: 10px;
+}
+
 ul{
-ompalist-style-type: none;
+list-style-type: none;
 padding: 0;
 margin: 0;
 font-size: 12px;
-font-family: 'helvetica';;
+color: 838181;
+font-family: 'Helvetica Neue Reg', sans-serif;
 }
 
 li {
@@ -19,19 +35,15 @@ margin:0;
 #compare {
 	height: 500px;
 	padding: 5px;
-	background: yellow;
+	background: ;
 }
 
 .fitting_room {
 background: grey;
 }
 
-.designer {
-color: purple;
-}
-
 #labels {
-	background: blue;
+	background: ;
 	width: 60px;
 	margin-top: 280px;
 	margin-left: 30px;
@@ -39,7 +51,7 @@ color: purple;
 
 #reference_pant {
         width: 200px;
-        background: green;
+        background: ;
 	margin-left: 100px;
 	margin-top: -395px;
 }
@@ -48,29 +60,35 @@ color: purple;
         margin-left: 300px;
 	margin-top: -395px;
         width: 200px;
-        background: orange;}
+        background: ;}
 
 
 #descrip {
-	background: red;
+	background: ;
 	width:250px;
 	height: 450px;
 	float: right;
 	font-size: 12px;
-	font-family: 'helvetica';
+	font-family: 'Helvetica Neue Reg', sans-serif;
 	margin-top: -390px;
 	margin-right: 215px;
+	color: 838181;
+
 }
 
 #explain {
-color: blue;
-background: grey;
+background: #4D5268;
 width: 100px;
 float: right;
 margin-top: -380px;
 margin-right: -400px;
 font-family: 'helvetica';
 font-size: 12px;
+}
+
+#explain li {
+padding: 8px;
+list-style-type: circle;
 }
 	
 
