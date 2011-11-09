@@ -161,6 +161,10 @@ text-decoration:underline;
 	overflow:hidden;
 }
 
+#item {
+padding-bottom: 60px;
+}
+
 #imagecontainer{
 	height:220px;
 	width:180px;
@@ -218,6 +222,10 @@ text-decoration:underline;
 	position:relative;
 }
 
+#resultsnav {
+padding-top: 30px;
+}
+
 .addFilterLink {
 	cursor: pointer;
 	position:absolute;
@@ -260,6 +268,8 @@ list-style: none;
 color: #838181;
 font-family:;
 }
+
+
 
 /* PANT ENTRY PAGE */
 #inputform hr {
