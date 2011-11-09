@@ -10,12 +10,10 @@
 
 <body>
 <div id="container">
-	<div id="companyname"> 
-	<h1>Clothesliner</h1>
-	<h2>Find pants that fit</h2>
-	</div>
-
 	<div id="explainer">
+        <h1>Clothesliner</h1>
+        <h3>find pants that fit</h3>
+
 	<p>Shopping online is hard, but going to the mall is worse. We're building a website that lets you search for clothes that you like, based on clothes that you already know fit you.</p>
 	<p>Like the fit of the Levi's 505, but want to find it in khaki? You're a 34x32 in Dockers, 33x31 in Levi's and want to know what you are at Banana Republic? What the hell does "relaxed fit" mean anyway? </p>
 	<p>You've come to the right place. Sign up to get more info about our upcoming launch. </p>
@@ -35,7 +33,7 @@
 		<input id="id_email" type="text" name="email" maxlength="75">
 		</p>
 		
-		<input type="submit" value="Register">
+		<input class="reg_button" type="submit" value="Register">
 		</form> 
 	</div> <!--closes #explainer-->
 
