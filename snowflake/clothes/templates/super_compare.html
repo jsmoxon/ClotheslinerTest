@@ -209,7 +209,7 @@ function unfitThis(item)
 
 {% for pant in fitRoom %}
 	<input type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{pant.id}}" name="{{pant.id}}" src="{{pant.picURL}}" width="90" height="100">
-	<input type="button" class="fitting_room" onClick="unfitThis({{pant.id}})" name="remove{{pant.id}}" value="-">
+	<input type="button" class="fitting_room" onClick="unfitThis({{pant.id}})" name="remove{{pant.id}}" value="x">
 {% endfor %}
 </div><!--closes thumbnails-->
 </body>
