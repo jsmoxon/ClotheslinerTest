@@ -170,13 +170,8 @@ text-decoration:underline;
 }
 
 #resultimage {
-<<<<<<< HEAD
-width: 180px;
-height:200px;
-=======
 	width: 180px;
 	height:220px;
->>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 }
 
 .pantlabel{
@@ -189,17 +184,6 @@ height:200px;
 }
 
 #fittingroombutton {
-<<<<<<< HEAD
-color:white;
-background-color:838181;
-opacity: 10;
-border:transparent;
-padding:0px;
-height: 16px;
-width: 16px;
-text-align:center;
-font-size:13px;
-=======
 	color:white;
 	float:right;
 	border:none;
@@ -211,7 +195,6 @@ font-size:13px;
 	height: 20px;
 	width: 20px;
 	cursor: pointer;
->>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 }
 
 .pantlabel li {
@@ -251,12 +234,7 @@ font-size:13px;
 	height:15px;
 }
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> 434f283c2439eef1919be968a90a5ff8a550956c
 li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
 color: 838181;

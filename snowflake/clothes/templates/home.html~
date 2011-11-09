@@ -85,12 +85,7 @@ function genMeasurements(des, sel)
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
 </script> end Mixpanel -->
 </head>
-<<<<<<< HEAD
-
-<body onload=genStyles(document.getElementById("designers"))>
-=======
 <body onload=genDesigners()>
->>>>>>> 784d8321b57a28ef6b183bfc9c95ce9b3244d164
 <div id="sidebar">
     <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" alt="" onClick="feedbackPopup()" value="Feedback">
 </div>
@@ -99,7 +94,7 @@ function genMeasurements(des, sel)
 
   <div id="header" class= "alpha omega grid_16">
     <div id="title">
-      <h1>Clothesliner</h1>
+      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
       <h2>find  pants that fit (beta)</h2>
       </div> <!--closes the title div-->
     <div id="headerlinks">
