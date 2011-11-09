@@ -16,11 +16,15 @@ font-size: 14px;
 }
 
 #explainer {
-margin-top: 280px;
-}
+margin-top: 180px;
+width: 300px;}
 
 .reg_button {
 color: white;
 background:black;
 height:30px;
-margin-left: 55px;}
+margin-left: 75px;}
+
+#reg_form {
+margin-left:90px;
+}

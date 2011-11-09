@@ -1,1 +1,26 @@
 body{background-color:black;}
+
+h1 {
+color: white;
+line-height:0px;
+font-size:56px;
+}
+
+h3 {
+line-height:0px;
+color:white;
+margin-left: 15px;}
+
+p {
+font-size: 14px;
+}
+
+#explainer {
+margin-top: 280px;
+}
+
+.reg_button {
+color: white;
+background:black;
+height:30px;
+margin-left: 55px;}
