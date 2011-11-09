@@ -110,7 +110,7 @@ function makeForm(child)
 		}
 	}
 	if (newID) {newID += "/"}
-	newForm.action="/pants4thunderthighs/super_compare/"+newID;
+	newForm.action="/demonstration/super_compare/"+newID;
 	newForm.method="post";
 	
 	var csrfToken = document.createElement("INPUT");
