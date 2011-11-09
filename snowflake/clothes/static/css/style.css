@@ -200,6 +200,20 @@ padding-bottom: 60px;
 	cursor: pointer;
 }
 
+.fitting_room {
+	color:white;
+	float:right;
+	border:none;
+	position:relative;
+	background-color:838181;
+	opacity: .5;
+	top:-275px;
+	z-index:2;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
 .pantlabel li {
 	font: 'Helvetica Neue';
 	font-size:12px;
@@ -281,6 +295,8 @@ padding:1em;
 	top:-3px;
 }
 
+.fitting_room {
+}
 #circlex {
 
 }
