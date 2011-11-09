@@ -10,6 +10,7 @@
 var sauce = jQuery.parseJSON('{{ sauce|safe }}');
 var specialSauce = jQuery.parseJSON('{{ specialSauce|safe }}');
 var lessSpecialSauce = jQuery.parseJSON('{{ lessSpecialSauce|safe }}');
+var moreSpecialSauce = jQuery.parseJSON('{{ moreSpecialSauce|safe }}');
 
 var p = new Object();
 	p[{{reference.id}}] = new Object();
@@ -136,25 +137,27 @@ function unfitThis(item)
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 
+<div id="title">
+	<h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
+	<h2>find  pants that fit (beta)</h2>
+</div> <!--closes the title div-->
+
 <div id="compare">
-    <div id="title">
-      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
-      <h2>find  pants that fit (beta)</h2>
-      </div> <!--closes the title div-->
+    
 <div id="labels">
-        <ul class="measurement_data">
-                <li id="designer">Designer</li>
-                <li id="model">Model</li>
-                <li id="waist">Waist</li>
-                <li id="inseam">Inseam</li>
-                <li id="cuff">Cuff</li>
-                <li id="thigh">Thigh</li>
-                <li id="front_rise">Front rise</li>
-                <li id="back_rise">Back rise</li>
-                <li id="hips">Hips</li>
-                <li id="knee">Knee</li>
-                <li id="outseam">Outseam</li>
-        </ul>
+	<ul class="measurement_data">
+		<li id="designer">Designer</li>
+		<li id="model">Model</li>
+		<li id="waist">Waist</li>
+		<li id="inseam">Inseam</li>
+		<li id="cuff">Cuff</li>
+		<li id="thigh">Thigh</li>
+		<li id="front_rise">Front rise</li>
+		<li id="back_rise">Back rise</li>
+		<li id="hips">Hips</li>
+		<li id="knee">Knee</li>
+		<li id="outseam">Outseam</li>
+	</ul>
 </div><!--closes labels-->
 
 <div id="reference_pant">

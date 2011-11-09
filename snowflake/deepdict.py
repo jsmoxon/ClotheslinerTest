@@ -59,3 +59,13 @@ SHALLOW_DICT = {
 "thigh": "MAN THIGH!!",	
 "ankle": "Lovin them amish."
 }
+
+RIGHT_DICT = {
+"muffintop": "front_rise",	
+"buttcupping": "front_rise, back_rise",
+"diaperbutt": "front_rise, back_rise, inseam, outseam",	
+"nutcupping": "waist, front_rise, back_rise",
+"leg": "cuff, thigh, knee",
+"thigh": "thigh",	
+"ankle": "cuff"
+}
