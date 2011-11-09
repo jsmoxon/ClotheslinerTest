@@ -46,11 +46,11 @@ Clothesliner
       
     <div id="headerlinks">
       <ul>
-        <li><a href="/pants4thunderthighs/search/">Search</a></li>
-        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
-        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="/demonstration/search/">Search</a></li>
+        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-        <li><a href="/pants4thunderthighs/logout">Logout</a></li>
+        <li><a href="/demonstration/logout">Logout</a></li>
         </ul>
       </div> <!--closes the headerlinks div-->
     </div> <!--closes the header div-->
@@ -66,9 +66,9 @@ Clothesliner
     <hr />
     <div id="footerlinks">
       <ul>
-        <li><a href="/pants4thunderthighs/search/">Search</a></li>
-        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
-        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="/demonstration/search/">Search</a></li>
+        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
         <li><a href="/create/">Enter a Pant</a></li>
       </ul>

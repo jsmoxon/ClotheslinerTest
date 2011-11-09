@@ -99,11 +99,11 @@ function genMeasurements(des, sel)
       </div> <!--closes the title div-->
     <div id="headerlinks">
       <ul>
-        <li><a href="/pants4thunderthighs/search/">Search</a></li>
-        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
-        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="/demonstration/search/">Search</a></li>
+        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-        <li><a href="/pants4thunderthighs/logout">Logout</a></li>
+        <li><a href="/demonstration/logout">Logout</a></li>
         </ul>
       </div> <!--closes the headerlinks div-->
     <hr />
@@ -112,7 +112,7 @@ function genMeasurements(des, sel)
 <div id="mainsearch" class="grid_6 push_5">
 <h3>Search for pants</h3>
 <p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
-<form action="/pants4thunderthighs/reference/" method="post" name="selectReferencePant">
+<form action="/demonstration/reference/" method="post" name="selectReferencePant">
 	{% csrf_token %}
 	<select id="designers" name="designers" onchange="genStyles(this)"></select><br />
 	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br />
@@ -129,9 +129,9 @@ function genMeasurements(des, sel)
     <hr />
     <div id="footerlinks">
       <ul>
-        <li><a href="/pants4thunderthighs/search/">Search</a></li>
-        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
-        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="/demonstration/search/">Search</a></li>
+        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
         <li><a href="/create/">Enter a Pant</a></li>
       </ul>

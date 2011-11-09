@@ -11,7 +11,7 @@ font-family: 'Raleway', cursive;
 }
 
 h2 {
-color: 83818;
+color: black;
 font-family: 'Sorts Mill Goudy', serif;
 font-size: 16px;
 }
@@ -19,7 +19,7 @@ font-size: 16px;
 h3 {
 color: 838181;
 font-size: 20px;
-line-height: 20px;
+line-height: 0px;
 font-family: 'Raleway', cursive;
 }
 
