@@ -65,7 +65,6 @@ margin-bottom:0;
 margin-top: 30px;
 }
 
-
 #header, #footer {height: 100px; background-color: ; text-align: center;}
 #header {margin-bottom: 10px; margin-top: 30px; background-color:;}
 #footer {margin-top:30px; margin-bottom:10px; clear:both; }
@@ -232,7 +231,6 @@ text-decoration:underline;
 	height:15px;
 }
 
-
 li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
 color: 838181;
@@ -260,9 +258,6 @@ list-style: none;
 color: #838181;
 font-family:;
 }
-
-
-
 
 /* PANT ENTRY PAGE */
 #inputform hr {

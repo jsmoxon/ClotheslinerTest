@@ -59,3 +59,70 @@ SHALLOW_DICT = {
 "thigh": "MAN THIGH!!",	
 "ankle": "Lovin them amish."
 }
+
+RIGHT_DICT = {
+"muffintop": "front_rise",	
+"buttcupping": "front_rise back_rise",
+"diaperbutt": "front_rise back_rise inseam outseam",	
+"nutcupping": "waist front_rise back_rise",
+"leg": "cuff thigh knee",
+"thigh": "thigh",	
+"ankle": "cuff"
+}
+
+OTHER_DICT = {
+'waist':
+	{
+	'zero': 'Similar waist', 
+	'positive': 'Positive waist',
+	'negative': 'Negative waist',
+	},
+'front_rise':
+	{
+	'zero': 'Similar front rise', 
+	'positive': 'Positive front rise',
+	'negative': 'Negative front rise',
+	},
+'thigh':
+	{
+	'zero': 'Similar thigh', 
+	'positive': 'Positive thigh',
+	'negative': 'Negative thigh',
+	},
+'outseam':
+	{
+	'zero': 'Similar outseam', 
+	'positive': 'Positive outseam',
+	'negative': 'Negative outseam',
+	},
+'inseam':
+	{
+	'zero': 'Similar inseam', 
+	'positive': 'Positive inseam',
+	'negative': 'Negative inseam',
+	},
+'cuff':
+	{
+	'zero': 'Similar cuff', 
+	'positive': 'Positive cuff',
+	'negative': 'Negative cuff',
+	},
+'knee':
+	{
+	'zero': 'Similar knee', 
+	'positive': 'Positive knee',
+	'negative': 'Negative knee',
+	},
+'hips':
+	{
+	'zero': 'Similar hips', 
+	'positive': 'Positive hips',
+	'negative': 'Negative hips',
+	},
+'back_rise':
+	{
+	'zero': 'Similar back rise', 
+	'positive': 'Positive back rise',
+	'negative': 'Negative back rise',
+	}
+}

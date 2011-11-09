@@ -91,6 +91,8 @@ def super_compare(request, comp=None):
 	sauce = simplejson.dumps(FIT_DICT)
 	secret_sauce = simplejson.dumps(DEEP_DICT)
 	not_secret_sauce = simplejson.dumps(SHALLOW_DICT)
+	more_secret_sauce = simplejson.dumps(RIGHT_DICT)
+	other_secret_sauce = simplejson.dumps(OTHER_DICT)
 	unfittingRoom = str(request.POST.get("unfitRoom", ""))
 	token = get_token(request)
 	
@@ -111,6 +113,8 @@ def super_compare(request, comp=None):
 													 'sauce':sauce,
 													 'specialSauce':secret_sauce,
 													 'lessSpecialSauce':not_secret_sauce,
+													 'moreSpecialSauce':more_secret_sauce,
+													 'otherSpecialSauce':other_secret_sauce,
 													 'token':token }, context_instance=RequestContext(request))
 
 def about(request):
