@@ -1,17 +1,9 @@
 h1, a {
-<<<<<<< HEAD
-color: #83818;
-font-size: 48px;
-line-height: 0px;
-font-family: 'Raleway', cursive;
-text-decoration: none;
-=======
 	color: 83818;
 	font-size: 48px;
 	font-family: 'Raleway', cursive;
 	text-decoration: none;
 	line-height: -10px;
->>>>>>> 1ac9debad1e28839bbf03b3f82603ceaebc4b76e
 }
 
 h2 {
