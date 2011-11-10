@@ -10,6 +10,9 @@
 var sauce = jQuery.parseJSON('{{ sauce|safe }}');
 var specialSauce = jQuery.parseJSON('{{ specialSauce|safe }}');
 var lessSpecialSauce = jQuery.parseJSON('{{ lessSpecialSauce|safe }}');
+var moreSpecialSauce = jQuery.parseJSON('{{ moreSpecialSauce|safe }}');
+var otherSpecialSauce = jQuery.parseJSON('{{ otherSpecialSauce|safe }}');
+var cart = new Array();
 
 var p = new Object();
 	p[{{reference.id}}] = new Object();
@@ -27,6 +30,7 @@ var p = new Object();
 	p[{{reference.id}}]["outseam"] = ("{{reference.outseam}}" == "None") ? "N/A":{{reference.outseam}};
 
 {% for pant in fitRoom %}
+	cart.push({{pant.id}});
 	p[{{pant.id}}] = new Object();
 	p[{{pant.id}}]["image"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.picURL|safe}}";
 	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":"{{pant.designer|safe}}";
@@ -85,50 +89,30 @@ function makeReference(sel)
 	$('.small_tile#'+sel.name).css("border","3px solid red");
 }
 
-function makeForm(child)
+function unfitItem(item)
 {
-	var newForm = document.createElement("FORM");
-	var newID = "{{compared.id}}";
-	if (child.value == newID)
+	cart.splice(cart.indexOf(item), 1)
+	$('.thumbnail#thumb'+item).hide();
+	window.opener.popupCallback(cart);
+	if (item == $('div#reference_pant').attr('title')) {makeReference(document.getElementById("{{reference.id}}"));}
+	compID = $('div#comp_pant_1').attr('title');
+	if (item == compID)
 	{
-		newID = $('div#comp_pant_1').attr('title');
-		if (child.value == newID)
+		compedID = "{{compared.id}}";
+		if (jQuery.inArray(compedID, cart) != -1) {compID = compedID;}
+		else {compID == item;}
+		if (item == compID)
 		{
-			newID = "{{fitRoom.0.id}}";
-			if (child.value == newID)
+			compID = cart[0];
+			if (typeof compID === 'undefined')
 			{
-				{% with fitRoom|last as newPant %}
-				    newID = "{{newPant.id}}"
-				{% endwith %}
-//				if (child.value == newID)
-//				{
-//					newID = "";
-//				}
+				window.close();
 			}
 		}
+		makeCompare(document.getElementById(compID));
 	}
-	if (newID) {newID += "/"}
-	newForm.action="/pants4thunderthighs/super_compare/"+newID;
-	newForm.method="post";
-	
-	var csrfToken = document.createElement("INPUT");
-	csrfToken.name = "csrfmiddlewaretoken";
-	csrfToken.type = "hidden";
-	csrfToken.value = "{{token}}";
-	
-	newForm.appendChild(csrfToken);
-	newForm.appendChild(child);
-	newForm.submit();
 }
 
-function unfitThis(item)
-{
-	var unfitItem = document.createElement("INPUT");
-	unfitItem.name = "unfitRoom";
-	unfitItem.type = "hidden";
-	unfitItem.value = item;
-	makeForm(unfitItem);
-}
 </script>
 
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
@@ -136,25 +120,26 @@ function unfitThis(item)
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 
+<div id="title">
+	<h1>Clothesliner</h1>
+	<h2>find  pants that fit (beta)</h2>
+</div> <!--closes the title div-->
+
 <div id="compare">
-    <div id="title">
-      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
-      <h2>find  pants that fit (beta)</h2>
-      </div> <!--closes the title div-->
 <div id="labels">
-        <ul class="measurement_data">
-                <li id="designer">Designer</li>
-                <li id="model">Model</li>
-                <li id="waist">Waist</li>
-                <li id="inseam">Inseam</li>
-                <li id="cuff">Cuff</li>
-                <li id="thigh">Thigh</li>
-                <li id="front_rise">Front rise</li>
-                <li id="back_rise">Back rise</li>
-                <li id="hips">Hips</li>
-                <li id="knee">Knee</li>
-                <li id="outseam">Outseam</li>
-        </ul>
+	<ul class="measurement_data">
+		<li id="designer">Designer</li>
+		<li id="model">Model</li>
+		<li id="waist">Waist</li>
+		<li id="inseam">Inseam</li>
+		<li id="cuff">Cuff</li>
+		<li id="thigh">Thigh</li>
+		<li id="front_rise">Front rise</li>
+		<li id="back_rise">Back rise</li>
+		<li id="hips">Hips</li>
+		<li id="knee">Knee</li>
+		<li id="outseam">Outseam</li>
+	</ul>
 </div><!--closes labels-->
 
 <div id="reference_pant">
@@ -202,11 +187,31 @@ function unfitThis(item)
 </div><!--closes compare-->
 
 <div class="thumbnails">
-	<input  type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{reference.id}}" name="{{reference.id}}" src="{{reference.picURL}}" width="90" height="100">
-
+	<div class="thumbnail" id="thumb{{reference.id}}">
+	<input  type="image"
+			onclick="makeCompare(this)" 
+			ondblclick="makeReference(this)" 
+			class="small_tile" 
+			id="{{reference.id}}" 
+			name="{{reference.id}}" 
+			src="{{reference.picURL}}" 
+			width="90" 
+			height="100">
+	</div><!--closes thumbnail-->
+	
 {% for pant in fitRoom %}
-	<input type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{pant.id}}" name="{{pant.id}}" src="{{pant.picURL}}" width="90" height="100">
-	<input type="button" class="fitting_room" onClick="unfitThis({{pant.id}})" name="remove{{pant.id}}" value="-">
+<div class="thumbnail" id="thumb{{pant.id}}">
+	<input type="image" 
+		   onclick="makeCompare(this)" 
+		   ondblclick="makeReference(this)" 
+		   class="small_tile" 
+		   id="{{pant.id}}" 
+		   name="{{pant.id}}" 
+		   src="{{pant.picURL}}" 
+		   width="90" 
+		   height="100">
+	<input type="button" class="fitting_room" onClick="unfitItem({{pant.id}})" name="remove{{pant.id}}" value="x">
+</div><!--closes thumbnail-->
 {% endfor %}
 </div><!--closes thumbnails-->
 </body>
