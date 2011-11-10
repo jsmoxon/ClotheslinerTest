@@ -1,3 +1,4 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”>
 {% load static %}
 {% load filters %}
 <html>
@@ -85,7 +86,7 @@ function genMeasurements(des, sel)
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
 </script> end Mixpanel -->
 </head>
-<body onload=genDesigners()>
+<body onload="genDesigners()">
 <div id="sidebar">
     <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" alt="" onClick="feedbackPopup()" value="Feedback">
 </div>
@@ -106,7 +107,7 @@ function genMeasurements(des, sel)
         <li><a href="/demonstration/logout">Logout</a></li>
         </ul>
       </div> <!--closes the headerlinks div-->
-    <hr />
+    <hr>
     </div> <!--closes the header div-->
 
 <div id="mainsearch" class="grid_6 push_5">
@@ -114,19 +115,19 @@ function genMeasurements(des, sel)
 <p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
 <form action="/demonstration/reference/" method="post" name="selectReferencePant">
 	{% csrf_token %}
-	<select id="designers" name="designers" onchange="genStyles(this)"></select><br />
-	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br />
-	<select id="measurements" name="measurements"></select><br />
+	<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
+	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
+	<select id="measurements" name="measurements"></select><br>
 
 	<input type="submit" value="Compare" />
 </form>
-</br>
+<br>
 <p> Do we not have the pants you want to compare against? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
 </div> <!--close #mainsearch -->
 
 
 <div id="footer" class="alpha omega grid_16">
-    <hr />
+    <hr>
     <div id="footerlinks">
       <ul>
         <li><a href="/demonstration/search/">Search</a></li>
