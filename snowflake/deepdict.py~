@@ -51,13 +51,13 @@ DEEP_DICT = {
 }
 
 SHALLOW_DICT = {
-    "muffintop": "How low the pant sits on the front of your waist is a function of the front rise",
-    "buttcupping": "The way the pant fits around the butt is a function of front and back rise.",
-    "diaperbutt": "Extra material in the seat is a function of front and back rise and the ratio of inseam to outseam.",
-    "nutcupping": "The way the pant feels around the crotch is a function of the relationship between front rise and actual waist.",
-    "leg": "The taper of the pant is related to the measurements at the thigh, knee and cuff.",
-    "thigh": "The thigh variable gives you an important sense of how tight the pant will fit around the upperleg.",
-    "ankle": "The ankle is a function of the leg opening and is an important indicator of how the pant is style and how it will taper."
+"muffintop": "Horray for muffintop!",
+"buttcupping": "no butcupping!",
+"diaperbutt": "Extra material in the seat is a function of front and back rise and the ratio of inseam to outseam.",	
+"nutcupping": "The way the pant feels around the crotch is a function of the relationship between front rise and actual waist.",
+"leg": "The taper of the pant is related to the pant's measurements at the thigh, knee and cuff.",
+"thigh": "The thigh variable gives you an important sense of how tight the pant will fit around the upperleg.",	
+"ankle": "The ankle is a function of the leg opening and is an important indicator of how the pant is style and how it will taper."
 }
 
 RIGHT_DICT = {
@@ -74,55 +74,55 @@ OTHER_DICT = {
 'waist':
 	{
 	'zero': 'Similar waist', 
-	'positive': 'Smaller waist',
-	'negative': 'Larger waist',
+	'positive': 'Positive waist',
+	'negative': 'Negative waist',
 	},
 'front_rise':
 	{
 	'zero': 'Similar front rise', 
-	'positive': 'Smaller front rise',
-	'negative': 'Larger front rise',
+	'positive': 'Positive front rise',
+	'negative': 'Negative front rise',
 	},
 'thigh':
 	{
 	'zero': 'Similar thigh', 
-	'positive': 'Smaller thigh',
-	'negative': 'Larger thigh',
+	'positive': 'Positive thigh',
+	'negative': 'Negative thigh',
 	},
 'outseam':
 	{
 	'zero': 'Similar outseam', 
-	'positive': 'Smaller outseam',
-	'negative': 'Larger outseam',
+	'positive': 'Positive outseam',
+	'negative': 'Negative outseam',
 	},
 'inseam':
 	{
 	'zero': 'Similar inseam', 
-	'positive': 'Smaller inseam',
-	'negative': 'Larger inseam',
+	'positive': 'Positive inseam',
+	'negative': 'Negative inseam',
 	},
 'cuff':
 	{
 	'zero': 'Similar cuff', 
-	'positive': 'Smaller cuff',
-	'negative': 'Larger cuff',
+	'positive': 'Positive cuff',
+	'negative': 'Negative cuff',
 	},
 'knee':
 	{
 	'zero': 'Similar knee', 
-	'positive': 'Smaller knee',
-	'negative': 'Larger knee',
+	'positive': 'Positive knee',
+	'negative': 'Negative knee',
 	},
 'hips':
 	{
 	'zero': 'Similar hips', 
-	'positive': 'Smaller hips',
-	'negative': 'Larger hips',
+	'positive': 'Positive hips',
+	'negative': 'Negative hips',
 	},
 'back_rise':
 	{
 	'zero': 'Similar back rise', 
-	'positive': 'Smaller back rise',
-	'negative': 'Larger back rise',
+	'positive': 'Positive back rise',
+	'negative': 'Negative back rise',
 	}
 }

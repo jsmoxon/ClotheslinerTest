@@ -111,6 +111,21 @@ function unfitItem(item)
 		}
 		makeCompare(document.getElementById(compID));
 	}
+<<<<<<< HEAD
+=======
+	if (newID) {newID += "/"}
+	newForm.action="/demonstration/super_compare/"+newID;
+	newForm.method="post";
+	
+	var csrfToken = document.createElement("INPUT");
+	csrfToken.name = "csrfmiddlewaretoken";
+	csrfToken.type = "hidden";
+	csrfToken.value = "{{token}}";
+	
+	newForm.appendChild(csrfToken);
+	newForm.appendChild(child);
+	newForm.submit();
+>>>>>>> 479747057c269ae54fd23dbfebbe09356c731446
 }
 
 </script>
@@ -121,12 +136,11 @@ function unfitItem(item)
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 
 <div id="title">
-	<h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
+	<h1>Clothesliner</h1>
 	<h2>find  pants that fit (beta)</h2>
 </div> <!--closes the title div-->
 
 <div id="compare">
-    
 <div id="labels">
 	<ul class="measurement_data">
 		<li id="designer">Designer</li>
@@ -201,6 +215,7 @@ function unfitItem(item)
 	</div><!--closes thumbnail-->
 	
 {% for pant in fitRoom %}
+<<<<<<< HEAD
 <div class="thumbnail" id="thumb{{pant.id}}">
 	<input type="image" 
 		   onclick="makeCompare(this)" 
@@ -213,6 +228,10 @@ function unfitItem(item)
 		   height="100">
 	<input type="button" class="fitting_room" onClick="unfitItem({{pant.id}})" name="remove{{pant.id}}" value="-">
 </div><!--closes thumbnail-->
+=======
+	<input type="image" onclick="makeCompare(this)" ondblclick="makeReference(this)" class="small_tile" id="{{pant.id}}" name="{{pant.id}}" src="{{pant.picURL}}" width="90" height="100">
+	<input type="button" class="fitting_room" onClick="unfitThis({{pant.id}})" name="remove{{pant.id}}" value="x">
+>>>>>>> 479747057c269ae54fd23dbfebbe09356c731446
 {% endfor %}
 </div><!--closes thumbnails-->
 </body>

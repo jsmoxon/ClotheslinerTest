@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{background-color:black;}
 
 h1 {
@@ -28,4 +29,6 @@ margin-left: 75px;}
 #reg_form {
 margin-left:90px;
 }
-
+=======
+body{background-color:black;}
+>>>>>>> 1ac9debad1e28839bbf03b3f82603ceaebc4b76e
