@@ -91,20 +91,20 @@ def super_compare(request, comp=None):
 	not_secret_sauce = simplejson.dumps(SHALLOW_DICT)
 	more_secret_sauce = simplejson.dumps(RIGHT_DICT)
 	other_secret_sauce = simplejson.dumps(OTHER_DICT)
-	unfittingRoom = str(request.POST.get("unfitRoom", ""))
 	token = get_token(request)
-	
 	fitRoom = []
 	if str(request.POST.get("fitRoom", "")) != "":
 		fittingRoom = str(request.POST.get("fitRoom", ""))
 		fitRoom = fittingRoom.split(',')
+	elif not comp:
+		return HttpResponse(EXPLANATION)
+	
+	if not comp:
+		comp = fitRoom[0]
 	if comp not in fitRoom:
 		fitRoom.append(int(comp))
 	fitRoom = Pant.objects.filter(pk__in=fitRoom)
 	compPant = Pant.objects.get(pk=comp)
-#	if unfittingRoom != "":
-#		unfitting_item = Pant.objects.get(pk=unfittingRoom)
-#		request.session["fitting_room"].remove(unfitting_item) if (unfitting_item in request.session["fitting_room"]) else None
 	
 	reference_pant = request.session["reference_pant"]
 	return render_to_response('super_compare.html', {'reference':reference_pant, 
