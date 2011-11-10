@@ -12,7 +12,7 @@ function compThem(val, key)
 		for (var bound in usage['negative'])
 			{if (Math.abs(val) <= bound) {return usage['negative'][bound];}}
 	}
-	else {return "you messed up somewhere";}
+	else {return "";}
 }
 
 function explainThis(val)
@@ -30,9 +30,9 @@ function explainThis(val)
 		else {specificDescription += "<li>you messed up somewhere</li>";}
 	}
 	
-	if (val.title == 0) {explanation += "<li>"+specify["zero"]+"</li>";}
-	else if (val.title > 0) {explanation += "<li>"+specify["positive"]+"</li>";}
-	else if (val.title < 0) {explanation += "<li>"+specify["negative"]+"</li>";}
-	else {specificDescription += "<li>you messed up somewhere</li>";}
+//	if (val.title == 0) {explanation += "<li>"+specify["zero"]+"</li>";}
+//	else if (val.title > 0) {explanation += "<li>"+specify["positive"]+"</li>";}
+//	else if (val.title < 0) {explanation += "<li>"+specify["negative"]+"</li>";}
+//	else {specificDescription += "<li>you messed up somewhere</li>";}
 	$('div#explain').html(explanation);
 }

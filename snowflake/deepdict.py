@@ -126,3 +126,5 @@ OTHER_DICT = {
 	'negative': 'Larger back rise',
 	}
 }
+
+EXPLANATION = "Here is how you use our site"

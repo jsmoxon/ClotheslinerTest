@@ -17,6 +17,7 @@ var cart = new Array();
 var p = new Object();
 	p[{{reference.id}}] = new Object();
 	p[{{reference.id}}]["image"] = ("{{reference.picURL}}" == "None") ? "N/A":"{{reference.picURL|safe}}";
+	p[{{reference.id}}]["imageLink"] = ("{{reference.picURL}}" == "None") ? "N/A":"{{reference.url_link|safe}}";
 	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":"{{reference.designer|safe}}";
 	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":"{{reference.style|safe}}";
 	p[{{reference.id}}]["waist"] = ("{{reference.waist}}" == "None") ? "N/A":{{reference.waist}};
@@ -33,6 +34,7 @@ var p = new Object();
 	cart.push({{pant.id}});
 	p[{{pant.id}}] = new Object();
 	p[{{pant.id}}]["image"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.picURL|safe}}";
+	p[{{pant.id}}]["imageLink"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.url_link|safe}}";
 	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":"{{pant.designer|safe}}";
 	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":"{{pant.style|safe}}";
 	p[{{pant.id}}]["waist"] = ("{{pant.waist}}" == "None") ? "N/A":{{pant.waist}};
@@ -49,6 +51,7 @@ var p = new Object();
 function makeCompare(sel)
 {
 	$('div#comp_pant_1 #image').attr('src',p[sel.name]['image']);
+	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
 	$('div#comp_pant_1 li#designer').text(p[sel.name]['designer']);
 	$('div#comp_pant_1 li#model').text(p[sel.name]['style']);
 	$('div#comp_pant_1 li#waist').text(p[sel.name]['waist']);
@@ -67,11 +70,13 @@ function makeCompare(sel)
 
 	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
 	$('#fit_desc').html(describe);
+	$('div#explain').html("");
 }
 
 function makeReference(sel)
 {
 	$('div#reference_pant #image').attr('src',p[sel.name]['image']);
+	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
 	$('div#reference_pant li#designer').text(p[sel.name]['designer']);
 	$('div#reference_pant li#model').text(p[sel.name]['style']);
 	$('div#reference_pant li#waist').text(p[sel.name]['waist']);
@@ -87,6 +92,7 @@ function makeReference(sel)
 	
 	$('.small_tile').css("border", "none");
 	$('.small_tile#'+sel.name).css("border","3px solid red");
+	$('div#explain').html("");
 }
 
 function unfitItem(item)
@@ -143,7 +149,7 @@ function unfitItem(item)
 </div><!--closes labels-->
 
 <div id="reference_pant">
-	<img id="image" src=""/ alt="ref"> 	
+	<a id="ref_image" href=""><img id="image" src=""/ alt="ref"></a>	
 	<ul class="measurement_data">
 		<li id="designer" class="designer"></li>
 		<li id="model" class="designer"></li>
@@ -160,7 +166,7 @@ function unfitItem(item)
 </div><!--closes reference_pant-->
 
 <div id="comp_pant_1">
-	<img id="image" src=""/> 
+	<a id="comp_image" href=""><img id="image" src=""/></a>
 	<div class="measurements">
 	<ul class="measurement_data">
 		<li id="designer" class="designer"></li>

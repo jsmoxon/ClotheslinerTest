@@ -9,7 +9,6 @@ var s = "";
    	s += "({{filt}})";
 {% endfor %}
 
-var cart = new Array();
 {% for item in fitRoom %}
 	cart.push({{item.id}});
 {% endfor %}
@@ -56,47 +55,23 @@ function makeForm(child)
 	newForm.submit();
 }
 
-function fitThis(item)
-{
-	var fitItem = document.createElement("INPUT");
-	fitItem.name = "fitRoom";
-	fitItem.type = "hidden";
-	fitItem.value = item;
-	makeForm(fitItem);
-}
-
-function popupForm(sel) 
-{
-	var newForm = document.createElement("FORM");
-	newForm.action="/p4tt/super_compare/"+sel.name+"/";
-	newForm.method="post";
-	newForm.onsubmit="popupThis(this)";
-	
-	var csrfToken = document.createElement("INPUT");
-	csrfToken.name = "csrfmiddlewaretoken";
-	csrfToken.type = "hidden";
-	csrfToken.value = "{{token}}";
-	
-	var fRoom = document.createElement("INPUT");
-	fRoom.name = "fitRoom";
-	fRoom.type = "hidden";
-	fRoom.value = cart;
-	
-	newForm.appendChild(fRoom);
-	newForm.appendChild(csrfToken);
-	popupThis(newForm);
-}
-
-function popupThis(form)
-{
-	window.open('', "Compare Pants", "status=0, height=1500, width=1000");
-	form.target = "Compare Pants";
-	form.submit();
-}
-
 function popupCallback(c)
 {
 	cart = c;
+	$('#headerlinks #compareitems').text('Compare Items ('+cart.length+')');
+}
+
+function addItem(item)
+{
+	cart.push(item);
+	cart=jQuery.unique(cart);
+	$('#headerlinks #compareitems').text('Compare Items ('+cart.length+')');
+}
+
+function popItUp(item)
+{
+	addItem(item);
+	popupForm(item, '{{token}}');
 }
 </script>
 
@@ -114,8 +89,7 @@ function popupCallback(c)
 	<div id="imagecontainer" onmouseover="$('.pantlabel#{{item.id}}').show();" onmouseout="$('.pantlabel').hide();">
 		<input type="image" 
 			   id="resultimage" 
-			   onclick="cart.push({{item.id}}); popupForm(this);"
-			   name="{{item.id}}" 
+			   onclick="popItUp({{item.id}})" 
 			   src="{{item.picURL}}">
 		<div class="pantlabel" id="{{item.id}}" style="display:none">
 			<ul align="left">
@@ -126,7 +100,7 @@ function popupCallback(c)
 		</div><!--closes #pantlabel-->
 		<input type="button" 
 			   class="fittingRoom" 
-			   onClick="cart.push({{item.id}}); cart=jQuery.unique(cart);" 
+			   onClick="addItem({{item.id}})" 
 			   name="add{{item.id}}" 
 			   value="+" 
 			   id="fittingroombutton">
