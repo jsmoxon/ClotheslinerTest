@@ -8,12 +8,12 @@ function calcDiff(ref, comp)
 	var thighTightness = thigh(ref, comp); 
 	var ankleTightness = ankle(ref, comp);
 
-	return '<p onclick=explainThis(this) id="nutcupping" title="'+nutCupping+'">'+nutCupping+compThem(nutCupping, "nutcupping")+'</p>'+
-		   '<p onclick=explainThis(this) id="leg" title="'+legTightness+'">'+legTightness+compThem(legTightness, "leg")+'</p>'+
-		   '<p onclick=explainThis(this) id="buttcupping" title="'+buttCupping+'">'+buttCupping+compThem(buttCupping, "buttcupping")+'</p>'+
-		   '<p onclick=explainThis(this) id="muffintop" title="'+muffinTop+'">'+muffinTop+compThem(muffinTop, "muffintop")+'</p>'+
-		   '<p onclick=explainThis(this) id="thigh" title="'+thighTightness+'">'+thighTightness+compThem(thighTightness, "thigh")+'</p>'+
-		   '<p onclick=explainThis(this) id="ankle" title="'+ankleTightness+'">'+ankleTightness+compThem(ankleTightness, "ankle")+'</p>';
+	return '<p onclick=explainThis(this) id="nutcupping" title="'+nutCupping+'">'+compThem(nutCupping, "nutcupping")+'</p>'+
+		   '<p onclick=explainThis(this) id="leg" title="'+legTightness+'">'+compThem(legTightness, "leg")+'</p>'+
+		   '<p onclick=explainThis(this) id="buttcupping" title="'+buttCupping+'">'+compThem(buttCupping, "buttcupping")+'</p>'+
+		   '<p onclick=explainThis(this) id="muffintop" title="'+muffinTop+'">'+compThem(muffinTop, "muffintop")+'</p>'+
+		   '<p onclick=explainThis(this) id="thigh" title="'+thighTightness+'">'+compThem(thighTightness, "thigh")+'</p>'+
+		   '<p onclick=explainThis(this) id="ankle" title="'+ankleTightness+'">'+compThem(ankleTightness, "ankle")+'</p>';
 }
 
 function thigh(ref, comp)

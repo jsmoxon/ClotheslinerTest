@@ -1,18 +1,18 @@
 h1, a {
-color: 83818;
-font-size: 48px;
-line-height: 0px;
-font-family: 'Raleway', cursive;
-text-decoration: none;
+	color: 83818;
+	font-size: 48px;
+	font-family: 'Raleway', cursive;
+	text-decoration: none;
+	line-height: -10px;
 }
-
 
 h2 {
 font-family: 'Raleway', cursive;
 font-size:20px;
 line-height: 0px;
+margin-top: -30px;
 margin-left: 10px;
-color: 83818;
+color: #83818;
 }
 
 ul{
@@ -29,47 +29,66 @@ list-style: none;
 margin:0; 
 }
 
+#title {
+	position: relative;
+	height: 70px;
+	
+}
+
 #image {
 	width: 200px;
 	height: 240px;
 }
 
 #compare {
-	height: 600px;
+	height: 440px;
 	padding: 5px;
-	background: ;
 }
 
 .fitting_room {
-background: grey;
+        cursor: pointer;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        color:white;
+        border:none;
+        background-color:838181;
+        opacity:.5;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        display:inline;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        position:relative;
+        left:-25px;
+        top:-87px;
 }
 
 #labels {
-	background: ;
+	position: relative;
 	width: 60px;
 	margin-top: 280px;
-	margin-left: 30px;
+	margin-left: 15px;
 }
 
 #reference_pant {
-        width: 200px;
-        background: ;
+	width: 200px;
 	margin-left: 100px;
-	margin-top: -395px;
+	margin-top: -395;
 }
 
 #comp_pant_1 {
-        margin-left: 305px;
+	margin-left: 305px;
 	margin-top: -395px;
-        width: 200px;
-        background: ;}
+	width: 200px;
+	background: ;}
 
 
 #descrip {
 	background: ;
 	width:250px;
 	height: 450px;
-	float: right;
+	margin-left: 550px;
 	font-size: 12px;
 	font-family: 'Helvetica Neue Reg', sans-serif;
 	margin-top: -390px;
@@ -80,10 +99,9 @@ background: grey;
 
 #explain {
 background: #DBDBDB;
-width: 100px;
-float: right;
+width: 150px;
 margin-top: -380px;
-margin-right: -400px;
+margin-left: 850px;
 font-family: 'helvetica';
 font-size: 12px;
 }
@@ -98,11 +116,13 @@ list-style-type: circle;
 }
 
 .thumbnails  {
+margin-top: 60px;
 width: 1200px;
 }
 
-.small_tile {
+.thumbnail {
 	display: inline;
 	margin:5px;
 	clear: both;
+	width:900px;
 }

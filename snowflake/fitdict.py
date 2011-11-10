@@ -107,7 +107,7 @@ FIT_DICT = { #all are ref pant MINUS returned pant
 		{
 		.25: "It finishes off with a bit looser leg opening.",
 		.5: "The leg opening will be noticably looser.",
-		1: "It finishes off with a much looser leg opening, creating a more tapered feel.",
+		1: "It finishes off with a much looser leg opening, giving it a less tapered feel.",
 		2: "The leg opening will feel like a boot cut by comparison.",
 		99: "Welcome to 1978. The pant finishes much looser at the leg opening."
 		}

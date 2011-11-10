@@ -32,8 +32,8 @@ BIG_DICT = { #ref pant minus returned pant
 		},
 	'negative': 
 		{
-		.25:'1/4 in. rise',
-		.5: '1/2 in. rise',
+		.25:'1/4 in. higher rise',
+		.5: '1/2 in. higher rise',
 		1: '1 in. higher rise',
 		2: '2 in. higher rise',
 		99: 'Insanely higher rise'

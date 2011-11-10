@@ -17,12 +17,22 @@ function compThem(val, key)
 
 function explainThis(val)
 {
-	var generalDescription = lessSpecialSauce[val.id];
+	ref = p[$('div#reference_pant').attr('title')]
+	comp = p[$('div#comp_pant_1').attr('title')]
 	var specify = specialSauce[val.id];
-	var specificDescription;
-	if (val.title == 0) {specificDescription = specify["zero"];}
-	else if (val.title > 0) {specificDescription = specify["positive"];}
-	else if (val.title < 0) {specificDescription = specify["negative"];}
-	else {specificDescription = "you messed up somewhere";}
-	$('div#explain').html("<li>"+generalDescription+"</li><li>"+specificDescription+"</li>");
+	var explanation = "<li>"+lessSpecialSauce[val.id]+"</li>";
+	var parts = moreSpecialSauce[val.id].split(" ");
+	for(var i=0;i<parts.length;i++)
+	{
+		if ((ref[parts[i]]-comp[parts[i]]) == 0) {explanation += "<li>"+otherSpecialSauce[parts[i]]["zero"]+"</li>";}
+		else if ((ref[parts[i]]-comp[parts[i]]) > 0) {explanation += "<li>"+otherSpecialSauce[parts[i]]["positive"]+"</li>";}
+		else if ((ref[parts[i]]-comp[parts[i]]) < 0) {explanation += "<li>"+otherSpecialSauce[parts[i]]["negative"]+"</li>";}
+		else {specificDescription += "<li>you messed up somewhere</li>";}
+	}
+	
+	if (val.title == 0) {explanation += "<li>"+specify["zero"]+"</li>";}
+	else if (val.title > 0) {explanation += "<li>"+specify["positive"]+"</li>";}
+	else if (val.title < 0) {explanation += "<li>"+specify["negative"]+"</li>";}
+	else {specificDescription += "<li>you messed up somewhere</li>";}
+	$('div#explain').html(explanation);
 }

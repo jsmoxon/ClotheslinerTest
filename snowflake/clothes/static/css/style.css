@@ -11,17 +11,15 @@ font-family: 'Raleway', cursive;
 }
 
 h2 {
-color: 83818;
+color: black;
 font-family: 'Sorts Mill Goudy', serif;
-text-align:left;
 font-size: 16px;
-line-height: 0px;
 }
 
 h3 {
 color: 838181;
 font-size: 20px;
-line-height: 20px;
+line-height: 0px;
 font-family: 'Raleway', cursive;
 }
 
@@ -67,7 +65,6 @@ margin-bottom:0;
 margin-top: 30px;
 }
 
-
 #header, #footer {height: 100px; background-color: ; text-align: center;}
 #header {margin-bottom: 10px; margin-top: 30px; background-color:;}
 #footer {margin-top:30px; margin-bottom:10px; clear:both; }
@@ -88,8 +85,6 @@ font-family: 'Sorts Mill Goudy', serif;
 text-align:right;
 font-size: 16px;
 }
-
-
 
 #sidebar {
 margin-top:250px;
@@ -162,11 +157,16 @@ text-decoration:underline;
 	overflow:hidden;
 }
 
+#item {
+padding-bottom: 60px;
+}
+
 #imagecontainer{
 	height:220px;
 	width:180px;
 	text-align:center;
 	cursor: pointer;
+	z-index:1;
 }
 
 #resultimage {
@@ -184,6 +184,20 @@ text-decoration:underline;
 }
 
 #fittingroombutton {
+	color:white;
+	float:right;
+	border:none;
+	position:relative;
+	background-color:838181;
+	opacity: .5;
+	top:-275px;
+	z-index:2;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
+.fitting_room {
 	color:white;
 	float:right;
 	border:none;
@@ -217,6 +231,16 @@ text-decoration:underline;
 
 .desc {
 	position:relative;
+	padding-top: 30px;
+}
+
+#breadcrumb {
+background-color:;
+}
+
+#breadcrumb button{
+display: inline;
+padding:1em;
 }
 
 .addFilterLink {
@@ -234,6 +258,42 @@ text-decoration:underline;
 	height:15px;
 }
 
+.dropFilterLink {
+	cursor: pointer;
+	color: #838181;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	font-variant:small-caps;
+	font-size: 12px;
+	background-color:transparent;
+	border:none;
+	height:15px;
+	display:inline;
+}
+
+.dropx {
+	cursor: pointer;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	color:white;
+	border:none;
+	background-color:838181;
+	opacity:.5;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+	display:inline;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	position:relative;
+	left:-15px;
+	top:-3px;
+}
+
+.fitting_room {
+}
+#circlex {
+
+}
 
 li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
@@ -265,7 +325,6 @@ font-family:;
 
 
 
-
 /* PANT ENTRY PAGE */
 #inputform hr {
 width: 20%;
@@ -288,27 +347,6 @@ width:auto;
 clear:right;
 }
 
-
-/* Breadcrumb. Markup taken from http://projectcerbera.com/web/articles/breadcrumbs-markup */
-#breadcrumb, #breadcrumb ol, #breadcrumb li {
- margin: 0;
- padding: 0;
- display: inline;
- list-style: none;
-}
-#breadcrumb ol {
- margin-left: 0.125em;
- padding-left: 0.25em;
- background: url(/static//images/gt.gif) no-repeat left center;
-}
-#breadcrumb li li {
- margin-left: 8px; /* Width of the arrow */
-}
-#breadcrumb, #breadcrumb a {
- margin-left: 0;
- padding-left: 0;
- color:$666;
-}
 
 /* Landing Page */
 #companyname h1, h2{
@@ -359,6 +397,30 @@ z-index:-1;
 
 
 /*CODE WE PROBABLY DONT NEED BUT JUST IN CASE
+
+Breadcrumb. Markup taken from http://projectcerbera.com/web/articles/breadcrumbs-markup 
+#breadcrumb, #breadcrumb ol, #breadcrumb li {
+ margin: 0;
+ padding: 0;
+ display: inline;
+ list-style: none;
+}
+#breadcrumb ol {
+ margin-left: 0.125em;
+ padding-left: 0.25em;
+ background: url(/static//images/gt.gif) no-repeat left center;
+}
+#breadcrumb li li {
+ margin-left: 8px; 
+}
+#breadcrumb, #breadcrumb a {
+ margin-left: 0;
+ padding-left: 0;
+ color:$666;
+}
+
+
+
 h3 {font-size: 30px;}
 h4 {font-size: 16px;}
 

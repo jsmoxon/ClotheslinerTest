@@ -9,10 +9,10 @@ var s = "";
    	s += "({{filt}})";
 {% endfor %}
 
-function popDescription(sel)
-{	
-	window.open("/pants4thunderthighs/super_compare/"+sel.name, "Compare Pants", "status=0, height=1500, width=1000");
-}
+var cart = new Array();
+{% for item in fitRoom %}
+	cart.push({{item.id}});
+{% endfor %}
 
 function addFilter(sel)
 {
@@ -43,7 +43,7 @@ function makeFilter(str)
 function makeForm(child)
 {
 	var newForm = document.createElement("FORM");
-	newForm.action="/pants4thunderthighs/results/";
+	newForm.action="/demonstration/results/";
 	newForm.method="post";
 	
 	var csrfToken = document.createElement("INPUT");
@@ -64,20 +64,57 @@ function fitThis(item)
 	fitItem.value = item;
 	makeForm(fitItem);
 }
+
+function popupForm(sel) 
+{
+	var newForm = document.createElement("FORM");
+	newForm.action="/p4tt/super_compare/"+sel.name+"/";
+	newForm.method="post";
+	newForm.onsubmit="popupThis(this)";
+	
+	var csrfToken = document.createElement("INPUT");
+	csrfToken.name = "csrfmiddlewaretoken";
+	csrfToken.type = "hidden";
+	csrfToken.value = "{{token}}";
+	
+	var fRoom = document.createElement("INPUT");
+	fRoom.name = "fitRoom";
+	fRoom.type = "hidden";
+	fRoom.value = cart;
+	
+	newForm.appendChild(fRoom);
+	newForm.appendChild(csrfToken);
+	popupThis(newForm);
+}
+
+function popupThis(form)
+{
+	window.open('', "Compare Pants", "status=0, height=1500, width=1000");
+	form.target = "Compare Pants";
+	form.submit();
+}
+
+function popupCallback(c)
+{
+	cart = c;
+}
 </script>
 
-<p>
+
+<div id="breadcrumb">
 {% for filt in filters %}
-<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp; 
+<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">&nbsp;&nbsp; 
 {% endfor %}
-</p>
+</div> <!--closes #breadcrumb-->
+
 
 {% for item,values in pants.items %}
 <div id="item" class="tile">
 	<div id="imagecontainer" onmouseover="$('.pantlabel#{{item.id}}').show();" onmouseout="$('.pantlabel').hide();">
 		<input type="image" 
 			   id="resultimage" 
-			   onclick="popDescription(this)" 
+			   onclick="cart.push({{item.id}}); popupForm(this);"
 			   name="{{item.id}}" 
 			   src="{{item.picURL}}">
 		<div class="pantlabel" id="{{item.id}}" style="display:none">
@@ -89,12 +126,12 @@ function fitThis(item)
 		</div><!--closes #pantlabel-->
 		<input type="button" 
 			   class="fittingRoom" 
-			   onClick="fitThis({{item.id}})" 
+			   onClick="cart.push({{item.id}}); cart=jQuery.unique(cart);" 
 			   name="add{{item.id}}" 
 			   value="+" 
 			   id="fittingroombutton">
 	</div><!--closes #imagecontainer-->
-	
+
 	<div class="desc">
 		<input type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></br>
 		<input type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"></br>
