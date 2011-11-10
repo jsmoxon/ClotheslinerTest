@@ -9,17 +9,10 @@ var s = "";
    	s += "({{filt}})";
 {% endfor %}
 
-<<<<<<< HEAD
 var cart = new Array();
 {% for item in fitRoom %}
 	cart.push({{item.id}});
 {% endfor %}
-=======
-function popDescription(sel)
-{	
-	window.open("/demonstration/super_compare/"+sel.name, "Compare Pants", "status=0, height=1500, width=1000");
-}
->>>>>>> 479747057c269ae54fd23dbfebbe09356c731446
 
 function addFilter(sel)
 {
@@ -75,7 +68,7 @@ function fitThis(item)
 function popupForm(sel) 
 {
 	var newForm = document.createElement("FORM");
-	newForm.action="/pants4thunderthighs/super_compare/"+sel.name+"/";
+	newForm.action="/p4tt/super_compare/"+sel.name+"/";
 	newForm.method="post";
 	newForm.onsubmit="popupThis(this)";
 	

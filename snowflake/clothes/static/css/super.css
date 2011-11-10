@@ -60,8 +60,8 @@ margin:0;
         -webkit-border-radius: 1em;
         border-radius: 1em;
         position:relative;
-        left:-30px;
-        top:-90px;
+        left:-25px;
+        top:-87px;
 }
 
 #labels {
@@ -115,16 +115,12 @@ list-style-type: circle;
 	float:right;
 }
 
-<<<<<<< HEAD
-.thumbnail {
-=======
 .thumbnails  {
 margin-top: 60px;
 width: 1200px;
 }
 
-.small_tile {
->>>>>>> 479747057c269ae54fd23dbfebbe09356c731446
+.thumbnail {
 	display: inline;
 	margin:5px;
 	clear: both;
