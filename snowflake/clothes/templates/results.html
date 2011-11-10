@@ -9,10 +9,9 @@ var s = "";
    	s += "({{filt}})";
 {% endfor %}
 
-function popDescription(sel)
-{
-	window.open("/pants4thunderthighs/product_info/"+sel.name, "Compare Pants", "status=0, height=600, width=500");
-}
+{% for item in fitRoom %}
+	cart.push({{item.id}});
+{% endfor %}
 
 function addFilter(sel)
 {
@@ -43,7 +42,7 @@ function makeFilter(str)
 function makeForm(child)
 {
 	var newForm = document.createElement("FORM");
-	newForm.action="/pants4thunderthighs/results/";
+	newForm.action="/demonstration/results/";
 	newForm.method="post";
 	
 	var csrfToken = document.createElement("INPUT");
@@ -55,26 +54,64 @@ function makeForm(child)
 	newForm.appendChild(child);
 	newForm.submit();
 }
+
+function popupCallback(c)
+{
+	cart = c;
+	$('#headerlinks #compareitems').text('Compare Items ('+cart.length+')');
+}
+
+function addItem(item)
+{
+	cart.push(item);
+	cart=jQuery.unique(cart);
+	$('#headerlinks #compareitems').text('Compare Items ('+cart.length+')');
+}
+
+function popItUp(item)
+{
+	addItem(item);
+	popupForm(item, '{{token}}');
+}
 </script>
-<p>
+
+
+<div id="breadcrumb">
 {% for filt in filters %}
-	<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp; 
+<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">&nbsp;&nbsp; 
 {% endfor %}
-</p>
+</div> <!--closes #breadcrumb-->
+
+
 {% for item,values in pants.items %}
-   <div id="item" class="tile">
-    <input type="image" onclick="popDescription(this)" name="{{item.id}}" src="{{item.picURL}}" width="180" height="200">
-    <div class="desc">
-    <ul>
-      <li class="make">{{item.designer}}</li></br>
-      <li class="model">{{item.style}} </li>
-	  <li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
-      <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></li>
-      <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"></li>
-      <li><input type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"></li>
-    </ul>
-   </div><!--ends desc div-->
-   </div><!--ends item div-->
+<div id="item" class="tile">
+	<div id="imagecontainer" onmouseover="$('.pantlabel#{{item.id}}').show();" onmouseout="$('.pantlabel').hide();">
+		<input type="image" 
+			   id="resultimage" 
+			   onclick="popItUp({{item.id}})" 
+			   src="{{item.picURL}}">
+		<div class="pantlabel" id="{{item.id}}" style="display:none">
+			<ul align="left">
+				<li class="make">{{item.designer}}</li></br> 
+				<li class="model">{{item.style}} </li></br>
+				<li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
+			</ul>
+		</div><!--closes #pantlabel-->
+		<input type="button" 
+			   class="fittingRoom" 
+			   onClick="addItem({{item.id}})" 
+			   name="add{{item.id}}" 
+			   value="+" 
+			   id="fittingroombutton">
+	</div><!--closes #imagecontainer-->
+
+	<div class="desc">
+		<input type="button" class="addFilterLink" onClick="addFilter(this)" name="waist" value="{{values.waist}}"></br>
+		<input type="button" class="addFilterLink" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"></br>
+		<input type="button" class="addFilterLink" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}"></br>
+	</div><!--ends desc div-->
+</div><!--ends item div-->
 {% endfor %}
 
 {% endblock content%}

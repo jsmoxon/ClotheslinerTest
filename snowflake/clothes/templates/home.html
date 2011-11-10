@@ -1,11 +1,14 @@
+<!DOCTYPE HTML PUBLIC “-//W3C//DTD HTML 4.01//EN” “http://www.w3.org/TR/html4/strict.dtd”>
 {% load static %}
 {% load filters %}
 <html>
 <head>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
   <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
+<script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
  <script type="text/javascript">
   function feedbackPopup() {
   window.open("/feedback/", "feedbackWindow", "status=1, height = 600, width = 600, resizable = 0")
@@ -14,61 +17,76 @@
 <title>Clothesliner Home Page</title>		
 <script type="text/javascript">
 
-var d = new Object();
-var m = new Object();
-{% for des, sty in measurements.items %}
-	d[{{des.id}}] = new Array();
-	m[{{des.id}}] = new Array();
-	{% for st, meas in sty.items %}
-		d[{{des.id}}].push(new Array("{{st.id}}","{{st.name}}"));
-		m[{{des.id}}][{{st.id}}] = new Array();
-		{% for mea in meas %}
-			{% if mea.designer_inseam != 0.0 %}
-				m[{{des.id}}][{{st.id}}].push(new Array("{{mea.designer_waist}}","{{mea.designer_inseam}}"));
-			{% else %}
-				m[{{des.id}}][{{st.id}}].push(new Array("{{mea.designer_waist}}","Unhemmed"));
-			{% endif %}
-		{% endfor %}
-	{% endfor %}
-{% endfor %}
+var p = jQuery.parseJSON('{{measurements|escapejs|safe}}');
+p.sort();
+
+function sortOptions(sel)
+{
+	var my_options = $("#"+sel+" option");
+	my_options.sort(function(a,b) {
+	    if (a.text > b.text) return 1;
+	    else if (a.text < b.text) return -1;
+	    else return 0
+	})
+	$("#"+sel).empty().append( my_options );
+}
+
+function genDesigners()
+{
+	var z = document.getElementById("designers");
+	for (var key in p)
+	{
+		var newOption = document.createElement("OPTION");
+		newOption.text = key;
+		newOption.value = key;
+		z.add(newOption, null);
+	}
+	
+	sortOptions("designers");
+	genStyles(z);
+}
 
 function genStyles(sel)
 {
-	var optionlist = d[sel[sel.selectedIndex].value];
 	var z = document.getElementById("styles");
 	while(z.length > 0)
 	{
 	   z.remove(0);
 	}
-	for (i=0;i<optionlist.length;i++)
+	for (var key in p[sel[sel.selectedIndex].value])
 	{
 		var newOption = document.createElement("OPTION");
-		newOption.text = optionlist[i][1];
-		newOption.value = optionlist[i][0];
+		newOption.text = key;
+		newOption.value = key;
 		z.add(newOption, null);
 	}
-	genMeasurements(sel, z)
+	sortOptions("styles");
+	genMeasurements(sel, z);
 }
 
 function genMeasurements(des, sel)
 {
-	var measures = m[des[des.selectedIndex].value][sel[sel.selectedIndex].value];
 	var z = document.getElementById("measurements");
 	while(z.length > 0)
 	{
 		z.remove(0);
 	}
-	for (i=0;i<measures.length;i++)
+	for (var key in p[des[des.selectedIndex].value][sel[sel.selectedIndex].value])
 	{
+		var a = p[des[des.selectedIndex].value][sel[sel.selectedIndex].value][key];
 		var newOption = document.createElement("OPTION");
-		newOption.text = measures[i][0]+' x '+measures[i][1];
-		newOption.value = measures[i][0]+' x '+measures[i][1];
+		if (a[1] == "0") {a[1] = "Unhemmed"}
+		newOption.text = a[0]+' x '+a[1];
+		newOption.value = a[0]+' '+a[1]+' '+a[2]+' '+a[3];
 		z.add(newOption, null);
 	}
 }
 </script>
+
+<!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
+</script> end Mixpanel -->
 </head>
-<body onload=genStyles(document.getElementById("designers"))>
+<body onload="genDesigners()">
 <div id="sidebar">
     <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" alt="" onClick="feedbackPopup()" value="Feedback">
 </div>
@@ -77,48 +95,44 @@ function genMeasurements(des, sel)
 
   <div id="header" class= "alpha omega grid_16">
     <div id="title">
-      <h1><a href="http://www.clothesliner.com">Clothesliner</a></h1>
-      <h2>Find  pants that fit.</h2>
+      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+      <h3>find  pants that fit (beta)</h3>
       </div> <!--closes the title div-->
     <div id="headerlinks">
       <ul>
-        <li><a href="/pants4thunderthighs/search/">Search</a></li>
-        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
-        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="/demonstration/search/">Search</a></li>
+        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-        <li><a href="/pants4thunderthighs/logout">Logout</a></li>
+        <li><a href="/demonstration/logout">Logout</a></li>
         </ul>
       </div> <!--closes the headerlinks div-->
-    <hr />
+    <hr>
     </div> <!--closes the header div-->
 
 <div id="mainsearch" class="grid_6 push_5">
-<h2>Search for pants</h2>
+<h3>Search for pants</h3>
 <p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
-<form action="/pants4thunderthighs/reference/" method="post" name="selectReferencePant">
+<form action="/demonstration/reference/" method="post" name="selectReferencePant">
 	{% csrf_token %}
-	<select id="designers" name="designers" onchange="genStyles(this)">
-	{% for des, sty in measurements.items %}
-		<option value="{{des.id}}">{{des.name}}</option>
-	{% endfor %}
-	</select><br />
-	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br />
-	<select id="measurements" name="measurements"></select><br />
+	<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
+	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
+	<select id="measurements" name="measurements"></select><br>
 
 	<input type="submit" value="Compare" />
 </form>
-</br>
+<br>
 <p> Do we not have the pants you want to compare against? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
 </div> <!--close #mainsearch -->
 
 
 <div id="footer" class="alpha omega grid_16">
-    <hr />
+    <hr>
     <div id="footerlinks">
       <ul>
-        <li><a href="/pants4thunderthighs/search/">Search</a></li>
-        <li><a href="/pants4thunderthighs/compare/">Compare Items</a></li>
-        <li><a href="/pants4thunderthighs/about/">About</a></li>
+        <li><a href="/demonstration/search/">Search</a></li>
+        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
         <li><a href="/create/">Enter a Pant</a></li>
       </ul>

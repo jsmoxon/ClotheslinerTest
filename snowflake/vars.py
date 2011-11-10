@@ -4,18 +4,18 @@ BIG_DICT = { #ref pant minus returned pant
 	'zero': 'Similar waist', 
 	'positive': 
 		{
-		.25: 'Similar waist',
-		.5: 'Slightly tighter waist',
-		1: 'Tighter waist',
-		2: 'Much tighter waist',
+		.25: '1/4 in. tighter waist',
+		.5: '1/2 in. tighter waist',
+		1: '1 in. tighter waist',
+		2: '2 in. tighter waist',
 		99: 'Insanely tighter waist'
 		},
 	'negative': 
 		{
-		.25: 'Similar waist',
-		.5: 'A bit looser waist',
-		1: 'Looser waist',
-		2: 'Much looser waist',
+		.25: '1/4 in. looser waist',
+		.5: '1/2 in. looser waist',
+		1: '1 in. looser waist',
+		2: '2 in. looser waist',
 		99: 'Insanely looser waist'
 		}
 	},
@@ -24,18 +24,18 @@ BIG_DICT = { #ref pant minus returned pant
 	'zero':'Same rise',
 	'positive': 
 		{
-		.25:'Similar rise',
-		.5: 'Lower rise',
-		1: 'Much lower rise',
-		2: 'Extremely lower rise',
+		.25:'1/4 in. lower rise',
+		.5: '1/2 in. lower rise',
+		1: '1 in. lower rise',
+		2: '2 in. lower rise',
 		99: 'Insanely lower rise'
 		},
 	'negative': 
 		{
-		.25:'Similar rise',
-		.5: 'Higher rise',
-		1: 'Much higher rise',
-		2: 'Extremely higher rise',
+		.25:'1/4 in. higher rise',
+		.5: '1/2 in. higher rise',
+		1: '1 in. higher rise',
+		2: '2 in. higher rise',
 		99: 'Insanely higher rise'
 		}
 	},
@@ -101,18 +101,18 @@ BIG_DICT = { #ref pant minus returned pant
 	'zero':'Same cuff',
 	'positive':
 		{
-		.25: 'Similar cuff',
-		.5: 'Tighter cuff',
-		1: 'Much tighter cuff',
-		2: 'Extremely tighter cuff',
+		.25: '1/4 in. tighter cuff',
+		.5: '1/2 in. tighter cuff',
+		1: '1 in. tighter cuff',
+		2: '2 in. tighter cuff',
 		99: 'Insanely tighter cuff'
 		},
 	'negative':
 		{
-		.25: 'Similar cuff',
-		.5: 'Looser cuff',
-		1: 'Much looser cuff',
-		2: 'Extremely looser cuff',
+		.25: '1/4 in. looser cuff',
+		.5: '1/2 in. looser cuff',
+		1: '1 in. looser cuff',
+		2: '2 in. looser cuff',
 		99: 'Insanely looser cuff'
 		}
 	},

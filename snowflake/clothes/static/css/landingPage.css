@@ -1,63 +1,31 @@
-hr {
-width: 100%;
-background-image:url(http://static.everlane.com/distressed_topborder.png);
-background-color: #9C052A;
-height: 1px;
-line-height:0px;
-margin:0;
-border: 0;
-padding:0;
-}
-
-
-
-h1, h2, h3, a {
-color: 23015E;
-font-family:'Palatino', serif;
-font-weight:lighter;
-text-align:left;
-}
-
-
-
-
-#companyname {
-margin-top:20px;
-}
+body{background-color:black;}
 
 h1 {
-font-size: 50px;
-line-height: 0px;}
-
-h2 {
-font-size: 20px;
+color: white;
+line-height:0px;
+font-size:56px;
 }
 
-h3 {font-size: 30px;}
+h3 {
+line-height:0px;
+color:white;
+margin-left: 15px;}
 
-h4 {font-size: 20px;
-color: #AB98A8
-}
-
-a {text-decoration: none;}
-a:hover {color:9C052A;}
-
-#logo {
-margin-left:100px;
-margin-top: 200px;
-width: 500px;
+p {
+font-size: 14px;
 }
 
 #explainer {
-width: 400px;
-float: left;
-;}
+margin-top: 180px;
+width: 300px;}
 
-#alpha{
-font-size: 18px;
-color: #AB98A8;
-float: right;
-margin: 50px;
-margin-right: 200px;
-font-weight: bold;
+.reg_button {
+color: white;
+background:black;
+height:30px;
+margin-left: 75px;}
+
+#reg_form {
+margin-left:90px;
 }
+

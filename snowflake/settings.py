@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'feedback',
     'createpant',
     'south',
+    'register',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -151,3 +152,5 @@ LOGGING = {
         },
     }
 }
+
+SESSION_SAVE_EVERY_REQUEST=True
