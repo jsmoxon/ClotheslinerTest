@@ -62,7 +62,6 @@ def results(request):
 	return render_to_response('results.html', { 'pants':translated, 
 												'reference':reference_pant, 
 												'filters':filters, 
-												'fitRoom':request.session["fitting_room"], 
 												'token':token }, context_instance=RequestContext(request))
 
 def find_reference(request):
