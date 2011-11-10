@@ -79,7 +79,6 @@ def find_reference(request):
 		request.session["flags"] = flags
 		request.session["result_set"] = None
 		request.session["filters"] = []
-		request.session["fitting_room"] = []
 		return HttpResponseRedirect(reverse('clothes.views.results'))
 
 def product_info(request, comp):
@@ -96,20 +95,22 @@ def super_compare(request, comp=None):
 	unfittingRoom = str(request.POST.get("unfitRoom", ""))
 	token = get_token(request)
 	
-	if unfittingRoom != "":
-		unfitting_item = Pant.objects.get(pk=unfittingRoom)
-		request.session["fitting_room"].remove(unfitting_item) if (unfitting_item in request.session["fitting_room"]) else None
+	fitRoom = []
+	if str(request.POST.get("fitRoom", "")) != "":
+		fittingRoom = str(request.POST.get("fitRoom", ""))
+		fitRoom = fittingRoom.split(',')
+	if comp not in fitRoom:
+		fitRoom.append(int(comp))
+	fitRoom = Pant.objects.filter(pk__in=fitRoom)
+	compPant = Pant.objects.get(pk=comp)
+#	if unfittingRoom != "":
+#		unfitting_item = Pant.objects.get(pk=unfittingRoom)
+#		request.session["fitting_room"].remove(unfitting_item) if (unfitting_item in request.session["fitting_room"]) else None
 	
-	if comp:
-		compared_pant = Pant.objects.get(id__exact = comp) 
-	else:
-		compared_pant = None
-	fittingRoom = request.session["fitting_room"]
 	reference_pant = request.session["reference_pant"]
-	fittingRoom.append(compared_pant) if (compared_pant not in fittingRoom) else None
 	return render_to_response('super_compare.html', {'reference':reference_pant, 
-													 'fitRoom':fittingRoom, 
-													 'compared':compared_pant,
+													 'fitRoom':fitRoom, 
+													 'compared':compPant,
 													 'sauce':sauce,
 													 'specialSauce':secret_sauce,
 													 'lessSpecialSauce':not_secret_sauce,

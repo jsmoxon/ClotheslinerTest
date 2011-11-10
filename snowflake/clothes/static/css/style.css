@@ -166,6 +166,7 @@ text-decoration:underline;
 	width:180px;
 	text-align:center;
 	cursor: pointer;
+	z-index:1;
 }
 
 #resultimage {

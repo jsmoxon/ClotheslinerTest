@@ -58,8 +58,6 @@ margin:0;
 }
 
 #reference_pant {
-	background: red;
-	position:fixed;
 	width: 200px;
 	margin-left: 100px;
 	margin-top: -395;
@@ -104,11 +102,7 @@ list-style-type: circle;
 	float:right;
 }
 
-.thumbnails  {
-width: 1200px;
-}
-
-.small_tile {
+.thumbnail {
 	display: inline;
 	margin:5px;
 	clear: both;
