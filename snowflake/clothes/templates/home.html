@@ -115,11 +115,12 @@ function genMeasurements(des, sel)
 <p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
 <form action="/demonstration/reference/" method="post" name="selectReferencePant">
 	{% csrf_token %}
-	<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
-	<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
-	<select id="measurements" name="measurements"></select><br>
-
-	<input type="submit" value="Compare" />
+	<div id="selectors">
+		<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
+		<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
+		<select id="measurements" name="measurements"></select><br>
+	</div>
+	<input type="submit" value="Compare">
 </form>
 <br>
 <p> Do we not have the pants you want to compare against? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
