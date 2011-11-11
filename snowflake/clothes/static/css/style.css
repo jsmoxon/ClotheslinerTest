@@ -246,7 +246,7 @@ padding:1em;
 .addFilterLink {
 	cursor: pointer;
 	position:absolute;
-	right:0px;
+	right:15px;
 	text-align:center;
 	vertical-align:middle;
 	color: #838181;
@@ -270,6 +270,24 @@ padding:1em;
 	display:inline;
 }
 
+.addplus {
+	cursor: pointer;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	color:white;
+	border:none;
+	background-color:838181;
+	opacity:.5;
+	height: 20px;
+	width: 20px;
+	display:inline;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	position:relative;
+	left:160px;
+	top:-3px;
+}
+
 .dropx {
 	cursor: pointer;
 	font-family: 'Helvetica Neue Reg', sans-serif;
@@ -279,7 +297,6 @@ padding:1em;
 	opacity:.5;
 	height: 20px;
 	width: 20px;
-	cursor: pointer;
 	display:inline;
 	-moz-border-radius: 1em;
 	-webkit-border-radius: 1em;
