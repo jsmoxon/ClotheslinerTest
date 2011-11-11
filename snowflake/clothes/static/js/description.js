@@ -20,14 +20,14 @@ function explainThis(val)
 	ref = p[$('div#reference_pant').attr('title')]
 	comp = p[$('div#comp_pant_1').attr('title')]
 	var specify = specialSauce[val.id];
-	var explanation = "<li>"+lessSpecialSauce[val.id]+"</li>";
+	var explanation = "<p>"+lessSpecialSauce[val.id]+"</p>";
 	var parts = moreSpecialSauce[val.id].split(" ");
 	for(var i=0;i<parts.length;i++)
 	{
-		if ((ref[parts[i]]-comp[parts[i]]) == 0) {explanation += "<li>"+otherSpecialSauce[parts[i]]["zero"]+"</li>";}
-		else if ((ref[parts[i]]-comp[parts[i]]) > 0) {explanation += "<li>"+otherSpecialSauce[parts[i]]["positive"]+"</li>";}
-		else if ((ref[parts[i]]-comp[parts[i]]) < 0) {explanation += "<li>"+otherSpecialSauce[parts[i]]["negative"]+"</li>";}
-		else {specificDescription += "<li>you messed up somewhere</li>";}
+		if ((ref[parts[i]]-comp[parts[i]]) == 0) {explanation += "<p>"+otherSpecialSauce[parts[i]]["zero"]+"</p>";}
+		else if ((ref[parts[i]]-comp[parts[i]]) > 0) {explanation += "<p>"+otherSpecialSauce[parts[i]]["positive"]+"</p>";}
+		else if ((ref[parts[i]]-comp[parts[i]]) < 0) {explanation += "<p>"+otherSpecialSauce[parts[i]]["negative"]+"</p>";}
+		else {specificDescription += "<p>An error happened.</p>";}
 	}
 	
 //	if (val.title == 0) {explanation += "<li>"+specify["zero"]+"</li>";}

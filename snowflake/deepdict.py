@@ -51,13 +51,13 @@ DEEP_DICT = {
 }
 
 SHALLOW_DICT = {
-    "muffintop": "How low the pant sits on the front of your waist is a function of the front rise",
-    "buttcupping": "The way the pant fits around the butt is a function of front and back rise.",
-    "diaperbutt": "Extra material in the seat is a function of front and back rise and the ratio of inseam to outseam.",
-    "nutcupping": "The way the pant feels around the crotch is a function of the relationship between front rise and actual waist.",
-    "leg": "The taper of the pant is related to the measurements at the thigh, knee and cuff.",
-    "thigh": "The thigh variable gives you an important sense of how tight the pant will fit around the upperleg.",
-    "ankle": "The ankle is a function of the leg opening and is an important indicator of how the pant is style and how it will taper."
+    "muffintop": "How low the pant sits on the front of your waist is a function of the front rise. In this case the relevant measurements are:",
+    "buttcupping": "The way the pant fits around the butt is a function of front and back rise. In this case the relevant measurements are:",
+    "diaperbutt": "Extra material in the seat is a function of front and back rise and the ratio of inseam to outseam. In this case the relevant measurements are:",
+    "nutcupping": "The way the pant feels around the crotch is a function of the relationship between front rise and actual waist. In this case the relevant measurements are:",
+    "leg": "The taper of the pant is related to the measurements at the thigh, knee and cuff. In this case the relevant measurements are:",
+    "thigh": "The thigh variable gives you an important sense of how tight the pant will fit around the upperleg. At this point we dont account for fabric weight or stretch, which are very important. That said, the relevant measurements are:",
+    "ankle": "The ankle is a function of the leg opening and is an important indicator of how the pant is style and how it will taper. In this case the relevant measurements are:"
 }
 
 RIGHT_DICT = {
