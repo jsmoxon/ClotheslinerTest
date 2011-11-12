@@ -1,0 +1,223 @@
+<head>
+{% load static %}
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super.css" >
+<script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
+<script type="text/javascript">
+
+var sauce = jQuery.parseJSON('{{ sauce|safe }}');
+var specialSauce = jQuery.parseJSON('{{ specialSauce|safe }}');
+var lessSpecialSauce = jQuery.parseJSON('{{ lessSpecialSauce|safe }}');
+var moreSpecialSauce = jQuery.parseJSON('{{ moreSpecialSauce|safe }}');
+var otherSpecialSauce = jQuery.parseJSON('{{ otherSpecialSauce|safe }}');
+var cart = new Array();
+
+var p = new Object();
+	p[{{reference.id}}] = new Object();
+	p[{{reference.id}}]["image"] = ("{% get_static_prefix %}images/{{reference.picURL}}" == "None") ? "N/A":"{% get_static_prefix %}images/{{reference.picURL|safe}}";
+	p[{{reference.id}}]["imageLink"] = ("{% get_static_prefix %}images/{{reference.picURL}}" == "None") ? "N/A":"{{reference.url_link|safe}}";
+	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":"{{reference.designer|safe}}";
+	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":"{{reference.style|safe}}";
+	p[{{reference.id}}]["waist"] = ("{{reference.waist}}" == "None") ? "N/A":{{reference.waist}};
+	p[{{reference.id}}]["inseam"] = ("{{reference.inseam}}" == "None") ? "N/A":{{reference.inseam}};
+	p[{{reference.id}}]["cuff"] = ("{{reference.cuff}}" == "None") ? "N/A":{{reference.cuff}};
+	p[{{reference.id}}]["thigh"] = ("{{reference.thigh}}" == "None") ? "N/A":{{reference.thigh}};
+	p[{{reference.id}}]["front_rise"] = ("{{reference.front_rise}}" == "None") ? "N/A":{{reference.front_rise}};
+	p[{{reference.id}}]["back_rise"] = ("{{reference.back_rise}}" == "None") ? "N/A":{{reference.back_rise}};
+	p[{{reference.id}}]["hips"] = ("{{reference.hips}}" == "None") ? "N/A":{{reference.hips}};
+	p[{{reference.id}}]["knee"] = ("{{reference.knee}}" == "None") ? "N/A":{{reference.knee}};
+	p[{{reference.id}}]["outseam"] = ("{{reference.outseam}}" == "None") ? "N/A":{{reference.outseam}};
+
+{% for pant in fitRoom %}
+	cart.push({{pant.id}});
+	p[{{pant.id}}] = new Object();
+	p[{{pant.id}}]["image"] = ("{% get_static_prefix %}images/{{pant.picURL}}" == "None") ? "N/A":"{{pant.picURL|safe}}";
+	p[{{pant.id}}]["imageLink"] = ("{% get_static_prefix %}images/{{pant.picURL}}" == "None") ? "N/A":"{{pant.url_link|safe}}";
+	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":"{{pant.designer|safe}}";
+	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":"{{pant.style|safe}}";
+	p[{{pant.id}}]["waist"] = ("{{pant.waist}}" == "None") ? "N/A":{{pant.waist}};
+	p[{{pant.id}}]["inseam"] = ("{{pant.inseam}}" == "None") ? "N/A":{{pant.inseam}};
+	p[{{pant.id}}]["cuff"] = ("{{pant.cuff}}" == "None") ? "N/A":{{pant.cuff}};
+	p[{{pant.id}}]["thigh"] = ("{{pant.thigh}}" == "None") ? "N/A":{{pant.thigh}};
+	p[{{pant.id}}]["front_rise"] = ("{{pant.front_rise}}" == "None") ? "N/A":{{pant.front_rise}};
+	p[{{pant.id}}]["back_rise"] = ("{{pant.back_rise}}" == "None") ? "N/A":{{pant.back_rise}};
+	p[{{pant.id}}]["hips"] = ("{{pant.hips}}" == "None") ? "N/A":{{pant.hips}};
+	p[{{pant.id}}]["knee"] = ("{{pant.knee}}" == "None") ? "N/A":{{pant.knee}};
+	p[{{pant.id}}]["outseam"] = ("{{pant.outseam}}" == "None") ? "N/A":{{pant.outseam}};
+{% endfor %}
+
+function makeCompare(sel)
+{
+	$('div#comp_pant_1 #image').attr('src',p[sel.name]['image']);
+	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
+	$('div#comp_pant_1 li#designer').text(p[sel.name]['designer']);
+	$('div#comp_pant_1 li#model').text(p[sel.name]['style']);
+	$('div#comp_pant_1 li#waist').text(p[sel.name]['waist']);
+	$('div#comp_pant_1 li#inseam').text(p[sel.name]['inseam']);
+	$('div#comp_pant_1 li#cuff').text(p[sel.name]['cuff']);
+	$('div#comp_pant_1 li#thigh').text(p[sel.name]['thigh']);
+	$('div#comp_pant_1 li#front_rise').text(p[sel.name]['front_rise']);
+	$('div#comp_pant_1 li#back_rise').text(p[sel.name]['back_rise']);
+	$('div#comp_pant_1 li#hips').text(p[sel.name]['hips']);
+	$('div#comp_pant_1 li#knee').text(p[sel.name]['knee']);
+	$('div#comp_pant_1 li#outseam').text(p[sel.name]['outseam']);
+	$('div#comp_pant_1').attr('title', sel.name);
+
+	$('.small_tile').css("outline", "none");
+	$('.small_tile#'+sel.name).css("outline","3px solid blue");
+
+	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
+	$('#fit_desc').html(describe);
+	$('div#explain').html("");
+}
+
+function makeReference(sel)
+{
+	$('div#reference_pant #image').attr('src',p[sel.name]['image']);
+	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
+	$('div#reference_pant li#designer').text(p[sel.name]['designer']);
+	$('div#reference_pant li#model').text(p[sel.name]['style']);
+	$('div#reference_pant li#waist').text(p[sel.name]['waist']);
+	$('div#reference_pant li#inseam').text(p[sel.name]['inseam']);
+	$('div#reference_pant li#cuff').text(p[sel.name]['cuff']);
+	$('div#reference_pant li#thigh').text(p[sel.name]['thigh']);
+	$('div#reference_pant li#front_rise').text(p[sel.name]['front_rise']);
+	$('div#reference_pant li#back_rise').text(p[sel.name]['back_rise']);
+	$('div#reference_pant li#hips').text(p[sel.name]['hips']);
+	$('div#reference_pant li#knee').text(p[sel.name]['knee']);
+	$('div#reference_pant li#outseam').text(p[sel.name]['outseam']);
+	$('div#reference_pant').attr('title', sel.name);
+	
+	$('.small_tile').css("border", "none");
+	$('.small_tile#'+sel.name).css("border","3px solid red");
+	$('div#explain').html("");
+}
+
+function unfitItem(item)
+{
+	cart.splice(cart.indexOf(item), 1)
+	$('.thumbnail#thumb'+item).hide();
+	window.opener.popupCallback(cart);
+	if (item == $('div#reference_pant').attr('title')) {makeReference(document.getElementById("{{reference.id}}"));}
+	compID = $('div#comp_pant_1').attr('title');
+	if (item == compID)
+	{
+		compedID = "{{compared.id}}";
+		if (jQuery.inArray(compedID, cart) != -1) {compID = compedID;}
+		else {compID == item;}
+		if (item == compID)
+		{
+			compID = cart[0];
+			if (typeof compID === 'undefined')
+			{
+				window.close();
+			}
+		}
+		makeCompare(document.getElementById(compID));
+	}
+}
+
+</script>
+
+<!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
+</script> end Mixpanel -->
+</head>
+<body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
+
+<div id="title">
+	<h1>Clothesliner</h1>
+	<h2>find  pants that fit (beta)</h2>
+</div> <!--closes the title div-->
+
+<div id="compare">
+<div id="labels">
+	<ul class="measurement_data">
+		<li id="designer">Designer</li>
+		<li id="model">Model</li>
+		<li id="waist">Waist</li>
+		<li id="inseam">Inseam</li>
+		<li id="cuff">Cuff</li>
+		<li id="thigh">Thigh</li>
+		<li id="front_rise">Front rise</li>
+		<li id="back_rise">Back rise</li>
+		<li id="hips">Hips</li>
+		<li id="knee">Knee</li>
+		<li id="outseam">Outseam</li>
+	</ul>
+</div><!--closes labels-->
+
+<div id="reference_pant">
+	<a id="ref_image" href=""><img id="image" src=""/ alt="ref"></a>	
+	<ul class="measurement_data">
+		<li id="designer" class="designer"></li>
+		<li id="model" class="designer"></li>
+		<li id="waist"></li>
+		<li id="inseam"></li>
+		<li id="cuff"></li>
+		<li id="thigh"></li>
+		<li id="front_rise"></li>
+		<li id="back_rise"></li>
+		<li id="hips"></li>
+		<li id="knee"></li>
+		<li id="outseam"></li>
+	</ul>
+</div><!--closes reference_pant-->
+
+<div id="comp_pant_1">
+	<a id="comp_image" href=""><img id="image" src=""/></a>
+	<div class="measurements">
+	<ul class="measurement_data">
+		<li id="designer" class="designer"></li>
+		<li id="model" class="designer"></li>
+		<li id="waist"></li>
+		<li id="inseam"></li>
+		<li id="cuff"></li>
+		<li id="thigh"></li>
+		<li id="front_rise"></li>
+		<li id="back_rise"></li>
+		<li id="hips"></li>
+		<li id="knee"></li>
+		<li id="outseam"></li>
+	</ul>
+	</div><!--closes measurements-->
+</div><!--closes comp_pant_1-->
+
+<div id="descrip">
+        <li id="fit_desc"></li><br/>
+</div><!--closes descrip-->
+
+<div id="explain"></div>
+</div>
+</div><!--closes compare-->
+
+<div class="thumbnails">
+	<div class="thumbnail" id="thumb{{reference.id}}">
+	<input  type="image"
+			onclick="makeCompare(this)" 
+			ondblclick="makeReference(this)" 
+			class="small_tile" 
+			id="{{reference.id}}" 
+			name="{{reference.id}}" 
+			src="{% get_static_prefix %}images/{{reference.picURL}}" 
+			width="90" 
+			height="100">
+	</div><!--closes thumbnail-->
+	
+{% for pant in fitRoom %}
+<div class="thumbnail" id="thumb{{pant.id}}">
+	<input type="image" 
+		   onclick="makeCompare(this)" 
+		   ondblclick="makeReference(this)" 
+		   class="small_tile" 
+		   id="{{pant.id}}" 
+		   name="{{pant.id}}" 
+		   src="{% get_static_prefix %}images/{{pant.picURL}}" 
+		   width="90" 
+		   height="100">
+	<input type="button" class="fitting_room" onClick="unfitItem({{pant.id}})" name="remove{{pant.id}}" value="x">
+</div><!--closes thumbnail-->
+{% endfor %}
+</div><!--closes thumbnails-->
+</body>

@@ -16,8 +16,8 @@ var cart = new Array();
 
 var p = new Object();
 	p[{{reference.id}}] = new Object();
-	p[{{reference.id}}]["image"] = ("{{reference.picURL}}" == "None") ? "N/A":"{{reference.picURL|safe}}";
-	p[{{reference.id}}]["imageLink"] = ("{{reference.picURL}}" == "None") ? "N/A":"{{reference.url_link|safe}}";
+	p[{{reference.id}}]["image"] = ("{% get_static_prefix %}images/{{reference.picURL}}" == "None") ? "N/A":"{% get_static_prefix %}images/{{reference.picURL|safe}}";
+	p[{{reference.id}}]["imageLink"] = ("{% get_static_prefix %}images/{{reference.picURL}}" == "None") ? "N/A":"{{reference.url_link|safe}}";
 	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":"{{reference.designer|safe}}";
 	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":"{{reference.style|safe}}";
 	p[{{reference.id}}]["waist"] = ("{{reference.waist}}" == "None") ? "N/A":{{reference.waist}};
@@ -33,8 +33,8 @@ var p = new Object();
 {% for pant in fitRoom %}
 	cart.push({{pant.id}});
 	p[{{pant.id}}] = new Object();
-	p[{{pant.id}}]["image"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.picURL|safe}}";
-	p[{{pant.id}}]["imageLink"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.url_link|safe}}";
+	p[{{pant.id}}]["image"] = ("{% get_static_prefix %}images/{{pant.picURL}}" == "None") ? "N/A":"{% get_static_prefix %}images/{{pant.picURL|safe}}";
+	p[{{pant.id}}]["imageLink"] = ("{% get_static_prefix %}images/{{pant.picURL}}" == "None") ? "N/A":"{{pant.url_link|safe}}";
 	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":"{{pant.designer|safe}}";
 	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":"{{pant.style|safe}}";
 	p[{{pant.id}}]["waist"] = ("{{pant.waist}}" == "None") ? "N/A":{{pant.waist}};
@@ -200,7 +200,7 @@ function unfitItem(item)
 			class="small_tile" 
 			id="{{reference.id}}" 
 			name="{{reference.id}}" 
-			src="{{reference.picURL}}" 
+			src="{% get_static_prefix %}images/{{reference.picURL}}" 
 			width="90" 
 			height="100">
 	</div><!--closes thumbnail-->
@@ -213,7 +213,7 @@ function unfitItem(item)
 		   class="small_tile" 
 		   id="{{pant.id}}" 
 		   name="{{pant.id}}" 
-		   src="{{pant.picURL}}" 
+		   src="{% get_static_prefix %}images/{{pant.picURL}}" 
 		   width="90" 
 		   height="100">
 	<input type="button" class="fitting_room" onClick="unfitItem({{pant.id}})" name="remove{{pant.id}}" value="x">

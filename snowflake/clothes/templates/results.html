@@ -1,5 +1,5 @@
 {% extends "base_results.html" %}
-
+{% load static %}
 {% block content %}
 {% load filters %}
 <script type="text/javascript">
@@ -95,7 +95,7 @@ function popItUp(item)
 		<input type="image" 
 			   id="resultimage" 
 			   onclick="popItUp({{item.id}})" 
-			   src="{{item.picURL}}">
+			   src="{% get_static_prefix %}images/{{item.picURL}}">
 		<div class="pantlabel" id="{{item.id}}" style="display:none">
 			<ul align="left">
 				<li class="make">{{item.designer}}</li></br> 
