@@ -204,8 +204,12 @@ function unfitItem(item)
 			width="90" 
 			height="100">
 	</div><!--closes thumbnail-->
-	
+
+
 {% for pant in fitRoom %}
+<script type="text/javascript">
+alert("fitroom len: ");
+</script>
 <div class="thumbnail" id="thumb{{pant.id}}">
 	<input type="image" 
 		   onclick="makeCompare(this)" 
@@ -218,6 +222,7 @@ function unfitItem(item)
 		   height="100">
 	<input type="button" class="fitting_room" onClick="unfitItem({{pant.id}})" name="remove{{pant.id}}" value="x">
 </div><!--closes thumbnail-->
+
 {% endfor %}
 </div><!--closes thumbnails-->
 </body>

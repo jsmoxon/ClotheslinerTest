@@ -93,6 +93,7 @@ def super_compare(request, comp=None):
 	other_secret_sauce = simplejson.dumps(OTHER_DICT)
 	token = get_token(request)
 	fitRoom = []
+	
 	if str(request.POST.get("fitRoom", "")) != "":
 		fittingRoom = str(request.POST.get("fitRoom", ""))
 		fitRoom = fittingRoom.split(',')
@@ -101,8 +102,10 @@ def super_compare(request, comp=None):
 	
 	if not comp:
 		comp = fitRoom[0]
+		
 	if comp not in fitRoom:
 		fitRoom.append(int(comp))
+		
 	fitRoom = Pant.objects.filter(pk__in=fitRoom)
 	compPant = Pant.objects.get(pk=comp)
 	
