@@ -57,6 +57,7 @@ function makeForm(child)
 	
 	newForm.appendChild(csrfToken);
 	newForm.appendChild(child);
+        document.body.appendChild(newForm)
 	newForm.submit();
 }
 
