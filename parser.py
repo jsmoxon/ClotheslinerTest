@@ -1,9 +1,9 @@
 from BeautifulSoup import BeautifulSoup
 import re, urllib2, csv
 
-pantWriter = csv.writer(open('pant.csv'), delimiter=",")
+pantWriter = csv.writer(open('pants.csv', 'wb'), delimiter=",")
 
-i = urllib2.urlopen("http://fourhorsemen.ca/shop/category/categories/denim/")
+i = urllib2.urlopen("http://fourhorsemen.ca/shop/category/categories/denim/page/2/")
 soup = BeautifulSoup(i)
 list = soup.findAll("li", {"class":"product"})
 for item in list: 
@@ -11,4 +11,4 @@ for item in list:
     name= item.h4.a.contents[0]
     price= item.p.contents[0]
     image= item.img['src']
-    print (url, name, price, image)
+    pantWriter.writerow([url, name, price, image])
