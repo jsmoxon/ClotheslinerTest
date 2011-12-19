@@ -1,0 +1,10 @@
+from BeautifulSoup import BeautifulSoup
+import re, urllib2
+
+i = urllib2.urlopen("http://fourhorsemen.ca/shop/category/categories/pants/")
+soup = BeautifulSoup(i)
+list = soup.findAll("h4", {"class":"name"})
+for x in list:
+    print x.a['href']
+    print x.a.contents[0]
+    
