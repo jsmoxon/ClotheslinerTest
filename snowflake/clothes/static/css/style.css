@@ -159,7 +159,7 @@ text-decoration:underline;
 
 #item {
 padding-bottom: 60px;
-}
+background:}
 
 #imagecontainer{
 	height:220px;
@@ -236,6 +236,9 @@ padding-bottom: 60px;
 
 #breadcrumb {
 background-color:;
+margin-top:-50px;
+margin-left:250px;
+padding-top:20px;
 }
 
 #breadcrumb button{

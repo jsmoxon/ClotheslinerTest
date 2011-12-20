@@ -1,21 +1,7 @@
 {% extends "base_results.html" %}
 
-
-{% load filters %}
-{% block breadcrumb %}
-<div id="breadcrumb">
-{% if filters %}
-{% else %}
-<p>Click the <input class="addplus" type="button" value="+"/> to see more pants with this  description</p>
-{% endif %}
-{% for filt in filters %}
-<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
-<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">&nbsp;&nbsp;
-{% endfor %}
-</div> <!--closes #breadcrumb-->
-{% endblock breadcrumb %}
-
 {% block content %}
+{% load filters %}
 <script type="text/javascript">
 
 var s = "";
@@ -63,8 +49,7 @@ function makeForm(child)
 	var newForm = document.createElement("FORM");
 	newForm.action="/demonstration/results/";
 	newForm.method="post";
-	newForm.onsubmit="clearInstruction()";
-
+	
 	var csrfToken = document.createElement("INPUT");
 	csrfToken.name = "csrfmiddlewaretoken";
 	csrfToken.type = "hidden";
@@ -95,6 +80,15 @@ function popItUp(item)
 	popupForm(item, '{{token}}');
 }
 </script>
+
+
+<div id="breadcrumb">
+{% for filt in filters %}
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp; 
+<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">&nbsp;&nbsp; 
+{% endfor %}
+</div> <!--closes #breadcrumb-->
+
 
 {% for item,values in pants.items %}
 <div id="item" class="tile">
@@ -127,19 +121,8 @@ function popItUp(item)
 		<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}">
 		<input id="circlecuff" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.cuff}}" value="+"></br>
 
-	</div><!--ends desc div-->
+	</div><!--ends desc div-->	
 </div><!--ends item div-->
 {% endfor %}
 
 {% endblock content%}
-
-{% block filter_section %}
-<div id="filter_list">
-<h4>Filters</h4>
-<ul><h6>Price</h6>
-  <li><a href="http://google.com">Less than $50</a></li>
-  <li>Between $51 and $100</li>
-  <li>More than $100</li>
-</ul>
-</div>
-{% endblock filter_section%}

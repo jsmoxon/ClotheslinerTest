@@ -1,3 +1,9 @@
+$(document).ready(function() {
+	$('#filter_list').find('li').hide().end().find('ul').click(function() {
+		$(this).find('li').slideDown();
+	    });
+    });
+
 var cart = new Array();
 
 function popupForm(sel, token) 
