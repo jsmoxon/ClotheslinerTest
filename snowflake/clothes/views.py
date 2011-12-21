@@ -11,6 +11,11 @@ from django.utils import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 
+def stocktest(request):
+	pant = Pant.objects.all()
+	item = "the"
+	return render_to_response('stock_item.html', {'item':item, 'pant':pant})
+
 def landing(request):
 	return render_to_response('landingPage.html')
 
