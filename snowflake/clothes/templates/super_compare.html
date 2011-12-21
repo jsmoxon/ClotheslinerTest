@@ -1,7 +1,11 @@
+{% extends "base.html" %}
+{% block bodycontent%}
+
+
 <head>
 {% load static %}
 <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
@@ -50,7 +54,7 @@ var p = new Object();
 
 function makeCompare(sel)
 {
-	$('div#comp_pant_1 #image').attr('src',p[sel.name]['image']);
+	$('div#comp_pant_image #image').attr('src',p[sel.name]['image']);
 	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
 	$('div#comp_pant_1 li#designer').text(p[sel.name]['designer']);
 	$('div#comp_pant_1 li#model').text(p[sel.name]['style']);
@@ -65,9 +69,8 @@ function makeCompare(sel)
 	$('div#comp_pant_1 li#outseam').text(p[sel.name]['outseam']);
 	$('div#comp_pant_1').attr('title', sel.name);
 
-	$('.small_tile').css("outline", "none");
-	$('.small_tile#'+sel.name).css("outline","3px solid blue");
-
+	$('.small_tile').css("outline", "none"); 
+	$('.small_tile#'+sel.name).css("outline","3px solid #A8A8A8");
 	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
 	$('#fit_desc').html(describe);
 	$('div#explain').html("");
@@ -75,7 +78,7 @@ function makeCompare(sel)
 
 function makeReference(sel)
 {
-	$('div#reference_pant #image').attr('src',p[sel.name]['image']);
+	$('div#ref_pant_image #image').attr('src',p[sel.name]['image']);
 	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
 	$('div#reference_pant li#designer').text(p[sel.name]['designer']);
 	$('div#reference_pant li#model').text(p[sel.name]['style']);
@@ -91,7 +94,7 @@ function makeReference(sel)
 	$('div#reference_pant').attr('title', sel.name);
 	
 	$('.small_tile').css("border", "none");
-	$('.small_tile#'+sel.name).css("border","3px solid red");
+	$('.small_tile#'+sel.name).css("border","3px solid #505050 ");
 	$('div#explain').html("");
 }
 
@@ -126,73 +129,118 @@ function unfitItem(item)
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 
-<div id="title">
-	<h1>Clothesliner</h1>
-	<h2>find  pants that fit (beta)</h2>
-</div> <!--closes the title div-->
+<div id="compare" class="alpha omega grid_16"> <!--functions as a body content div-->
 
-<div id="compare">
-<div id="labels">
-	<ul class="measurement_data">
-		<li id="designer">Designer</li>
-		<li id="model">Model</li>
-		<li id="waist">Waist</li>
-		<li id="inseam">Inseam</li>
-		<li id="cuff">Cuff</li>
-		<li id="thigh">Thigh</li>
-		<li id="front_rise">Front rise</li>
-		<li id="back_rise">Back rise</li>
-		<li id="hips">Hips</li>
-		<li id="knee">Knee</li>
-		<li id="outseam">Outseam</li>
-	</ul>
-</div><!--closes labels-->
+	<div id="leftside" class="alpha omega grid_10">
+		<div id="ref_pant_image" class="alpha omega grid_4">
+			<a id="ref_image" href=""><img id="image" class="border" src=""/ alt="ref"></a>
+		</div><!--closes #ref_pant_image-->
+		
+		<div id="comp_pant_image" class="alpha omega grid_4">
+			<a id="comp_image" href=""><img id="image" class="outline" src=""/></a>
+		</div><!--closes #comp_pant_image-->
+	
+		<div id="compdatatable" class="alpha omega grid_10">
+			<div id="labels" class="alpha omega grid_2">
+				<ul class="measurement_data">
+					<li id="designer">Designer</li>
+					<li id="model">Model</li>
+					<li id="waist">Waist</li>
+					<li id="inseam">Inseam</li>
+					<li id="cuff">Cuff</li>
+					<li id="thigh">Thigh</li>
+					<li id="front_rise">Front rise</li>
+					<li id="back_rise">Back rise</li>
+					<li id="hips">Hips</li>
+					<li id="knee">Knee</li>
+					<li id="outseam">Outseam</li>
+				</ul>
+			</div><!--closes labels-->
+			
+			<div id="comp_images">
+			<div id="reference_pant" class="alpha omega grid_4">
+				<ul class="measurement_data">
+					<li id="designer" class="designer"></li>
+					<li id="model" class="designer"></li>
+					<li id="waist"></li>
+					<li id="inseam"></li>
+					<li id="cuff"></li>
+					<li id="thigh"></li>
+					<li id="front_rise"></li>
+					<li id="back_rise"></li>
+					<li id="hips"></li>
+					<li id="knee"></li>
+					<li id="outseam"></li>
+				</ul>
+			</div><!--closes reference_pant-->
+		
+			<div id="comp_pant_1" class="alpha omega grid_4">
+				<div class="measurements">
+					<ul class="measurement_data">
+						<li id="designer" class="designer"></li>
+						<li id="model" class="designer"></li>
+						<li id="waist"></li>
+						<li id="inseam"></li>
+						<li id="cuff"></li>
+						<li id="thigh"></li>
+						<li id="front_rise"></li>
+						<li id="back_rise"></li>
+						<li id="hips"></li>
+						<li id="knee"></li>
+						<li id="outseam"></li>
+					</ul>
+				</div><!--closes #measurements-->
+			</div><!--closes #comp_pant_1-->
+			</div> <!--closes #comp_images-->
+		
+		</div> <!--closes #compdatatable-->
+	</div> <!--closes #leftside-->
+	
+	<div id="rightside" class="alpha omega grid_5">
+	<h3> Where to buy </h3>
+		<div id="retailerinfo" class="alpha omega grid_5">
+			<div id="retailerdesc" class="retailer_label">
+				<p class="retail_price retail_about"> $150</p>
+				<p> at </p>
+				<p class="retailer_1 retail_about"> Four Horsemen </p>
+				<p> in </p>
+				<p class="location retail_about"> Vancouver, Canada </p>
+				</br>
+				<p class="shipping retail_returns"> Free shipping </p>
+				<p> | </p>
+				<p class="returns retail_returns"> Returns for store credit, you pay shipping </p>	
+			</div><!--closes #retailerdesc-->	
+			
+			<div id="retailerdesc2">
+				<div class="retailer_label"">
+				<p class="retail_price retail_about"> $150</p>
+				<p> at </p>
+				<p class="retailer_1 retail_about"> Context </p>
+				<p> in </p>
+				<p class="location retail_about"> Madison WI </p>
+				</div> <!--closes .retailer_label-->
+				<p class="shipping retail_returns"> Free shipping </p>
+				<p> | </p>
+				<p class="returns retail_returns"> Returns for store credit, free shipping </p>	
+			</div><!--closes #retailerdesc-->
+			
+		</div> <!--closes #retailerinfo -->
+	<h3> How they'll fit </h3>	
+		<div id="descrip" class="alpha omega grid_5">
+				<li id="fit_desc"></li><br/>
+		</div><!--closes descrip-->
+	</div><!--closes #rightside-->
+	
+	
+	<div id="explain" class="grid_4">
+	</div> <!--closes #explain-->
 
-<div id="reference_pant">
-	<a id="ref_image" href=""><img id="image" src=""/ alt="ref"></a>	
-	<ul class="measurement_data">
-		<li id="designer" class="designer"></li>
-		<li id="model" class="designer"></li>
-		<li id="waist"></li>
-		<li id="inseam"></li>
-		<li id="cuff"></li>
-		<li id="thigh"></li>
-		<li id="front_rise"></li>
-		<li id="back_rise"></li>
-		<li id="hips"></li>
-		<li id="knee"></li>
-		<li id="outseam"></li>
-	</ul>
-</div><!--closes reference_pant-->
 
-<div id="comp_pant_1">
-	<a id="comp_image" href=""><img id="image" src=""/></a>
-	<div class="measurements">
-	<ul class="measurement_data">
-		<li id="designer" class="designer"></li>
-		<li id="model" class="designer"></li>
-		<li id="waist"></li>
-		<li id="inseam"></li>
-		<li id="cuff"></li>
-		<li id="thigh"></li>
-		<li id="front_rise"></li>
-		<li id="back_rise"></li>
-		<li id="hips"></li>
-		<li id="knee"></li>
-		<li id="outseam"></li>
-	</ul>
-	</div><!--closes measurements-->
-</div><!--closes comp_pant_1-->
+</div><!--closes #compare-->
 
-<div id="descrip">
-        <li id="fit_desc"></li><br/>
-</div><!--closes descrip-->
 
-<div id="explain"></div>
-</div>
-</div><!--closes compare-->
 
-<div class="thumbnails">
+<div class="thumbnails" class="grid16">
 	<div class="thumbnail" id="thumb{{reference.id}}">
 	<input  type="image"
 			onclick="makeCompare(this)" 
@@ -216,8 +264,10 @@ function unfitItem(item)
 		   src="{{pant.picURL}}" 
 		   width="90" 
 		   height="100">
-	<input type="button" class="fitting_room" onClick="unfitItem({{pant.id}})" name="remove{{pant.id}}" value="x">
+
 </div><!--closes thumbnail-->
 {% endfor %}
 </div><!--closes thumbnails-->
 </body>
+
+{% endblock bodycontent%}
