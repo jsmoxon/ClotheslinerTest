@@ -9,11 +9,6 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/popup.css" >
 <!--  <link rel="stylesheet" href="{% get_static_prefix %}fancybox/fancybox-1.3.4.css" type="text/css" media="screen"> -->
-  <script type="text/javascript">
-  function feedbackPopup() {
-  window.open("/feedback/", "feedbackWindow", "status=1, height = 600, width = 600, resizable = 0")
-  }
-  </script>
 
   <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
   <script type="text/javascript" src="{% get_static_prefix %}js/dropdown.js"></script>
@@ -26,12 +21,11 @@
 <title>                                                                                                                                         
 Clothesliner                                                                                                                                  
 </title>
-
-
 	<!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
 	</script> end Mixpanel -->
 </head>
-<body>
+<body onload="genDesigners()">
+
 <div id="sidebar">
   <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" width="" onClick="feedbackPopup()">
 </div>
@@ -58,7 +52,6 @@ Clothesliner
 
 {% block refpant %}
 {% endblock refpant%}
-
 {% block bodycontent%}
 {% endblock bodycontent%}
 

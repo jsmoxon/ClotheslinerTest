@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load filters %}
+
+{% block bodycontent %}
+<div id="content" class="alpha omega grid_16">
+<div id="mainsearch" class="grid_6 push_5">
+<h3>Search for pants</h3>
+<p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
+<form action="/demonstration/reference/" method="post" name="selectReferencePant">
+	{% csrf_token %}
+	<div id="selectors">
+		<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
+		<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
+		<select id="measurements" name="measurements"></select><br>
+		<input type="submit" value="Alert" onclick="show_alert()">
+	</div>
+</form>
+<br>
+<p> Do we not have the pants you want to compare against? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
+</div> <!--close #mainsearch -->
+</div> <!--closes the content div-->
+
+<input type="submit" value="Load Pants" onclick="genDesigners()">
+<input type="submit" value="Alert" onclick="show_alert()">
+
+{% endblock bodycontent %}
+
+
