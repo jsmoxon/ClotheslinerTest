@@ -74,7 +74,7 @@ function makeCompare(sel)
 	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
 	var retailerInfo = 
 {% for stock in compared.pant_stock_item_set.all %}
-        "<p>Price: ${{stock.price}}, Retailer: {{stock.retailer}}</p>"
+        "<p>Price: ${{stock.price}}, Retailer: {{stock.retailer}}</p>";
 {% empty %}
         "<p>We know of no retailer</p>"
 {% endfor %}
