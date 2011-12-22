@@ -1,0 +1,179 @@
+/*  
+  h1, a {
+	color: 83818;
+	font-size: 48px;
+	font-family: 'Raleway', cursive;
+	text-decoration: none;
+	line-height: -10px;
+}
+
+h2 {
+font-family: 'Raleway', cursive;
+font-size:20px;
+line-height: 0px;
+margin-top: -30px;
+margin-left: 10px;
+color: #83818;
+}
+
+ul{
+list-style-type: none;
+padding: 0;
+margin: 0;
+font-size: 12px;
+color: 838181;
+font-family: 'Helvetica Neue Reg', sans-serif;
+}
+
+li {
+list-style: none; 
+margin:0; 
+}
+
+#title {
+	position: relative;
+	height: 70px;
+	
+}
+*/
+
+
+h3 {
+line-height:normal;
+}
+
+#retailerinfo, #descrip {
+background-color:#A8A8A8;
+padding:5px;
+}
+
+#retailerinfo p{
+display: inline;
+}
+
+#fit_desc{
+background-color:#FFFFFF;
+opacity:.8;
+margin:3px;
+padding:2px;
+}
+
+.retail_about {
+}
+
+.retailer_label{
+	/*position:relative;
+	top:-55px;
+	z-index:2;
+	height: 55px;
+	
+	background-color:#FFFFFF;
+	*/
+background-color:#FFFFFF;
+opacity:.8;
+margin:3px;
+padding:2px;
+}
+
+.retail_returns {
+}
+
+#image {
+	width: 200px;
+	height: 240px;
+
+}
+
+.fitting_room {
+        cursor: pointer;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        color:white;
+        border:none;
+        background-color:838181;
+        opacity:.5;
+        height: 20px;
+        width: 20px;
+        display:inline;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        position:relative;
+        left:-25px;
+        top:-87px;
+}
+
+
+
+#compare {
+}
+
+#compdatatable{
+clear:left;
+background-color:;
+overflow:hidden;
+
+}
+
+#comp_images {
+white-space:nowrap;
+overflow:hidden;
+display:inline;
+max-width:170px;
+}
+
+li .designer {
+}
+
+#labels {
+	background-color:;
+}
+
+#ref_pant_image {
+margin-left: 100px;
+}
+
+#reference_pant {
+	border:blue;
+	background-color:;
+}
+
+#comp_pant_1 {
+	background-color:;
+	overflow:hidden;
+	}
+
+
+#explain {
+background: #DBDBDB;
+}
+
+
+
+
+#explain li {
+padding: 8px;
+list-style-type: circle;
+}
+
+#reference_pant .measurements{
+	float:right;
+}
+
+.thumbnails  {
+margin-top: 60px;
+}
+
+.thumbnail {
+	display: inline;
+	margin:5px;
+	clear: both;
+	width:900px;
+}
+
+.outline {
+outline: 3px solid #A8A8A8;
+}
+
+.border {
+border: 3px solid #505050;
+}

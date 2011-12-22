@@ -166,3 +166,6 @@ class Pant_Stock_Item(models.Model):
 	dateAdded = models.DateTimeField()
 	current = models.BooleanField()
 	preferred = models.BooleanField()
+	
+	def __unicode__(self):
+		return str(self.item)+" from "+str(self.retailer)

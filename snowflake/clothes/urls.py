@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     (r'^compare/$', 'clothes.views.compare'),
     (r'^logout/$', 'clothes.views.logout'),
     (r'^create/$', 'clothes.views.create'),
+    (r'^stock/$', 'clothes.views.stocktest'),
 )
 
 urlpatterns += patterns('django.contrib.staticfiles.views',

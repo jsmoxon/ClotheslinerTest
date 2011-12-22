@@ -1,0 +1,14 @@
+<h1>Stock Item Test</h1>
+
+<li>{{item.price}}</li>
+
+
+<br/><br/>
+{% for p in pant %}
+<li><h3>{{p.designer}} - {{p.style}}</h3></li> 
+{% for x in p.pant_stock_item_set.all %}
+<li><h4>{{x.retailer}}</h4></li>
+<li>{{x.price}}</li>
+{% endfor %}
+<br/><br/>
+{% endfor %}
