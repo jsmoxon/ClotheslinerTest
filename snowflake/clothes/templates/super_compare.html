@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% block bodycontent%}
+{% load static %}
+{% load filters %}
 
 
 <head>
@@ -76,7 +76,7 @@ function makeCompare(sel)
 	$('div#comp_pant_1').attr('title', sel.name);
 
 	$('.small_tile').css("outline", "none"); 
-	$('.small_tile#'+sel.name).css("outline","3px solid #A8A8A8");
+	$('.small_tile#'+sel.name).css("outline","1px solid #A8A8A8");
 	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
         $('#fit_desc').html(describe);
 	$('div#explain').html("");
@@ -100,7 +100,7 @@ function makeReference(sel)
 	$('div#reference_pant').attr('title', sel.name);
 	
 	$('.small_tile').css("border", "none");
-	$('.small_tile#'+sel.name).css("border","3px solid #505050 ");
+	$('.small_tile#'+sel.name).css("border","1px solid #505050 ");
 	$('div#explain').html("");
 }
 
@@ -135,76 +135,110 @@ function unfitItem(item)
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 
-<div id="compare" class="alpha omega grid_16"> <!--functions as a body content div-->
+<div class="container">
+  	<div id="header" class= "alpha omega sixteen columns">
+    <div id="title">
+      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+      <h3>find pants that fit (beta)</h3>
+      </div> <!--closes the title div-->
+      
+    <div id="headerlinks">
+      <ul>
+        <li><a href="/demonstration/search/">Search</a></li>
+		<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
+        <!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
+        </ul>
+      </div> <!--closes the headerlinks div-->
+    <hr />
+	</div> <!--closes the header div-->
 
-	<div id="leftside" class="alpha omega grid_10">
-		<div id="ref_pant_image" class="alpha omega grid_4">
+	
+	<div id="compare" class="sixteen columns"> <!--functions as a body content div-->
+	
+	<div id="leftside" class="ten columns">
+		<div id="ref_pant_image" class="three columns">
 			<a id="ref_image" href=""><img id="refr_image" class="border" src=""/ alt="ref"></a>
 		</div><!--closes #ref_pant_image-->
 		
-		<div id="comp_pant_image" class="alpha omega grid_4">
+		<div id="comp_pant_image" class="five columns">
 			<a id="comp_image" href=""><img id="compr_image" class="outline" src=""/></a>
 		</div><!--closes #comp_pant_image-->
 	
-		<div id="compdatatable" class="alpha omega grid_10">
-			<div id="labels" class="alpha omega grid_2">
-				<ul class="measurement_data">
-					<li id="designer">Designer</li>
-					<li id="model">Model</li>
-					<li id="waist">Waist</li>
-					<li id="inseam">Inseam</li>
-					<li id="cuff">Cuff</li>
-					<li id="thigh">Thigh</li>
-					<li id="front_rise">Front rise</li>
-					<li id="back_rise">Back rise</li>
-					<li id="hips">Hips</li>
-					<li id="knee">Knee</li>
-					<li id="outseam">Outseam</li>
-				</ul>
-			</div><!--closes labels-->
+		<div id="descrip" class="ten columns" layout>
+			<div id="tabs_header">
+			<ul class="tabs">
+				  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+				  <li><a class="active" href="#tabs_desc">How they'll Fit</a></li>
+				  <li><a href="#tabs_data">See Data</a></li>
+			</ul>		
+			</div> <!--closes #tabs_header-->
 			
-			<div id="comp_images">
-			<div id="reference_pant" class="alpha omega grid_4">
-				<ul class="measurement_data">
-					<li id="designer" class="designer"></li>
-					<li id="model" class="designer"></li>
-					<li id="waist"></li>
-					<li id="inseam"></li>
-					<li id="cuff"></li>
-					<li id="thigh"></li>
-					<li id="front_rise"></li>
-					<li id="back_rise"></li>
-					<li id="hips"></li>
-					<li id="knee"></li>
-					<li id="outseam"></li>
+			<div id="tabs_content">
+				<ul>
+				<li id="tabs_desc">	
+					<div id="fit_desc"></div>
+				</li>			
+				<li id="tabs_data">
+					<div id="compdatatable" class="alpha omega ten columns">
+						<div id="labels" class="alpha omega three columns columnar">
+							<ul class="measurement_data">
+								<li id="designer">--</li>
+								<li id="model">--</li>
+								<li id="waist">Actual waist</li>
+								<li id="inseam">Actual inseam</li>
+								<li id="cuff">Cuff</li>
+								<li id="thigh">Thigh</li>
+								<li id="front_rise">Front rise</li>
+								<li id="back_rise">Back rise</li>
+								<li id="hips">Hips</li>
+								<li id="knee">Knee</li>
+								<li id="outseam">Outseam</li>
+							</ul>
+						</div><!--closes labels-->
+						
+						<div id="reference_pant" class="alpha omega three columns columnar">
+							<ul class="measurement_data">
+								<li id="designer" class="designer"></li>
+								<li id="model" class="designer"></li>
+								<li id="waist" class="numbers"></li>
+								<li id="inseam" class="numbers"></li>
+								<li id="cuff" class="numbers"></li>
+								<li id="thigh" class="numbers"></li>
+								<li id="front_rise" class="numbers"></li>
+								<li id="back_rise" class="numbers"></li>
+								<li id="hips" class="numbers"></li>
+								<li id="knee" class="numbers"></li>
+								<li id="outseam" class="numbers"></li>
+							</ul>
+						</div><!--closes reference_pant-->
+						<div id="comp_pant_1" class="alpha omega three columns columnar">
+							<div class="measurements">
+								<ul class="measurement_data">
+									<li id="designer" class="designer"></li>
+									<li id="model" class="designer"></li>
+									<li id="waist" class="numbers"></li>
+									<li id="inseam" class="numbers"></li>
+									<li id="cuff" class="numbers"></li>
+									<li id="thigh" class="numbers"></li>
+									<li id="front_rise" class="numbers"></li>
+									<li id="back_rise" class="numbers"></li>
+									<li id="hips" class="numbers"></li>
+									<li id="knee" class="numbers"></li>
+									<li id="outseam" class="numbers"></li>
+								</ul>
+							</div><!--closes #measurements-->
+						</div><!--closes #comp_pant_1-->
+					</div> <!--closes #compdatatable-->
+				</li><!--closes #tabs_data-->
 				</ul>
-			</div><!--closes reference_pant-->
-		
-			<div id="comp_pant_1" class="alpha omega grid_4">
-				<div class="measurements">
-					<ul class="measurement_data">
-						<li id="designer" class="designer"></li>
-						<li id="model" class="designer"></li>
-						<li id="waist"></li>
-						<li id="inseam"></li>
-						<li id="cuff"></li>
-						<li id="thigh"></li>
-						<li id="front_rise"></li>
-						<li id="back_rise"></li>
-						<li id="hips"></li>
-						<li id="knee"></li>
-						<li id="outseam"></li>
-					</ul>
-				</div><!--closes #measurements-->
-			</div><!--closes #comp_pant_1-->
-			</div> <!--closes #comp_images-->
-		
-		</div> <!--closes #compdatatable-->
+			<br/>	
+			</div><!--closes #tabs_content-->
+		</div><!--closes #descrip-->	
 	</div> <!--closes #leftside-->
 	
-	<div id="rightside" class="alpha omega grid_5">
-	<h3> Where to buy </h3>
-		<div id="retailerinfo" class="alpha omega grid_5">
+	<div id="rightside" class="one-third column">
+		<div id="retailerinfo">
+		<h3> Where to buy </h3>
 			<div id="retailerdesc" class="retailer_label">
 				<p class="retail_price retail_about"> $150</p>
 				<p> at </p>
@@ -231,16 +265,14 @@ function unfitItem(item)
 			</div><!--closes #retailerdesc-->
 			
 		</div> <!--closes #retailerinfo -->
-	<h3> How they'll fit </h3>	
-		<div id="descrip" class="alpha omega grid_5">
-				<li id="fit_desc"></li><br/>
-		</div><!--closes descrip-->
+	
+
 	</div><!--closes #rightside-->
 	
 	
 	<div id="explain" class="grid_4">
 	</div> <!--closes #explain-->
-
+	
 
 </div><!--closes #compare-->
 
@@ -272,8 +304,80 @@ function unfitItem(item)
 		   height="100">
 
 </div><!--closes thumbnail-->
+
+						<table border="1"
+							   summary="Table providing actual measurements.">
+						
+						  <thead>
+							<tr>
+							  <th>Designer</th>
+							  <th>Gap</th>
+							  <th>J Crew</th>
+							</tr>
+							<tr>
+							  <th>Style Name</th>
+							  <th>Relaxed Cut </th>
+							  <th>Staton Pant</th>
+							</tr>
+							<tr>
+							  <th>Size</th>
+							  <th>32x32 </th>
+							  <th>33x32/th>
+							</tr>
+						  </thead>
+						
+						  <tbody>
+							<tr>
+							  <td>Actual waist</td>
+							  <td>32.5</td>
+							  <td>+.5</td>
+							</tr>
+							<tr>
+							  <td>Actual inseam</td>
+							  <td>32</td>
+							  <td>--</td>
+							</tr>
+							<tr>
+							  <td>Front rise</td>
+							  <td>11</td>
+							  <td>-.5</td>
+							</tr>
+							<tr>
+							  <td>Back rise</td>
+							  <td>14</td>
+							  <td>+.5</td>
+							</tr>
+							<tr>
+							  <td>Hip</td>
+							  <td>17</td>
+							  <td>--</td>
+							</tr>
+							<tr>
+							  <td>Thigh</td>
+							  <td>14</td>
+							  <td>-.25</td>
+							</tr>
+							<tr>
+							  <td>Knee</td>
+							  <td>9</td>
+							  <td>-.5</td>
+							</tr>
+							<tr>
+							  <td>Cuff</td>
+							  <td>8</td>
+							  <td>+1.0</td>
+							</tr>
+						  </tbody>
+						
+						  <tfoot>
+
+						  </tfoot>
+						
+						</table> 
+
 {% endfor %}
 </div><!--closes thumbnails-->
+</div><!--closes the hacky #container that I created in this page, even though there's also a #container-->
 </body>
 
-{% endblock bodycontent%}
+

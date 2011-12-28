@@ -37,15 +37,19 @@ margin:0;
 }
 */
 
+.layout {background-color:green;}
 
 h3 {
 line-height:normal;
 }
 
-#retailerinfo, #descrip {
-background-color:#A8A8A8;
+#retailerinfo {
+background-color:;
+border: 1px solid #A8A8A8;
 padding:5px;
 }
+
+#descrip {}
 
 #retailerinfo p{
 display: inline;
@@ -111,7 +115,28 @@ padding:2px;
 clear:left;
 background-color:;
 overflow:hidden;
+border:#DDDDDD;
+}
 
+#compdatatable li:nth-child(2n+4) {background: #F5F5F5}
+
+/*
+.columnar {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid green;
+}
+
+.measurements {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid red;
+}
+
+.measurementdata {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid blue;
 }
 
 #comp_images {
@@ -120,6 +145,7 @@ overflow:hidden;
 display:inline;
 max-width:170px;
 }
+*/
 
 li .designer {
 }
@@ -142,6 +168,9 @@ margin-left: 100px;
 	overflow:hidden;
 	}
 
+#comp_pant_image {
+float:right;
+}
 
 #explain {
 background: #DBDBDB;
@@ -181,9 +210,9 @@ margin-top: 60px;
 }
 
 .outline {
-outline: 3px solid #A8A8A8;
+outline: 1px solid #A8A8A8;
 }
 
 .border {
-border: 3px solid #505050;
+border: 1px solid #505050;
 }
