@@ -1,17 +1,20 @@
-function displayMainInstructions()
+function displayLabelWaist()
 {
-document.getElementById("starter").innerHTML='<div class="measurementguide">\
-		 <p class="entry_description">1. Lay the pant flat on the floor (buttoned and zipped up).<br/><br/>\
-          2. Measure to the edge of the garment as it lays rather than the edege of the seam.<br/><br/>\
-          3. Round to the nearest 1/4 of an inch.<br/><br/>\
-          4. Click each box below for further instructions.\
-        </p>\
-	<img src="http://clothesliner.com/static/images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\
-	</div>'
-	;
+    document.getElementById("starter").innerHTML='<div class="measurementguide">\                                                  
+        <p class="entry_description">With the pants laid flat, measure from edge to edge widthwise across the ellipse that\'s \
+created by the space between the rear and the front of the waistband. If the rear waistband is a perfectly straight line, use \
+that.</p>\                                                                                                                     
+        <p class="entry_description">Don\'t include belt loops in your measurement.  Enter it. Your final measurement should b\
+e about half of what the designers label said it would be.</p>\                                                                
+        <p class="entry_description">(You double it to know the whole waist size but we didn\'t want to risk you messing up th\
+e math while you enter the data. You\'ll notice, though, that the actual waist measurement is likely to be different from what\
+ the label said by as much as 2 inches).</p>\                                                                                  
+        <img src="http://clothesliner.com/static/images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\                 
+        </div>'
+        ;
 }
 
-function displayWaist()
+function displayLabelWaist()
 {
 document.getElementById("starter").innerHTML='<div class="measurementguide">\
 	<p class="entry_description">With the pants laid flat, measure from edge to edge widthwise across the ellipse that\'s created by the space between the rear and the front of the waistband. If the rear waistband is a perfectly straight line, use that.</p>\
@@ -22,7 +25,7 @@ document.getElementById("starter").innerHTML='<div class="measurementguide">\
 	;
 }
 
-function displayInseam()
+function displayLabelInseam()
 {
     document.getElementById("starter").innerHTML='<div class="measurementguide">\
     <p class="entry_description">Pick one of the legs, measure from the crotch of the pant to the bottom of the cuff. If the line between those two points isn\'t perfectly straight, try to follow its curvature. Your final measurement should be within a couple of inches of what the designer\'s label said it would be. </p>\
@@ -31,20 +34,20 @@ function displayInseam()
 	;
 }
 
-function displayLabelWaist()
+function displayWaist()
 {
     document.getElementById("starter").innerHTML='<div class="measurementguide">\
-    <p class="entry_description">This is what the designer has labeled the waist. For example, if the pant is a 32x30, the "Label waist size" is 32." If there is no waist, there might be information like "medium" or "large".</p>\
+    <p class="entry_description">This is what the designer has labeled the inseam. For example, if the pant is a 32x30, the "Label inseam size" is 30." If there is no inseam, there might be information like "long" or "short".</p>\
     <img src="http://clothesliner.com/static/images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\
     </div>'
 	;
 }
 
-function displayLabelInseam()
+function displayInseam()
 {
     document.getElementById("starter").innerHTML='<div class="measurementguide">\
-    <p class="entry_description">This is what the designer has labeled the inseam. For example, if the pant is a 32x30, the "Label inseam size" is 30." If there is no waist, there might be information like "long" or "short" (it is okay to leave this blank).</p>\
-    <img src="http://clothesliner.com/static/images/drawnpant.png" class="drawnpant" alt="pant drawing"/>\
+    <p class="entry_description">Pick one of the legs, measure from the crotch of the pant to the bottom of the cuff. If the line between those two points isn\'t perfectly straight, try to follow its curvature. Your final measurement should be within a couple of inches of what the designer\'s label said it would be. </p>\
+    <img src="http://clothesliner.com/static/images/drawnpant.png/" class="drawnpant" alt="pant drawing"/>\
     </div>'
 	;
 }

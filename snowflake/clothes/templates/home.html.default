@@ -95,7 +95,7 @@ function genMeasurements(des, sel)
   <div id="header" class= "alpha omega grid_16">
     <div id="title">
       <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-      <h4>find  pants that fit (beta)</h4>
+      <h3>find  pants that fit (beta)</h3>
       </div> <!--closes the title div-->
     <div id="headerlinks">
       <ul>
@@ -111,21 +111,20 @@ function genMeasurements(des, sel)
 <div id="mainpant" class="grid_4 push_3">
   <img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant" alt="pant drawing"/>
 </div><!--clses mainpant div-->
-<div id="mainsearch" class="grid_7 push_4">
-<h3>Choose a pant you know...</h3>
-<form action="/demonstration/reference/" method="post" name="selectReferencePant" class="searchform">
+<div id="mainsearch" class="grid_6 push_4">
+<h3>Search for pants</h3>
+<p> Select a pant that you're familiar with and we'll describe your search returns in comparison to it. </p>
+<form action="/demonstration/reference/" method="post" name="selectReferencePant">
 	{% csrf_token %}
 	<div id="selectors">
 		<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
 		<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
 		<select id="measurements" name="measurements"></select><br>
-		<input type="submit" class="comparebutton" value="Compare">
+		<input type="submit" value="Compare">
 	</div>
 </form>
-<br/>
-<h3>...and we'll return pants that fit similarly.</h3>
 <br>
-<p> Don't see your pant? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
+<p> Do we not have the pants you want to compare against? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
 </div> <!--close #mainsearch -->
 
 
