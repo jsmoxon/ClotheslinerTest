@@ -6,9 +6,15 @@
 {% load static %}
 <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_skeleton.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
+
+
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/tabs.js"></script>
 <script type="text/javascript">
 
 var sauce = jQuery.parseJSON('{{ sauce|safe }}');
@@ -54,7 +60,7 @@ var p = new Object();
 
 function makeCompare(sel)
 {
-	$('div#comp_pant_image #image').attr('src',p[sel.name]['image']);
+	$('div#comp_pant_image #compr_image').attr('src',p[sel.name]['image']);
 	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
 	$('div#comp_pant_1 li#designer').text(p[sel.name]['designer']);
 	$('div#comp_pant_1 li#model').text(p[sel.name]['style']);
@@ -78,7 +84,7 @@ function makeCompare(sel)
 
 function makeReference(sel)
 {
-	$('div#ref_pant_image #image').attr('src',p[sel.name]['image']);
+	$('div#ref_pant_image #refr_image').attr('src',p[sel.name]['image']);
 	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
 	$('div#reference_pant li#designer').text(p[sel.name]['designer']);
 	$('div#reference_pant li#model').text(p[sel.name]['style']);
@@ -133,11 +139,11 @@ function unfitItem(item)
 
 	<div id="leftside" class="alpha omega grid_10">
 		<div id="ref_pant_image" class="alpha omega grid_4">
-			<a id="ref_image" href=""><img id="image" class="border" src=""/ alt="ref"></a>
+			<a id="ref_image" href=""><img id="refr_image" class="border" src=""/ alt="ref"></a>
 		</div><!--closes #ref_pant_image-->
 		
 		<div id="comp_pant_image" class="alpha omega grid_4">
-			<a id="comp_image" href=""><img id="image" class="outline" src=""/></a>
+			<a id="comp_image" href=""><img id="compr_image" class="outline" src=""/></a>
 		</div><!--closes #comp_pant_image-->
 	
 		<div id="compdatatable" class="alpha omega grid_10">

@@ -159,6 +159,16 @@ list-style-type: circle;
 	float:right;
 }
 
+#refr_image {
+width: 150px;
+height: auto;
+}
+
+#compr_image {
+width: 300px;
+height: auto;
+}
+
 .thumbnails  {
 margin-top: 60px;
 }
