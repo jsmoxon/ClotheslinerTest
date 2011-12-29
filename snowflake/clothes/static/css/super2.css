@@ -118,7 +118,11 @@ overflow:hidden;
 border:#DDDDDD;
 }
 
-#compdatatable li:nth-child(2n+4) {background: #F5F5F5}
+#datatable {
+}
+
+td {padding:5px;}
+tr:nth-child(2n+4) {background: #F5F5F5}
 
 /*
 .columnar {

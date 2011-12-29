@@ -4,11 +4,12 @@
 
 <head>
 {% load static %}
-<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
+<!--<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+!-->
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_skeleton.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
 
 
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
@@ -62,22 +63,22 @@ function makeCompare(sel)
 {
 	$('div#comp_pant_image #compr_image').attr('src',p[sel.name]['image']);
 	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
-	$('div#comp_pant_1 li#designer').text(p[sel.name]['designer']);
-	$('div#comp_pant_1 li#model').text(p[sel.name]['style']);
-	$('div#comp_pant_1 li#waist').text(p[sel.name]['waist']);
-	$('div#comp_pant_1 li#inseam').text(p[sel.name]['inseam']);
-	$('div#comp_pant_1 li#cuff').text(p[sel.name]['cuff']);
-	$('div#comp_pant_1 li#thigh').text(p[sel.name]['thigh']);
-	$('div#comp_pant_1 li#front_rise').text(p[sel.name]['front_rise']);
-	$('div#comp_pant_1 li#back_rise').text(p[sel.name]['back_rise']);
-	$('div#comp_pant_1 li#hips').text(p[sel.name]['hips']);
-	$('div#comp_pant_1 li#knee').text(p[sel.name]['knee']);
-	$('div#comp_pant_1 li#outseam').text(p[sel.name]['outseam']);
-	$('div#comp_pant_1').attr('title', sel.name);
+	$('div#datatable td#designer_comp').text(p[sel.name]['designer']);
+	$('div#datatable td#style_comp').text(p[sel.name]['style']);
+	$('div#datatable td#waist_comp').text(p[sel.name]['waist']);
+	$('div#datatable td#inseam_comp').text(p[sel.name]['inseam']);
+	$('div#datatable td#cuff_comp').text(p[sel.name]['cuff']);
+	$('div#datatable td#thigh_comp').text(p[sel.name]['thigh']);
+	$('div#datatable td#front_rise_comp').text(p[sel.name]['front_rise']);
+	$('div#datatable td#back_rise_comp').text(p[sel.name]['back_rise']);
+	$('div#datatable td#hips_comp').text(p[sel.name]['hips']);
+	$('div#datatable td#knee_comp').text(p[sel.name]['knee']);
+	$('div#datatable td#outseam_comp').text(p[sel.name]['outseam']);
+	$('div#datatable').attr('title_comp', sel.name);
 
 	$('.small_tile').css("outline", "none"); 
 	$('.small_tile#'+sel.name).css("outline","1px solid #A8A8A8");
-	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
+	var describe = calcDiff(p[$('div#datatable').attr('title_ref')], p[$('div#datatable').attr('title_comp')]);
         $('#fit_desc').html(describe);
 	$('div#explain').html("");
 }
@@ -86,18 +87,18 @@ function makeReference(sel)
 {
 	$('div#ref_pant_image #refr_image').attr('src',p[sel.name]['image']);
 	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
-	$('div#reference_pant li#designer').text(p[sel.name]['designer']);
-	$('div#reference_pant li#model').text(p[sel.name]['style']);
-	$('div#reference_pant li#waist').text(p[sel.name]['waist']);
-	$('div#reference_pant li#inseam').text(p[sel.name]['inseam']);
-	$('div#reference_pant li#cuff').text(p[sel.name]['cuff']);
-	$('div#reference_pant li#thigh').text(p[sel.name]['thigh']);
-	$('div#reference_pant li#front_rise').text(p[sel.name]['front_rise']);
-	$('div#reference_pant li#back_rise').text(p[sel.name]['back_rise']);
-	$('div#reference_pant li#hips').text(p[sel.name]['hips']);
-	$('div#reference_pant li#knee').text(p[sel.name]['knee']);
-	$('div#reference_pant li#outseam').text(p[sel.name]['outseam']);
-	$('div#reference_pant').attr('title', sel.name);
+	$('div#datatable td#designer_ref').text(p[sel.name]['designer']);
+	$('div#datatable td#style_ref').text(p[sel.name]['style']);
+	$('div#datatable td#waist_ref').text(p[sel.name]['waist']);
+	$('div#datatable td#inseam_ref').text(p[sel.name]['inseam']);
+	$('div#datatable td#cuff_ref').text(p[sel.name]['cuff']);
+	$('div#datatable td#thigh_ref').text(p[sel.name]['thigh']);
+	$('div#datatable td#front_rise_ref').text(p[sel.name]['front_rise']);
+	$('div#datatable td#back_rise_ref').text(p[sel.name]['back_rise']);
+	$('div#datatable td#hips_ref').text(p[sel.name]['hips']);
+	$('div#datatable td#knee_ref').text(p[sel.name]['knee']);
+	$('div#datatable td#outseam_ref').text(p[sel.name]['outseam']);
+	$('div#datatable').attr('title_ref', sel.name);
 	
 	$('.small_tile').css("border", "none");
 	$('.small_tile#'+sel.name).css("border","1px solid #505050 ");
@@ -109,8 +110,8 @@ function unfitItem(item)
 	cart.splice(cart.indexOf(item), 1)
 	$('.thumbnail#thumb'+item).hide();
 	window.opener.popupCallback(cart);
-	if (item == $('div#reference_pant').attr('title')) {makeReference(document.getElementById("{{reference.id}}"));}
-	compID = $('div#comp_pant_1').attr('title');
+	if (item == $('div#reference_pant').attr('title_ref')) {makeReference(document.getElementById("{{reference.id}}"));}
+	compID = $('div#comp_pant_1').attr('title_comp');
 	if (item == compID)
 	{
 		compedID = "{{compared.id}}";
@@ -128,6 +129,18 @@ function unfitItem(item)
 	}
 }
 
+</script>
+<script>
+    $("#see_data").click(function () {
+    $("#datatable").show("slow");
+    });
+</script>
+
+<script type="text/javascript">
+function show_alert()
+{
+alert("I am an alert box!");
+}
 </script>
 
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
@@ -169,7 +182,7 @@ function unfitItem(item)
 			<ul class="tabs">
 				  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
 				  <li><a class="active" href="#tabs_desc">How they'll Fit</a></li>
-				  <li><a href="#tabs_data">See Data</a></li>
+				  <li><a  href="#tabs_data">See Data</a></li>
 			</ul>		
 			</div> <!--closes #tabs_header-->
 			
@@ -179,56 +192,70 @@ function unfitItem(item)
 					<div id="fit_desc"></div>
 				</li>			
 				<li id="tabs_data">
-					<div id="compdatatable" class="alpha omega ten columns">
-						<div id="labels" class="alpha omega three columns columnar">
-							<ul class="measurement_data">
-								<li id="designer">--</li>
-								<li id="model">--</li>
-								<li id="waist">Actual waist</li>
-								<li id="inseam">Actual inseam</li>
-								<li id="cuff">Cuff</li>
-								<li id="thigh">Thigh</li>
-								<li id="front_rise">Front rise</li>
-								<li id="back_rise">Back rise</li>
-								<li id="hips">Hips</li>
-								<li id="knee">Knee</li>
-								<li id="outseam">Outseam</li>
-							</ul>
-						</div><!--closes labels-->
-						
-						<div id="reference_pant" class="alpha omega three columns columnar">
-							<ul class="measurement_data">
-								<li id="designer" class="designer"></li>
-								<li id="model" class="designer"></li>
-								<li id="waist" class="numbers"></li>
-								<li id="inseam" class="numbers"></li>
-								<li id="cuff" class="numbers"></li>
-								<li id="thigh" class="numbers"></li>
-								<li id="front_rise" class="numbers"></li>
-								<li id="back_rise" class="numbers"></li>
-								<li id="hips" class="numbers"></li>
-								<li id="knee" class="numbers"></li>
-								<li id="outseam" class="numbers"></li>
-							</ul>
-						</div><!--closes reference_pant-->
-						<div id="comp_pant_1" class="alpha omega three columns columnar">
-							<div class="measurements">
-								<ul class="measurement_data">
-									<li id="designer" class="designer"></li>
-									<li id="model" class="designer"></li>
-									<li id="waist" class="numbers"></li>
-									<li id="inseam" class="numbers"></li>
-									<li id="cuff" class="numbers"></li>
-									<li id="thigh" class="numbers"></li>
-									<li id="front_rise" class="numbers"></li>
-									<li id="back_rise" class="numbers"></li>
-									<li id="hips" class="numbers"></li>
-									<li id="knee" class="numbers"></li>
-									<li id="outseam" class="numbers"></li>
-								</ul>
-							</div><!--closes #measurements-->
-						</div><!--closes #comp_pant_1-->
-					</div> <!--closes #compdatatable-->
+				<div id="datatable" class="alpha omega ten columns">
+					<table>
+						<tr>
+						  <td id="designer_label"></td>
+						  <td id="designer_ref">error</td>
+						  <td id="designer_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="style_label"class="firstcolumn">Style</td>
+						  <td id="style_ref">error</td>
+						  <td id="style_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="size_label">Size</td>
+						  <td id="size_ref">pending </td>
+						  <td id="size_comp">pending</td>
+						</tr>
+						<tr>
+						  <td id="waist_label">Actual waist</td>
+						  <td id="waist_ref">error </td>
+						  <td id="waist_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="front_rise_label">Front rise</td>
+						  <td id="front_rise_ref">error </td>
+						  <td id="front_rise_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="back_rise_label">Rear rise</td>
+						  <td id="back_rise_ref">error </td>
+						  <td id="back_rise_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="hip_label">Hip</td>
+						  <td id="hip_ref">error </td>
+						  <td id="hip_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="thigh_label"> Thigh</td>
+						  <td id="thigh_ref">error </td>
+						  <td id="thigh_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="knee_label">Knee</td>
+						  <td id="knee_ref">error </td>
+						  <td id="knee_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="cuff_label">Cuff</td>
+						  <td id="cuff_ref">error </td>
+						  <td id="cuff_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="outseam_label">Outseam</td>
+						  <td id="outseam_ref">error </td>
+						  <td id="outseam_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="inseam_label">Actual inseam</td>
+						  <td id="inseam_ref">error </td>
+						  <td id="inseam_comp">error</td>
+						</tr>				
+					</table> 
+				</div><!--closes #datatable-->		
 				</li><!--closes #tabs_data-->
 				</ul>
 			<br/>	
@@ -304,79 +331,28 @@ function unfitItem(item)
 		   height="100">
 
 </div><!--closes thumbnail-->
-
-						<table border="1"
-							   summary="Table providing actual measurements.">
 						
-						  <thead>
-							<tr>
-							  <th>Designer</th>
-							  <th>Gap</th>
-							  <th>J Crew</th>
-							</tr>
-							<tr>
-							  <th>Style Name</th>
-							  <th>Relaxed Cut </th>
-							  <th>Staton Pant</th>
-							</tr>
-							<tr>
-							  <th>Size</th>
-							  <th>32x32 </th>
-							  <th>33x32/th>
-							</tr>
-						  </thead>
-						
-						  <tbody>
-							<tr>
-							  <td>Actual waist</td>
-							  <td>32.5</td>
-							  <td>+.5</td>
-							</tr>
-							<tr>
-							  <td>Actual inseam</td>
-							  <td>32</td>
-							  <td>--</td>
-							</tr>
-							<tr>
-							  <td>Front rise</td>
-							  <td>11</td>
-							  <td>-.5</td>
-							</tr>
-							<tr>
-							  <td>Back rise</td>
-							  <td>14</td>
-							  <td>+.5</td>
-							</tr>
-							<tr>
-							  <td>Hip</td>
-							  <td>17</td>
-							  <td>--</td>
-							</tr>
-							<tr>
-							  <td>Thigh</td>
-							  <td>14</td>
-							  <td>-.25</td>
-							</tr>
-							<tr>
-							  <td>Knee</td>
-							  <td>9</td>
-							  <td>-.5</td>
-							</tr>
-							<tr>
-							  <td>Cuff</td>
-							  <td>8</td>
-							  <td>+1.0</td>
-							</tr>
-						  </tbody>
-						
-						  <tfoot>
-
-						  </tfoot>
-						
-						</table> 
-
 {% endfor %}
 </div><!--closes thumbnails-->
+
+<!-- Standard <ul> with class of "tabs" -->
+<ul class="tabs">
+  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+  <li><a class="active" href="#simple">Simple</a></li>
+  <li><a href="#lightweight">Lightweight</a></li>
+  <li><a href="#mobileFriendly">Mobile</a></li>
+</ul>
+
+<!-- Standard <ul> with class of "tabs-content" -->
+<ul class="tabs-content">
+  <!-- Give ID that matches HREF of above anchors -->
+  <li class="active" id="simple">The tabs are clean and simple unordered-list markup and basic CSS.</li>
+  <li id="lightweight">The tabs are cross-browser, but don't need a ton of hacky CSS or markup.</li>
+  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
+</ul>
+
+<!-- NOTE: jQuery that fires the change is in tabs.js -->
+
 </div><!--closes the hacky #container that I created in this page, even though there's also a #container-->
 </body>
 
