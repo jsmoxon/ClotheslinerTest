@@ -13,9 +13,9 @@
 
 
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/tabs.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
-<script type="text/javascript" src="{% get_static_prefix %}js/tabs.js"></script>
 <script type="text/javascript">
 
 var sauce = jQuery.parseJSON('{{ sauce|safe }}');
@@ -128,19 +128,6 @@ function unfitItem(item)
 		makeCompare(document.getElementById(compID));
 	}
 }
-
-</script>
-<script>
-    $("#see_data").click(function () {
-    $("#datatable").show("slow");
-    });
-</script>
-
-<script type="text/javascript">
-function show_alert()
-{
-alert("I am an alert box!");
-}
 </script>
 
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
@@ -181,19 +168,17 @@ alert("I am an alert box!");
 			<div id="tabs_header">
 			<ul class="tabs">
 				  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
-				  <li><a class="active" href="#tabs_desc">How they'll Fit</a></li>
-				  <li><a  href="#tabs_data">See Data</a></li>
+				  <li><a class="active" href="#tab_desc">How they'll Fit</a></li>
+				  <li><a  href="#tab_table">See Data</a></li>
 			</ul>		
 			</div> <!--closes #tabs_header-->
 			
 			<div id="tabs_content">
-				<ul>
-				<li id="tabs_desc">	
-					<div id="fit_desc"></div>
-				</li>			
-				<li id="tabs_data">
-				<div id="datatable" class="alpha omega ten columns">
-					<table>
+				<ul class="tabs-content">
+  				<!-- Give ID that matches HREF of above anchors -->
+  				<li class="active" id="tab_desc"><div id="fit_desc"></div></li>
+ 				<li id="tab_table"><div id="datatable">
+										<table>
 						<tr>
 						  <td id="designer_label"></td>
 						  <td id="designer_ref">error</td>
@@ -255,10 +240,9 @@ alert("I am an alert box!");
 						  <td id="inseam_comp">error</td>
 						</tr>				
 					</table> 
-				</div><!--closes #datatable-->		
-				</li><!--closes #tabs_data-->
-				</ul>
-			<br/>	
+					</div><!--closes #datatable-->	</li>
+  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
+</ul>
 			</div><!--closes #tabs_content-->
 		</div><!--closes #descrip-->	
 	</div> <!--closes #leftside-->
@@ -334,25 +318,6 @@ alert("I am an alert box!");
 						
 {% endfor %}
 </div><!--closes thumbnails-->
-
-<!-- Standard <ul> with class of "tabs" -->
-<ul class="tabs">
-  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
-  <li><a class="active" href="#simple">Simple</a></li>
-  <li><a href="#lightweight">Lightweight</a></li>
-  <li><a href="#mobileFriendly">Mobile</a></li>
-</ul>
-
-<!-- Standard <ul> with class of "tabs-content" -->
-<ul class="tabs-content">
-  <!-- Give ID that matches HREF of above anchors -->
-  <li class="active" id="simple">The tabs are clean and simple unordered-list markup and basic CSS.</li>
-  <li id="lightweight">The tabs are cross-browser, but don't need a ton of hacky CSS or markup.</li>
-  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
-</ul>
-
-<!-- NOTE: jQuery that fires the change is in tabs.js -->
-
 </div><!--closes the hacky #container that I created in this page, even though there's also a #container-->
 </body>
 
