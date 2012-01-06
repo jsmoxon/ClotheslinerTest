@@ -1,12 +1,18 @@
-{% extends "base.html" %}
-{% block bodycontent%}
-
-
+{% load static %}
+{% load filters %}
 <head>
 {% load static %}
+<!--<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+!-->
 <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_skeleton.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
+
+
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/tabs.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/description.js"></script>
 <script type="text/javascript" src="{% get_static_prefix %}js/fit.js"></script>
 <script type="text/javascript">
@@ -54,47 +60,47 @@ var p = new Object();
 
 function makeCompare(sel)
 {
-	$('div#comp_pant_image #image').attr('src',p[sel.name]['image']);
+	$('div#comp_pant_image #compr_image').attr('src',p[sel.name]['image']);
 	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
-	$('div#comp_pant_1 li#designer').text(p[sel.name]['designer']);
-	$('div#comp_pant_1 li#model').text(p[sel.name]['style']);
-	$('div#comp_pant_1 li#waist').text(p[sel.name]['waist']);
-	$('div#comp_pant_1 li#inseam').text(p[sel.name]['inseam']);
-	$('div#comp_pant_1 li#cuff').text(p[sel.name]['cuff']);
-	$('div#comp_pant_1 li#thigh').text(p[sel.name]['thigh']);
-	$('div#comp_pant_1 li#front_rise').text(p[sel.name]['front_rise']);
-	$('div#comp_pant_1 li#back_rise').text(p[sel.name]['back_rise']);
-	$('div#comp_pant_1 li#hips').text(p[sel.name]['hips']);
-	$('div#comp_pant_1 li#knee').text(p[sel.name]['knee']);
-	$('div#comp_pant_1 li#outseam').text(p[sel.name]['outseam']);
-	$('div#comp_pant_1').attr('title', sel.name);
+	$('div#datatable td#designer_comp').text(p[sel.name]['designer']);
+	$('div#datatable td#style_comp').text(p[sel.name]['style']);
+	$('div#datatable td#waist_comp').text(p[sel.name]['waist']);
+	$('div#datatable td#inseam_comp').text(p[sel.name]['inseam']);
+	$('div#datatable td#cuff_comp').text(p[sel.name]['cuff']);
+	$('div#datatable td#thigh_comp').text(p[sel.name]['thigh']);
+	$('div#datatable td#front_rise_comp').text(p[sel.name]['front_rise']);
+	$('div#datatable td#back_rise_comp').text(p[sel.name]['back_rise']);
+	$('div#datatable td#hips_comp').text(p[sel.name]['hips']);
+	$('div#datatable td#knee_comp').text(p[sel.name]['knee']);
+	$('div#datatable td#outseam_comp').text(p[sel.name]['outseam']);
+	$('div#datatable').attr('title_comp', sel.name);
 
 	$('.small_tile').css("outline", "none"); 
-	$('.small_tile#'+sel.name).css("outline","3px solid #A8A8A8");
-	var describe = calcDiff(p[$('div#reference_pant').attr('title')], p[$('div#comp_pant_1').attr('title')]);
+	$('.small_tile#'+sel.name).css("outline","1px solid #A8A8A8");
+	var describe = calcDiff(p[$('div#datatable').attr('title_ref')], p[$('div#datatable').attr('title_comp')]);
         $('#fit_desc').html(describe);
 	$('div#explain').html("");
 }
 
 function makeReference(sel)
 {
-	$('div#ref_pant_image #image').attr('src',p[sel.name]['image']);
+	$('div#ref_pant_image #refr_image').attr('src',p[sel.name]['image']);
 	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
-	$('div#reference_pant li#designer').text(p[sel.name]['designer']);
-	$('div#reference_pant li#model').text(p[sel.name]['style']);
-	$('div#reference_pant li#waist').text(p[sel.name]['waist']);
-	$('div#reference_pant li#inseam').text(p[sel.name]['inseam']);
-	$('div#reference_pant li#cuff').text(p[sel.name]['cuff']);
-	$('div#reference_pant li#thigh').text(p[sel.name]['thigh']);
-	$('div#reference_pant li#front_rise').text(p[sel.name]['front_rise']);
-	$('div#reference_pant li#back_rise').text(p[sel.name]['back_rise']);
-	$('div#reference_pant li#hips').text(p[sel.name]['hips']);
-	$('div#reference_pant li#knee').text(p[sel.name]['knee']);
-	$('div#reference_pant li#outseam').text(p[sel.name]['outseam']);
-	$('div#reference_pant').attr('title', sel.name);
+	$('div#datatable td#designer_ref').text(p[sel.name]['designer']);
+	$('div#datatable td#style_ref').text(p[sel.name]['style']);
+	$('div#datatable td#waist_ref').text(p[sel.name]['waist']);
+	$('div#datatable td#inseam_ref').text(p[sel.name]['inseam']);
+	$('div#datatable td#cuff_ref').text(p[sel.name]['cuff']);
+	$('div#datatable td#thigh_ref').text(p[sel.name]['thigh']);
+	$('div#datatable td#front_rise_ref').text(p[sel.name]['front_rise']);
+	$('div#datatable td#back_rise_ref').text(p[sel.name]['back_rise']);
+	$('div#datatable td#hips_ref').text(p[sel.name]['hips']);
+	$('div#datatable td#knee_ref').text(p[sel.name]['knee']);
+	$('div#datatable td#outseam_ref').text(p[sel.name]['outseam']);
+	$('div#datatable').attr('title_ref', sel.name);
 	
 	$('.small_tile').css("border", "none");
-	$('.small_tile#'+sel.name).css("border","3px solid #505050 ");
+	$('.small_tile#'+sel.name).css("border","1px solid #505050 ");
 	$('div#explain').html("");
 }
 
@@ -103,8 +109,8 @@ function unfitItem(item)
 	cart.splice(cart.indexOf(item), 1)
 	$('.thumbnail#thumb'+item).hide();
 	window.opener.popupCallback(cart);
-	if (item == $('div#reference_pant').attr('title')) {makeReference(document.getElementById("{{reference.id}}"));}
-	compID = $('div#comp_pant_1').attr('title');
+	if (item == $('div#reference_pant').attr('title_ref')) {makeReference(document.getElementById("{{reference.id}}"));}
+	compID = $('div#comp_pant_1').attr('title_comp');
 	if (item == compID)
 	{
 		compedID = "{{compared.id}}";
@@ -121,7 +127,6 @@ function unfitItem(item)
 		makeCompare(document.getElementById(compID));
 	}
 }
-
 </script>
 
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
@@ -129,76 +134,121 @@ function unfitItem(item)
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 
-<div id="compare" class="alpha omega grid_16"> <!--functions as a body content div-->
+<div class="container">
+  	<div id="header" class= "alpha omega sixteen columns">
+    	<div id="title" class="alpha eight columns">
+			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+			<h3>find pants that fit (beta)</h3>
+        </div> <!--closes the title div-->
+      
+		<div id="headerlinks" class="omega eight columns">
+		  <ul>
+			<li><a href="/demonstration/search/">Search</a></li>
+			<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
+			<!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
+			</ul>
+		</div> <!--closes the headerlinks div-->
+    <hr />
+	</div> <!--closes the header div-->
 
-	<div id="leftside" class="alpha omega grid_10">
-		<div id="ref_pant_image" class="alpha omega grid_4">
-			<a id="ref_image" href=""><img id="image" class="border" src=""/ alt="ref"></a>
+	
+	<div id="compare" class="sixteen columns"> <!--functions as a body content div-->
+	
+	<div id="leftside" class="ten columns">
+		<div id="ref_pant_image" class="three columns">
+			<a id="ref_image" href=""><img id="refr_image" class="border" src=""/ alt="ref"></a>
 		</div><!--closes #ref_pant_image-->
 		
-		<div id="comp_pant_image" class="alpha omega grid_4">
-			<a id="comp_image" href=""><img id="image" class="outline" src=""/></a>
+		<div id="comp_pant_image" class="five columns scale-with-grid">
+			<a id="comp_image" href=""><img id="compr_image" class="outline" src=""/></a>
 		</div><!--closes #comp_pant_image-->
 	
-		<div id="compdatatable" class="alpha omega grid_10">
-			<div id="labels" class="alpha omega grid_2">
-				<ul class="measurement_data">
-					<li id="designer">Designer</li>
-					<li id="model">Model</li>
-					<li id="waist">Waist</li>
-					<li id="inseam">Inseam</li>
-					<li id="cuff">Cuff</li>
-					<li id="thigh">Thigh</li>
-					<li id="front_rise">Front rise</li>
-					<li id="back_rise">Back rise</li>
-					<li id="hips">Hips</li>
-					<li id="knee">Knee</li>
-					<li id="outseam">Outseam</li>
-				</ul>
-			</div><!--closes labels-->
+		<div id="descrip" class="ten columns" layout>
+			<div id="tabs_header">
+			<ul class="tabs">
+				  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
+				  <li><a class="active" href="#tab_desc">How they'll Fit</a></li>
+				  <li><a  href="#tab_table">See Data</a></li>
+			</ul>		
+			</div> <!--closes #tabs_header-->
 			
-			<div id="comp_images">
-			<div id="reference_pant" class="alpha omega grid_4">
-				<ul class="measurement_data">
-					<li id="designer" class="designer"></li>
-					<li id="model" class="designer"></li>
-					<li id="waist"></li>
-					<li id="inseam"></li>
-					<li id="cuff"></li>
-					<li id="thigh"></li>
-					<li id="front_rise"></li>
-					<li id="back_rise"></li>
-					<li id="hips"></li>
-					<li id="knee"></li>
-					<li id="outseam"></li>
-				</ul>
-			</div><!--closes reference_pant-->
-		
-			<div id="comp_pant_1" class="alpha omega grid_4">
-				<div class="measurements">
-					<ul class="measurement_data">
-						<li id="designer" class="designer"></li>
-						<li id="model" class="designer"></li>
-						<li id="waist"></li>
-						<li id="inseam"></li>
-						<li id="cuff"></li>
-						<li id="thigh"></li>
-						<li id="front_rise"></li>
-						<li id="back_rise"></li>
-						<li id="hips"></li>
-						<li id="knee"></li>
-						<li id="outseam"></li>
-					</ul>
-				</div><!--closes #measurements-->
-			</div><!--closes #comp_pant_1-->
-			</div> <!--closes #comp_images-->
-		
-		</div> <!--closes #compdatatable-->
+			<div id="tabs_content">
+				<ul class="tabs-content">
+  				<!-- Give ID that matches HREF of above anchors -->
+  				<li class="active" id="tab_desc"><div id="fit_desc"></div></li>
+ 				<li id="tab_table"><div id="datatable">
+										<table>
+						<tr>
+						  <td id="designer_label"></td>
+						  <td id="designer_ref">error</td>
+						  <td id="designer_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="style_label"class="firstcolumn">Style</td>
+						  <td id="style_ref">error</td>
+						  <td id="style_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="size_label">Size</td>
+						  <td id="size_ref">pending </td>
+						  <td id="size_comp">pending</td>
+						</tr>
+						<tr>
+						  <td id="waist_label">Actual waist</td>
+						  <td id="waist_ref">error </td>
+						  <td id="waist_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="front_rise_label">Front rise</td>
+						  <td id="front_rise_ref">error </td>
+						  <td id="front_rise_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="back_rise_label">Rear rise</td>
+						  <td id="back_rise_ref">error </td>
+						  <td id="back_rise_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="hip_label">Hip</td>
+						  <td id="hip_ref">error </td>
+						  <td id="hip_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="thigh_label"> Thigh</td>
+						  <td id="thigh_ref">error </td>
+						  <td id="thigh_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="knee_label">Knee</td>
+						  <td id="knee_ref">error </td>
+						  <td id="knee_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="cuff_label">Cuff</td>
+						  <td id="cuff_ref">error </td>
+						  <td id="cuff_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="outseam_label">Outseam</td>
+						  <td id="outseam_ref">error </td>
+						  <td id="outseam_comp">error</td>
+						</tr>
+						<tr>
+						  <td id="inseam_label">Actual inseam</td>
+						  <td id="inseam_ref">error </td>
+						  <td id="inseam_comp">error</td>
+						</tr>				
+					</table> 
+					</div><!--closes #datatable-->	</li>
+  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
+</ul>
+			</div><!--closes #tabs_content-->
+		</div><!--closes #descrip-->	
 	</div> <!--closes #leftside-->
 	
-	<div id="rightside" class="alpha omega grid_5">
-	<h3> Where to buy </h3>
-		<div id="retailerinfo" class="alpha omega grid_5">
+	<div id="rightside" class="one-third column">
+		<div id="retailerinfo">
+		<h3> Where to buy </h3>
 			<div id="retailerdesc" class="retailer_label">
 				<p class="retail_price retail_about"> $150</p>
 				<p> at </p>
@@ -225,16 +275,14 @@ function unfitItem(item)
 			</div><!--closes #retailerdesc-->
 			
 		</div> <!--closes #retailerinfo -->
-	<h3> How they'll fit </h3>	
-		<div id="descrip" class="alpha omega grid_5">
-				<li id="fit_desc"></li><br/>
-		</div><!--closes descrip-->
+	
+
 	</div><!--closes #rightside-->
 	
 	
 	<div id="explain" class="grid_4">
 	</div> <!--closes #explain-->
-
+	
 
 </div><!--closes #compare-->
 
@@ -266,8 +314,10 @@ function unfitItem(item)
 		   height="100">
 
 </div><!--closes thumbnail-->
+						
 {% endfor %}
 </div><!--closes thumbnails-->
+</div><!--closes the hacky #container that I created in this page, even though there's also a #container-->
 </body>
 
-{% endblock bodycontent%}
+

@@ -37,15 +37,19 @@ margin:0;
 }
 */
 
+.layout {background-color:green;}
 
 h3 {
 line-height:normal;
 }
 
-#retailerinfo, #descrip {
-background-color:#A8A8A8;
+#retailerinfo {
+background-color:;
+border: 1px solid #A8A8A8;
 padding:5px;
 }
+
+#descrip {}
 
 #retailerinfo p{
 display: inline;
@@ -111,7 +115,32 @@ padding:2px;
 clear:left;
 background-color:;
 overflow:hidden;
+border:#DDDDDD;
+}
 
+#datatable {
+}
+
+td {padding:5px;}
+tr:nth-child(2n+4) {background: #F5F5F5}
+
+/*
+.columnar {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid green;
+}
+
+.measurements {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid red;
+}
+
+.measurementdata {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid blue;
 }
 
 #comp_images {
@@ -120,6 +149,7 @@ overflow:hidden;
 display:inline;
 max-width:170px;
 }
+*/
 
 li .designer {
 }
@@ -142,13 +172,13 @@ margin-left: 100px;
 	overflow:hidden;
 	}
 
+#comp_pant_image {
+float:right;
+}
 
 #explain {
 background: #DBDBDB;
 }
-
-
-
 
 #explain li {
 padding: 8px;
@@ -157,6 +187,16 @@ list-style-type: circle;
 
 #reference_pant .measurements{
 	float:right;
+}
+
+#refr_image {
+width: 150px;
+height: auto;
+}
+
+#compr_image {
+width: 300px;
+height: auto;
 }
 
 .thumbnails  {
@@ -171,9 +211,88 @@ margin-top: 60px;
 }
 
 .outline {
-outline: 3px solid #A8A8A8;
+outline: 1px solid #A8A8A8;
 }
 
 .border {
-border: 3px solid #505050;
+border: 1px solid #505050;
+}
+
+.container {
+margin-top:-40px;
+}
+
+/* #PK ADDED
+================================================== */
+#header {
+background-color:;
+}
+
+#headerlinks {
+float:right;
+background-color:;
+text-align:right;
+}
+
+#title {
+background-color:;
+}
+
+#headerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+}
+ 
+#footer {text-align: center; }
+#footer li {display: inline; padding:1em;}
+
+
+
+/*
+#header, #footer {height: 100px; background-color: ; text-align: center;}
+#header {margin-bottom: 10px; margin-top: 30px; background-color:;}
+#footer {margin-top:30px; margin-bottom:10px; clear:both; }
+
+#footerlinks{
+width:80%;
+margin:auto;
+text-align:center;
+margin-top:5px;
+}
+
+#headerlinks li, #footerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+font-size: 16px;
+}
+*/
+
+a {text-decoration: none; color: 838181;}
+a:hover {color:9C052A;} 
+
+h1 {
+color: 83818;
+font-size: 48px;
+line-height: 10px;
+font-family: 'Raleway', cursive;
+}
+
+h2 {
+color: black;
+font-family: 'Sorts Mill Goudy', serif;
+font-size: 16px;
+}
+
+h3 {
+color: 838181;
+font-size: 20px;
+font-family: 'Raleway', cursive;
 }

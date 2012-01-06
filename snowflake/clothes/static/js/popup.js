@@ -46,7 +46,8 @@ function popupThis(form, url)
 {
 	//alert("foo"); //for debugging; tells us that the JS doesn't fail prior to this
 	//alert("cart: "+cart); //for debugging; this records (to Console) how many pants get added
-	window.open(url, "Compare Pants", "status=0, height=1500, width=1100");
+	//window.open(url, "Compare Pants", "status=0, height=1500, width=1100");
+	window.open(url, "Compare Pants");
 	//window.open('', "", "");
 	form.target = "Compare Pants";
 	form.submit();

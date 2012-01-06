@@ -36,7 +36,7 @@ Clothesliner
 
 <div id="container" class="container_16">
 
-  <div id="header" class= "alpha omega grid_16">
+  	<div id="header" class= "alpha omega grid_16">
     <div id="title">
       <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
       <h4>find pants that fit (beta)</h4>
@@ -45,15 +45,12 @@ Clothesliner
     <div id="headerlinks">
       <ul>
         <li><a href="/demonstration/search/">Search</a></li>
-		<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare Items(0)</li>
+		<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
         <!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
-        <li><a href="/demonstration/about/">About</a></li>
-        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-        <li><a href="/demonstration/logout">Logout</a></li>
         </ul>
       </div> <!--closes the headerlinks div-->
     <hr />
-    </div> <!--closes the header div-->
+	</div> <!--closes the header div-->
 
 
 {% block refpant %}
@@ -66,8 +63,6 @@ Clothesliner
     <hr />
     <div id="footerlinks">
       <ul>
-        <li><a href="/demonstration/search/">Search</a></li>
-        <li><a href="/demonstration/compare/">Compare Items</a></li>
         <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
         <li><a href="/create/">Enter a Pant</a></li>
