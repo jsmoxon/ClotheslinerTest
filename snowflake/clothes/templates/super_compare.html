@@ -1,11 +1,10 @@
 {% load static %}
 {% load filters %}
-
-
 <head>
 {% load static %}
 <!--<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
 !-->
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_skeleton.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
@@ -137,18 +136,18 @@ function unfitItem(item)
 
 <div class="container">
   	<div id="header" class= "alpha omega sixteen columns">
-    <div id="title">
-      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-      <h3>find pants that fit (beta)</h3>
-      </div> <!--closes the title div-->
+    	<div id="title" class="alpha eight columns">
+			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+			<h3>find pants that fit (beta)</h3>
+        </div> <!--closes the title div-->
       
-    <div id="headerlinks">
-      <ul>
-        <li><a href="/demonstration/search/">Search</a></li>
-		<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
-        <!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
-        </ul>
-      </div> <!--closes the headerlinks div-->
+		<div id="headerlinks" class="omega eight columns">
+		  <ul>
+			<li><a href="/demonstration/search/">Search</a></li>
+			<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
+			<!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
+			</ul>
+		</div> <!--closes the headerlinks div-->
     <hr />
 	</div> <!--closes the header div-->
 
@@ -160,7 +159,7 @@ function unfitItem(item)
 			<a id="ref_image" href=""><img id="refr_image" class="border" src=""/ alt="ref"></a>
 		</div><!--closes #ref_pant_image-->
 		
-		<div id="comp_pant_image" class="five columns">
+		<div id="comp_pant_image" class="five columns scale-with-grid">
 			<a id="comp_image" href=""><img id="compr_image" class="outline" src=""/></a>
 		</div><!--closes #comp_pant_image-->
 	

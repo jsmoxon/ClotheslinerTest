@@ -59,12 +59,6 @@
 		-webkit-text-size-adjust: 100%;
  }
  
-/* #PK ADDED
-================================================== */
-#headerlinks {float:right;}
- 
-#footer {text-align: center; }
-#footer li {display: inline; padding:1em;}
 
 
 /* #Typography
@@ -97,7 +91,7 @@
 	blockquote cite:before { content: "\2014 \0020"; }
 	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
 
-	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 0px 0 15px; height: 0; }
 
 
 /* #Links

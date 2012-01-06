@@ -180,9 +180,6 @@ float:right;
 background: #DBDBDB;
 }
 
-
-
-
 #explain li {
 padding: 8px;
 list-style-type: circle;
@@ -219,4 +216,83 @@ outline: 1px solid #A8A8A8;
 
 .border {
 border: 1px solid #505050;
+}
+
+.container {
+margin-top:-40px;
+}
+
+/* #PK ADDED
+================================================== */
+#header {
+background-color:;
+}
+
+#headerlinks {
+float:right;
+background-color:;
+text-align:right;
+}
+
+#title {
+background-color:;
+}
+
+#headerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+}
+ 
+#footer {text-align: center; }
+#footer li {display: inline; padding:1em;}
+
+
+
+/*
+#header, #footer {height: 100px; background-color: ; text-align: center;}
+#header {margin-bottom: 10px; margin-top: 30px; background-color:;}
+#footer {margin-top:30px; margin-bottom:10px; clear:both; }
+
+#footerlinks{
+width:80%;
+margin:auto;
+text-align:center;
+margin-top:5px;
+}
+
+#headerlinks li, #footerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+font-size: 16px;
+}
+*/
+
+a {text-decoration: none; color: 838181;}
+a:hover {color:9C052A;} 
+
+h1 {
+color: 83818;
+font-size: 48px;
+line-height: 10px;
+font-family: 'Raleway', cursive;
+}
+
+h2 {
+color: black;
+font-family: 'Sorts Mill Goudy', serif;
+font-size: 16px;
+}
+
+h3 {
+color: 838181;
+font-size: 20px;
+font-family: 'Raleway', cursive;
 }
