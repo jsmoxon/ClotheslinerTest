@@ -288,7 +288,7 @@ function unfitItem(item)
 
 
 
-<div class="thumbnails" class="grid16">
+<div class="thumbnails" class="sixteen columns">
 	<div class="thumbnail" id="thumb{{reference.id}}">
 	<input  type="image"
 			onclick="makeCompare(this)" 
@@ -317,6 +317,17 @@ function unfitItem(item)
 						
 {% endfor %}
 </div><!--closes thumbnails-->
+<div id="footer" class="alpha omega sixteen columns">
+    <hr>
+    <div id="footerlinks">
+      <ul>
+        <li><a href="/create/">Enter a Pant</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/demonstration/logout">Logout</a></li>
+      </ul>
+    </div> <!--closes the footerlinks div-->
+  </div> <!--closes the footer div-->
 </div><!--closes the hacky #container that I created in this page, even though there's also a #container-->
 </body>
 
