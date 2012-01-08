@@ -1,8 +1,0 @@
-bin/
-include/
-lib/
-*.pyc
-*.py~
-*.html~
-*.css~
-*.js~
