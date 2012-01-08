@@ -3,7 +3,7 @@ import re, urllib2, csv
 import simplejson as json
 
 pantWriter = csv.writer(open('zappos.csv', 'wb'), delimiter=",")
-linky = "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=0&s=goliveRecentSalesStyle/desc/"
+
 link_list = "http://www.zappos.com/mens-pants-clothing~1z"
 x = urllib2.urlopen(link_list)
 soup = BeautifulSoup(x)
@@ -23,19 +23,11 @@ for pant in prod_url_list:
     #now use api
     api_url = "http://api.zappos.com/Product/"+final_sku+"?includes=[%22measurements%22]&key=cf3dffea27e37c3371ee725fa5f19bea2c23e5de"
     z = urllib2.urlopen(api_url)
+    z_soup = BeautifulSoup(z)
     jsonCity = json.load(z)
-    try:
-        waist =  jsonCity['product'][0]['measurements'][0]['value']
-    except:
-        waist = "no go"
-    try:
-        outseam =  jsonCity['product'][0]['measurements'][1]['value']
-    except:
-        outseam = "no go"
-    try:
-        inseam =  jsonCity['product'][0]['measurements'][2]['value']
-    except:
-        inseam = "no go"
+    waist =  jsonCity['product'][0]['measurements'][0]['value']
+    outseam =  jsonCity['product'][0]['measurements'][1]['value']
+    inseam =  jsonCity['product'][0]['measurements'][2]['value']
     front =  jsonCity['product'][0]['measurements'][3]['value']
     back =  jsonCity['product'][0]['measurements'][4]['value']
     leg =  jsonCity['product'][0]['measurements'][5]['value']
@@ -46,7 +38,7 @@ for pant in prod_url_list:
     meas_taken = y.find(text=re.compile('Product measurements'))
     knee = ""
     thigh=""
-    pantWriter.writerow([prodURL, brand, style, price, picURL, meas_taken, waist, front, inseam, knee, leg, thigh, back, outseam])
-   
+    pantWriter.writerow([prodURL, brand, style, price, picURL, meas_taken, waist, front, inseam, knee, cuff, thigh, back, outseam])
+
 
 
