@@ -4,15 +4,13 @@ import simplejson as json
 
 pantWriter = csv.writer(open('zappos.csv', 'wb'), delimiter=",")
 linky = ["http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=0&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=1&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=2&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=3&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=4&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=5&s=goliveRecentSalesStyle/desc/","http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=6&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=7&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=8&s=goliveRecentSalesStyle/desc/","http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=9&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=10&s=goliveRecentSalesStyle/desc/", "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=11&s=goliveRecentSalesStyle/desc/"]
-link_list = "http://www.zappos.com/mens-pants-clothing~1z"
-short_linky = ["http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wHAAQLiAgMBGAI.zso?p=1&s=goliveRecentSalesStyle/desc/"]
-for link in short_linky: 
-    x = urllib2.urlopen(link)
-    soup = BeautifulSoup(x)
-    list = soup.findAll("div", {"id": "searchResults"})
-    parse = BeautifulSoup(str(list))
-    url_search=parse.findAll("a")
-    prod_url_list = []
+link_list = "http://www.zappos.com/mens-pants-clothing~1q#!/men-pants/CKvXARDK1wE6AroFwAEC4gIEARgCBw.zso?s=goliveRecentSalesStyle/desc/"
+x = urllib2.urlopen(link_list)
+soup = BeautifulSoup(x)
+list = soup.findAll("div", {"id": "searchResults"})
+parse = BeautifulSoup(str(list))
+url_search=parse.findAll("a")
+prod_url_list = []
 for item in url_search:
     prod_url_list.append(item['href'])
 for pant in prod_url_list:
@@ -33,7 +31,7 @@ for pant in prod_url_list:
     try:
         outseam =  jsonCity['product'][0]['measurements'][1]['value']
     except:
-        outseam = "no go"     
+        outseam = "no go"
     try:
         inseam =  jsonCity['product'][0]['measurements'][2]['value']
     except:
@@ -41,10 +39,7 @@ for pant in prod_url_list:
     front =  jsonCity['product'][0]['measurements'][3]['value']
     back =  jsonCity['product'][0]['measurements'][4]['value']
     leg =  jsonCity['product'][0]['measurements'][5]['value']
-    try:
-        price = y.find("span", {'id':'price'}).contents[0]
-    except:
-        price = y.find("span", {"class": 'sale'}).contents[1]
+    price = y.find("span", {'id':'price'}).contents[0]
     brand = y.find("a", {'class':'to-brand'}).contents[0]
     style = y.find('span', {'class':'prName'}).contents[1]
     picURL = y.find('img', {'id':'detailImage'})['src']
