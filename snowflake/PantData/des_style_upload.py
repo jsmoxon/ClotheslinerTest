@@ -1,5 +1,5 @@
-project_home="/Users/jmoxon/ClotheslinerTest/snowflake/"
-csv_home="/Users/jmoxon/needsupply_denim.csv"
+project_home="/Users/jackmoxon/ClotheslinerTest/snowflake/"
+csv_home="/Users/jackmoxon/ClotheslinerTest/snowflake/PantData/test.csv"
 
 
 import sys, os
@@ -10,8 +10,6 @@ from clothes.models import *
 
 import csv
 dataReader = csv.reader(open(csv_home, "rU"), delimiter=',')
-
-
 
 for row in dataReader:
     item=Style()
