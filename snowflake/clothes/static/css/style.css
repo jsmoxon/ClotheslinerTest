@@ -16,26 +16,11 @@ font-family: 'Sorts Mill Goudy', serif;
 font-size: 16px;
 }
 
-h4 {
-color: 838181;
-font-size: 20px;
-line-height: 20px;
-font-family: 'Raleway', cursive;
-}
-
 h3 {
 color: 838181;
-font-size: 30px;
-line-height: 30px;
+font-size: 20px;
+line-height: 0px;
 font-family: 'Raleway', cursive;
-}
-
-h5 {
-color: black;
-font-size: 14px;
-line-height: 8px;
-font-weight:normal;
-font-family: 'helvetica';;
 }
 
 ul{
@@ -147,18 +132,8 @@ vertical-align:middle;
 
 /* HOME(SEARCH) PAGE */
 
-#mainpant {
-background:;
-margin-top:30px;
-}
-
 #mainsearch {
 min-height: 400px;
-margin-top:30px;
-}
-
-.searchform {
-margin-left:100px;
 }
 
 #mainsearch a {
@@ -170,11 +145,6 @@ text-decoration:underline;
 
 #mainsearch a:hover {color:9C052A;} 
 
-.comparebutton {
-color: #838181;
-font-size:20px;
-
-}
 
 /* RESULTS PAGE */
 
@@ -397,10 +367,6 @@ width:auto;
 clear:right;
 }
 
-.entry_description {
-float:right;
-width: 300px;
-}
 
 /* Landing Page */
 #companyname h1, h2{
