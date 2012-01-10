@@ -250,6 +250,14 @@ text-align:right;
 #footer {text-align: center; }
 #footer li {display: inline; padding:1em;}
 
+#footerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+}
+
 
 
 /*
@@ -295,4 +303,18 @@ h3 {
 color: 838181;
 font-size: 20px;
 font-family: 'Raleway', cursive;
+}
+
+#searchform {
+margin-left:20px;
+}
+
+#sidebar {
+margin-top:250px;
+float: left;
+position:fixed;
+}
+
+#feedback {
+width: 100px;
 }

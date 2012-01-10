@@ -69,7 +69,7 @@ function makeForm(child)
 	csrfToken.name = "csrfmiddlewaretoken";
 	csrfToken.type = "hidden";
 	csrfToken.value = "{{token}}";
-	
+
 	newForm.appendChild(csrfToken);
 	newForm.appendChild(child);
         document.body.appendChild(newForm)
@@ -118,7 +118,7 @@ function popItUp(item)
 			   id="fittingroombutton">
 	</div><!--closes #imagecontainer-->
 
-	
+
 	<div class="desc">
 		<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="{{values.waist}}">
 		<input id="circlewaist" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.waist}}" value="+"></br>

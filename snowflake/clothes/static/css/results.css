@@ -1,0 +1,196 @@
+/* RESULTS PAGE */
+
+.tile {
+	margin-left: 5px;
+	float:left;
+	width:180px;
+	height:280px;
+	background-color:;
+	overflow:hidden;
+}
+
+#item {
+padding-bottom: 60px;
+background:}
+
+#imagecontainer{
+	height:220px;
+	width:180px;
+	text-align:center;
+	cursor: pointer;
+	z-index:1;
+}
+
+#resultimage {
+	width: 180px;
+	height:220px;
+}
+
+.pantlabel{
+	position:relative;
+	top:-55px;
+	height: 55px;
+	background-color:#FFFFFF;
+	opacity:.8;
+	z-index:2;
+}
+
+#fittingroombutton {
+	color:white;
+	float:right;
+	border:none;
+	position:relative;
+	background-color:838181;
+	opacity: .5;
+	top:-275px;
+	z-index:2;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
+.fitting_room {
+	color:white;
+	float:right;
+	border:none;
+	position:relative;
+	background-color:838181;
+	opacity: .5;
+	top:-275px;
+	z-index:2;
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
+.pantlabel li {
+	font: 'Helvetica Neue';
+	font-size:12px;
+	z-index:3;
+	color: black;
+}
+
+.pantlabel ul {
+	padding-left:7px
+}
+
+.dropfilterLink {
+	background-color: transparent;
+	text-decoration: none;
+	border: none;
+	color: blue;
+}
+
+.desc {
+	position:relative;
+	padding-top: 30px;
+}
+
+#breadcrumb {
+background-color:;
+margin-top:-50px;
+margin-left:250px;
+padding-top:20px;
+}
+
+#breadcrumb button{
+display: inline;
+padding:1em;
+}
+
+.addFilterLink {
+	cursor: pointer;
+	position:absolute;
+	right:15px;
+	text-align:center;
+	vertical-align:middle;
+	color: #838181;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	font-variant:small-caps;
+	font-size: 12px;
+	background-color:transparent;
+	border:none;
+	height:15px;
+}
+
+.dropFilterLink {
+	cursor: pointer;
+	color: #838181;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	font-variant:small-caps;
+	font-size: 12px;
+	background-color:transparent;
+	border:none;
+	height:15px;
+	display:inline;
+}
+
+.addplus {
+	cursor: pointer;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	color:white;
+	border:none;
+	background-color:838181;
+	opacity:.5;
+	height: 20px;
+	width: 20px;
+	display:inline;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	position:relative;
+	left:160px;
+	top:-3px;
+}
+
+.dropx {
+	cursor: pointer;
+	font-family: 'Helvetica Neue Reg', sans-serif;
+	color:white;
+	border:none;
+	background-color:838181;
+	opacity:.5;
+	height: 20px;
+	width: 20px;
+	display:inline;
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+	position:relative;
+	left:-15px;
+	top:-3px;
+}
+
+.fitting_room {
+}
+#circlex {
+
+}
+
+li.make, li.model, li.price, li.originalprice, li.sale {
+display: inline;
+color: 838181;
+font-family:;
+font-size: 12px;
+}
+
+li.model, li.price, li.originalprice {color: 838181;}
+li.price, li.originalprice {margin-left:15px;}
+li.sale {color:9C052A; margin-left:2px;}
+li.originalprice {text-decoration: line-through;}
+
+li.model {overflow:hidden; white-space: nowrap; width: 180px;}
+
+li.colors {
+margin: 0;
+padding: 0;
+display: inline;
+list-style: none;
+}
+
+#ref_make, #ref_model, #ref_price {font-size: 14px;}
+
+#refpant li.category{
+color: #838181;
+font-family:;
+}

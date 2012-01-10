@@ -3,10 +3,10 @@
 <html>
 <head>
 <link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/reset.css" >
-  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/ninesixty.css" >
-  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/text.css" >
-  <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/style.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_skeleton.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
  <script type="text/javascript">
   function feedbackPopup() {
@@ -85,59 +85,63 @@ function genMeasurements(des, sel)
 <!-- start Mixpanel <script type="text/javascript">var mpq=[];mpq.push(["init","22c229665c519c7fb9b7a703e0df621e"]);(function(){var b,a,e,d,c;b=document.createElement("script");b.type="text/javascript";b.async=true;b.src=(document.location.protocol==="https:"?"https:":"http:")+"//api.mixpanel.com/site_media/js/api/mixpanel.js";a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a);e=function(f){return function(){mpq.push([f].concat(Array.prototype.slice.call(arguments,0)))}};d=["init","track","track_links","track_forms","register","register_once","identify","name_tag","set_config"];for(c=0;c<d.length;c++){mpq[d[c]]=e(d[c])}})();
 </script> end Mixpanel -->
 </head>
+
 <body onload="genDesigners()">
 <div id="sidebar">
     <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" alt="" onClick="feedbackPopup()" value="Feedback">
 </div>
 
-<div id="container" class="container_16">
+<div id="container" class="container" style="margin-top:20px">
+  	<div id="header" class= "alpha omega sixteen columns">
+    	<div id="title" class="alpha eight columns">
+			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+			<h3>find pants that fit (beta)</h3>
+        </div> <!--closes the title div-->
+      
+		<div id="headerlinks" class="omega eight columns">
+		  <ul>
+			<li><a href="/demonstration/search/">Search</a></li>
+			<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
+			<!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
+			</ul>
+		</div> <!--closes the headerlinks div-->
+    <hr />
+	</div> <!--closes the header div-->
+	
 
-  <div id="header" class= "alpha omega grid_16">
-    <div id="title">
-      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-      <h4>find  pants that fit (beta)</h4>
-      </div> <!--closes the title div-->
-    <div id="headerlinks">
-      <ul>
-        <li><a href="/demonstration/search/">Search</a></li>
-        <li><a href="/demonstration/compare/">Compare Items</a></li>
-        <li><a href="/demonstration/about/">About</a></li>
-        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-        <li><a href="/demonstration/logout">Logout</a></li>
-        </ul>
-      </div> <!--closes the headerlinks div-->
-    <hr>
-    </div> <!--closes the header div-->
-<div id="mainpant" class="grid_4 push_3">
-  <img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant" alt="pant drawing"/>
-</div><!--clses mainpant div-->
-<div id="mainsearch" class="grid_7 push_4">
-<h3>Choose a pant you know...</h3>
-<form action="/demonstration/reference/" method="post" name="selectReferencePant" class="searchform">
-	{% csrf_token %}
-	<div id="selectors">
-		<select id="designers" name="designers" onchange="genStyles(this)"></select><br>
-		<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select><br>
-		<select id="measurements" name="measurements"></select><br>
-		<input type="submit" class="comparebutton" value="Compare">
-	</div>
-</form>
-<br/>
-<h3>...and we'll return pants that fit similarly.</h3>
-<br>
-<p> Don't see your pant? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
+
+<div id="mainsearch" class="eight columns offset-by-four">
+
+	<div id="mainpant" class="three columns" style="padding-right:30px">
+	  <img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant scale-with-grid" style="max-width:170px" alt="pant drawing"/>
+	</div><!--clses mainpant div-->
+
+	<div id="searchform" class="four colums offset-by-one">
+		<h3>Choose a pant you know...</h3>
+		<form action="/demonstration/reference/" method="post" name="selectReferencePant" class="searchform">
+			{% csrf_token %}
+			<div id="selectors">
+				<select id="designers" name="designers" onchange="genStyles(this)"></select>
+				<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select>
+				<select id="measurements" name="measurements"></select>
+				<input type="submit" class="comparebutton" value="Compare">
+			</div>
+		</form>
+		<h3>...and we'll return pants that fit similarly.</h3>
+	</div><!--closes #searchform-->
+	<br>
+		<p> Don't see your pant? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
 </div> <!--close #mainsearch -->
 
 
-<div id="footer" class="alpha omega grid_16">
+<div id="footer" class="alpha omega sixteen columns">
     <hr>
     <div id="footerlinks">
       <ul>
-        <li><a href="/demonstration/search/">Search</a></li>
-        <li><a href="/demonstration/compare/">Compare Items</a></li>
+        <li><a href="/create/">Enter a Pant</a></li>
         <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-        <li><a href="/create/">Enter a Pant</a></li>
+        <li><a href="/demonstration/logout">Logout</a></li>
       </ul>
     </div> <!--closes the footerlinks div-->
   </div> <!--closes the footer div-->
