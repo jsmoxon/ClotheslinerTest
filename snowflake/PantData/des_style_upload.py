@@ -1,5 +1,5 @@
-project_home="/Users/jmoxon/ClotheslinerTest/snowflake/"
-csv_home="/Users/jmoxon/needsupply_denim.csv"
+project_home="/Users/jackmoxon/ClotheslinerTest/snowflake/"
+csv_home="/Users/jackmoxon/ClotheslinerTest/snowflake/PantData/test.csv"
 
 
 import sys, os
@@ -17,6 +17,8 @@ for row in dataReader:
     item=Style()
     item.name = row[0]
     item.save()
-
+    des = Designer()
+    des.name = row[1]
+    des.save()
 
         
