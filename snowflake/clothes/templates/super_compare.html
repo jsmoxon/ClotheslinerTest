@@ -96,7 +96,8 @@ function makeCompare(sel)
     $('div#retailerdesc2 p#retailer2_location').text(p[sel.name]['retailer2_location']);
     $('div#retailerdesc2 p#retailer2_shipping').text(p[sel.name]['retailer2_shipping']);
     $('div#retailerdesc2 p#retailer2_returns').text(p[sel.name]['retailer2_returns']);
-    $('div#retailerdesc2 a#retailer2_url').text(p[sel.name]['retailer2_url']);
+    $('div#retailerinfo h3#pant_style').text(p[sel.name]['style']);
+    $('div#retailerinfo h6#pant_designer').text(p[sel.name]['designer']);
 
 
 	$('.small_tile').css("outline", "none"); 
@@ -275,6 +276,8 @@ function unfitItem(item)
 	
 	<div id="rightside" class="one-third column">
 		<div id="retailerinfo">
+		<h3 id="pant_style">Style Name</h6>
+		<h6 id="pant_designer">Pant Name</h3>
 		<h3> Where to buy </h3>
 			<div id="retailerdesc" class="retailer_label">
 				<p class="retail_price retail_about" id="retailer1_price">Retailer1 Price</p>

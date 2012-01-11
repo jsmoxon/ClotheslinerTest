@@ -1,5 +1,5 @@
 project_home="/Users/jackmoxon/ClotheslinerTest/snowflake/"
-csv_home="/Users/jackmoxon/ClotheslinerTest/snowflake/PantData/tester.csv"
+csv_home="/Users/jackmoxon/ClotheslinerTest/zappos.csv"
 
 import sys, os
 sys.path.append(project_home)
@@ -11,31 +11,34 @@ import csv
 dataReader = csv.reader(open(csv_home, "rU"), delimiter=',')
 
 for row in dataReader:
-    designer = Designer.objects.get(name = row[1])
-    style = Style.objects.get(name = row[2])
-    print designer, style
-    pant=Pant()
+    designer = Designer.objects.get(name = row[0])
+    style = Style.objects.get(name = row[1])
+    pant = Pant()
     pant.designer= designer
     pant.style = style
-    pant.url_link = row[0]
-    pant.picURL = row[4]
-    pant.retailer1_price = row[3]
-    pant.designer_waist = row[6]
+    pant.url_link = row[4]
+    pant.picURL = row[3]
+    pant.retailer1_price = row[2]
+    pant.designer_waist = row[5]
     pant.designer_inseam = row[7]
-    pant.waist = row[8]
-    pant.front_rise = row[9]
-    pant.inseam = row[10]
-    pant.knee = row[11]
-    pant.cuff = row[12]
-    pant.thigh = row[13]
- #   pant.back_rise = row[14]
- #   pant.outseam = row[15]
+    pant.waist = row[5]
+    pant.front_rise = row[8]
+    try:
+        pant.inseam = row[7]
+    except:
+        pant.inseam = "4.23"
+#    pant.knee = row[11]
+    pant.cuff = row[9]
+#    pant.thigh = row[13]
+    pant.back_rise = row[10]
+    pant.outseam = row[6]
  #   pant.hip = row[16]
-    pant.retailer1_name = row[19]
-    pant.retailer1_shipping = row[20]
-    pant.retailer1_returns = row[21]
-    pant.retailer1_url = row[24]
-    pant.retailer_description = row[25]
+    pant.retailer1_name = row[11]
+    pant.retailer1_shipping = row[12]
+    pant.retailer1_returns = row[13]
+    pant.retailer1_location = row[14]
+#    pant.retailer1_url = row[24]
+#    pant.retailer_description = row[25]
     pant.save()
-
+    print pant.waist
 
