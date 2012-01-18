@@ -93,8 +93,8 @@ function genMeasurements(des, sel)
 
   <div id="header" class= "alpha omega grid_16">
     <div id="title">
-        <img src="{% get_static_prefix %}images/blackbar.png" width=250px />
-<!--      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>-->
+
+      <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
       <h3>find  pants that fit (beta)</h3>
       </div> <!--closes the title div-->
     <div id="headerlinks">
