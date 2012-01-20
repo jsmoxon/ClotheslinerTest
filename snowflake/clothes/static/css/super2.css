@@ -256,6 +256,34 @@ position:fixed;
 width: 100px;
 }
 
+/* HOME.HTML */
+.signup {
+margin-top: 20px;
+background-color:#2F35EB;
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#2F35EB),color-stop(50%,#296AC6),color-stop(50%,#296AC6),color-stop(100%,#296AC6));
+background-image:-webkit-linear-gradient(top,#2F35EB 0,#296AC6 50%,#296AC6 50%,#296AC6 100%);
+background-image:-moz-linear-gradient(top,#2F35EB 0,#296AC6 50%,#296AC6 50%,#296AC6 100%);
+background-image:-ms-linear-gradient(top,#2F35EB 0,#296AC6 50%,#296AC6 50%,#296AC6 100%);
+background-image:-o-linear-gradient(top,#2F35EB 0,#296AC6 50%,#296AC6 50%,#296AC6 100%);
+background-image:linear-gradient(top,#2F35EB 0,#296AC6 50%,#296AC6 50%,#296AC6 100%);
+border:1px solid #1500FF;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+-ms-border-radius:5px;
+-o-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 0 0 1px rgba(233,100,100,0.4),0 1px 3px #1500FF;
+-moz-box-shadow:inset 0 0 0 1px rgba(233,100,100,0.4),0 1px 3px #1500FF;
+-ms-box-shadow:inset 0 0 0 1px rgba(233,100,100,0.4),0 1px 3px #1500FF;
+-o-box-shadow:inset 0 0 0 1px rgba(233,100,100,0.4),0 1px 3px #1500FF;
+box-shadow:inset 0 0 0 1px rgba(233,100,100,0.4),0 1px 3px #1500FF;
+font:bold 20px "helvetica neue",helvetica,arial,sans-serif;
+line-height:1;
+text-align:center;
+text-shadow:0 -1px 1px rgba(0,0,0,0.8);
+height:30px;
+}
+
 /* RESULTS.HTML */
 .pantlabel{
         position:relative;
@@ -349,11 +377,17 @@ padding-bottom: 60px;
 }
 
 
+.opque_button {
+
+}
+
 .dropfilterLink {
         background-color: transparent;
         text-decoration: none;
         border: none;
-        color: blue;
+        color: #838181;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        font-variant:small-caps;
 }
 
 .desc {
@@ -425,4 +459,33 @@ list-style: none;
 #refpant li.category{
 color: #838181;
 font-family:;
+}
+
+/* PANT ENTRY */
+.entry_description {
+float: right;
+width:300px;
+margin-top:20px;
+}
+
+
+#inputform input {
+display:inline;
+margin-top: -20px;
+height:10px;
+width:100px;}
+
+#number_inputs input {
+width: 20px;
+}
+
+#inputform p {
+display:inline;
+margin-left:8px;
+}
+
+#compsubmit input {
+width:100px;
+height:30px;
+margin-top:0px;
 }

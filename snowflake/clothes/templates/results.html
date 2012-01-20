@@ -9,8 +9,8 @@
 <p>Click the <input class="addplus" type="button" value="+"/> to see more pants with this  description</p>
 {% endif %}-->
 {% for filt in filters %}
-<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}}">&nbsp;&nbsp;
-<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">&nbsp;&nbsp;
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="X {{filt|disp_filter}}">&nbsp;&nbsp;
+<!--<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">-->&nbsp;&nbsp;
 {% endfor %}
 </div> <!--closes #breadcrumb-->
 {% endblock breadcrumb %}
@@ -105,9 +105,10 @@ function popItUp(item)
 			   src="{{item.picURL}}">
 		<div class="pantlabel" id="{{item.id}}" style="display:none">
 			<ul align="left">
-				<li class="make">{{item.designer}}</li></br> 
+				<li class="make">{{item.designer}}</li></br>
 				<li class="model">{{item.style}} </li></br>
-				<li>{{item.designer_waist}} x {{item.designer_inseam}}</li>
+				<li class="size" style="display:inline;">{{item.designer_waist}} x {{item.designer_inseam}}</li> 
+				<li class="price" style="display:inline;">${{item.retailer1_price}}</li>
 			</ul>
 		</div><!--closes #pantlabel-->
 		<input type="button" 
@@ -120,12 +121,10 @@ function popItUp(item)
 
 
 	<div class="desc">
-		<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="{{values.waist}}">
-<!--		<input id="circlewaist" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.waist}}" value="+">--></br>
-		<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}">
-<!--		<input id="circlerise" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.front_rise}}" value="+">--></br>
+		<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="{{values.waist}}"><br/>
+		<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"><br/>
 		<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}">
-<!--		<input id="circlecuff" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.cuff}}" value="+">--></br>
+		<!--		<input id="circlecuff" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.cuff}}" value="+"> HOW TO ADD BUTTON BACK IF WANTED--><br/>
 
 	</div><!--ends desc div-->
 </div><!--ends item div-->
