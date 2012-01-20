@@ -257,6 +257,22 @@ width: 100px;
 }
 
 /* HOME.HTML */
+
+#mainsearch h3 {
+color: #C30017;
+font-size:28px;
+}
+
+#mainsearch {
+min-height:500px;
+margin-top:40px;
+}
+
+#mainpant {
+margin-right:20px;
+margin-top:30px;}
+
+
 .signup {
 margin-top: 20px;
 background-color:#2F35EB;
