@@ -1,9 +1,5 @@
 project_home="/Users/jackmoxon/ClotheslinerTest/snowflake/"
-<<<<<<< HEAD
-csv_home="/Users/jackmoxon/ClotheslinerTest/snowflake/PantData/test.csv"
-=======
 csv_home="/Users/jackmoxon/ClotheslinerTest/zappos.csv"
->>>>>>> 5fb667537c08794ab1c7eaef1b8d5148f49960a5
 
 
 import sys, os
@@ -28,13 +24,6 @@ for des in designer_objects:
 
 for row in dataReader:
     item=Style()
-<<<<<<< HEAD
-    item.name = row[0]
-    item.save()
-    des = Designer()
-    des.name = row[1]
-    des.save()
-=======
     if row[1] not in style_list_two:
         item.name = row[1]
         item.save()
@@ -49,6 +38,5 @@ for row in dataReader:
     else:
         print row[0]
 
->>>>>>> 5fb667537c08794ab1c7eaef1b8d5148f49960a5
 
         

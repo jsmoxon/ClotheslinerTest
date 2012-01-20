@@ -56,6 +56,18 @@ var p = new Object();
 	p[{{pant.id}}]["hips"] = ("{{pant.hips}}" == "None") ? "N/A":{{pant.hips}};
 	p[{{pant.id}}]["knee"] = ("{{pant.knee}}" == "None") ? "N/A":{{pant.knee}};
 	p[{{pant.id}}]["outseam"] = ("{{pant.outseam}}" == "None") ? "N/A":{{pant.outseam}};
+ 	p[{{pant.id}}]["retailer1_price"] = ("{{pant.retailer1_price}}" == "None") ? "N/A":{{pant.retailer1_price}};
+ 	p[{{pant.id}}]["retailer1_name"] = ("{{pant.retailer1_name}}" == "None") ? "N/A":"{{pant.retailer1_name|safe}}";
+ 	p[{{pant.id}}]["retailer1_location"] = ("{{pant.retailer1_location}}" == "None") ? "N/A":"{{pant.retailer1_location|safe}}";
+ 	p[{{pant.id}}]["retailer1_shipping"] = ("{{pant.retailer1_shipping}}" == "None") ? "N/A":"{{pant.retailer1_shipping|safe}}";
+ 	p[{{pant.id}}]["retailer1_returns"] = ("{{pant.retailer1_returns}}" == "None") ? "N/A":"{{pant.retailer1_returns|safe}}";
+	p[{{pant.id}}]["retailer2_price"] = ("{{pant.retailer2_price}}" == "None") ? "":"$"+{{pant.retailer2_price}};
+ 	p[{{pant.id}}]["retailer2_name"] = ("{{pant.retailer2_name}}" == "None") ? "":"at {{pant.retailer2_name|safe}}";
+ 	p[{{pant.id}}]["retailer2_location"] = ("{{pant.retailer2_location}}" == "None") ? "":"in {{pant.retailer2_location|safe}}";
+ 	p[{{pant.id}}]["retailer2_shipping"] = ("{{pant.retailer2_shipping}}" == "None") ? "":"{{pant.retailer2_shipping|safe}}";
+ 	p[{{pant.id}}]["retailer2_returns"] = ("{{pant.retailer2_returns}}" == "None") ? "":" | {{pant.retailer2_returns|safe}}";
+ 	p[{{pant.id}}]["retailer2_url"] = ("{{pant.retailer2_url}}" == "None") ? "":"{{pant.retailer2_url|safe}}";
+
 {% endfor %}
 
 function makeCompare(sel)
@@ -74,6 +86,19 @@ function makeCompare(sel)
 	$('div#datatable td#knee_comp').text(p[sel.name]['knee']);
 	$('div#datatable td#outseam_comp').text(p[sel.name]['outseam']);
 	$('div#datatable').attr('title_comp', sel.name);
+    $('div#retailerdesc p#retailer1_name').text(p[sel.name]['retailer1_name']);
+    $('div#retailerdesc p#retailer1_price').text("$"+p[sel.name]['retailer1_price']);
+    $('div#retailerdesc p#retailer1_location').text(p[sel.name]['retailer1_location']);
+    $('div#retailerdesc p#retailer1_shipping').text(p[sel.name]['retailer1_shipping']);
+ 	$('div#retailerdesc p#retailer1_returns').text(p[sel.name]['retailer1_returns']);
+	$('div#retailerdesc2 p#retailer2_name').text(p[sel.name]['retailer2_name']);
+	$('div#retailerdesc2 p#retailer2_price').text(p[sel.name]['retailer2_price']);
+    $('div#retailerdesc2 p#retailer2_location').text(p[sel.name]['retailer2_location']);
+    $('div#retailerdesc2 p#retailer2_shipping').text(p[sel.name]['retailer2_shipping']);
+    $('div#retailerdesc2 p#retailer2_returns').text(p[sel.name]['retailer2_returns']);
+    $('div#retailerinfo h3#pant_style').text(p[sel.name]['style']);
+    $('div#retailerinfo h6#pant_designer').text(p[sel.name]['designer']);
+
 
 	$('.small_tile').css("outline", "none"); 
 	$('.small_tile#'+sel.name).css("outline","1px solid #A8A8A8");
@@ -251,30 +276,29 @@ function unfitItem(item)
 	
 	<div id="rightside" class="one-third column">
 		<div id="retailerinfo">
+		<h3 id="pant_style">Style Name</h6>
+		<h6 id="pant_designer">Pant Name</h3>
 		<h3> Where to buy </h3>
 			<div id="retailerdesc" class="retailer_label">
-				<p class="retail_price retail_about"> $150</p>
+				<p class="retail_price retail_about" id="retailer1_price">Retailer1 Price</p>
 				<p> at </p>
-				<p class="retailer_1 retail_about"> Four Horsemen </p>
+				<p class="retailer_1 retail_about" id="retailer1_name"> Four Horsemen </p>
 				<p> in </p>
-				<p class="location retail_about"> Vancouver, Canada </p>
+				<p class="location retail_about" id="retailer1_location"> Vancouver, Canada </p>
 				</br>
-				<p class="shipping retail_returns"> Free shipping </p>
+				<p class="shipping retail_returns" id="retailer1_shipping"> Free shipping </p>
 				<p> | </p>
-				<p class="returns retail_returns"> Returns for store credit, you pay shipping </p>	
+				<p class="returns retail_returns" id="retailer1_returns"> Returns for store credit, you pay shipping </p>	
 			</div><!--closes #retailerdesc-->	
 			
-			<div id="retailerdesc2">
-				<div class="retailer_label">
-				<p class="retail_price retail_about"> $150</p>
-				<p> at </p>
-				<p class="retailer_1 retail_about"> Context </p>
-				<p> in </p>
-				<p class="location retail_about"> Madison WI </p>
-				</div> <!--closes .retailer_label-->
-				<p class="shipping retail_returns"> Free shipping </p>
-				<p> | </p>
-				<p class="returns retail_returns"> Returns for store credit, free shipping </p>	
+			<div id="retailerdesc2" class="retailer_label">
+				<p class="retail_price retail_about" id="retailer2_price">retailer2 Price</p>
+			
+				<p class="retailer_1 retail_about" id="retailer2_name">Four Horsemen</p>
+				<p class="location retail_about" id="retailer2_location"> Vancouver, Canada </p>
+				</br>
+				<p class="shipping retail_returns" id="retailer2_shipping"> Free shipping </p>
+				<p class="returns retail_returns" id="retailer2_returns"> Returns for store credit, you pay shipping </p>	
 			</div><!--closes #retailerdesc-->
 			
 		</div> <!--closes #retailerinfo -->
