@@ -203,7 +203,7 @@ background-color:;
 display: inline;
 padding:1em;
 font-variant:small-caps;
-color: #838181;
+color: black;
 font-family: 'Sorts Mill Goudy', serif;
 text-align:right;
 }
@@ -219,12 +219,12 @@ color: #838181;
 font-family: 'Sorts Mill Goudy', serif;
 }
 
-a {text-decoration: none; color: #838181;}
+a {text-decoration: none; color:black;}
 a:hover {color:#9C052A;} 
-a:visited {color:#838181;}
+a:visited {color:#black;}
 
 h1  {
-color: #838181;
+color: #black;
 font-size: 48px;
 line-height: 10px;
 font-family: 'Raleway', cursive;
@@ -237,7 +237,7 @@ font-size: 16px;
 }
 
 h3 {
-color: #838181;
+color: #black;
 font-size: 20px;
 font-family: 'Raleway', cursive;
 }
@@ -260,18 +260,29 @@ width: 100px;
 
 #mainsearch h3 {
 color: #C30017;
-font-size:28px;
 }
 
 #mainsearch {
 min-height:500px;
-margin-top:40px;
+margin-top:10px;
+}
+
+#searchform {
+margin-top:60px;
 }
 
 #mainpant {
-margin-right:20px;
-margin-top:30px;}
+margin-right:0px;
+margin-top:10px;
+}
 
+#tagline {
+margin-left: 40px;
+}
+
+#tagline2 {
+margin-top: 10px;
+}
 
 .signup {
 margin-top: 20px;

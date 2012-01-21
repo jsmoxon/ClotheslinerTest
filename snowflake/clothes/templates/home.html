@@ -7,6 +7,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
+        <style type="text/css">
+         body {background-image:url("{% get_static_prefix %}images/exclusive_paper.png")}
+        </style>
+
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
  <script type="text/javascript">
   function feedbackPopup() {
@@ -111,13 +115,18 @@ function genMeasurements(des, sel)
 
 
 <div id="mainsearch" class="twelve columns offset-by-two">
-
+       <div id="tagline" class="eight columns offset-by-two">
+<!--       <h3>Choose a pant you know...</h3>	 -->
+       <img src="{% get_static_prefix%}images/tagline.svg" width=80%/>
+       </div>
 	<div id="mainpant" class="five columns" style="padding-right:30px">
+            
+
 	  <img src="{% get_static_prefix %}images/Arrow.svg" class="drawnpant scale-with-grid" style="max-width:300px" alt="pant drawing"/>
 	</div><!--clses mainpant div-->
 
+
 	<div id="searchform" class="five columns">
-		<h3>Choose a pant you know...</h3>
 		<form action="/demonstration/reference/" method="post" name="selectReferencePant" class="searchform">
 			{% csrf_token %}
 			<div id="selectors">
@@ -127,11 +136,13 @@ function genMeasurements(des, sel)
 				<input type="submit" class="test" value="Compare">
 			</div>
 		</form>
-		<h3>...and we'll return pants that fit similarly.</h3>
-                <p> Don't see your pant? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
-
-	</div><!--closes #searchform-->
-	<br>
+			</div><!--closes #searchform-->
+	<br/>
+       <div id="tagline2" class="eight columns offset-by-two">
+       <img src="{% get_static_prefix%}images/tagline2.svg" width=105%/>
+<!--                <h3>...and we'll return pants that fit similarly.</h3>-->
+		<p> Don't see your pant? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
+	</div><!--closes #tagline2-->
 </div> <!--close #mainsearch -->
 
 
