@@ -1,0 +1,492 @@
+/*  
+  h1, a {
+	color: 83818;
+	font-size: 48px;
+	font-family: 'Raleway', cursive;
+	text-decoration: none;
+	line-height: -10px;
+}
+
+h2 {
+font-family: 'Raleway', cursive;
+font-size:20px;
+line-height: 0px;
+margin-top: -30px;
+margin-left: 10px;
+color: #83818;
+}
+
+ul{
+list-style-type: none;
+padding: 0;
+margin: 0;
+font-size: 12px;
+color: 838181;
+font-family: 'Helvetica Neue Reg', sans-serif;
+}
+
+li {
+list-style: none; 
+margin:0; 
+}
+
+#title {
+	position: relative;
+	height: 70px;
+	
+}
+*/
+
+.layout {background-color:green;}
+
+h3 {
+line-height:normal;
+}
+
+#retailerinfo {
+background-color:;
+border: 1px solid #A8A8A8;
+padding:5px;
+}
+
+#descrip {}
+
+#retailerinfo p{
+display: inline;
+}
+
+#fit_desc{
+background-color:#FFFFFF;
+opacity:.8;
+margin:3px;
+padding:2px;
+}
+
+.retail_about {
+}
+
+.retailer_label{
+	/*position:relative;
+	top:-55px;
+	z-index:2;
+	height: 55px;
+	
+	background-color:#FFFFFF;
+	*/
+background-color:#FFFFFF;
+opacity:.8;
+margin:3px;
+padding:2px;
+}
+
+.retail_returns {
+}
+
+#image {
+	width: 200px;
+	height: 240px;
+
+}
+
+.fitting_room {
+        cursor: pointer;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        color:white;
+        border:none;
+        background-color:838181;
+        opacity:.5;
+        height: 20px;
+        width: 20px;
+        display:inline;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        position:relative;
+        left:-25px;
+        top:-87px;
+}
+
+
+
+#compare {
+}
+
+#compdatatable{
+clear:left;
+background-color:;
+overflow:hidden;
+border:#DDDDDD;
+}
+
+#datatable {
+}
+
+td {padding:5px;}
+tr:nth-child(2n+4) {background: #F5F5F5}
+
+/*
+.columnar {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid green;
+}
+
+.measurements {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid red;
+}
+
+.measurementdata {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid blue;
+}
+
+#comp_images {
+white-space:nowrap;
+overflow:hidden;
+display:inline;
+max-width:170px;
+}
+*/
+
+li .designer {
+}
+
+#labels {
+	background-color:;
+}
+
+#ref_pant_image {
+margin-left: 100px;
+}
+
+#reference_pant {
+	border:blue;
+	background-color:;
+}
+
+#comp_pant_1 {
+	background-color:;
+	overflow:hidden;
+	}
+
+#comp_pant_image {
+float:right;
+}
+
+#explain {
+background: #DBDBDB;
+}
+
+#explain li {
+padding: 8px;
+list-style-type: circle;
+}
+
+#reference_pant .measurements{
+	float:right;
+}
+
+#refr_image {
+width: 150px;
+height: auto;
+}
+
+#compr_image {
+width: 300px;
+height: auto;
+}
+
+.thumbnails  {
+margin-top: 60px;
+}
+
+.thumbnail {
+	display: inline;
+	margin:5px;
+	clear: both;
+	width:900px;
+}
+
+.outline {
+outline: 1px solid #A8A8A8;
+}
+
+.border {
+border: 1px solid #505050;
+}
+
+.container {
+margin-top:-40px;
+}
+
+/* #PK ADDED Main SITE INFO
+================================================== */
+#header {
+background-color:;
+}
+
+#headerlinks {
+float:right;
+background-color:;
+text-align:right;
+}
+
+#title {
+background-color:;
+}
+
+#headerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+}
+ 
+#footer {text-align: center; }
+#footer li {display: inline; padding:1em;}
+
+#footerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+}
+
+
+
+/*
+#header, #footer {height: 100px; background-color: ; text-align: center;}
+#header {margin-bottom: 10px; margin-top: 30px; background-color:;}
+#footer {margin-top:30px; margin-bottom:10px; clear:both; }
+
+#footerlinks{
+width:80%;
+margin:auto;
+text-align:center;
+margin-top:5px;
+}
+
+#headerlinks li, #footerlinks li {
+display: inline;
+padding:1em;
+font-variant:small-caps;
+color: 838181;
+font-family: 'Sorts Mill Goudy', serif;
+text-align:right;
+font-size: 16px;
+}
+*/
+
+a {text-decoration: none; color: 838181;}
+a:hover {color:9C052A;} 
+
+
+h1  {
+color: #838181;
+font-size: 48px;
+line-height: 10px;
+font-family: 'Raleway', cursive;
+}
+
+h2 {
+color: black;
+font-family: 'Sorts Mill Goudy', serif;
+font-size: 16px;
+}
+
+h3 {
+color: 838181;
+font-size: 20px;
+font-family: 'Raleway', cursive;
+}
+
+#searchform {
+margin-left:20px;
+}
+
+#sidebar {
+margin-top:250px;
+float: left;
+position:fixed;
+}
+
+#feedback {
+width: 100px;
+}
+
+/* RESULTS.HTML */
+.pantlabel{
+        position:relative;
+        top:-55px;
+	height: 55px;
+        background-color:#FFFFFF;
+        opacity:.8;
+        z-index:2;
+}
+
+.tile {
+        margin-left: 5px;
+	float:left;
+        width:180px;
+        height:280px;
+        background-color:;
+	overflow:hidden;
+}
+
+#item {
+padding-bottom: 60px;
+}
+
+#imagecontainer{
+        height:220px;
+        width:180px;
+        text-align:center;
+        cursor: pointer;
+        z-index:1;
+}
+
+
+#resultimage {
+        width: 180px;
+        height:220px;
+}
+
+#fittingroombutton {
+        color:white;
+        float:right;
+        border:none;
+        position:relative;
+        background-color:838181;
+        opacity: .5;
+        top:-275px;
+        z-index:2;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+}
+
+.fitting_room {
+        color:white;
+        float:right;
+        border:none;
+        position:relative;
+	background-color:838181;
+        opacity: .5;
+        top:-275px;
+        z-index:2;
+	height: 20px;
+        width: 20px;
+        cursor: pointer;
+}
+
+.pantlabel li {
+        font: 'Helvetica Neue';
+        font-size:12px;
+        z-index:3;
+        color: black;
+}
+
+.pantlabel ul {
+        padding-left:7px
+}
+
+.addFilterLink {
+        cursor: pointer;
+        position:absolute;
+        right:15px;
+        text-align:center;
+        vertical-align:middle;
+        color: #838181;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        font-variant:small-caps;
+        font-size: 12px;
+        background-color:transparent;
+        border:none;
+        height:20px;
+	width:120px;
+}
+
+
+.dropfilterLink {
+        background-color: transparent;
+        text-decoration: none;
+        border: none;
+        color: blue;
+}
+
+.desc {
+        position:relative;
+        padding-top: 10px;
+}
+
+/*
+.addplus {
+        cursor: pointer;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        color:white;
+        border:none;
+        background-color:838181;
+        opacity:.5;
+        height: 20px;
+        width: 20px;
+        display:inline;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        position:relative;
+        left:160px;
+        top:-3px;
+}
+*/
+
+.dropx {
+        cursor: pointer;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        color:white;
+        border:none;
+        background-color:838181;
+        opacity:.5;
+        height: 20px;
+        width: 20px;
+        display:inline;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        position:relative;
+        left:-15px;
+        top:-3px;
+}
+
+li.make, li.model, li.price, li.originalprice, li.sale {
+display: inline;
+color: 838181;
+font-family:;
+font-size: 12px;
+}
+
+li.model, li.price, li.originalprice {color: 838181;}
+li.price, li.originalprice {margin-left:15px;}
+li.sale {color:9C052A; margin-left:2px;}
+li.originalprice {text-decoration: line-through;}
+
+li.model {overflow:hidden; white-space: nowrap; width: 180px;}
+
+li.colors {
+margin: 0;
+padding: 0;
+display: inline;
+list-style: none;
+}
+
+#ref_make, #ref_model, #ref_price {font-size: 14px;}
+
+#refpant li.category{
+color: #838181;
+font-family:;
+}
