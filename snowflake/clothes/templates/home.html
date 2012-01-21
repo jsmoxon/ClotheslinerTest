@@ -7,6 +7,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
+        <style type="text/css">
+         body {background-image:url("{% get_static_prefix %}images/bgnoise_lg.png")}
+        </style>
+
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
  <script type="text/javascript">
   function feedbackPopup() {
@@ -94,8 +98,10 @@ function genMeasurements(des, sel)
 <div id="container" class="container" style="margin-top:20px">
   	<div id="header" class= "alpha omega sixteen columns">
     	<div id="title" class="alpha eight columns">
-			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-			<h3>find pants that fit (beta)</h3>
+    		<img src="{% get_static_prefix %}images/logo.svg" class="logo scale-with-grid" style="max-width:300px" alt="logo"/>
+			<!--<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+			<h3>find pants that fit (beta)</h3>-->
+			
         </div> <!--closes the title div-->
       
 		<div id="headerlinks" class="omega eight columns">
@@ -110,27 +116,36 @@ function genMeasurements(des, sel)
 	
 
 
-<div id="mainsearch" class="eight columns offset-by-four">
+<div id="mainsearch" class="twelve columns offset-by-two">
+</br>
+       <div id="tagline" class="eight columns offset-by-two">
+<!--       <h3>Choose a pant you know...</h3>	 -->
+       <img src="{% get_static_prefix%}images/tagline_pk.svg" width=80%/>
+       </div>
+	<div id="mainpant" class="five columns" style="padding-right:30px">
+            
 
-	<div id="mainpant" class="three columns" style="padding-right:30px">
-	  <img src="{% get_static_prefix %}images/drawnpant.png" class="drawnpant scale-with-grid" style="max-width:170px" alt="pant drawing"/>
+	  <img src="{% get_static_prefix %}images/Arrow_PK.svg" class="drawnpant scale-with-grid" style="max-width:300px" alt="pant drawing"/>
 	</div><!--clses mainpant div-->
 
-	<div id="searchform" class="four colums offset-by-one">
-		<h3>Choose a pant you know...</h3>
+
+	<div id="searchform" class="five columns">
 		<form action="/demonstration/reference/" method="post" name="selectReferencePant" class="searchform">
 			{% csrf_token %}
 			<div id="selectors">
 				<select id="designers" name="designers" onchange="genStyles(this)"></select>
 				<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select>
 				<select id="measurements" name="measurements"></select>
-				<input type="submit" class="comparebutton" value="Compare">
+				<input type="submit" class="test" value="Compare">
 			</div>
 		</form>
-		<h3>...and we'll return pants that fit similarly.</h3>
-	</div><!--closes #searchform-->
-	<br>
+			</div><!--closes #searchform-->
+	<br/>
+       <div id="tagline2" class="eight columns offset-by-two">
+       <img src="{% get_static_prefix%}images/tagline2_pk.svg" width=105%/>
+<!--                <h3>...and we'll return pants that fit similarly.</h3>-->
 		<p> Don't see your pant? While we're growing our database you can upload measurements yourself <a href="/create/">here</a>. </p>
+	</div><!--closes #tagline2-->
 </div> <!--close #mainsearch -->
 
 

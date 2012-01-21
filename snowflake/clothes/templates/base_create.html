@@ -6,41 +6,46 @@ js/measurementinput.js
 
 {% block bodycontent%}
 
-<div id="content" class="grid_14 push_1">
-	<div id="measurementintro" class="alpha omega grid_">
+<div id="content" class="fourteen columns offset-by-one">
+	<div id="measurementintro" class="">
 	<h3>Measure Your Favorite Pant in 5 Minutes</h3>
 	<br/>
 	</div> <!--close #measurementintro-->
 
-	<div id="inputform" class="alpha grid_5">	
+	<div id="inputform" class="four columns">	
 	<form action="/create/submit/" method="post">
 	  {% csrf_token %}
-	<input type="text" name="designer" onFocus="displayMainInstructions()" name="brand" maxlength="30" size="10"  /> Brand Name<br />
-	<input type="text" name="style" onFocus="displayMainInstructions()" maxlength="30" size="10" /> Style Name <br />
-	<input type="text" onFocus="displayLabelWaist()" name="label_waist" maxlength="4" size="2" /> Label waist size <br />
-	<input type="text" onFocus="displayLabelInseam()" name="label_inseam" maxlength="4" size="2" /> Label inseam size <br />
-	<input type="text" onFocus="displayWaist()" name="waist" maxlength="4" size="2" /> Actual waist <br />
-	<input type="text" onFocus="displayInseam()" name="inseam" maxlength="4" size="2" /> Actual Inseam <br />
-	<input type="text" onFocus="displayOutseam()" name="outseam" maxlength="4" size="2" /> Outseam <br />
-	<input type="text" onFocus="displayFront()" name="front_rise" maxlength="4" size="2" /> Front Rise <br />
-	<input type="text" onFocus="displayBack()" name="back_rise" maxlength="4" size="2" /> Back Rise <br />
-	<input type="text" onFocus="displayHips()" name="hips" maxlength="4" size="2" /> Hips <br />
-	<input type="text" onFocus="displayThigh()" name="thigh" maxlength="4" size="2"  /> Thigh <br />
-	<input type="text" onFocus="displayKnee()" name="knee" maxlength="4" size="2" /> Knee <br />
-	<input type="text" onFocus="displayCuff()" name="cuff" maxlength="4" size="2" /> Leg Opening <br />
+
+	<input type="text" name="designer" onFocus="displayMainInstructions()" name="brand" maxlength="30" size="10"  /><p>Brand</p><br/>
+	<input type="text" name="style" onFocus="displayMainInstructions()" maxlength="30" size="10" /><p>Style</p><br/>
+	<div id="number_inputs">
+	<input type="text" onFocus="displayLabelWaist()" name="label_waist" maxlength="4" size="2" /><p>Label Waist</p><br/>
+	<input type="text" onFocus="displayLabelInseam()" name="label_inseam" maxlength="4" size="2" /><p>Label Inseam<p><br/>
+	<input type="text" onFocus="displayWaist()" name="waist" maxlength="4" size="2" /><p>Actual Waist</p><br />
+	<input type="text" onFocus="displayInseam()" name="inseam" maxlength="4" size="2" /><p>Actual Inseam</p> <br />
+	<input type="text" onFocus="displayOutseam()" name="outseam" maxlength="4" size="2" /><p>Outseam</p><br />
+	<input type="text" onFocus="displayFront()" name="front_rise" maxlength="4" size="2" /><p>Front Rise</p><br />
+	<input type="text" onFocus="displayBack()" name="back_rise" maxlength="4" size="2" /><p>Back Rise</p><br />
+	<input type="text" onFocus="displayHips()" name="hips" maxlength="4" size="2" /><p>Hips</p><br />
+	<input type="text" onFocus="displayThigh()" name="thigh" maxlength="4" size="2"  /><p>Thigh</p><br />
+	<input type="text" onFocus="displayKnee()" name="knee" maxlength="4" size="2" /><p>Knee</p><br />
+	<input type="text" onFocus="displayCuff()" name="cuff" maxlength="4" size="2" /><p>Cuff</p><br />
+	<div id="compsubmit">
 	<input type="submit" value="Enter & Compare" />
+	</div><!--closes #compsubmit-->
 	</form>
+        </div> <!--closes #number_inputs-->
 	</div> <!--closes #inputform-->
 
 
-	<div id="starter" class="omega grid_9"> 
-	<p class="entry_description">1. Lay the pant flat on the floor (buttoned and zipped up).<br/><br/>
-	  2. Measure to the edge of the garment as it lays rather than the edege of the seam.<br/><br/>
+	<div id="starter" class="nine columns"> 
+        <img src="http://clothesliner.com/static/images/drawnpant.svg" class="drawnpant" alt="pant drawing" width=200px/>	
+<p class="entry_description">1. Lay the pant flat on the floor (buttoned and zipped up).<br/><br/>
+	  2. Measure to the edge of the garment as it lays rather than the edge of the seam.<br/><br/>
 	  3. Round to the nearest 1/4 of an inch.<br/><br/>
 	  4. Click each box below for further instructions.
 	</p>
-	<img src="http://clothesliner.com/static/images/drawnpant.png" class="drawnpant" alt="pant drawing"/>
-	</div>
+	</div><!--closes starter-->
 </div> <!--closes #content-->
 
 

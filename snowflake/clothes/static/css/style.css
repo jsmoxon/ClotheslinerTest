@@ -322,7 +322,7 @@ font-family:;
 font-size: 12px;
 }
 
-li.model, li.price, li.originalprice {color: 838181;}
+li.model, li.price, li.originalprice, li.size {color: 838181;}
 li.price, li.originalprice {margin-left:15px;}
 li.sale {color:9C052A; margin-left:2px;}
 li.originalprice {text-decoration: line-through;}
