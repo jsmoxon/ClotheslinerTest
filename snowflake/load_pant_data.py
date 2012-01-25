@@ -1,5 +1,5 @@
 project_home="/Users/jackmoxon/ClotheslinerTest/snowflake/"
-csv_home="/Users/jackmoxon/ClotheslinerTest/zappos.csv"
+csv_home="/Users/jackmoxon/ClotheslinerTest/zapposClean1.csv"
 
 import sys, os
 sys.path.append(project_home)
@@ -16,29 +16,20 @@ for row in dataReader:
     pant = Pant()
     pant.designer= designer
     pant.style = style
-    pant.url_link = row[4]
-    pant.picURL = row[3]
+    pant.url_link = row[6]
+    pant.picURL = row[4]
     pant.retailer1_price = row[2]
-    pant.designer_waist = row[5]
-    pant.designer_inseam = row[7]
-    pant.waist = row[5]
-    pant.front_rise = row[8]
-    try:
-        pant.inseam = row[7]
-    except:
-        pant.inseam = "4.23"
-#    pant.knee = row[11]
-    pant.cuff = row[9]
-#    pant.thigh = row[13]
-    pant.back_rise = row[10]
-    pant.outseam = row[6]
- #   pant.hip = row[16]
-    pant.retailer1_name = row[11]
-    pant.retailer1_shipping = row[12]
-    pant.retailer1_returns = row[13]
-    pant.retailer1_location = row[14]
-#    pant.retailer1_url = row[24]
-#    pant.retailer_description = row[25]
+    pant.designer_waist = row[4]
+    pant.designer_inseam = row[5]
+    if row[7] != "":
+        pant.waist = row[7]
+    else: 
+        pass
+    pant.outseam = row[8]
+    pant.inseam = row[9]
+    pant.front_rise = row[10]
+    pant.cuff = row[11]
+    pant.back_rise = row[12]
     pant.save()
-    print pant.waist
+
 

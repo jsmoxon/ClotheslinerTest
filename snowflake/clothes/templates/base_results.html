@@ -11,7 +11,12 @@
 <ul>
 <li id="ref_make" class="make">{{reference.designer}}</li>
 </br>
-<li id="ref_model" class="model">{{reference.style}}  ({{reference.designer_waist}} x {{reference.designer_inseam}}) </li>
+<li id="ref_model" class="model">{{reference.style}}  ({{reference.designer_waist}}
+{% if reference.designer_inseam = 1.729 %}
+)</li>
+{% else %}
+x {{reference.designer_inseam}}) </li>
+{% endif %}
 <li id="ref_price" class="price"></li>
 </ul>
 <div id="refpant_desc" class="alpha omega grid_4">

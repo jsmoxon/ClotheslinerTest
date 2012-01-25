@@ -77,7 +77,10 @@ function genMeasurements(des, sel)
 		var a = p[des[des.selectedIndex].value][sel[sel.selectedIndex].value][key];
 		var newOption = document.createElement("OPTION");
 		if (a[1] == "0") {a[1] = "Unhemmed"}
-		newOption.text = a[0]+' x '+a[1];
+		else if (a[1] == "1.729") {a[1] = "N/A"}
+                if (a[1] == "N/A") {newOption.text = a[0]}
+                else {
+                newOption.text = a[0]+' x '+a[1]}
 		newOption.value = a[0]+' '+a[1]+' '+a[2]+' '+a[3];
 		z.add(newOption, null);
 	}

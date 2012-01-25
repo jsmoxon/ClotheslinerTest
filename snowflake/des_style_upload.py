@@ -1,5 +1,5 @@
 project_home="/Users/jackmoxon/ClotheslinerTest/snowflake/"
-csv_home="/Users/jackmoxon/ClotheslinerTest/zappos.csv"
+csv_home="/Users/jackmoxon/ClotheslinerTest/zapposClean1.csv"
 
 
 import sys, os
