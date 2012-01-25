@@ -275,7 +275,7 @@
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font: 24px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		color: #777;
 		margin: 0;
 		width: 210px;
@@ -316,5 +316,5 @@
 	.remove-bottom { margin-bottom: 0 !important; }
 	.half-bottom { margin-bottom: 10px !important; }
 	.add-bottom { margin-bottom: 20px !important; }
-
-
+	
+	
