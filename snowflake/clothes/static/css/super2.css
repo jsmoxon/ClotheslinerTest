@@ -314,9 +314,9 @@ height:30px;
 /* RESULTS.HTML */
 .pantlabel{
         position:relative;
-        top:-55px;
-	height: 55px;
-        background-color:#FFFFFF;
+        top:-70px;
+	height: 70px;
+        background-color: #FFFFFF;
         opacity:.8;
         z-index:2;
 }
@@ -355,11 +355,13 @@ padding-bottom: 60px;
         position:relative;
         background-color:#838181;
         opacity: .5;
-        top:-275px;
+        top:-295px;
         z-index:2;
         height: 20px;
         width: 20px;
         cursor: pointer;
+	padding: 2px 2px 8px 3px;
+	font-weight: normal;
 }
 
 .fitting_room {
