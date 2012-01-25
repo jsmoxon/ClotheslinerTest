@@ -376,6 +376,9 @@ padding-bottom: 60px;
         cursor: pointer;
 }
 
+.pantlabel {
+
+        }
 .pantlabel li {
         font: 'Helvetica Neue';
         font-size:12px;
@@ -384,23 +387,27 @@ padding-bottom: 60px;
 }
 
 .pantlabel ul {
-        padding-left:7px
+        padding-left:7px;
 }
 
 .addFilterLink {
+		width:120px;
+		background-color:transparent;
+		color: #838181;
+        /*
         cursor: pointer;
         position:absolute;
         right:15px;
         text-align:center;
         vertical-align:middle;
-        color: #838181;
         font-family: 'Helvetica Neue Reg', sans-serif;
+        height:20px;
+		
+        color: #838181;
         font-variant:small-caps;
         font-size: 12px;
-        background-color:transparent;
-        border:none;
-        height:20px;
-	width:120px;
+        
+		*/
 }
 
 
