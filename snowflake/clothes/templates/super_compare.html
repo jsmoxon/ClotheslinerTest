@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
+<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/tabs.css" >
+
 
 
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
@@ -73,7 +75,7 @@ var p = new Object();
 function makeCompare(sel)
 {
 	$('div#comp_pant_image #compr_image').attr('src',p[sel.name]['image']);
-	$('div#comp_pant_1 #comp_image').attr('href',p[sel.name]['imageLink']);
+	$('div#comp_pant_image #comp_image').attr('href',p[sel.name]['imageLink']);
 	$('div#datatable td#designer_comp').text(p[sel.name]['designer']);
 	$('div#datatable td#style_comp').text(p[sel.name]['style']);
 	$('div#datatable td#waist_comp').text(p[sel.name]['waist']);
@@ -268,7 +270,6 @@ function unfitItem(item)
 						</tr>				
 					</table> 
 					</div><!--closes #datatable-->	</li>
-  <li id="mobileFriendly">The tabs work like a charm even on mobile devices.</li>
 </ul>
 			</div><!--closes #tabs_content-->
 		</div><!--closes #descrip-->	
@@ -277,7 +278,7 @@ function unfitItem(item)
 	<div id="rightside" class="one-third column">
 		<div id="retailerinfo">
 		<h3 id="pant_style">Style Name</h3>
-		<h6>by</h6><h6 id="pant_designer">Pant Name</h3>
+		<h6>by</h6><h6 id="pant_designer">Pant Name</h6>
                 <br/>
 		<h3> Where to buy </h3>
 			<div id="retailerdesc" class="retailer_label">

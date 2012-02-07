@@ -244,6 +244,7 @@ font-family: 'Raleway', cursive;
 
 #searchform {
 margin-left:20px;
+margin-top:60px;
 }
 
 #sidebar {
@@ -267,10 +268,6 @@ min-height:500px;
 margin-top:10px;
 }
 
-#searchform {
-margin-top:60px;
-}
-
 #mainpant {
 margin-right:0px;
 margin-top:10px;
@@ -282,6 +279,30 @@ margin-left: 40px;
 
 #tagline2 {
 margin-top: 10px;
+}
+
+.initialdropdown {
+width:170px;
+color: #6e6e6e;
+font: 14px Helvetica, Arial, sans-serif;
+text-decoration: none;
+    padding:5px 3px 3px 3px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: border-color .218s;
+    -moz-transition: border .218s;
+    -o-transition: border-color .218s;
+    transition: border-color .218s;
+    background: #f3f3f3;
+    background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    background: -moz-linear-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    border: solid 1px #dcdcdc;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin-top: 3px;
+
 }
 
 .signup {
@@ -312,6 +333,30 @@ height:30px;
 }
 
 /* RESULTS.HTML */
+
+#refpant {
+}
+
+#content {
+}
+
+
+#breadcrumb {
+}
+
+#refpant h3, h6 {
+text-align:center;
+margin-bottom:10px;}
+
+#filter_list h6{
+text-align:left;
+}
+
+#results {
+border-left:1px solid #838181;
+padding-left:25px;
+}
+
 .pantlabel{
         position:relative;
         top:-70px;
@@ -355,7 +400,7 @@ padding-bottom: 60px;
         position:relative;
         background-color:#838181;
         opacity: .5;
-        top:-295px;
+        top:-297px;
         z-index:2;
         height: 20px;
         width: 20px;
@@ -378,6 +423,9 @@ padding-bottom: 60px;
         cursor: pointer;
 }
 
+.pantlabel {
+
+        }
 .pantlabel li {
         font: 'Helvetica Neue';
         font-size:12px;
@@ -386,23 +434,27 @@ padding-bottom: 60px;
 }
 
 .pantlabel ul {
-        padding-left:7px
+        padding-left:7px;
 }
 
 .addFilterLink {
+		width:120px;
+		background-color:transparent;
+		color: #838181;
+        /*
         cursor: pointer;
         position:absolute;
         right:15px;
         text-align:center;
         vertical-align:middle;
-        color: #838181;
         font-family: 'Helvetica Neue Reg', sans-serif;
+        height:20px;
+		
+        color: #838181;
         font-variant:small-caps;
         font-size: 12px;
-        background-color:transparent;
-        border:none;
-        height:20px;
-	width:120px;
+        
+		*/
 }
 
 
@@ -464,12 +516,10 @@ padding-bottom: 60px;
 
 li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
-color: #838181;
-font-family:;
+color: black;	
 font-size: 12px;
 }
 
-li.model, li.price, li.originalprice {color: #838181;}
 li.price, li.originalprice {margin-left:15px;}
 li.sale {color:9C052A; margin-left:2px;}
 li.originalprice {text-decoration: line-through;}
@@ -517,4 +567,17 @@ margin-left:8px;
 width:100px;
 height:30px;
 margin-top:0px;
+}
+
+#tester {
+
+}
+
+.fit_prose {
+text-align: center;
+}
+
+
+#ankle {
+clear:both;
 }

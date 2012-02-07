@@ -35,12 +35,7 @@ for id in id_list:
     except: 
         print "borken link"+id
     pantWriter.writerow([designer, style, price, picURL, url, waist, outseam, inseam, front, leg, back])
-  #  style = y.find('span', {'class':'prName'}).contents[1]
-  #  picURL = y.find('img', {'id':'detailImage'})['src']
   #  meas_taken = y.find(text=re.compile('Product measurements'))
-  #  knee = ""
-  #  thigh=""
-#    pantWriter.writerow([prodURL, brand, style, price, picURL, meas_taken, waist, front, inseam, knee, cuff, thigh, back, outseam])
-  #  print waist
+
 
 
