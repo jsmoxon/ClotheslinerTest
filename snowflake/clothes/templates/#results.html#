@@ -3,14 +3,14 @@
 
 {% load filters %}
 {% block breadcrumb %}
-<div id="breadcrumb" class="ten columns">
+<div id="breadcrumb" class="ten columns offset-by-five">
 <!--{% if filters %}
 {% else %}
 <p>Click the <input class="addplus" type="button" value="+"/> to see more pants with this  description</p>
 {% endif %}-->
 {% for filt in filters %}
-<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="X {{filt|disp_filter}}">&nbsp;&nbsp;
-<!--<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">-->&nbsp;&nbsp;
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="{{filt|disp_filter}x">&nbsp;&nbsp;
+<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">&nbsp;&nbsp;
 {% endfor %}
 </div> <!--closes #breadcrumb-->
 {% endblock breadcrumb %}
@@ -132,4 +132,13 @@ function popItUp(item)
 
 {% endblock content%}
 
-
+{% block filter_section %}
+<div id="filter_list">
+<h4>Filters</h4>
+<ul><h6>Price</h6>
+  <li><a href="http://google.com">Less than $50</a></li>
+  <li>Between $51 and $100</li>
+  <li>More than $100</li>
+</ul>
+</div>
+{% endblock filter_section%}

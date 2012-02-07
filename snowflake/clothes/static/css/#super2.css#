@@ -342,7 +342,7 @@ height:30px;
 
 
 #breadcrumb {
-}
+}	    
 
 #refpant h3, h6 {
 text-align:center;
@@ -435,6 +435,26 @@ padding-bottom: 60px;
 
 .pantlabel ul {
         padding-left:7px;
+}
+
+.addFilterLink {
+		width:120px;
+		background-color:transparent;
+		color: #838181;
+        /*
+        cursor: pointer;
+        position:absolute;
+        right:15px;
+        text-align:center;
+        vertical-align:middle;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        height:20px;
+		
+        color: #838181;
+        font-variant:small-caps;
+        font-size: 12px;
+        
+		*/
 }
 
 

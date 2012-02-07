@@ -8,12 +8,12 @@ function calcDiff(ref, comp)
 	var thighTightness = thigh(ref, comp); 
 	var ankleTightness = ankle(ref, comp);
 
-	return '<p onclick=explainThis(this) id="nutcupping" title="'+nutCupping+'">'+compThem(nutCupping, "nutcupping")+'</p>'+
-		   '<p onclick=explainThis(this) id="leg" title="'+legTightness+'">'+compThem(legTightness, "leg")+'</p>'+
-		   '<p onclick=explainThis(this) id="buttcupping" title="'+buttCupping+'">'+compThem(buttCupping, "buttcupping")+'</p>'+
-		   '<p onclick=explainThis(this) id="muffintop" title="'+muffinTop+'">'+compThem(muffinTop, "muffintop")+'</p>'+
-		   '<p onclick=explainThis(this) id="thigh" title="'+thighTightness+'">'+compThem(thighTightness, "thigh")+'</p>'+
-		   '<p onclick=explainThis(this) id="ankle" title="'+ankleTightness+'">'+compThem(ankleTightness, "ankle")+'</p>';
+	return '<div id="tester" class="fit_prose three columns"><h5>Crotch</h5><p onclick=explainThis(this) id="nutcupping" title="'+nutCupping+'">'+compThem(nutCupping, "nutcupping")+'</p></div>'+
+	    //		   '<p onclick=explainThis(this) id="leg" title="'+legTightness+'">'+compThem(legTightness, "leg")+'</p>'+
+		   '<div id="butt" class="fit_prose three columns"><h5>Seat</h5><p onclick=explainThis(this) class="" id="buttcupping" title="'+buttCupping+'">'+compThem(buttCupping, "buttcupping")+'</p></div>'+
+		   '<div id="rise" class="fit_prose three columns"><h5>Rise</h5><p onclick=explainThis(this) id="muffintop" title="'+muffinTop+'">'+compThem(muffinTop, "muffintop")+'</p></div>'+
+	    //   '<p onclick=explainThis(this) id="thigh" title="'+thighTightness+'">'+compThem(thighTightness, "thigh")+'</p>'+
+		   '<div id="ankle" class="fit_prose three columns"><h5>Ankle</h5><p onclick=explainThis(this) id="ankle" title="'+ankleTightness+'">'+compThem(ankleTightness, "ankle")+'</p></div>';
 }
 
 function thigh(ref, comp)
