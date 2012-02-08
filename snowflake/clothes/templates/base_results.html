@@ -10,17 +10,18 @@
 <ul>
 <li id="ref_make" class="make">{{reference.designer}}</li>
 </br>
-<li id="ref_model" class="model">{{reference.style}}  ( {{reference.designer_waist}}
+<li id="ref_model" class="model">{{reference.style}}</li>
+<li class="model">  ( {{reference.designer_waist}}
 {% if reference.designer_inseam = 1.729 %})</li>
 {% else %}
 x {{reference.designer_inseam}} ) </li>
 {% endif %}
-<br/><br/>
-
-<li id="ref_price" class="price"></li>
+<!--<li id="ref_price" class="price"></li> where price would go-->
 </ul>
 <div id="refpant_desc" class="alpha omega grid_4">
 </div> <!--closes refpant_desc-->
+{% block sizefilters %}
+{% endblock sizefilters %}
 </div> <!--closes refpant-->
 
 <div id="results" class="ten columns">

@@ -52,7 +52,7 @@ def results(request):
 		filters = filters.split(')(')
 		filters[0] = filters[0][1:]
 		filters[-1] = filters[-1][:-1]
-	
+		print filters
 	if result_set == None:
 		compare_measurements = {"waist": reference_pant.waist, 
 								"inseam": reference_pant.inseam,
