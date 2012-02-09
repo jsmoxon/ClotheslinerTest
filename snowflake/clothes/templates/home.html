@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
         <style type="text/css">
-         body {background-image:url("{% get_static_prefix %}images/bgnoise_lg.png")}
+         /*body {background-image:url("{% get_static_prefix %}images/bgnoise_lg.png")} */
         </style>
 
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
@@ -133,9 +133,12 @@ function genMeasurements(des, sel)
 		<form action="/demonstration/reference/" method="post" name="selectReferencePant" class="searchform">
 			{% csrf_token %}
 			<div id="selectors">
-				<select id="designers" name="designers" onchange="genStyles(this)"></select>
-				<select id="styles" name="styles" onchange="genMeasurements(designers, this)"></select>
-				<select id="measurements" name="measurements"></select>
+				<select id="designers" class="initialdropdown" name="designers" onchange="genStyles(this)"></select>
+				</br>
+				<select id="styles" class="initialdropdown" name="styles" onchange="genMeasurements(designers, this)"></select>
+				</br>
+				<select id="measurements" class="initialdropdown" name="measurements"></select>
+				</br>
 				<input type="submit" class="test" value="Compare">
 			</div>
 		</form>

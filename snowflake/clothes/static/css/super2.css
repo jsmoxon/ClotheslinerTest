@@ -244,6 +244,7 @@ font-family: 'Raleway', cursive;
 
 #searchform {
 margin-left:20px;
+margin-top:60px;
 }
 
 #sidebar {
@@ -267,10 +268,6 @@ min-height:500px;
 margin-top:10px;
 }
 
-#searchform {
-margin-top:60px;
-}
-
 #mainpant {
 margin-right:0px;
 margin-top:10px;
@@ -282,6 +279,30 @@ margin-left: 40px;
 
 #tagline2 {
 margin-top: 10px;
+}
+
+.initialdropdown {
+width:170px;
+color: #6e6e6e;
+font: 14px Helvetica, Arial, sans-serif;
+text-decoration: none;
+    padding:5px 3px 3px 3px;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: border-color .218s;
+    -moz-transition: border .218s;
+    -o-transition: border-color .218s;
+    transition: border-color .218s;
+    background: #f3f3f3;
+    background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    background: -moz-linear-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    border: solid 1px #dcdcdc;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin-top: 3px;
+
 }
 
 .signup {
@@ -376,6 +397,9 @@ padding-bottom: 60px;
         cursor: pointer;
 }
 
+.pantlabel {
+
+        }
 .pantlabel li {
         font: 'Helvetica Neue';
         font-size:12px;
@@ -384,23 +408,27 @@ padding-bottom: 60px;
 }
 
 .pantlabel ul {
-        padding-left:7px
+        padding-left:7px;
 }
 
 .addFilterLink {
+		width:120px;
+		background-color:transparent;
+		color: #838181;
+        /*
         cursor: pointer;
         position:absolute;
         right:15px;
         text-align:center;
         vertical-align:middle;
-        color: #838181;
         font-family: 'Helvetica Neue Reg', sans-serif;
+        height:20px;
+		
+        color: #838181;
         font-variant:small-caps;
         font-size: 12px;
-        background-color:transparent;
-        border:none;
-        height:20px;
-	width:120px;
+        
+		*/
 }
 
 
