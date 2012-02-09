@@ -1,25 +1,4 @@
 BIG_DICT = { #ref pant minus returned pant
-'retailer1_price':
-        {
-        'zero': 'Similar price',
-        'positive':
-                {
-                .25: '1/4 in. tighter price',
-                .5: '1/2 in. tighter price',
-                1: '1 in. tighter price',
-                2: '2 in. tighter price',
-                99: 'Insanely tighter price'
-                },
-        'negative':
-                {
-                .25: '1/4 in. looser price',
-                .5: '1/2 in. looser price',
-                1: '1 in. looser price',
-                2: '2 in. looser price',
-                99: 'Insanely looser price'
-                }
-        },
-
 'waist':
 	{
 	'zero': 'Similar waist', 
@@ -193,4 +172,4 @@ BIG_DICT = { #ref pant minus returned pant
 	}
 }
 
-MOE = {'waist':1, 'front_rise':1, 'thigh':1, 'outseam':1, 'inseam':1, 'cuff':1, 'knee':2, 'hips':2, 'back_rise':3, 'retailer1_price':10000}
+MOE = {'waist':1, 'front_rise':1, 'thigh':1, 'outseam':1, 'inseam':1, 'cuff':1, 'knee':2, 'hips':2, 'back_rise':3}

@@ -514,7 +514,7 @@ padding-bottom: 60px;
         top:-3px;
 }
 
-li.make, li.model, li.price, li.originalprice, li.sale {
+li.make, li.model, li.originalprice, li.sale {
 display: inline;
 color: black;	
 font-size: 12px;
@@ -580,4 +580,6 @@ text-align: center;
 
 #ankle {
 clear:both;
+}
+
 }

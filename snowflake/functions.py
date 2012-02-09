@@ -65,6 +65,7 @@ def narrow_pants(pants, filters):
 	for filt in filters:
 		fil = filt.split(', ')
 		for pant in pants.keys():
+			print pants[pant][fil[0]], fil[1]
 			if pants[pant][fil[0]] != fil[1]:
 				pants.pop(pant)
 	return pants

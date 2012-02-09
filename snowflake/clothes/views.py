@@ -52,12 +52,12 @@ def results(request):
 		filters = filters.split(')(')
 		filters[0] = filters[0][1:]
 		filters[-1] = filters[-1][:-1]
-		print filters
 	if result_set == None:
 		compare_measurements = {"waist": reference_pant.waist, 
 								"inseam": reference_pant.inseam,
 								"cuff": reference_pant.cuff,
 								"front_rise": reference_pant.front_rise}
+#					                        "retailer1_price": reference_pant.retailer1_price}
 		acceptable_pants = compare_pants(reference_pant, compare_measurements, MOE, flags)
 		translated = categorical_pant_list(reference_pant, acceptable_pants)
 		request.session["result_set"] = translated.copy()
@@ -65,7 +65,7 @@ def results(request):
 		translated = narrow_pants(result_set.copy(), filters)
 	
 	return render_to_response('results.html', { 'pants':translated, 
-												'reference':reference_pant, 
+												'reference':reference_pant,
 												'filters':filters, 
 												'token':token }, context_instance=RequestContext(request))
 

@@ -56,7 +56,8 @@ def results(request):
 		compare_measurements = {"waist": reference_pant.waist, 
 								"inseam": reference_pant.inseam,
 								"cuff": reference_pant.cuff,
-								"front_rise": reference_pant.front_rise}
+								"front_rise": reference_pant.front_rise,
+					                        }
 		acceptable_pants = compare_pants(reference_pant, compare_measurements, MOE, flags)
 		translated = categorical_pant_list(reference_pant, acceptable_pants)
 		request.session["result_set"] = translated.copy()

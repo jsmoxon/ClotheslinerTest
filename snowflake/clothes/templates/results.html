@@ -16,14 +16,6 @@
 {% endblock breadcrumb %}
 
 {% block sizefilters %}
-
-<h4>Price</h4>
-<input type="button" value="Less than $50" />
-<input type="button" value="Between $50-100" />
-<input type="button" value="More than $100" />
-
-
-
 <h4>Waist</h4>
 <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. tighter waist"><br/>
 <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. tighter waist"><br/>
@@ -138,7 +130,7 @@ function popItUp(item)
 				<li class="make">{{item.designer}}</li></br>
 				<li class="model">{{item.style}} </li></br>
 				<li class="size" style="display:inline;">{{item.designer_waist}} x {{item.designer_inseam}}</li> 
-				<li class="price" style="display:inline;">${{item.retailer1_price}}</li>
+				<li class="price" id="price" style="display:inline;">${{item.retailer1_price}}</li>
 			</ul>
 		</div><!--closes #pantlabel-->
 		<input type="button" 
