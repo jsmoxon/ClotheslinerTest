@@ -10,33 +10,12 @@
 <ul>
 <li id="ref_make" class="make">{{reference.designer}}</li>
 </br>
-
-<li id="ref_model" class="model">{{reference.style}}  ( {{reference.designer_waist}}
-=======
 <li id="ref_model" class="model">{{reference.style}}</li>
 <li class="model">  ( {{reference.designer_waist}}
 {% if reference.designer_inseam = 1.729 %})</li>
 {% else %}
 x {{reference.designer_inseam}} ) </li>
 {% endif %}
-<br/><br/>
-<li id="ref_price" class="price"></li>
-</ul>
-<div id="refpant_desc" class="alpha omega grid_4">
-</div> <!--closes refpant_desc-->
-
-	{% block filter_section %}
-	<div id="filter_list">
-	<h4>Filters</h4>
-		<ul><h6>Price</h6>
-		  <li><a href="http://google.com">Less than $50</a></li>
-		  <li>Between $51 and $100</li>
-		  <li>More than $100</li>
-		  <li class="price" style="display:inline;">${{item.retailer1_price}}</li>
-		</ul>
-	</div>
-	{% endblock filter_section%}
-
 <!--<li id="ref_price" class="price"></li> where price would go-->
 </ul>
 <div id="refpant_desc" class="alpha omega grid_4">
