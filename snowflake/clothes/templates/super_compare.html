@@ -32,6 +32,7 @@ var p = new Object();
 	p[{{reference.id}}]["imageLink"] = ("{{reference.picURL}}" == "None") ? "N/A":"{{reference.url_link|safe}}";
 	p[{{reference.id}}]["designer"] = ("{{reference.designer}}" == "None") ? "N/A":"{{reference.designer|safe}}";
 	p[{{reference.id}}]["style"] = ("{{reference.style}}" == "None") ? "N/A":"{{reference.style|safe}}";
+        p[{{reference.id}}]["designer_waist"] = ("{{reference.designer_waist}}" == "None") ? "N/A":"{{reference.designer_waist}}";
 	p[{{reference.id}}]["waist"] = ("{{reference.waist}}" == "None") ? "N/A":{{reference.waist}};
 	p[{{reference.id}}]["inseam"] = ("{{reference.inseam}}" == "None") ? "N/A":{{reference.inseam}};
 	p[{{reference.id}}]["cuff"] = ("{{reference.cuff}}" == "None") ? "N/A":{{reference.cuff}};
@@ -49,6 +50,7 @@ var p = new Object();
 	p[{{pant.id}}]["imageLink"] = ("{{pant.picURL}}" == "None") ? "N/A":"{{pant.url_link|safe}}";
 	p[{{pant.id}}]["designer"] = ("{{pant.designer}}" == "None") ? "N/A":"{{pant.designer|safe}}";
 	p[{{pant.id}}]["style"] = ("{{pant.style}}" == "None") ? "N/A":"{{pant.style|safe}}";
+        p[{{pant.id}}]["designer_waist"] = ("{{pant.designer_waist}}" == "None") ? "N/A":"{{pant.designer_waist}}";
 	p[{{pant.id}}]["waist"] = ("{{pant.waist}}" == "None") ? "N/A":{{pant.waist}};
 	p[{{pant.id}}]["inseam"] = ("{{pant.inseam}}" == "None") ? "N/A":{{pant.inseam}};
 	p[{{pant.id}}]["cuff"] = ("{{pant.cuff}}" == "None") ? "N/A":{{pant.cuff}};
@@ -78,6 +80,7 @@ function makeCompare(sel)
 	$('div#comp_pant_image #comp_image').attr('href',p[sel.name]['imageLink']);
 	$('div#datatable td#designer_comp').text(p[sel.name]['designer']);
 	$('div#datatable td#style_comp').text(p[sel.name]['style']);
+        $('div#datatable td#size_comp').text(p[sel.name]['designer_waist']);
 	$('div#datatable td#waist_comp').text(p[sel.name]['waist']);
 	$('div#datatable td#inseam_comp').text(p[sel.name]['inseam']);
 	$('div#datatable td#cuff_comp').text(p[sel.name]['cuff']);
@@ -100,6 +103,7 @@ function makeCompare(sel)
     $('div#retailerdesc2 p#retailer2_returns').text(p[sel.name]['retailer2_returns']);
     $('div#retailerinfo h3#pant_style').text(p[sel.name]['style']);
     $('div#retailerinfo h6#pant_designer').text(p[sel.name]['designer']);
+    $('div#retailerinfo h6#size_comp').text(p[sel.name]['designer_waist']);
 
 
 	$('.small_tile').css("outline", "none"); 
@@ -115,6 +119,7 @@ function makeReference(sel)
 	$('div#reference_pant #ref_image').attr('href',p[sel.name]['imageLink']);
 	$('div#datatable td#designer_ref').text(p[sel.name]['designer']);
 	$('div#datatable td#style_ref').text(p[sel.name]['style']);
+        $('div#datatable td#size_ref').text(p[sel.name]['designer_waist']);
 	$('div#datatable td#waist_ref').text(p[sel.name]['waist']);
 	$('div#datatable td#inseam_ref').text(p[sel.name]['inseam']);
 	$('div#datatable td#cuff_ref').text(p[sel.name]['cuff']);
@@ -210,63 +215,63 @@ function unfitItem(item)
 										<table>
 						<tr>
 						  <td id="designer_label"></td>
-						  <td id="designer_ref">error</td>
-						  <td id="designer_comp">error</td>
+						  <td id="designer_ref">N/A</td>
+						  <td id="designer_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="style_label"class="firstcolumn">Style</td>
-						  <td id="style_ref">error</td>
-						  <td id="style_comp">error</td>
+						  <td id="style_ref">N/A</td>
+						  <td id="style_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="size_label">Size</td>
-						  <td id="size_ref">pending </td>
-						  <td id="size_comp">pending</td>
+						  <td id="size_ref">N/A </td>
+						  <td id="size_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="waist_label">Actual waist</td>
-						  <td id="waist_ref">error </td>
-						  <td id="waist_comp">error</td>
+						  <td id="waist_ref">N/A </td>
+						  <td id="waist_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="front_rise_label">Front rise</td>
-						  <td id="front_rise_ref">error </td>
-						  <td id="front_rise_comp">error</td>
+						  <td id="front_rise_ref">N/A </td>
+						  <td id="front_rise_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="back_rise_label">Rear rise</td>
-						  <td id="back_rise_ref">error </td>
-						  <td id="back_rise_comp">error</td>
+						  <td id="back_rise_ref">N/A </td>
+						  <td id="back_rise_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="hip_label">Hip</td>
-						  <td id="hip_ref">error </td>
-						  <td id="hip_comp">error</td>
+						  <td id="hip_ref">N/A </td>
+						  <td id="hip_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="thigh_label"> Thigh</td>
-						  <td id="thigh_ref">error </td>
-						  <td id="thigh_comp">error</td>
+						  <td id="thigh_ref">N/A </td>
+						  <td id="thigh_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="knee_label">Knee</td>
-						  <td id="knee_ref">error </td>
-						  <td id="knee_comp">error</td>
+						  <td id="knee_ref">N/A </td>
+						  <td id="knee_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="cuff_label">Cuff</td>
-						  <td id="cuff_ref">error </td>
-						  <td id="cuff_comp">error</td>
+						  <td id="cuff_ref">N/A </td>
+						  <td id="cuff_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="outseam_label">Outseam</td>
-						  <td id="outseam_ref">error </td>
-						  <td id="outseam_comp">error</td>
+						  <td id="outseam_ref">N/A </td>
+						  <td id="outseam_comp">N/A</td>
 						</tr>
 						<tr>
 						  <td id="inseam_label">Actual inseam</td>
-						  <td id="inseam_ref">error </td>
-						  <td id="inseam_comp">error</td>
+						  <td id="inseam_ref">N/A </td>
+						  <td id="inseam_comp">N/A</td>
 						</tr>				
 					</table> 
 					</div><!--closes #datatable-->	</li>
@@ -280,6 +285,8 @@ function unfitItem(item)
 		<h3 id="pant_style">Style Name</h3>
 		<h6>by</h6><h6 id="pant_designer">Pant Name</h6>
                 <br/>
+		<h6>Size</h6><h6 id="size_comp">N/A</h6>
+		<br/>
 		<h3> Where to buy </h3>
 			<div id="retailerdesc" class="retailer_label">
 				<p class="retail_price retail_about" id="retailer1_price">Retailer1 Price</p>
