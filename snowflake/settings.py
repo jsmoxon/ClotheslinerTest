@@ -1,4 +1,5 @@
 # Django settings for snowflake project.
+from constants import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
