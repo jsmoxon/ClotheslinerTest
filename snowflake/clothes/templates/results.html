@@ -15,6 +15,36 @@
 </div> <!--closes #breadcrumb-->
 {% endblock breadcrumb %}
 
+{% block sizefilters %}
+
+<h4>Price</h4>
+<input type="button" value="Less than $50" />
+<input type="button" value="Between $50-100" />
+<input type="button" value="More than $100" />
+
+
+
+<h4>Waist</h4>
+<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. tighter waist"><br/>
+<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. tighter waist"><br/>
+<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="Similar waist"><br/>
+<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. looser waist"><br/>
+<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. looser waist"><br/>
+<h4>Rise</h4>
+<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1 in. lower rise"><br/>
+<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1/2 in. lower rise"><br/>
+<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="Similar rise"><br/>
+<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1 in. higher rise"><br/>
+<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1/2 in. higher rise"><br/>
+<h4>Cuff</h4>
+<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1 in. tighter cuff"><br/>
+<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1/2 in. tighter cuff"><br/>
+<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="Similar cuff"><br/>
+<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1 in. looser cuff"><br/>
+<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1/2 in. looser cuff"><br/>
+{% endblock sizefilters %}
+
+
 {% block content %}
 <script type="text/javascript">
 
