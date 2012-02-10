@@ -242,6 +242,11 @@ font-size: 20px;
 font-family: 'Raleway', cursive;
 }
 
+h4 {
+font: 16px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #black;
+}
+
 #searchform {
 margin-left:20px;
 margin-top:60px;
@@ -580,4 +585,103 @@ text-align: center;
 
 #ankle {
 clear:both;
+}
+
+
+/* HOW IT WORKS */
+
+.inline{
+display:inline;
+}
+
+#reg_form input[type="text"] {
+display:inline;
+}
+
+#forminput1 {
+backround-color: green;
+}
+
+.howitworkstile
+{width: 230px;
+}
+
+.signup {
+display:inline;
+background-color:green;
+}
+
+.fieldlabel {
+padding-left: 20px;
+}
+
+#tux {
+	max-width:300px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto; 
+    }
+
+#logobox {
+background-color:;
+text-align:center;
+margin-top:60px;
+}
+
+#logoimg {
+background-color:;
+min-width:240px;
+}
+
+.featurebox {
+min-height:203px;
+margin-top:30px;
+padding:16px;
+border-radius:5px;
+box-shadow:rgba(0,0,0,0.15) 0 2px 4px;
+background: white;
+}
+
+.featurebox img {
+height:90px;
+}
+
+body
+{
+background-image:url('/images/bgnoise_lg.png');
+}
+
+.signupbutton{
+margin-top: 20px;
+background-color:#ee432e;
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ee432e),color-stop(50%,#c63929),color-stop(50%,#b51700),color-stop(100%,#891100));
+background-image:-webkit-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:-moz-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:-ms-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:-o-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+border:1px solid #951100;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+-ms-border-radius:5px;
+-o-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-moz-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-ms-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-o-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+color:#fff;
+font:bold 20px "helvetica neue",helvetica,arial,sans-serif;
+line-height:1;
+padding:12px 0 14px 0;
+text-align:center;
+text-shadow:0 -1px 1px rgba(0,0,0,0.8);
+width:150px
+}
+
+#signupbutton {
+display:block;
+margin-left:auto;
+margin-right:auto;
 }

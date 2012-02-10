@@ -5,8 +5,8 @@
 ]>
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="319px" height="75px" viewBox="302.333 176.059 319 75"
-	 overflow="visible" enable-background="new 302.333 176.059 319 75" xml:space="preserve">
+	 x="0px" y="0px" width="181px" height="164px" viewBox="612 441 181 164"
+	 overflow="visible" enable-background="new 612 441 181 164" xml:space="preserve">
 <defs>
 </defs>
 <image display="none" overflow="visible" width="1020" height="1020" id="Background_xA0_Image_1_" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA/wAAAP8CAIAAAB0wyKsAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
@@ -99,11 +99,17 @@ KzcLDwAAAABJRU5ErkJggg==">
 			h-40V1020z M160,1020h40V0h-40V1020z M100,1020h40V0h-40V1020z M40,1020h40V0H40V1020z"/>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 300.3335 236)" font-family="'Ampersand'" font-size="72">Clothesliner</text>
-<g>
-	<g>
-		<path d="M325.635,243.589c84.83,0.987,169.666,1,254.5,1c0.776,0,2.036-1.179,0.729-1.179c-84.834,0-169.67-0.013-254.5-1
-			C325.585,242.402,324.327,243.574,325.635,243.589L325.635,243.589z"/>
-	</g>
-</g>
+<rect x="617.5" y="453.5" display="none" fill="#F2F2F2" stroke="#CCCCCC" stroke-miterlimit="10" width="157" height="153"/>
+<rect x="626.43" y="454.817" fill="none" width="147.141" height="65.172"/>
+<text transform="matrix(1 0 0 1 626.4297 466.0674)"><tspan x="0" y="0" font-family="'Ampersand'" font-size="18">Your favorite pair of </tspan><tspan x="0" y="21.6" font-family="'Ampersand'" font-size="18">pants to compare to.</tspan></text>
+<path d="M725.079,562.401c0.177-1.274,2.637-3.161,2.716-4.446c0.142-2.335-3.161-6.902-5.432-7.78
+	c-3.603-1.394-21.918-0.741-21.918-0.741c-1.789-2.989,3.189-10.369,4.559-13.555c2.011-4.67,1.672-10.866-0.871-14.049
+	c-3.105-3.888-8.804-4.147-8.923-2.407c-0.849,12.62-3.378,16.122-6.765,18.617c-2.034,1.499-3.812,2.811-4.751,5.094
+	c-5.771,14.041-10.05,17.291-12.494,17.291h-1.631v31.912l17.109,3.04c0,0,21.241,1.921,27.93,0c2.104-0.603,5.736-3.62,6.594-5.558
+	c0.491-1.112-0.188-3.744,0.391-4.817c0.854-1.591,4.464-3.582,4.461-5.742c-0.004-1.541-1.883-4.208-1.745-5.744
+	c0.135-1.537,3.494-3.646,3.49-5.186C727.792,566.713,724.856,564.006,725.079,562.401z"/>
+<path d="M666.311,591.559c0,1.72-1.459,3.113-3.259,3.113h-9.779c-1.8,0-3.26-1.394-3.26-3.113v-29.576
+	c0-1.72,1.46-3.113,3.26-3.113h9.779c1.8,0,3.259,1.394,3.259,3.113V591.559z"/>
+<rect x="758.945" y="525.59" width="29.25" height="7.02"/>
+<rect x="758.945" y="511.549" width="29.25" height="7.02"/>
 </svg>
