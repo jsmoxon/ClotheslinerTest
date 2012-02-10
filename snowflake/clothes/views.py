@@ -17,7 +17,7 @@ def stocktest(request):
 	return render_to_response('stock_item.html', {'item':item, 'pant':pant})
 
 def landing(request):
-	return render_to_response('landingPage.html')
+	return render_to_response('howitworks.html')
 
 def home(request):
 	q = Pant.objects.all()

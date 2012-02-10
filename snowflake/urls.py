@@ -6,6 +6,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^$', 'clothes.views.landing'),
     (r'^demonstration/', include('clothes.urls')),
+    (r'^alpha/', include('clothes.urls')),
     (r'^p4tt/', include('clothes.urls')),
     (r'^feedback/$', 'feedback.views.home'),
     (r'^feedback/submit/$', 'feedback.views.feedback_submit'),
