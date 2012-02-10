@@ -1,0 +1,77 @@
+{% extends "index.html" %}
+{% load static %}
+{% load filters %}
+
+{% block pages %}
+
+	<div class="container">
+		<div class="sixteen columns">
+			<div id="logobox" class="ten columns offset-by-three">
+			
+			<img src="{% get_static_prefix %}images/logoamp.png" id="logoimg" class="scale-with-grid" alt="logo"/>
+			</br>
+			<h3> Find pants that fit. </h3>
+			</br>
+			</div>
+		</div>
+		<div id="signup" class="sixteen columns">
+			<div id="explainer" class="eight columns offset-by-four">
+				<h4> 
+				We're building a website that lets you search for clothes that you like, based on clothes that you already know fit you. 
+				</h4>
+				<br />
+				<h4>
+				Like the fit of the Levi's 505, but want it in a chino? You're a 34x32 in Gap, 33x31 in Levi's and want to know what you are at J. Crew? What the hell does "relaxed fit" mean anyway?
+				</h4>
+				<br />
+			</div>
+			
+			<div id="signuper" class="eight columns offset-by-four">
+				<h4> You've come to the right place. Sign up to get invited as an alpha user: </h4>
+				<br />
+				<form method="get" action="/register/">
+					<div id="reg_form" class="">
+						<label for="name" class="inline fieldlabel">Name:</label>
+						<input id="name" type="text" name="name" maxlength="100" class="inline" value="Name">
+						<label for="email" class="inline fieldlabel">Email:</label>
+						<input id="email" type="text" name="email" maxlength="75" class="inline" value="Email address">
+						<div id="buttonholder">
+						<button class="reg_button" id="signupbutton" style="inline">Sign up!</button>
+						</div>
+					</div><!--closes reg_form-->
+				</form> 
+			</div><!--closes signup-->
+		</div>
+		
+		<div id="featurebox_div" class="sixteen columns">
+			<div class="sixteen columns alpha omega">
+				<img src="{% get_static_prefix %}images/howitworkstext.svg" alt="description" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="one-third column alpha omega">
+				<img src="{% get_static_prefix %}images/factory.svg" alt="how it works" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="one-third column alpha omega">
+				<img src="{% get_static_prefix %}images/genome.svg" alt="genome" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="one-third column alpha omega">
+				<img src="{% get_static_prefix %}images/thumb.svg" alt="thumb" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="sixteen columns alpha omega">
+				<img src="{% get_static_prefix %}images/tuxedo.svg" alt="tuxedo" class="howitworkstile scale-with-grid" id="tux"/>
+			</div>
+		</div><!--closes featurebox div--> 
+   
+<div id="footer" class="alpha omega sixteen columns">
+    <hr />
+    <div id="footerlinks">
+      <ul>
+        <li><a href="/demonstration/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/create/">Enter a Pant</a></li>
+      </ul>
+    </div> <!--closes the footerlinks div-->
+  </div> <!--closes the footer div-->
+  
+{% endblock pages %}
+
+

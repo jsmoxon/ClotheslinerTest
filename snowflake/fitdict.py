@@ -3,34 +3,34 @@ FIT_DICT = { #all are ref pant MINUS returned pant
 
 "muffintop": #for now just a function of frontRise
 {
-	"zero":"Rise - Structured to sit on your waist at about the same height as the reference pant.",
+	"zero":"Structured to sit on your waist at about the same height as the reference pant.",
 	"positive":
 		{
-		1: "Rise - These sit a bit lower on your waist.",
-		2: "Rise - These sit lower on your waist or hip, feeling more like a low rise pant, and youll notice that some T shirts wont tuck in anymore.",
-		3: "Rise - These sit signifcantly lower on your hips. Realize this will have a much different look and feel."
+		1: "These sit a bit lower on your waist.",
+		2: "These sit lower on your waist or hip, feeling more like a low rise pant, and youll notice that some T shirts wont tuck in anymore.",
+		3: "These sit signifcantly lower on your hips. Realize this will have a much different look and feel."
 		},
 	"negative":
 		{
-		1: "Rise - These sit a bit higher on your hip, but should feel pretty similar to the reference pant.",
-		2: "Rise - These sit higher on your waist, and should feel a bit more secure.",
-		3: "Rise - These are significanltly higher on your waist, and feel like a very different pant. They can be worn either sitting very high on your waist or as a drop-crotch pant, where the crotch of the pant is noticably low on your thigh."
+		1: "These sit a bit higher on your hip, but should feel pretty similar to the reference pant.",
+		2: "These sit higher on your waist, and should feel a bit more secure.",
+		3: "These are significanltly higher on your waist, and feel like a very different pant. They can be worn either sitting very high on your waist or as a drop-crotch pant, where the crotch of the pant is noticably low on your thigh."
 		}
 },	
 	
 "buttcupping": # (rearlRise/totalRise)
 {
-	"zero":"Seat - You wont notice much of a change in how much room these pants provide.",
+	"zero":"You wont notice much of a change in how much room these pants provide.",
 	"positive":
 		{
-		.02: "Seat - The butt for these pants will feel slightly more tight, but not significantly enough to worry about.",
-		.04: "Seat - The buttocks will be noticably more tight, and should be enough for you unless you find the reference pant to be super loose.",
-		.05: "Seat - These will be much more tight in the butt, which is risky if the reference pant fits comfortably." 
+		.02: "The butt for these pants will feel slightly more tight, but not significantly enough to worry about.",
+		.04: "The buttocks will be noticably more tight, and should be enough for you unless you find the reference pant to be super loose.",
+		.05: "These will be much more tight in the butt, which is risky if the reference pant fits comfortably." 
 		},
 	"negative":
 		{
-		1: "Seat - These pants feel slightly more loose in the butt, but not signficantly so.",
-		2: "Seat - Theres significantly more room in the rear of these pants, but you shouldnt run the risk yet of a diaper butt unless you already had plenty of room in the reference pant.",
+		1: "These pants feel slightly more loose in the butt, but not signficantly so.",
+		2: "Theres significantly more room in the rear of these pants, but you shouldnt run the risk yet of a diaper butt unless you already had plenty of room in the reference pant.",
 		}
 },
 	
@@ -43,18 +43,18 @@ FIT_DICT = { #all are ref pant MINUS returned pant
 	
 "nutcupping": # a shorter totalRise without a larger waist will result in more nutcupping
 {
-	"zero":"Crotch - These pants will fit you in the crotch at about the same level of tightness.",
+	"zero":"These pants will fit you in the crotch at about the same level of tightness.",
 	"positive":
 		{
-		1: "Crotch - These pants will feel negligably tighter.",
-		2: "Crotch - These pants will feel noticably tighter.",
-		3: "Crotch - These pants will feel a lot tighter."
+		1: "These pants will feel negligably tighter.",
+		2: "These pants will feel noticably tighter.",
+		3: "These pants will feel a lot tighter."
 		},
 	"negative":
 		{
-		1: "Crotch - These pants will feel negligably looser.",
-		2: "Crotch - These pants will feel noticably looser.",
-		3: "Crotch - These pants will feel a lot looser."
+		1: "These pants will feel negligably looser.",
+		2: "These pants will feel noticably looser.",
+		3: "These pants will feel a lot looser."
 		}
 	},
 
@@ -94,22 +94,22 @@ FIT_DICT = { #all are ref pant MINUS returned pant
 
 "ankle": #for now a function of only cuff
 	{
-	"zero":"Ankle - The leg opening is very similar.",
+	"zero":"The leg opening is very similar.",
 	"positive":
 		{
-		.25: "Ankle - Finishes off with a bit tighter leg opening.",
-		.5: "Ankle - The leg opening will be noticably tighter.",
-		1: "Ankle - Finishes off with a much tighter leg opening, creating a more tapered feel.",
-		2: "Ankle - The leg opening will feel like a boot cut by comparison.",
-		99: "Ankle - This leg opening is insanely tighter. Only try these if you are comfortable losing circulation to your feet."
+		.25: "Finishes off with a bit tighter leg opening.",
+		.5: "The leg opening will be noticably tighter.",
+		1: "Finishes off with a much tighter leg opening, creating a more tapered feel.",
+		2: "The leg opening will feel like a boot cut by comparison.",
+		99: "This leg opening is insanely tighter. Only try these if you are comfortable losing circulation to your feet."
 		},
 	"negative":
 		{
-		.25: "Ankle - Finishes off with a bit looser leg opening.",
-		.5: "Ankle - The leg opening will be noticably looser.",
-		1: "Ankle - It finishes off with a much looser leg opening, giving it a less tapered feel.",
-		2: "Ankle - The leg opening will feel like a boot cut by comparison.",
-		99: "Ankle - The pant finishes much looser at the leg opening. Welcome to 1978. "
+		.25: "Finishes off with a bit looser leg opening.",
+		.5: "The leg opening will be noticably looser.",
+		1: "It finishes off with a much looser leg opening, giving it a less tapered feel.",
+		2: "The leg opening will feel like a boot cut by comparison.",
+		99: "The pant finishes much looser at the leg opening. Welcome to 1978. "
 		}
 	}
 	}

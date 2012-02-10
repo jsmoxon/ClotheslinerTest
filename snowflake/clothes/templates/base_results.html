@@ -2,30 +2,38 @@
 {% load filters %}
 
 {% block refpant %}
-
 <div id="content" class="sixteen columns">
-{% block breadcrumb %}
-{% endblock breadcrumb %}
 <div id="refpant" class="five columns">
+<h3>Your Reference Pant</h3>
+<h6>All pants to the right are described in relation to this pant.</h6>
 <img src="{{reference.picURL}}"width="240" height="280"></img>
 <ul>
 <li id="ref_make" class="make">{{reference.designer}}</li>
 </br>
-<li id="ref_model" class="model">{{reference.style}}  ({{reference.designer_waist}} x {{reference.designer_inseam}}) </li>
-<li id="ref_price" class="price"></li>
+<li id="ref_model" class="model">{{reference.style}}</li>
+<li class="model">  ( {{reference.designer_waist}}
+{% if reference.designer_inseam = 1.729 %})</li>
+{% else %}
+x {{reference.designer_inseam}} ) </li>
+{% endif %}
+<!--<li id="ref_price" class="price"></li> where price would go-->
 </ul>
 <div id="refpant_desc" class="alpha omega grid_4">
-{% block filter_section %}
-{% endblock filter_section %}
-
 </div> <!--closes refpant_desc-->
+{% block sizefilters %}
+{% endblock sizefilters %}
 </div> <!--closes refpant-->
 
 <div id="results" class="ten columns">
+    {% block breadcrumb %}
+    {% endblock breadcrumb %}
 
     {% block content %}
     {% endblock content %}
 </div> <!--closes #results-->
 </div> <!--closes #content-->
+
+
+
 
 {% endblock refpant%}

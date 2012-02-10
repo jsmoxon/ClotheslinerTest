@@ -342,7 +342,7 @@ height:30px;
 
 
 #breadcrumb {
-}
+}	    
 
 #refpant h3, h6 {
 text-align:center;
@@ -438,7 +438,7 @@ padding-bottom: 60px;
 }
 
 .addFilterLink {
-		width:130px;
+		width:120px;
 		background-color:transparent;
 		color: #838181;
         /*
@@ -514,7 +514,7 @@ padding-bottom: 60px;
         top:-3px;
 }
 
-li.make, li.model, li.originalprice, li.sale {
+li.make, li.model, li.price, li.originalprice, li.sale {
 display: inline;
 color: black;	
 font-size: 12px;

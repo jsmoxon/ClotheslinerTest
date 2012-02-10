@@ -12,7 +12,7 @@ function compThem(val, key)
 		for (var bound in usage['negative'])
 			{if (Math.abs(val) <= bound) {return usage['negative'][bound];}}
 	}
-	else {return "";}
+	else {return "Sorry, data not available";}
 }
 
 function explainThis(val)

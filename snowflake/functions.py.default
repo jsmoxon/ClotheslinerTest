@@ -29,8 +29,6 @@ def find_pants(designer, style, waist, inseam):
 	if inseam == "Unhemmed":
 		kwargs["designer_inseam__exact"]=0.0
 		flags.append("Unhemmed")
-	elif inseam == "N/A":
-		kwargs["designer_inseam__exact"]=1.729
 	else:
 		kwargs["designer_inseam__exact"]=inseam
 	try:
