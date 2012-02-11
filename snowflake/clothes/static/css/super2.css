@@ -120,7 +120,7 @@ li .designer {
 }
 
 #ref_pant_image {
-margin-left: 100px;
+
 }
 
 #reference_pant {
@@ -135,6 +135,10 @@ margin-left: 100px;
 
 #comp_pant_image {
 float:right;
+}
+
+#comp_pant_image img {
+width:80%;
 }
 
 #explain {
@@ -334,27 +338,12 @@ height:30px;
 
 /* RESULTS.HTML */
 
-#refpant {
-}
-
-#content {
-}
-
-
-#breadcrumb {
-}
-
 #refpant h3, h6 {
 text-align:center;
 margin-bottom:10px;}
 
 #filter_list h6{
 text-align:left;
-}
-
-#results {
-border-left:1px solid #838181;
-padding-left:25px;
 }
 
 .pantlabel{
@@ -473,7 +462,6 @@ padding-bottom: 60px;
 
 .desc {
         position:relative;
-        padding-top: 10px;
 }
 
 /*
@@ -569,17 +557,47 @@ height:30px;
 margin-top:0px;
 }
 
-#tester {
-
-}
-
-.fit_prose {
+. fit_prose {
 text-align: center;
 }
 
+/* New Results2 CSS*/
 
-#ankle {
-clear:both;
+#refbar {
+background:white;
 }
 
+#upper_filters {
+
+float:right;
+margin-left:-40px;
+}
+
+#res_ref_pant {
+margin-left:40px;
+}
+
+#results {
+background:white;
+
+}
+
+.item_info {
+display: inline;
+color: black;
+font-size: 12px;
+}
+
+.desc ul {
+margin-top:-10px;}
+
+body {background-image:url("{% get_static_prefix %}images/heaven.jpg")}
+
+
+#results_box {
+border: 5px solid white;
+background:white;
+}
+
+#addtofitroom {
 }

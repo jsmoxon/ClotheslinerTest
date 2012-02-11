@@ -1,0 +1,161 @@
+{% extends "base_results2.html" %}
+
+
+{% load filters %}
+{% block breadcrumb %}
+<div id="breadcrumb" class="ten columns">
+<!--{% if filters %}
+{% else %}
+<p>Click the <input class="addplus" type="button" value="+"/> to see more pants with this  description</p>
+{% endif %}-->
+{% for filt in filters %}
+<input type="button" class="dropFilterLink" onclick="dropFilter(this)" name="({{filt}})" value="X {{filt|disp_filter}}">&nbsp;&nbsp;
+<!--<input id="circlex" type="button" class="dropx" onclick="dropFilter(this)" name="({{filt}})" value="x">-->&nbsp;&nbsp;
+{% endfor %}
+</div> <!--closes #breadcrumb-->
+{% endblock breadcrumb %}
+
+{% block sizefilters %}
+{% endblock sizefilters %}
+
+
+{% block content %}
+<script type="text/javascript">
+
+var s = "";
+{% for filt in filters %}
+   	s += "({{filt}})";
+{% endfor %}
+
+{% for item in fitRoom %}
+	cart.push({{item.id}});
+{% endfor %}
+
+function circleFilter(sel)
+{
+	addFilter(document.getElementById(sel.name));
+}
+
+function addFilter(sel)
+{
+	if (!(s.match("("+sel.name+", "+sel.value+")")))
+		{s += "("+sel.name+", "+sel.value+")"};
+	var newFilter = document.createElement("INPUT");
+	newFilter.name = "filter";
+	newFilter.type = "hidden";
+	newFilter.value = s;
+	makeFilter(s);
+}
+
+function dropFilter(des)
+{
+	s = s.replace(des.name,"");
+	makeFilter(s);
+}
+
+function makeFilter(str)
+{
+	var newFilter = document.createElement("INPUT");
+	newFilter.name = "filter";
+	newFilter.type = "hidden";
+	newFilter.value = str;
+	makeForm(newFilter);
+}
+
+function makeForm(child)
+{
+	var newForm = document.createElement("FORM");
+	newForm.action="/demonstration/results/";
+	newForm.method="post";
+	newForm.onsubmit="clearInstruction()";
+
+	var csrfToken = document.createElement("INPUT");
+	csrfToken.name = "csrfmiddlewaretoken";
+	csrfToken.type = "hidden";
+	csrfToken.value = "{{token}}";
+
+	newForm.appendChild(csrfToken);
+	newForm.appendChild(child);
+        document.body.appendChild(newForm)
+	newForm.submit();
+}
+
+function popupCallback(c)
+{
+	cart = c;
+	$('#headerlinks #compareitems').text('Compare Items ('+cart.length+')');
+}
+
+function addItem(item)
+{
+	cart.push(item);
+	cart=jQuery.unique(cart);
+	$('#headerlinks #compareitems').text('Compare Items ('+cart.length+')');
+}
+
+function popItUp(item)
+{
+	addItem(item);
+	popupForm(item, '{{token}}');
+}
+</script>
+
+{% for item,values in pants.items %}
+<div id="item" class="tile">
+	<div id="imagecontainer" onmouseover="$('.pantlabel#{{item.id}}').show();" onmouseout="$('.pantlabel').hide();">
+		<input type="image" 
+			   id="resultimage" 
+			   onclick="popItUp({{item.id}})" 
+			   src="{{item.picURL}}">
+		<div class="pantlabel" id="{{item.id}}" style="display:none">
+			<ul align="left">
+				<li class="item_info">{{values.waist}}</li></br>
+				<li class="item_info">{{values.front_rise}} </li></br>
+				<li class="item_info">{{values.cuff}} </li></br>
+
+			</ul>
+		</div><!--closes #pantlabel-->
+		<input type="button" 
+			   class="fittingRoom" 
+			   onClick="addItem({{item.id}})" 
+			   name="add{{item.id}}" 
+			   value="+" 
+			   id="fittingroombutton">
+	</div><!--closes #imagecontainer-->
+
+
+	<div class="desc">
+<!--		<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="{{values.waist}}"><br/>
+		<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"><br/>
+		<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}">
+		<!--		<input id="circlecuff" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.cuff}}" value="+"> HOW TO ADD BUTTON BACK IF WANTED--><br/>
+                        <ul align="left">
+                                <li class="item_info">{{item.designer}}</li></br>
+				<li class="item_info">{{item.style}} </li></br>
+                                <li class="item_info" style="display:inline;">{{item.designer_waist}} x {{item.designer_inseam}}</li>
+                                <li class="item_info" id="price" style="display:inline;">${{item.retailer1_price}}</li>
+			<input type="button"
+                           class=""
+                           onClick="addItem({{item.id}})"
+                           name="add{{item.id}}"
+                           value="Add to fit room"
+                           id="addtofitroom">
+			</ul>
+
+
+	</div><!--ends desc div-->
+</div><!--ends item div-->
+{% endfor %}
+
+{% endblock content%}
+
+{% block filter_section %}
+<div id="filter_list">
+<h4>Filters</h4>
+<ul><h6>Price</h6>
+  <li><a href="http://google.com">Less than $50</a></li>
+  <li>Between $51 and $100</li>
+  <li>More than $100</li>
+</ul>
+</div>
+{% endblock filter_section%}

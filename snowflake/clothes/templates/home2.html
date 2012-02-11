@@ -8,8 +8,9 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/home2.css" >
         <style type="text/css">
-         body {background-image:url("{% get_static_prefix %}images/bgnoise_lg.png")} 
+          body {background-image:url("{% get_static_prefix %}images/heaven.jpg"); background-size:100%}
         </style>
+
 <script type="text/javascript" src="{% get_static_prefix %}js/jquery.js"></script>
  <script type="text/javascript">
   function feedbackPopup() {
@@ -94,7 +95,7 @@ function genMeasurements(des, sel)
 
 <body onload="genDesigners()">
 <div id="logo" class="fourteen columns offset-by-one">
-<img src="{% get_static_prefix %}images/logoamp.png"/>
+  <a href="http://clothesliner.com"><img src="{% get_static_prefix %}images/bluelogo.png"/></a>
 </div><!--logo-->
 <div id="container" class="container" style="margin-top:20px">
   <div id="right_home" class="nine columns offset-by-five">
@@ -126,11 +127,11 @@ function genMeasurements(des, sel)
     </div><!--closes #searchform-->
   </div><!--closes #right home -->
 
-<div id="pantpic" class="six columns">
+<!--<div id="pantpic" class="six columns">
           <img src="{% get_static_prefix %}images/Arrow_PK.svg" class="drawnpant scale-with-grid" style="max-width:300px"/>
-</div>
+</div>-->
 
-<div id="footer" class="alpha omega sixteen columns">
+<div id="footer" class="ten columns offset-by-three">
     <hr>
     <div id="footerlinks">
       <ul>
@@ -138,8 +139,10 @@ function genMeasurements(des, sel)
         <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
         <li><a href="/demonstration/logout">Logout</a></li>
+	<li><a href="/">How it Works</a></li>
       </ul>
     </div> <!--closes the footerlinks div-->
+    </hr>
   </div> <!--closes the footer div-->
 </div> <!--closes the container div-->
 

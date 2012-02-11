@@ -10,6 +10,9 @@
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/tabs.css" >
+        <style type="text/css">
+<!--          body {background-image:white; background-size:100%}-->
+        </style>
 
 
 
@@ -172,8 +175,10 @@ function unfitItem(item)
 <div class="container">
   	<div id="header" class= "alpha omega sixteen columns">
     	<div id="title" class="alpha eight columns">
-			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-			<h3>find pants that fit (beta)</h3>
+<!--			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
+			<h3>find pants that fit (beta)</h3>-->
+                        <a href="http://clothesliner.com"><img src="{% get_static_prefix %}images/bluelogo.png"/></a>
+
         </div> <!--closes the title div-->
       
 		<div id="headerlinks" class="omega eight columns">
@@ -190,7 +195,7 @@ function unfitItem(item)
 	<div id="compare" class="sixteen columns"> <!--functions as a body content div-->
 	
 	<div id="leftside" class="ten columns">
-		<div id="ref_pant_image" class="three columns">
+		<div id="ref_pant_image" class="three columns offset-by-one">
 			<a id="ref_image" href=""><img id="refr_image" class="border" src=""/ alt="ref"></a>
 		</div><!--closes #ref_pant_image-->
 		
@@ -202,16 +207,17 @@ function unfitItem(item)
 			<div id="tabs_header">
 			<ul class="tabs">
 				  <!-- Give href an ID value of corresponding "tabs-content" <li>'s -->
-				  <li><a class="active" href="#tab_desc">How they'll Fit</a></li>
-				  <li><a  href="#tab_table">See Data</a></li>
+                                  <li><a  class="active" href="#tab_table">See Data</a></li>
+				  <li><a  href="#tab_desc">How they'll Fit</a></li>
+				  <!--<li><a  href="#tab_table">See Data</a></li>-->
 			</ul>		
 			</div> <!--closes #tabs_header-->
 			
 			<div id="tabs_content">
 				<ul class="tabs-content">
   				<!-- Give ID that matches HREF of above anchors -->
-  				<li class="active" id="tab_desc"><div id="fit_desc"></div></li>
- 				<li id="tab_table"><div id="datatable">
+  				<li class="" id="tab_desc"><div id="fit_desc"></div></li>
+ 				<li class="active" id="tab_table"><div id="datatable">
 										<table>
 						<tr>
 						  <td id="designer_label"></td>
@@ -308,7 +314,7 @@ function unfitItem(item)
 				</br>
 				<p class="shipping retail_returns" id="retailer2_shipping"> Free shipping </p>
 				<p class="returns retail_returns" id="retailer2_returns"> Returns for store credit, you pay shipping </p>	
-			</div><!--closes #retailerdesc-->
+			</div><!--closes #retailerdesc2-->
 			
 		</div> <!--closes #retailerinfo -->
 	
@@ -323,8 +329,7 @@ function unfitItem(item)
 </div><!--closes #compare-->
 
 
-
-<div class="thumbnails" class="sixteen columns">
+<div class="thumbnails" class="four columns" id="thumbnails">
 	<div class="thumbnail" id="thumb{{reference.id}}">
 	<input  type="image"
 			onclick="makeCompare(this)" 

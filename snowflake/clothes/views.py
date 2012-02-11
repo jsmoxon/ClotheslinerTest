@@ -34,7 +34,7 @@ def home(request):
 		else:
 			r[des]={sty:[[pant.designer_waist, pant.designer_inseam, desID, styID]]}
 	measure = simplejson.dumps(r)
-	return render_to_response('home.html', {'measurements':measure}, context_instance=RequestContext(request))
+	return render_to_response('home2.html', {'measurements':measure}, context_instance=RequestContext(request))
 
 def results(request):
 	reference_pant = request.session["reference_pant"]
@@ -64,7 +64,7 @@ def results(request):
 	else:
 		translated = narrow_pants(result_set.copy(), filters)
 	
-	return render_to_response('results.html', { 'pants':translated, 
+	return render_to_response('results2.html', { 'pants':translated, 
 												'reference':reference_pant,
 												'filters':filters, 
 												'token':token }, context_instance=RequestContext(request))
