@@ -14,16 +14,16 @@ padding-top:80px;
 
 #pantpic {
 margin-top:-80px;
-background:g;}
+background:;}
 
 .searchform {
 margin-top:10px;
 min-height:250px;
 background:#FFF;
 font-size:22px;
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
+-moz-box-shadow: 10px 10px 5px #667C7D;
+-webkit-box-shadow: 10px 10px 10px #667C7D;
+box-shadow: 10px 10px 10px #667C7D;
 padding-top:40px;
 }
 
@@ -96,6 +96,19 @@ margin-right:auto;
 width:100px;
 }
 
+#footerlinks li, a:visited, a {
+display: inline;
+color: #D9DBD0;
+text-decoration:none;
+font-size:28px;
+padding:7px;
+}
+
+#footerlinks a:hover {
+color:black;
+}
+
+
 #footer {
-margin-top: 200px;
+margin-top:30px;
 }

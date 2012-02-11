@@ -1,5 +1,4 @@
 FIT_DICT = { #all are ref pant MINUS returned pant
-#These are mostly done, ready for James
 
 "muffintop": #for now just a function of frontRise
 {

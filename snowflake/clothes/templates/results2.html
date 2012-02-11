@@ -1,4 +1,4 @@
-{% extends "base_results.html" %}
+{% extends "base_results2.html" %}
 
 
 {% load filters %}
@@ -16,24 +16,6 @@
 {% endblock breadcrumb %}
 
 {% block sizefilters %}
-<h4>Waist</h4>
-<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. tighter waist"><br/>
-<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. tighter waist"><br/>
-<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="Similar waist"><br/>
-<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. looser waist"><br/>
-<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. looser waist"><br/>
-<h4>Rise</h4>
-<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1 in. lower rise"><br/>
-<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1/2 in. lower rise"><br/>
-<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="Similar rise"><br/>
-<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1 in. higher rise"><br/>
-<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1/2 in. higher rise"><br/>
-<h4>Cuff</h4>
-<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1 in. tighter cuff"><br/>
-<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1/2 in. tighter cuff"><br/>
-<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="Similar cuff"><br/>
-<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1 in. looser cuff"><br/>
-<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1/2 in. looser cuff"><br/>
 {% endblock sizefilters %}
 
 
@@ -127,10 +109,10 @@ function popItUp(item)
 			   src="{{item.picURL}}">
 		<div class="pantlabel" id="{{item.id}}" style="display:none">
 			<ul align="left">
-				<li class="make">{{item.designer}}</li></br>
-				<li class="model">{{item.style}} </li></br>
-				<li class="size" style="display:inline;">{{item.designer_waist}} x {{item.designer_inseam}}</li> 
-				<li class="price" id="price" style="display:inline;">${{item.retailer1_price}}</li>
+				<li class="item_info">{{values.waist}}</li></br>
+				<li class="item_info">{{values.front_rise}} </li></br>
+				<li class="item_info">{{values.cuff}} </li></br>
+
 			</ul>
 		</div><!--closes #pantlabel-->
 		<input type="button" 
@@ -143,10 +125,23 @@ function popItUp(item)
 
 
 	<div class="desc">
-		<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="{{values.waist}}"><br/>
+<!--		<input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="{{values.waist}}"><br/>
 		<input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="{{values.front_rise}}"><br/>
 		<input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="{{values.cuff}}">
 		<!--		<input id="circlecuff" type="button" class="addplus" onclick="circleFilter(this)" name="{{values.cuff}}" value="+"> HOW TO ADD BUTTON BACK IF WANTED--><br/>
+                        <ul align="left">
+                                <li class="item_info">{{item.designer}}</li></br>
+				<li class="item_info">{{item.style}} </li></br>
+                                <li class="item_info" style="display:inline;">{{item.designer_waist}} x {{item.designer_inseam}}</li>
+                                <li class="item_info" id="price" style="display:inline;">${{item.retailer1_price}}</li>
+			<input type="button"
+                           class=""
+                           onClick="addItem({{item.id}})"
+                           name="add{{item.id}}"
+                           value="Add to fit room"
+                           id="addtofitroom">
+			</ul>
+
 
 	</div><!--ends desc div-->
 </div><!--ends item div-->
@@ -154,4 +149,13 @@ function popItUp(item)
 
 {% endblock content%}
 
-
+{% block filter_section %}
+<div id="filter_list">
+<h4>Filters</h4>
+<ul><h6>Price</h6>
+  <li><a href="http://google.com">Less than $50</a></li>
+  <li>Between $51 and $100</li>
+  <li>More than $100</li>
+</ul>
+</div>
+{% endblock filter_section%}

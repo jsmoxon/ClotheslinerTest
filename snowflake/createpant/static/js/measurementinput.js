@@ -1,12 +1,12 @@
 function displayMainInstructions()
 {
-document.getElementById("starter").innerHTML='<div class="measurementguide">\
+    document.getElementById("starter").innerHTML='<div class="measurementguide">\
 		 <p class="entry_description">1. Lay the pant flat on the floor (buttoned and zipped up).<br/><br/>\
           2. Measure to the edge of the garment as it lays rather than the edge of the seam.<br/><br/>\
           3. Round to the nearest 1/4 of an inch.<br/><br/>\
           4. Click each box below for further instructions.\
         </p>\
-	<img src="http://clothesliner.com/static/images/drawnpant.svg" class="drawnpant" alt="pant drawing" width=200px/>\
+	<img src="http://clothesliner.com/static/images/drawnpant.png" class="drawnpant" alt="pant drawing" width=200px/>\
 	</div>'
 	;
 }
