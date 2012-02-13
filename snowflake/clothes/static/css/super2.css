@@ -670,7 +670,7 @@ height:90px;
 
 body
 {
-background-image:url('/images/bgnoise_lg.png');
+background-image:url('{% get_static_prefix %}images/heaven.jpeg');
 }
 
 .signupbutton{
