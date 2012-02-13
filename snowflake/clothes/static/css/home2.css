@@ -1,11 +1,10 @@
 body, h1, h2, h3, h4, h5, h6, label {
 font-family:"Raleway";
-background-image:url("{% get_static_prefix %}images/exclusive_paper.png")
 }
 
 #logo {
 background:;
-margin-left:100px;
+
 }
 
 #logo img{
@@ -96,12 +95,13 @@ margin-right:auto;
 width:100px;
 }
 
-#footerlinks li, a:visited, a {
+#footerlinks li, a:visited, #footerlinks a {
 display: inline;
 color: #D9DBD0;
 text-decoration:none;
 font-size:28px;
 padding:7px;
+font-weight:bold;
 }
 
 #footerlinks a:hover {
@@ -111,4 +111,5 @@ color:black;
 
 #footer {
 margin-top:30px;
+text-align:center;
 }

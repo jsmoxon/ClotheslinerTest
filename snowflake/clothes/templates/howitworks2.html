@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+{% load static %}
+{% load filters %}
+
+{% block pages %}
+
+	<div class="container">
+		<div class="sixteen columns">
+			<div id="logobox" class="ten columns offset-by-three">
+			  
+			<a href="/demonstration/"><img src="{% get_static_prefix %}images/bluelogo.png" id="logoimg" class="scale-with-grid" alt="logo"/></a>
+			</br>
+			<h3> Find pants that fit. </h3>
+			</br>
+			</div>
+		</div>
+		<div id="featurebox_div" class="sixteen columns">
+			<div class="sixteen columns alpha omega">
+				<img src="{% get_static_prefix %}images/howitworkstext.svg" alt="description" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="one-third column alpha omega">
+				<img src="{% get_static_prefix %}images/factory.svg" alt="how it works" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="one-third column alpha omega">
+				<img src="{% get_static_prefix %}images/genome.svg" alt="genome" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="one-third column alpha omega">
+				<img src="{% get_static_prefix %}images/thumb.svg" alt="thumb" class="howitworkstile scale-with-grid"/>
+			</div>
+			<div class="sixteen columns alpha omega">
+				<img src="{% get_static_prefix %}images/tuxedo.svg" alt="tuxedo" class="howitworkstile scale-with-grid" id="tux"/>
+			</div>
+		</div><!--closes featurebox div--> 
+   
+<div id="footer" class="twelve columns offset-by-two">
+    <hr>
+    <div id="footerlinks">
+      <ul>
+        <li><a href="/create/">Enter a Pant</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
+        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/">How it Works</a></li>
+      </ul>
+    </div> <!--closes the footerlinks div-->
+    </hr>
+  </div> <!--closes the footer div-->
+</div> <!--closes the container div-->  
+{% endblock pages %}
+
+

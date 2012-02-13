@@ -23,6 +23,10 @@ margin:3px;
 padding:2px;
 }
 
+#ankle {
+
+}
+
 .retail_about {
 }
 
@@ -206,26 +210,25 @@ background-color:;
 #headerlinks li {
 display: inline;
 padding:1em;
-font-variant:small-caps;
-color: black;
-font-family: 'Sorts Mill Goudy', serif;
+color: #D9DBD0;
 text-align:right;
-}
+font-size: 22px; 
+font-weight:bold;
+font-family: 'Raleway'}
  
-#footer {text-align: center; }
+/*#footer {text-align: center; margin-top:30px; background:;}
 #footer li {display: inline; padding:1em;}
 
 #footerlinks li {
 display: inline;
 padding:1em;
-font-variant:small-caps;
-color: #838181;
+color: #D9DBD0;
 font-family: 'Sorts Mill Goudy', serif;
-}
+}*/
 
 a {text-decoration: none; color:black;}
 a:hover {color:#9C052A;} 
-a:visited {color:#black;}
+a:visited {color:#D9DBD0;}
 
 h1  {
 color: #black;
