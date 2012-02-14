@@ -6,11 +6,11 @@
   <div id="res_ref_pant" class="six columns">
   <img src="{{reference.picURL}}"width="168" height="196"></img>
   <ul>
-    <li id="ref_make" class="make">{{reference.designer}}</li>
+    <li id="ref_make" class="item_info">{{reference.designer}}</li>
 </br>
-    <li id="ref_model" class="model">{{reference.style}}</li>
+    <li id="ref_model" class="item_info">{{reference.style}}</li>
 </br>
-    <li class="model">  ( {{reference.designer_waist}}
+    <li class="item_info">  ( {{reference.designer_waist}}
 {% if reference.designer_inseam = 1.729 %})</li>
 {% else %}
 x {{reference.designer_inseam}} ) </li>

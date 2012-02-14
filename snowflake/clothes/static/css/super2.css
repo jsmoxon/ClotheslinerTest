@@ -1,5 +1,3 @@
-.layout {background-color:green;}
-
 h3 {
 line-height:normal;
 }
@@ -56,7 +54,7 @@ padding:2px;
 .fitting_room {
         cursor: pointer;
         font-family: 'Helvetica Neue Reg', sans-serif;
-        color:white;
+        Color:white;
         border:none;
         background-color:#838181;
         opacity:.5;
@@ -71,69 +69,10 @@ padding:2px;
         top:-87px;
 }
 
-
-
-#compare {
-}
-
-#compdatatable{
-clear:left;
-background-color:;
-overflow:hidden;
-border:#DDDDDD;
-}
-
-#datatable {
-}
-
 td {padding:5px;}
 tr:nth-child(2n+4) {background: #F5F5F5}
 
-/*
-.columnar {
-margin-left:0px;
-margin-right:0px;
-border: 1px solid green;
-}
-
-.measurements {
-margin-left:0px;
-margin-right:0px;
-border: 1px solid red;
-}
-
-.measurementdata {
-margin-left:0px;
-margin-right:0px;
-border: 1px solid blue;
-}
-
-#comp_images {
-white-space:nowrap;
-overflow:hidden;
-display:inline;
-max-width:170px;
-}
-*/
-
-li .designer {
-}
-
-#labels {
-	background-color:;
-}
-
-#ref_pant_image {
-
-}
-
-#reference_pant {
-	border:blue;
-	background-color:;
-}
-
 #comp_pant_1 {
-	background-color:;
 	overflow:hidden;
 	}
 
@@ -145,17 +84,9 @@ float:right;
 width:80%;
 }
 
-#explain {
-background: #DBDBDB;
-}
-
-#explain li {
-padding: 8px;
-list-style-type: circle;
-}
-
 #reference_pant .measurements{
 	float:right;
+	background:blue;
 }
 
 #refr_image {
@@ -193,18 +124,12 @@ margin-top:-40px;
 
 /* #PK ADDED Main SITE INFO
 ================================================== */
-#header {
-background-color:;
-}
+/* HEADER */
 
 #headerlinks {
 float:right;
 background-color:;
 text-align:right;
-}
-
-#title {
-background-color:;
 }
 
 #headerlinks li {
@@ -214,19 +139,11 @@ color: #D9DBD0;
 text-align:right;
 font-size: 22px; 
 font-family: 'Raleway'}
+
+/* LINKS and H's */
  
-/*#footer {text-align: center; margin-top:30px; background:;}
-#footer li {display: inline; padding:1em;}
-
-#footerlinks li {
-display: inline;
-padding:1em;
-color: #D9DBD0;
-font-family: 'Sorts Mill Goudy', serif;
-}*/
-
-a {text-decoration: none; color:black;}
-a:hover {color:#9C052A;} 
+a {text-decoration: none; color:#D9DBD0;}
+a:hover {color:black;} 
 a:visited {color:#D9DBD0;}
 
 h1  {
@@ -405,28 +322,11 @@ padding-bottom: 60px;
 	font-weight: normal;
 }
 
-.fitting_room {
-        color:white;
-        float:right;
-        border:none;
-        position:relative;
-	background-color:#838181;
-        opacity: .5;
-        top:-275px;
-        z-index:2;
-	height: 20px;
-        width: 20px;
-        cursor: pointer;
-}
-
-.pantlabel {
-
-        }
 .pantlabel li {
-        font: 'Helvetica Neue';
+        font-family: 'Helvetica Neue';
         font-size:12px;
         z-index:3;
-        color: black;
+        color:black;
 }
 
 .pantlabel ul {
@@ -451,11 +351,6 @@ padding-bottom: 60px;
         font-size: 12px;
         
 		*/
-}
-
-
-.opque_button {
-
 }
 
 .dropfilterLink {
@@ -509,27 +404,6 @@ padding-bottom: 60px;
         top:-3px;
 }
 
-li.make, li.model, li.originalprice, li.sale {
-display: inline;
-color: black;	
-font-size: 12px;
-}
-
-li.price, li.originalprice {margin-left:15px;}
-li.sale {color:9C052A; margin-left:2px;}
-li.originalprice {text-decoration: line-through;}
-
-li.model {overflow:hidden; white-space: nowrap; width: 180px;}
-
-li.colors {
-margin: 0;
-padding: 0;
-display: inline;
-list-style: none;
-}
-
-#ref_make, #ref_model, #ref_price {font-size: 14px;}
-
 #refpant li.category{
 color: #838181;
 font-family:;
@@ -575,7 +449,6 @@ background:white;
 }
 
 #upper_filters {
-
 float:right;
 margin-left:-40px;
 }
@@ -586,7 +459,6 @@ margin-left:40px;
 
 #results {
 background:white;
-
 }
 
 .item_info {
@@ -597,20 +469,6 @@ font-size: 12px;
 
 .desc ul {
 margin-top:-10px;}
-
-body {background-image:url("{% get_static_prefix %}images/heaven.jpg")}
-
-
-#results_box {
-border: 5px solid white;
-background:white;
-}
-
-
-#ankle {
-clear:both;
-}
-
 
 /* HOW IT WORKS */
 
@@ -670,10 +528,6 @@ background: white;
 height:90px;
 }
 
-body
-{
-background-image:url('{% get_static_prefix %}images/heaven.jpeg');
-}
 
 .signupbutton{
 margin-top: 20px;
