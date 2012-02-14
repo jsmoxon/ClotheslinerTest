@@ -4,8 +4,6 @@
 margin-top:-40px;
 }
 
-body {background-image:url("{% get_static_prefix %}images/heaven.jpg")}
-
 h1  {
 color: #black;
 font-size: 48px;
