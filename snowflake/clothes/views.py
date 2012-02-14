@@ -11,11 +11,6 @@ from django.utils import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 
-def stocktest(request):
-	pant = Pant.objects.all()
-	item = "the"
-	return render_to_response('stock_item.html', {'item':item, 'pant':pant})
-
 def landing(request):
 	return render_to_response('howitworks2.html')
 
@@ -85,11 +80,6 @@ def find_reference(request):
 		request.session["filters"] = []
 		return HttpResponseRedirect(reverse('clothes.views.results'))
 
-def product_info(request, comp):
-	reference_pant = request.session["reference_pant"]
-	compared_pant = Pant.objects.get(id__exact = comp)
-	return render_to_response('product_info.html', {'compared':compared_pant, 'reference':reference_pant}, context_instance=RequestContext(request))
-
 def super_compare(request, comp=None):
 	sauce = simplejson.dumps(FIT_DICT)
 	secret_sauce = simplejson.dumps(DEEP_DICT)
@@ -125,12 +115,6 @@ def super_compare(request, comp=None):
 def about(request):
 	return render_to_response('base_about.html', {},)
 
-def compare(request):
-	return render_to_response('base_compare.html', {},)
-
-def logout(request):
-	return render_to_response('base_outsuccess.html', {},)
-
 def create(request):
 	return render_to_response('base_create.html', {},)	
 
@@ -140,5 +124,3 @@ def drawnpantimage(request):
 def liemphoto(request):
 	return render_to_response('liemphoto.html', {},)
 
-def test(request):
-	return render_to_response('test.html', {},)
