@@ -174,13 +174,12 @@ background:;}
 
 .searchform {
 margin-top:10px;
-min-height:250px;
 background:#FFF;
-font-size:22px;
+opacity:0.8;
 -moz-box-shadow: 10px 10px 5px #667C7D;
 -webkit-box-shadow: 10px 10px 10px #667C7D;
 box-shadow: 10px 10px 10px #667C7D;
-padding-top:20px;
+padding:20px 5px 5px 10px;
 }
 
 .tagline {
