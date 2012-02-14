@@ -98,34 +98,35 @@ function genMeasurements(des, sel)
   <div id="logocontainer" class="sixteen columns">
   	<img alt="Clothesliner logo" class="scale-with-grid" src="{% get_static_prefix %}images/biglogo.png" width="960">
   </div><!--logocontainer-->
-  <div id="right_home" class="nine columns offset-by-four">
-	<div id="searchform" class="searchform">
-		<div id="tag1" class="tagline eight columns">
-		<h3>Choose a pant you know...</h3>
-		</div><!--closes #tag1-->
-			<div id="selectors">
-			<form action="/demonstration/reference/" method="post" name="selectReferencePant">
-			{% csrf_token %}
-				<div class="dropdown seven columns offset-by-one">
-					<h4>Brand</h4>
-					<select id="designers" class="initialdropdown" name="designers" onchange="genStyles(this)"></select>
-				</div><!--closes .dropdown-->
-				<div class="dropdown seven columns offset-by-one">
-				<h4 for="styles">Style</h4>
-				<select id="styles" class="initialdropdown" name="styles" onchange="genMeasurements(designers, this)"></select>
-				</div><!--closes .dropdown-->
-				<div class="dropdown seven columns offset-by-one">
-				<h4 for="measurements">Size</h4>
-				<select id="measurements" class="initialdropdown" name="measurements"></select>
-				</div><!--closes .dropdownXS-->
-			<input type="submit" class="signupbutton" value="Compare">
-			</form>
-			</div><!--closes #selectors-->
-		 <div id="tag2" class="tagline">
-			<h3>We'll return more like it.</h3>
-		 </div><!--closes #tag2-->
-	  </div><!--closes #searchform-->
-	</div><!--closes #right home -->
+  <div id="right_home" class="ten columns offset-by-three">
+    <div id="searchform" class="searchform">
+      <div id="tag1" class="tagline">
+      <h3>Choose a pant you know...</h3>
+      </div><!--closes #tag1-->
+      <div id="selectors">
+      <form action="/demonstration/reference/" method="post" name="selectReferencePant">
+       {% csrf_token %}
+       <div class="dropdown ">
+       <h4>Brand</h4>
+       <select id="designers" class="initialdropdown" name="designers" onchange="genStyles(this)"></select>
+       </div><!--closes .dropdown-->
+       <div class="dropdown ">
+       <h4 for="styles">Style</h4>
+       <select id="styles" class="initialdropdown" name="styles" onchange="genMeasurements(designers, this)"></select>
+       </div><!--closes .dropdown-->
+       <div class="dropdown ">
+       <h4 for="measurements">Size</h4>
+       <select id="measurements" class="initialdropdown" name="measurements"></select>
+       </div><!--closes .dropdownXS-->
+       <input type="submit" class="" value="Compare">
+     </form>
+     </div><!--closes #selectors-->
+    <div id="tag2" class="tagline">
+    <h3>We'll return more like it.</h3>
+    </div><!--closes #tag2-->
+    </div><!--closes #searchform-->
+  </div><!--closes #right home -->
+
 
 <!--<div id="pantpic" class="six columns">
           <img src="{% get_static_prefix %}images/Arrow_PK.svg" class="drawnpant scale-with-grid" style="max-width:300px"/>
@@ -138,7 +139,7 @@ function genMeasurements(des, sel)
         <li><a href="/create/">Enter a Pant</a></li>
         <li><a href="/demonstration/about/">About</a></li>
         <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
-	<li><a href="/">How it Works</a></li>
+<!--	<li><a href="/">How it Works</a></li>-->
       </ul>
     </div> <!--closes the footerlinks div-->
     </hr>
