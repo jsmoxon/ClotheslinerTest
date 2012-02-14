@@ -34,6 +34,11 @@ for des in designer_objects:
     designer_list += [des.name]
 
 for row in dataReader:
+<<<<<<< HEAD
+#    item=Style()
+ #   item.name = row[0]
+  #  item.save()
+=======
     item=Style()
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -63,8 +68,9 @@ for row in dataReader:
 =======
     item.name = row[0]
     item.save()
+>>>>>>> a904ec6f838906e6c9675b4f00e8d27a9a1fc937
     des = Designer()
-    des.name = row[1]
+    des.name = row[0]
     des.save()
 >>>>>>> cd04f8f83ca6b94d96e666034b672567432805db
 =======

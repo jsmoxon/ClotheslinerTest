@@ -11,13 +11,8 @@ from django.utils import simplejson
 from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 
-def stocktest(request):
-	pant = Pant.objects.all()
-	item = "the"
-	return render_to_response('stock_item.html', {'item':item, 'pant':pant})
-
 def landing(request):
-	return render_to_response('howitworks.html')
+	return render_to_response('howitworks2.html')
 
 def home(request):
 	q = Pant.objects.all()
@@ -34,7 +29,7 @@ def home(request):
 		else:
 			r[des]={sty:[[pant.designer_waist, pant.designer_inseam, desID, styID]]}
 	measure = simplejson.dumps(r)
-	return render_to_response('home.html', {'measurements':measure}, context_instance=RequestContext(request))
+	return render_to_response('home2.html', {'measurements':measure}, context_instance=RequestContext(request))
 
 def results(request):
 	reference_pant = request.session["reference_pant"]
@@ -52,20 +47,20 @@ def results(request):
 		filters = filters.split(')(')
 		filters[0] = filters[0][1:]
 		filters[-1] = filters[-1][:-1]
-		print filters
 	if result_set == None:
 		compare_measurements = {"waist": reference_pant.waist, 
 								"inseam": reference_pant.inseam,
 								"cuff": reference_pant.cuff,
 								"front_rise": reference_pant.front_rise}
+#					                        "retailer1_price": reference_pant.retailer1_price}
 		acceptable_pants = compare_pants(reference_pant, compare_measurements, MOE, flags)
 		translated = categorical_pant_list(reference_pant, acceptable_pants)
 		request.session["result_set"] = translated.copy()
 	else:
 		translated = narrow_pants(result_set.copy(), filters)
 	
-	return render_to_response('results.html', { 'pants':translated, 
-												'reference':reference_pant, 
+	return render_to_response('results2.html', { 'pants':translated, 
+												'reference':reference_pant,
 												'filters':filters, 
 												'token':token }, context_instance=RequestContext(request))
 
@@ -84,11 +79,6 @@ def find_reference(request):
 		request.session["result_set"] = None
 		request.session["filters"] = []
 		return HttpResponseRedirect(reverse('clothes.views.results'))
-
-def product_info(request, comp):
-	reference_pant = request.session["reference_pant"]
-	compared_pant = Pant.objects.get(id__exact = comp)
-	return render_to_response('product_info.html', {'compared':compared_pant, 'reference':reference_pant}, context_instance=RequestContext(request))
 
 def super_compare(request, comp=None):
 	sauce = simplejson.dumps(FIT_DICT)
@@ -125,12 +115,6 @@ def super_compare(request, comp=None):
 def about(request):
 	return render_to_response('base_about.html', {},)
 
-def compare(request):
-	return render_to_response('base_compare.html', {},)
-
-def logout(request):
-	return render_to_response('base_outsuccess.html', {},)
-
 def create(request):
 	return render_to_response('base_create.html', {},)	
 
@@ -140,5 +124,3 @@ def drawnpantimage(request):
 def liemphoto(request):
 	return render_to_response('liemphoto.html', {},)
 
-def test(request):
-	return render_to_response('test.html', {},)

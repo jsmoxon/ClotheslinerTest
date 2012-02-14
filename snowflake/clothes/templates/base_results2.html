@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load filters %}
+
+{% block refpant %}
+<div id="refbar" class="sixteen columns">
+  <div id="res_ref_pant" class="six columns">
+  <img src="{{reference.picURL}}"width="168" height="196"></img>
+  <ul>
+    <li id="ref_make" class="item_info">{{reference.designer}}</li>
+</br>
+    <li id="ref_model" class="item_info">{{reference.style}}</li>
+</br>
+    <li class="item_info">  ( {{reference.designer_waist}}
+{% if reference.designer_inseam = 1.729 %})</li>
+{% else %}
+x {{reference.designer_inseam}} ) </li>
+{% endif %}
+<!--<li id="ref_price" class="price"></li> where price would go-->
+  </ul>
+  </div><!--closes #res_ref_pant-->
+  <div id="upper_filters" class="ten columns">
+    {% block breadcrumb %}
+    {% endblock breadcrumb %}
+    <div id="waist_filters" class="three columns">
+      <h4>Waist</h4>
+      <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. tighter waist"><br/>
+      <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. tighter waist"><br/>
+      <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="Similar waist"><br/>
+      <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1 in. looser waist"><br/>
+      <input class="addFilterLink" id="{{values.waist}}" type="button" onClick="addFilter(this)" name="waist" value="1/2 in. looser waist"><br/>
+    </div>
+    <div id="rise_filters" class="three columns">
+      <h4>Rise</h4>
+      <input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1 in. lower rise"><br/>
+      <input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1/2 in. lower rise"><br/>
+      <input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="Similar rise"><br/>
+      <input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1 in. higher rise"><br/>
+      <input class="addFilterLink" id="{{values.front_rise}}" type="button" onClick="addFilter(this)" name="front_rise" value="1/2 in. higher rise"><br/>
+    </div>   
+    <div id="cuff_filters" class="three columns">
+      <h4>Cuff</h4>
+      <input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1 in. tighter cuff"><br/>
+      <input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1/2 in. tighter cuff"><br/>
+      <input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="Similar cuff"><br/>
+      <input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1 in. looser cuff"><br/>
+      <input class="addFilterLink" id="{{values.cuff}}" type="button" onClick="addFilter(this)" name="cuff" value="1/2 in. looser cuff"><br/>
+    </div>
+
+  </div><!--closes #upper_filters-->
+
+
+</div><!--closes #refbar-->
+
+{% block sizefilters %}
+{% endblock sizefilters %}
+
+
+<div id="results" class="fourteen columns offset-by-two">
+    {% block content %}
+    {% endblock content %}
+</div> <!--closes #results-->
+
+{% endblock refpant%}
+

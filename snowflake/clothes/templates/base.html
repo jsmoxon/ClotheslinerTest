@@ -6,10 +6,9 @@
   <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" width="" onClick="feedbackPopup()">
 </div>
 <div id="container" class="container" style="margin-top:20px">
-        <div id="header" class= "alpha omega sixteen columns">
+<div id="header" class= "alpha omega sixteen columns">
         <div id="title" class="alpha eight columns">
-                        <h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-                        <h3>find pants that fit (beta)</h3>
+			<a href="http://clothesliner.com"><img src="{% get_static_prefix %}images/bluelogo.png"/></a>
         </div> <!--closes the title div-->
 
                 <div id="headerlinks" class="omega eight columns">
@@ -17,7 +16,7 @@
                         <li><a href="/demonstration/search/">Search</a></li>
                         <li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
                         <!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
-                        </ul>
+			</ul>
                 </div> <!--closes the headerlinks div-->
     <hr />
         </div> <!--closes the header div-->
@@ -29,17 +28,17 @@
 
 {% block bodycontent %}
 {% endblock bodycontent%}
-
-
-<div id="footer" class="alpha omega grid_16">
-    <hr />
+<div id="footer" class="twelve columns offset-by-two">
+    <hr>
     <div id="footerlinks">
       <ul>
-        <li><a href="/demonstration/about/">About</a></li>
-        <li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
         <li><a href="/create/">Enter a Pant</a></li>
+        <li><a href="/demonstration/about/">About</a></li>
+	<li><a href="http://www.clothesliner.tumblr.com/">Tumblr</a></li>
+        <li><a href="/">How it Works</a></li>
       </ul>
     </div> <!--closes the footerlinks div-->
+    </hr>
   </div> <!--closes the footer div-->
 </div> <!--closes the container div-->
 
