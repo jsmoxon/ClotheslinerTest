@@ -2,10 +2,7 @@ body, h1, h2, h3, h4, h5, h6, label {
 font-family:"Raleway";
 }
 
-#logo {
-background:;
-
-}
+/* HOME2.html*/
 
 #logo img{
 padding-top:80px;
@@ -94,6 +91,8 @@ margin-left:200px;
 margin-right:auto;
 width:100px;
 }
+
+/* FOOTER */
 
 #footerlinks li, a:visited, #footerlinks a {
 display: inline;

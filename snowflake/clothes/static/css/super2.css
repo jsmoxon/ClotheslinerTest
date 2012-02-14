@@ -46,6 +46,29 @@ text-align:right;
 font-size: 22px; 
 font-family: 'Raleway'}
  
+/* supercompare is a white background*/
+.whiteheader a:visited, a, li {color:black;}
+
+/* FOOTER */
+
+#footerlinks li, a:visited, #footerlinks a {
+display: inline;
+color: #D9DBD0;
+text-decoration:none;
+font-size:28px;
+padding:7px;
+}
+
+#footerlinks a:hover {
+color:black;
+}
+
+
+#footer {
+margin-top:30px;
+text-align:center;
+}
+
 /*Links
 */
 
@@ -75,13 +98,13 @@ padding:2px;
 }
 
 .retailer_label, .retail_returns {
-	/*position:relative;
-	top:-55px;
-	z-index:2;
-	height: 55px;
-	
-	background-color:#FFFFFF;
-	*/
+		 /*position:relative;
+		 top:-55px;
+		 z-index:2;
+		 height: 55px;
+		 
+		 background-color:#FFFFFF;
+		 */
 background-color:#FFFFFF;
 opacity:.8;
 margin:3px;
@@ -92,8 +115,8 @@ td {padding:5px;}
 tr:nth-child(2n+4) {background: #F5F5F5}
 
 #comp_pant_1 {
-	overflow:hidden;
-	}
+	     overflow:hidden;
+	     }
 
 #comp_pant_image {
 float:right;
@@ -104,7 +127,7 @@ width:80%;
 }
 
 #reference_pant .measurements {
-	float:right;
+		float:right;
 }
 
 #refr_image {
@@ -122,10 +145,10 @@ margin-top: 60px;
 }
 
 .thumbnail {
-	display: inline;
-	margin:5px;
-	clear: both;
-	width:900px;
+	   display: inline;
+	   margin:5px;
+	   clear: both;
+	   width:900px;
 }
 
 .outline {
@@ -139,7 +162,88 @@ border: 1px solid #505050;
 
 /* #Home.html
 ================================================== */
+/* HOME2.html*/
 
+#logo img{
+padding-top:80px;
+}
+
+#pantpic {
+margin-top:-80px;
+background:;}
+
+.searchform {
+margin-top:10px;
+min-height:250px;
+background:#FFF;
+font-size:22px;
+-moz-box-shadow: 10px 10px 5px #667C7D;
+-webkit-box-shadow: 10px 10px 10px #667C7D;
+box-shadow: 10px 10px 10px #667C7D;
+padding-top:20px;
+}
+
+.tagline {
+text-align:center;
+}
+
+.tagline h3 {
+font-family: "Verdana";
+font-size:28px;
+}
+
+.dropdown select {
+font-size: 12px;
+width: 70%;
+float:right;
+margin-right:50px;
+margin-top:7px;}
+
+.dropdown h4 {
+display:inline;
+line-height:35px;
+}
+
+.signupbutton{
+margin-top: 20px;
+background-color:#ee432e;
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ee432\
+e),color-stop(50%,#c63929),color-stop(50%,#b51700),color-stop(100%,#891100));
+background-image:-webkit-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#89\
+1100 100%);
+background-image:-moz-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#89110\
+0 100%);
+background-image:-ms-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100\
+ 100%);
+background-image:-o-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 \
+100%);
+background-image:linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100\
+%);
+border:1px solid #951100;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+-ms-border-radius:5px;
+-o-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-moz-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-ms-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-o-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+color:#fff;
+font:bold 20px "helvetica neue",helvetica,arial,sans-serif;
+line-height:1;
+padding:12px 0 14px 0;
+text-align:center;
+text-shadow:0 -1px 1px rgba(0,0,0,0.8);
+margin-left:30px;
+}
+
+#searchform input {
+margin-left:200px;
+margin-right:auto;
+width:100px;
+}
 
 #searchform {
 margin-left:20px;
@@ -171,11 +275,11 @@ margin-right:0px;
 margin-top:10px;
 }
 
-#tagline {
-margin-left: 40px;
+#tag1 {
+
 }
 
-#tagline2 {
+#tag2 {
 margin-top: 10px;
 }
 
@@ -283,7 +387,7 @@ padding-bottom: 60px;
         width: 20px;
         cursor: pointer;
 		padding: 2px 2px 8px 3px;
-		font-weight: normal;
+			 font-weight: normal;
 }
 
 .pantlabel li {
@@ -299,8 +403,8 @@ padding-bottom: 60px;
 
 .addFilterLink {
 		width:130px;
-		background-color:transparent;
-		color: #838181;
+			background-color:transparent;
+				color: #838181;
         /*
         cursor: pointer;
         position:absolute;
@@ -312,7 +416,7 @@ padding-bottom: 60px;
         color: #838181;
         font-variant:small-caps;
         font-size: 12px;
-		*/
+		   */
 }
 
 .dropfilterLink {
@@ -421,7 +525,7 @@ padding-left: 20px;
 }
 
 #tux {
-	max-width:300px;
+     max-width:300px;
     display:block;
     margin-left: auto;
     margin-right: auto; 
@@ -534,8 +638,8 @@ font-size: 12px;
 }
 
 #image {
-	width: 200px;
-	height: 240px;
+       width: 200px;
+       height: 240px;
 }
 
 
