@@ -1,4 +1,67 @@
-body, h1, h2, 100%);
+body, h1, h2, h3, h4, h5, h6, label {
+font-family:"Raleway";
+}
+
+/* HOME2.html*/
+
+#logo img{
+padding-top:80px;
+}
+
+#pantpic {
+margin-top:-80px;
+background:;}
+
+.searchform {
+margin-top:10px;
+min-height:250px;
+background:#FFF;
+font-size:22px;
+-moz-box-shadow: 10px 10px 5px #667C7D;
+-webkit-box-shadow: 10px 10px 10px #667C7D;
+box-shadow: 10px 10px 10px #667C7D;
+padding-top:40px;
+}
+
+.tagline {
+text-align:center;
+background:;
+}
+
+#tag2 {
+background:;
+}
+
+#selectors input {
+margin-left:100px;
+}
+
+.initialdropdown {
+}
+
+.dropdown select {
+font-size: 12px;
+width: 70%;
+float:right;
+margin-top:7px;}
+
+.dropdown h4 {
+display:inline;
+margin-left:15px;}
+
+
+
+.signupbutton{
+margin-top: 20px;
+background-color:#ee432e;
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ee432\
+e),color-stop(50%,#c63929),color-stop(50%,#b51700),color-stop(100%,#891100));
+background-image:-webkit-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#89\
+1100 100%);
+background-image:-moz-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#89110\
+0 100%);
+background-image:-ms-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100\
+ 100%);
 background-image:-o-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 \
 100%);
 background-image:linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100\
@@ -29,6 +92,22 @@ margin-right:auto;
 width:100px;
 }
 
+/* FOOTER */
+
+#footerlinks li, a:visited, #footerlinks a {
+display: inline;
+color: #D9DBD0;
+text-decoration:none;
+font-size:28px;
+padding:7px;
+}
+
+#footerlinks a:hover {
+color:black;
+}
+
+
 #footer {
-margin-top: 200px;
+margin-top:30px;
+text-align:center;
 }
