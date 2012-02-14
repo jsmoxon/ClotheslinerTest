@@ -1,227 +1,8 @@
-.layout {background-color:green;}
-
-h3 {
-line-height:normal;
-}
-
-#retailerinfo {
-background-color:;
-border: 1px solid #A8A8A8;
-padding:5px;
-}
-
-#descrip {}
-
-#retailerinfo p{
-display: inline;
-}
-
-#fit_desc{
-background-color:#FFFFFF;
-opacity:.8;
-margin:3px;
-padding:2px;
-}
-
-.retail_about {
-}
-
-.retailer_label{
-	/*position:relative;
-	top:-55px;
-	z-index:2;
-	height: 55px;
-	
-	background-color:#FFFFFF;
-	*/
-background-color:#FFFFFF;
-opacity:.8;
-margin:3px;
-padding:2px;
-}
-
-.retail_returns {
-}
-
-#image {
-	width: 200px;
-	height: 240px;
-
-}
-
-.fitting_room {
-        cursor: pointer;
-        font-family: 'Helvetica Neue Reg', sans-serif;
-        color:white;
-        border:none;
-        background-color:#838181;
-        opacity:.5;
-        height: 20px;
-        width: 20px;
-        display:inline;
-        -moz-border-radius: 1em;
-        -webkit-border-radius: 1em;
-        border-radius: 1em;
-        position:relative;
-        left:-25px;
-        top:-87px;
-}
-
-
-
-#compare {
-}
-
-#compdatatable{
-clear:left;
-background-color:;
-overflow:hidden;
-border:#DDDDDD;
-}
-
-#datatable {
-}
-
-td {padding:5px;}
-tr:nth-child(2n+4) {background: #F5F5F5}
-
-/*
-.columnar {
-margin-left:0px;
-margin-right:0px;
-border: 1px solid green;
-}
-
-.measurements {
-margin-left:0px;
-margin-right:0px;
-border: 1px solid red;
-}
-
-.measurementdata {
-margin-left:0px;
-margin-right:0px;
-border: 1px solid blue;
-}
-
-#comp_images {
-white-space:nowrap;
-overflow:hidden;
-display:inline;
-max-width:170px;
-}
-*/
-
-li .designer {
-}
-
-#labels {
-	background-color:;
-}
-
-#ref_pant_image {
-margin-left: 100px;
-}
-
-#reference_pant {
-	border:blue;
-	background-color:;
-}
-
-#comp_pant_1 {
-	background-color:;
-	overflow:hidden;
-	}
-
-#comp_pant_image {
-float:right;
-}
-
-#explain {
-background: #DBDBDB;
-}
-
-#explain li {
-padding: 8px;
-list-style-type: circle;
-}
-
-#reference_pant .measurements{
-	float:right;
-}
-
-#refr_image {
-width: 150px;
-height: auto;
-}
-
-#compr_image {
-width: 300px;
-height: auto;
-}
-
-.thumbnails  {
-margin-top: 60px;
-}
-
-.thumbnail {
-	display: inline;
-	margin:5px;
-	clear: both;
-	width:900px;
-}
-
-.outline {
-outline: 1px solid #A8A8A8;
-}
-
-.border {
-border: 1px solid #505050;
-}
-
+/* #Site-Wide
+================================================== */
 .container {
 margin-top:-40px;
 }
-
-/* #PK ADDED Main SITE INFO
-================================================== */
-#header {
-background-color:;
-}
-
-#headerlinks {
-float:right;
-background-color:;
-text-align:right;
-}
-
-#title {
-background-color:;
-}
-
-#headerlinks li {
-display: inline;
-padding:1em;
-font-variant:small-caps;
-color: black;
-font-family: 'Sorts Mill Goudy', serif;
-text-align:right;
-}
- 
-#footer {text-align: center; }
-#footer li {display: inline; padding:1em;}
-
-#footerlinks li {
-display: inline;
-padding:1em;
-font-variant:small-caps;
-color: #838181;
-font-family: 'Sorts Mill Goudy', serif;
-}
-
-a {text-decoration: none; color:black;}
-a:hover {color:#9C052A;} 
-a:visited {color:#black;}
 
 h1  {
 color: #black;
@@ -240,6 +21,229 @@ h3 {
 color: #black;
 font-size: 20px;
 font-family: 'Raleway', cursive;
+line-height:normal;
+}
+
+h4 {
+font: 16px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #black;
+}
+
+/* #Header
+*/
+#headerlinks {
+float:right;
+background-color:;
+text-align:right;
+}
+
+
+#headerlinks li {
+display: inline;
+padding:1em;
+color: #D9DBD0;
+text-align:right;
+font-size: 22px; 
+font-family: 'Raleway'}
+ 
+/* supercompare is a white background*/
+.whiteheader a:visited, a, li {color:black;}
+
+/* FOOTER */
+
+#footerlinks li, a:visited, #footerlinks a {
+display: inline;
+color: black					;
+text-decoration:none;
+font-size:28px;
+padding:7px;
+font-family:'Sorts Mill Goudy';
+}
+
+#footerlinks a:hover {
+color:black;
+}
+
+
+#footer {
+margin-top:30px;
+text-align:center;
+}
+
+/*Links
+*/
+
+a {text-decoration: none; color:black;}
+a:hover {color:#9C052A;} 
+a:visited {color:#D9DBD0;}
+
+
+
+/* #Super Compare
+================================================== */
+#retailerinfo {
+background-color:;
+border: 1px solid #A8A8A8;
+padding:5px;
+}
+
+#retailerinfo p{
+display: inline;
+}
+
+#fit_desc{
+background-color:#FFFFFF;
+opacity:.8;
+margin:3px;
+padding:2px;
+}
+
+.retailer_label, .retail_returns {
+		 /*position:relative;
+		 top:-55px;
+		 z-index:2;
+		 height: 55px;
+		 
+		 background-color:#FFFFFF;
+		 */
+background-color:#FFFFFF;
+opacity:.8;
+margin:3px;
+padding:2px;
+}
+
+td {padding:5px;}
+tr:nth-child(2n+4) {background: #F5F5F5}
+
+#comp_pant_1 {
+	     overflow:hidden;
+	     }
+
+#comp_pant_image {
+float:right;
+}
+
+#comp_pant_image img {
+width:80%;
+}
+
+#reference_pant .measurements {
+		float:right;
+}
+
+#refr_image {
+width: 150px;
+height: auto;
+}
+
+#compr_image {
+width: 300px;
+height: auto;
+}
+
+.thumbnails  {
+margin-top: 60px;
+}
+
+.thumbnail {
+	   display: inline;
+	   margin:5px;
+	   clear: both;
+	   width:900px;
+}
+
+.outline {
+outline: 1px solid #A8A8A8;
+}
+
+.border {
+border: 1px solid #505050;
+}
+
+
+/* #Home.html
+================================================== */
+/* HOME2.html*/
+
+#logo img{
+padding-top:80px;
+}
+
+#pantpic {
+margin-top:-80px;
+background:;}
+
+.searchform {
+margin-top:10px;
+min-height:250px;
+background:#FFF;
+font-size:22px;
+-moz-box-shadow: 10px 10px 5px #667C7D;
+-webkit-box-shadow: 10px 10px 10px #667C7D;
+box-shadow: 10px 10px 10px #667C7D;
+padding-top:20px;
+}
+
+.tagline {
+text-align:center;
+}
+
+.tagline h3 {
+font-family: "Sorts Mill Goudy";
+font-size:28px;
+}
+
+.dropdown select {
+font-size: 12px;
+width: 70%;
+float:right;
+margin-right:50px;
+margin-top:7px;}
+
+.dropdown h4 {
+display:inline;
+line-height:35px;
+}
+
+.signupbutton{
+margin-top: 20px;
+background-color:#ee432e;
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ee432\
+e),color-stop(50%,#c63929),color-stop(50%,#b51700),color-stop(100%,#891100));
+background-image:-webkit-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#89\
+1100 100%);
+background-image:-moz-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#89110\
+0 100%);
+background-image:-ms-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100\
+ 100%);
+background-image:-o-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 \
+100%);
+background-image:linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100\
+%);
+border:1px solid #951100;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+-ms-border-radius:5px;
+-o-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-moz-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-ms-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-o-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+color:#fff;
+font:bold 20px "helvetica neue",helvetica,arial,sans-serif;
+line-height:1;
+padding:12px 0 14px 0;
+text-align:center;
+text-shadow:0 -1px 1px rgba(0,0,0,0.8);
+margin-left:30px;
+}
+
+#searchform input {
+margin-left:200px;
+margin-right:auto;
+width:100px;
 }
 
 #searchform {
@@ -247,20 +251,15 @@ margin-left:20px;
 margin-top:60px;
 }
 
-#sidebar {
+
+#sidebar { /*Feedback button */
 margin-top:250px;
 float: left;
 position:fixed;
 }
 
-#feedback {
+#feedback { /*Feedback button */
 width: 100px;
-}
-
-/* HOME.HTML */
-
-#mainsearch h3 {
-color: #C30017;
 }
 
 #mainsearch {
@@ -268,16 +267,20 @@ min-height:500px;
 margin-top:10px;
 }
 
+#mainsearch h3 {
+color: #C30017;
+}
+
 #mainpant {
 margin-right:0px;
 margin-top:10px;
 }
 
-#tagline {
-margin-left: 40px;
+#tag1 {
+
 }
 
-#tagline2 {
+#tag2 {
 margin-top: 10px;
 }
 
@@ -332,35 +335,15 @@ text-shadow:0 -1px 1px rgba(0,0,0,0.8);
 height:30px;
 }
 
-/* RESULTS.HTML */
 
-#refpant {
-}
-
-#content {
-}
+/* #Results.html
+================================================== */
 
 
-#breadcrumb {
-}	    
-
-#refpant h3, h6 {
-text-align:center;
-margin-bottom:10px;}
-
-#filter_list h6{
-text-align:left;
-}
-
-#results {
-border-left:1px solid #838181;
-padding-left:25px;
-}
-
-.pantlabel{
+.pantlabel{ /* For mouseover stuff */
         position:relative;
         top:-70px;
-	height: 70px;
+		height: 70px;
         background-color: #FFFFFF;
         opacity:.8;
         z-index:2;
@@ -387,7 +370,6 @@ padding-bottom: 60px;
         z-index:1;
 }
 
-
 #resultimage {
         width: 180px;
         height:220px;
@@ -405,27 +387,10 @@ padding-bottom: 60px;
         height: 20px;
         width: 20px;
         cursor: pointer;
-	padding: 2px 2px 8px 3px;
-	font-weight: normal;
+		padding: 2px 2px 8px 3px;
+			 font-weight: normal;
 }
 
-.fitting_room {
-        color:white;
-        float:right;
-        border:none;
-        position:relative;
-	background-color:#838181;
-        opacity: .5;
-        top:-275px;
-        z-index:2;
-	height: 20px;
-        width: 20px;
-        cursor: pointer;
-}
-
-.pantlabel {
-
-        }
 .pantlabel li {
         font: 'Helvetica Neue';
         font-size:12px;
@@ -438,9 +403,9 @@ padding-bottom: 60px;
 }
 
 .addFilterLink {
-		width:120px;
-		background-color:transparent;
-		color: #838181;
+		width:130px;
+			background-color:transparent;
+				color: #838181;
         /*
         cursor: pointer;
         position:absolute;
@@ -449,17 +414,10 @@ padding-bottom: 60px;
         vertical-align:middle;
         font-family: 'Helvetica Neue Reg', sans-serif;
         height:20px;
-		
         color: #838181;
         font-variant:small-caps;
         font-size: 12px;
-        
-		*/
-}
-
-
-.opque_button {
-
+		   */
 }
 
 .dropfilterLink {
@@ -473,7 +431,6 @@ padding-bottom: 60px;
 
 .desc {
         position:relative;
-        padding-top: 10px;
 }
 
 /*
@@ -514,39 +471,135 @@ padding-bottom: 60px;
         top:-3px;
 }
 
-li.make, li.model, li.price, li.originalprice, li.sale {
+/* #New Results2.html
+================================================== */
+#results {
+background:white;
+}
+
+#refbar {
+background:white;
+}
+
+#upper_filters {
+float:right;
+margin-left:-40px;
+}
+
+#res_ref_pant {
+margin-left:40px;
+}
+
+.item_info {
 display: inline;
-color: black;	
+color: black;
 font-size: 12px;
 }
 
-li.price, li.originalprice {margin-left:15px;}
-li.sale {color:9C052A; margin-left:2px;}
-li.originalprice {text-decoration: line-through;}
+.desc ul {
+margin-top:-10px;}
 
-li.model {overflow:hidden; white-space: nowrap; width: 180px;}
 
-li.colors {
-margin: 0;
-padding: 0;
-display: inline;
-list-style: none;
+
+
+/* #HOW IT WORKS
+================================================== */
+
+.inline {
+display:inline;
 }
 
-#ref_make, #ref_model, #ref_price {font-size: 14px;}
-
-#refpant li.category{
-color: #838181;
-font-family:;
+#reg_form input[type="text"] {
+display:inline;
 }
 
-/* PANT ENTRY */
+.howitworkstile
+{width: 230px;
+}
+
+.signup {
+display:inline;
+}
+
+.fieldlabel {
+padding-left: 20px;
+}
+
+#tux {
+     max-width:300px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto; 
+    }
+
+#logobox {
+background-color:;
+text-align:center;
+margin-top:60px;
+}
+
+#logoimg {
+background-color:;
+min-width:240px;
+}
+
+.featurebox {
+min-height:203px;
+margin-top:30px;
+padding:16px;
+border-radius:5px;
+box-shadow:rgba(0,0,0,0.15) 0 2px 4px;
+background: white;
+}
+
+.featurebox img {
+height:90px;
+}
+
+.signupbutton{
+margin-top: 20px;
+background-color:#ee432e;
+background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#ee432e),color-stop(50%,#c63929),color-stop(50%,#b51700),color-stop(100%,#891100));
+background-image:-webkit-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:-moz-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:-ms-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:-o-linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+background-image:linear-gradient(top,#ee432e 0,#c63929 50%,#b51700 50%,#891100 100%);
+border:1px solid #951100;
+-webkit-border-radius:5px;
+-moz-border-radius:5px;
+-ms-border-radius:5px;
+-o-border-radius:5px;
+border-radius:5px;
+-webkit-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-moz-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-ms-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+-o-box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+box-shadow:inset 0 0 0 1px rgba(255,115,100,0.4),0 1px 3px #333;
+color:#fff;
+font:bold 20px "helvetica neue",helvetica,arial,sans-serif;
+line-height:1;
+padding:12px 0 14px 0;
+text-align:center;
+text-shadow:0 -1px 1px rgba(0,0,0,0.8);
+width:150px
+}
+
+#signupbutton {
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+
+/* #PantEntry
+================================================== */
+
 .entry_description {
 float: right;
 width:300px;
 margin-top:20px;
 }
-
 
 #inputform input {
 display:inline;
@@ -569,15 +622,117 @@ height:30px;
 margin-top:0px;
 }
 
-#tester {
-
-}
-
-.fit_prose {
+. fit_prose {
 text-align: center;
 }
 
 
+
+/* #CRUFT
+================================================== */
+/*
+
+li.make, li.model, li.originalprice, li.sale {
+display: inline;
+color: black;	
+font-size: 12px;
+}
+
+#image {
+       width: 200px;
+       height: 240px;
+}
+
+
+.fitting_room {
+        cursor: pointer;
+        font-family: 'Helvetica Neue Reg', sans-serif;
+        color:white;
+        border:none;
+        background-color:#838181;
+        opacity:.5;
+        height: 20px;
+        width: 20px;
+        display:inline;
+        -moz-border-radius: 1em;
+        -webkit-border-radius: 1em;
+        border-radius: 1em;
+        position:relative;
+        left:-25px;
+        top:-87px;
+}
+
+#compdatatable{
+clear:left;
+background-color:;
+overflow:hidden;
+border:#DDDDDD;
+}
+
+.columnar {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid green;
+}
+
+.measurements {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid red;
+}
+
+.measurementdata {
+margin-left:0px;
+margin-right:0px;
+border: 1px solid blue;
+}
+
+#comp_images {
+white-space:nowrap;
+overflow:hidden;
+display:inline;
+max-width:170px;
+}
+
+
+#explain {
+background: #DBDBDB;
+}
+
+#explain li {
+padding: 8px;
+list-style-type: circle;
+}
+
+#refpant h3, h6 {
+text-align:center;
+margin-bottom:10px;}
+
+#filter_list h6{
+text-align:left;
+}
+
+.fitting_room {
+        color:white;
+        float:right;
+        border:none;
+        position:relative;
+		background-color:#838181;
+        opacity: .5;
+        top:-275px;
+        z-index:2;
+		height: 20px;
+        width: 20px;
+        cursor: pointer;
+}
+
 #ankle {
 clear:both;
 }
+
+#results_box {
+border: 5px solid white;
+background:white;
+}
+
+*/
