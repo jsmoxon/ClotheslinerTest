@@ -98,7 +98,7 @@ function genMeasurements(des, sel)
   <div id="logocontainer" class="sixteen columns">
   	<img alt="Clothesliner logo" class="scale-with-grid" src="{% get_static_prefix %}images/biglogo.png" width="960">
   </div><!--logocontainer-->
-  <div id="right_home" class="eight columns offset-by-four">
+  <div id="right_home" class="ten columns offset-by-three">
     <div id="searchform" class="searchform">
       <div id="tag1" class="tagline">
       <h3>Choose a pant you know...</h3>
@@ -117,8 +117,10 @@ function genMeasurements(des, sel)
        <div class="dropdown ">
        <h4 for="measurements">Size</h4>
        <select id="measurements" class="initialdropdown" name="measurements"></select>
-       </div><!--closes .dropdownXS-->
-       <input type="submit" class="" value="Compare">
+       </div><!--closes .dropdown-->
+       <div id="compare_button_div">
+       <input type="submit" class="comparebutton" value="Compare">
+       </div>
      </form>
      </div><!--closes #selectors-->
     <div id="tag2" class="tagline">
