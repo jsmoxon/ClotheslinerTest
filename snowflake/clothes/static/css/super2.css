@@ -175,13 +175,20 @@ background:;}
 
 .searchform {
 margin-top:10px;
-min-height:250px;
 background:#FFF;
-font-size:22px;
+opacity:0.8;
+
+padding:30px 10px 10px 20px;
 -moz-box-shadow: 10px 10px 5px #667C7D;
 -webkit-box-shadow: 10px 10px 10px #667C7D;
 box-shadow: 10px 10px 10px #667C7D;
-padding-top:20px;
+
+border: 1px solid #black;
+
+/*
+border:10px solid #DCDCDC;
+
+*/
 }
 
 .tagline {
@@ -345,7 +352,7 @@ height:30px;
         position:relative;
         top:-70px;
 		height: 70px;
-        background-color: #FFFFFF;
+        background-color: #667C7D;
         opacity:.8;
         z-index:2;
 }
