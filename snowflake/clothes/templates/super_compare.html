@@ -2,13 +2,12 @@
 {% load filters %}
 <head>
 {% load static %}
-<!--<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 !-->
-<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy|Raleway:100' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Sorts+Mill+Goudy' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_skeleton.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_base.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/sk_layout.css" >
-<link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/home2.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/super2.css" >
 <link rel="stylesheet" type="text/css" media="all" href="{% get_static_prefix %}css/tabs.css" >
         <style type="text/css">
@@ -175,21 +174,11 @@ function unfitItem(item)
 
 <div class="container">
   	<div id="header" class= "alpha omega sixteen columns whiteheader">
-    	<div id="title" class="alpha eight columns">
-<!--			<h1><a href="http://clothesliner.com">Clothesliner</a></h1>
-			<h3>find pants that fit (beta)</h3>-->
-                        <a href="http://clothesliner.com"><img src="{% get_static_prefix %}images/bluelogo.png"/></a>
-
+        <div id="title" class="sixteen columns">
+        	<a href="http://clothesliner.com">
+          	<img alt="Clothesliner logo" class="scale-with-grid" src="{% get_static_prefix %}images/biglogo.png" width="960">
+			</a>
         </div> <!--closes the title div-->
-      
-		<div id="headerlinks" class="omega eight columns">
-		  <ul>
-			<li><a href="/demonstration/search/">Search</a></li>
-			<li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
-			<!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
-			</ul>
-		</div> <!--closes the headerlinks div-->
-    <hr />
 	</div> <!--closes the header div-->
 
 	
@@ -361,7 +350,7 @@ function unfitItem(item)
 </div><!--closes thumbnails-->
 <div id="footer" class="sixteen columns">
     <hr>
-    <div id="footerlinks" class="whiteheader">
+    <div id="footerlinks">
       <ul>
         <li><a href="/create/">Enter a Pant</a></li>
         <li><a href="/demonstration/about/">About</a></li>
