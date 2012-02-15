@@ -169,7 +169,7 @@ function unfitItem(item)
 </head>
 <body onload=makeReference(document.getElementById("{{reference.id}}"));makeCompare(document.getElementById("{{compared.id}}"))>
 <div id="sidebar">
-  <input type="image" src="{% get_static_prefix %}images/Feedback.jpg" width="" onClick="feedbackPopup()">
+  <input id="Feedbackbutton" type="button" name="FeedbackButton" value="Feedback" onClick="feedbackPopup()"><br/>
 </div>
 
 <div class="container">

@@ -18,6 +18,7 @@ font-size: 16px;
 }
 
 
+
 /*Links
 */
 
@@ -52,6 +53,20 @@ cursor: pointer;
 }
 
 
+
+
+#Feedbackbutton {
+padding-right: 5px;
+padding-left: 5px;
+-webkit-transform: rotate(-90deg);
+-moz-transform: rotate(-90deg);
+-ms-transform: rotate(-90deg);
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+}
 
 
 /* #Super Compare
