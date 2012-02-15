@@ -17,65 +17,40 @@ font-family: 'Sorts Mill Goudy', serif;
 font-size: 16px;
 }
 
-h3 {
-color: #black;
-font-size: 20px;
-font-family: 'Raleway', cursive;
-line-height:normal;
-}
 
-h4 {
-font: 16px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-color: #black;
-}
+/*Links
+*/
+
+a {text-decoration: none; color:black;}
+a:hover, #headerlinks li:hover {color:#D9DBD0;} 
+a:visited {color:black;}
+
 
 /* #Header
 */
 #headerlinks {
 float:right;
-background-color:;
 text-align:right;
+margin-top:-20px;
 }
-
-
-#headerlinks li {
-display: inline;
-padding:1em;
-color: #D9DBD0;
-text-align:right;
-font-size: 22px; 
-font-family: 'Raleway'}
- 
-/* supercompare is a white background*/
-.whiteheader a:visited, a, li {color:black;}
-
-/* FOOTER */
-
-#footerlinks li, a:visited, #footerlinks a {
-display: inline;
-color: black;
-text-decoration:none;
-font-size:20px;
-padding:7px;
-font-family:'Sorts Mill Goudy';
-}
-
-#footerlinks a:hover {
-color:#D9DBD0;
-}
-
 
 #footer {
 margin-top:30px;
 text-align:center;
 }
 
-/*Links
-*/
+#headerlinks li, #footerlinks li, h4, h3 {
+font-size: 20px; 
+padding-left:7px;
+padding-right:7px;
+font-family:'Sorts Mill Goudy';
+}
 
-a {text-decoration: none; color:black;}
-a:hover {color:#9C052A;} 
-a:visited {color:#D9DBD0;}
+#headerlinks li, #footerlinks li {
+display: inline;
+cursor: pointer;
+}
+
 
 
 
@@ -359,11 +334,11 @@ height:30px;
 
 .tile {
         margin-left: 5px;
-	float:left;
+		float:left;
         width:180px;
-        height:280px;
+        min-height:220px;
         background-color:;
-	overflow:hidden;
+		overflow:hidden;
 }
 
 #item {
@@ -481,12 +456,12 @@ padding-bottom: 60px;
 
 /* #New Results2.html
 ================================================== */
-#results {
-background:white;
+#results, #refbar {
+
 }
 
 #refbar {
-background:white;
+padding-top:15px;
 }
 
 #upper_filters {
@@ -496,6 +471,7 @@ margin-left:-40px;
 
 #res_ref_pant {
 margin-left:40px;
+text-align:center;
 }
 
 .item_info {

@@ -7,18 +7,19 @@
 </div>
 <div id="container" class="container" style="margin-top:20px">
 <div id="header" class= "alpha omega sixteen columns">
-        <div id="title" class="alpha eight columns">
-			<a href="http://clothesliner.com"><img src="{% get_static_prefix %}images/logo_a_black.png"/></a>
+        <div id="title" class="sixteen columns">
+        	<a href="http://clothesliner.com">
+          	<img alt="Clothesliner logo" class="scale-with-grid" src="{% get_static_prefix %}images/biglogo.png" width="960">
+			</a>
         </div> <!--closes the title div-->
 
-                <div id="headerlinks" class="omega eight columns">
+                <div id="headerlinks" class="sixteen columns">
                   <ul>
                         <li><a href="/demonstration/search/">Search</a></li>
-                        <li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Compare (0 Items)</li>
+                        <li id="compareitems" onclick="popupForm(cart[0], '{{token}}');"> Fitting Room (0 Items)</li>
                         <!--<li><a id="compareitems" href="/p4tt/super_compare/">Compare Items (0)</a></li>-->
 			</ul>
                 </div> <!--closes the headerlinks div-->
-    <hr />
         </div> <!--closes the header div-->
 
 
